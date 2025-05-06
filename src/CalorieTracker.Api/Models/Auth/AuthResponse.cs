@@ -1,8 +1,8 @@
-﻿namespace CalorieTracker.Api.Models.Auth
+﻿namespace CalorieTracker.Api.Models.Auth;
+
+public class AuthResponse
 {
-	public class AuthResponse
-	{
-		public string Token { get; init; } = null!;
-		public DateTime ExpiresAt { get; init; }
-	}
+	public string AccessToken { get; init; } = null!;
+	public string RefreshToken { get; init; } = null!;
+	public DateTime ExpiresAt { get; init; }
 }

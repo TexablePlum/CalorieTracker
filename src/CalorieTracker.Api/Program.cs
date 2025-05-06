@@ -1,9 +1,13 @@
 using CalorieTracker.Api.Mapping;
+using CalorieTracker.Api.Validation;
 using CalorieTracker.Application.Auth.Handlers;
 using CalorieTracker.Application.Auth.Interfaces;
+using CalorieTracker.Application.Interfaces;
 using CalorieTracker.Domain.Entities;
 using CalorieTracker.Infrastructure.Auth;
 using CalorieTracker.Infrastructure.Data;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -18,11 +22,25 @@ builder.Services.AddDbContext<AppDbContext>(opts =>
 	opts.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
 );
 
+builder.Services.AddScoped<IAppDbContext>(sp => sp.GetRequiredService<AppDbContext>()); // Abstrakcja AppDbContext aby wyeliminowaæ zale¿noœæ handlerów od modu³u infrastructure
+
 // Identity
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>(opts =>
 {
-	opts.Password.RequiredLength = 6;
-	opts.Password.RequireNonAlphanumeric = false;
+	// U¯YTKOWNIK
+	opts.User.RequireUniqueEmail = true; // unikalny mail
+
+	// HAS£O
+	opts.Password.RequiredLength = 8;
+	opts.Password.RequireDigit = true;
+	opts.Password.RequireUppercase = true;
+	opts.Password.RequireLowercase = true;
+	opts.Password.RequireNonAlphanumeric = true;
+
+	// LOCKOUT
+	opts.Lockout.MaxFailedAccessAttempts = 5; // liczba b³edów
+	opts.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(15); // - minut przerwy
+	opts.Lockout.AllowedForNewUsers = true;
 })
 .AddEntityFrameworkStores<AppDbContext>()
 .AddDefaultTokenProviders();
@@ -81,9 +99,16 @@ builder.Services.AddSwaggerGen(c =>
 // Controllers
 builder.Services.AddControllers();
 
+// FluentValidation – automatyczna walidacja modeli
+builder.Services.AddFluentValidationAutoValidation()
+				.AddValidatorsFromAssemblyContaining<RegisterRequestValidator>();
+
 // Application services & handlers
 builder.Services.AddScoped<RegisterUserHandler>();
 builder.Services.AddScoped<LoginUserHandler>();
+builder.Services.AddScoped<GenerateRefreshTokenHandler>();
+builder.Services.AddScoped<UseRefreshTokenHandler>();
+builder.Services.AddScoped<LogoutHandler>();
 
 // JWT generator 
 builder.Services.AddScoped<IJwtGenerator, JwtGenerator>();
