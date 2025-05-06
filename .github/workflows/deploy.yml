@@ -1,0 +1,31 @@
+name: CI/CD to Azure WebApp
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup .NET 9
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '9.0.x'
+
+      - name: Restore & Build
+        run: |
+          dotnet restore CalorieTracker.Api/CalorieTracker.Api.csproj
+          dotnet build   CalorieTracker.Api/CalorieTracker.Api.csproj --configuration Release
+
+      - name: Publish App
+        run: dotnet publish CalorieTracker.Api/CalorieTracker.Api.csproj -c Release -o ./publish
+
+      - name: Deploy to Azure
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: 'ct-backend-TexablePlum'
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          package: './publish'
