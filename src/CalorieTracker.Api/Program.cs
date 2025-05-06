@@ -102,16 +102,13 @@ using (var scope = app.Services.CreateScope())
 }
 */
 
-// Swagger tylko w Developmencie
-if (app.Environment.IsDevelopment())
+// Swagger
+app.UseSwagger();
+app.UseSwaggerUI(c =>
 {
-	app.UseSwagger();
-	app.UseSwaggerUI(c =>
-	{
-		c.SwaggerEndpoint("/swagger/v1/swagger.json", "CalorieTracker API v1");
-		c.RoutePrefix = string.Empty;
-	});
-}
+	c.SwaggerEndpoint("/swagger/v1/swagger.json", "CalorieTracker API v1");
+	c.RoutePrefix = string.Empty;
+});
 
 app.UseAuthentication();
 app.UseAuthorization();
