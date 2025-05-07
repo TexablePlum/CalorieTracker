@@ -28,11 +28,15 @@ namespace CalorieTracker.Application.Auth.Handlers
 			_generateRt = generateRt;
 		}
 
-		/// <returns>null, gdy błędne dane lub lockout, w przeciwnym razie krotka access/refresh tokens</returns>
+		/// <returns>null, gdy błędne dane, lockout lub nie zweryfikowany email, w przeciwnym razie krotka access/refresh tokens</returns>
 		public async Task<(string access, string refresh)?> Handle(LoginUserQuery query)
 		{
 			var user = await _userManager.FindByEmailAsync(query.Email);
 			if (user is null) return null;
+
+			// Przymus potwierdzanie maila
+			if (!await _userManager.IsEmailConfirmedAsync(user))
+				return null;
 
 			// PasswordSignInAsync -> liczy nieudane próby i lockout
 			var signInRes = await _signInManager.PasswordSignInAsync(

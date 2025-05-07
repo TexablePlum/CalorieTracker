@@ -6,6 +6,7 @@ using CalorieTracker.Application.Interfaces;
 using CalorieTracker.Domain.Entities;
 using CalorieTracker.Infrastructure.Auth;
 using CalorieTracker.Infrastructure.Data;
+using CalorieTracker.Infrastructure.Email;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -115,6 +116,13 @@ builder.Services.AddScoped<IJwtGenerator, JwtGenerator>();
 
 // AutoMapper
 builder.Services.AddAutoMapper(typeof(AuthProfile));
+
+// Email
+builder.Services.Configure<EmailSettings>(
+	builder.Configuration.GetSection("Email"));
+
+builder.Services.AddTransient<IEmailSender, EmailSender>();
+
 
 var app = builder.Build();
 

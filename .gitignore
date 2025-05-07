@@ -15,4 +15,3 @@ secrets.json
 
 # appsettings
 appsettings.*.json
-!appsettings.Development.json

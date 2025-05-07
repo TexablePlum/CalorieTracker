@@ -2,11 +2,14 @@
 using CalorieTracker.Api.Models.Auth;
 using CalorieTracker.Application.Auth.Commands;
 using CalorieTracker.Application.Auth.Handlers;
+using CalorieTracker.Application.Auth.Interfaces;
 using CalorieTracker.Application.Auth.Queries;
 using CalorieTracker.Domain.Entities;
+using CalorieTracker.Infrastructure.Email;                   
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;                        
 using System.Security.Claims;
 
 namespace CalorieTracker.Api.Controllers
@@ -15,11 +18,15 @@ namespace CalorieTracker.Api.Controllers
 	[Route("api/[controller]")]
 	public class AuthController : ControllerBase
 	{
+		// handlery
 		private readonly RegisterUserHandler _register;
 		private readonly LoginUserHandler _login;
 		private readonly UseRefreshTokenHandler _useRefresh;
 		private readonly LogoutHandler _logout;
+		// narzędzia 
 		private readonly SignInManager<ApplicationUser> _signIn;
+		private readonly IEmailSender _mail;             
+		private readonly EmailSettings _mailCfg;          
 		private readonly IMapper _mapper;
 
 		public AuthController(
@@ -28,6 +35,8 @@ namespace CalorieTracker.Api.Controllers
 			UseRefreshTokenHandler useRefresh,
 			LogoutHandler logout,
 			SignInManager<ApplicationUser> signIn,
+			IEmailSender mail,                 
+			IOptions<EmailSettings> mailCfg,              
 			IMapper mapper)
 		{
 			_register = register;
@@ -35,42 +44,52 @@ namespace CalorieTracker.Api.Controllers
 			_useRefresh = useRefresh;
 			_logout = logout;
 			_signIn = signIn;
+			_mail = mail;                            
+			_mailCfg = mailCfg.Value;                   
 			_mapper = mapper;
 		}
 
-		// REGISTER
-		/// <summary>
-		/// Tworzy nowe konto. Zwraca 200 OK lub 409 Conflict gdy mail zajęty.
-		/// </summary>
+		// ---------- REGISTER ----------
 		[HttpPost("register")]
 		public async Task<IActionResult> Register(RegisterRequest request)
 		{
-			// mapowanie DTO -> Command (CQRS)
 			var cmd = _mapper.Map<RegisterUserCommand>(request);
 			var result = await _register.Handle(cmd);
 
-			// 409 dla duplikatów
 			if (!result.Succeeded &&
 				result.Errors.Any(e => e.Code is "DuplicateUserName" or "DuplicateEmail"))
-				return Conflict("Użytkownik z takim e‑mailem już istnieje.");
+				return Conflict("Użytkownik z takim e-mailem już istnieje.");
 
 			if (!result.Succeeded)
 				return BadRequest(result.Errors.Select(e => e.Description));
 
+			// Wysyłka linku potwierdzającego
+			var user = await _signIn.UserManager.FindByEmailAsync(request.Email);
+
+			if (user is not null)
+			{
+				var token = await _signIn.UserManager.GenerateEmailConfirmationTokenAsync(user);
+				var link = $"{_mailCfg.ConfirmUrl}?userId={user.Id}&token={Uri.EscapeDataString(token)}";
+
+				var html = $"<p>Hello {user.FirstName ?? user.Email}!</p>" +
+						   $"<p>Please confirm your CalorieTracker account by clicking " +
+						   $"<a href=\"{link}\">this link</a>.</p>";
+
+				await _mail.SendAsync(user.Email!, "Confirm your CalorieTracker account", html);
+			}
+
 			return Ok();
 		}
 
-		// LOGIN
-		/// <summary>
-		/// Zwraca parę tokenó {access, refresh} lub 401 gdy dane błędne.
-		/// </summary>
+		// ---------- LOGIN ----------
 		[HttpPost("login")]
 		public async Task<IActionResult> Login(LoginRequest request)
 		{
 			var query = _mapper.Map<LoginUserQuery>(request);
 			var tokens = await _login.Handle(query);
 
-			if (tokens is null) return Unauthorized("Nieprawidłowy e‑mail lub hasło.");
+			if (tokens is null)
+				return Unauthorized("Nieprawidłowy e-mail, hasło lub e-mail niepotwierdzony.");
 
 			return Ok(new AuthResponse
 			{
@@ -80,10 +99,22 @@ namespace CalorieTracker.Api.Controllers
 			});
 		}
 
-		// REFRESH
-		/// <summary>
-		/// Przyjmuje tokeny {access, refresh} i zwraca nowy zestaw tokenów.
-		/// </summary>
+		// ---------- CONFIRM ----------
+		/// <summary>Kończy proces rejestracji – aktywuje konto.</summary>
+		[AllowAnonymous]
+		[HttpGet("confirm")]
+		public async Task<IActionResult> Confirm(string userId, string token)
+		{
+			var user = await _signIn.UserManager.FindByIdAsync(userId);
+			if (user is null) return NotFound("User not found");
+
+			var res = await _signIn.UserManager.ConfirmEmailAsync(user, token);
+			return res.Succeeded
+				? Ok("E-mail potwierdzony! Możesz się zalogować.")
+				: BadRequest(res.Errors.Select(e => e.Description));
+		}
+
+		// ---------- REFRESH ----------
 		[HttpPost("refresh")]
 		public async Task<IActionResult> Refresh(RefreshRequest req)
 		{
@@ -101,23 +132,17 @@ namespace CalorieTracker.Api.Controllers
 			});
 		}
 
-		// LOGOUT
-		/// <summary>
-		/// Unieważnia podany refresh‑token i czyści cookies / identity.
-		/// </summary>
+		// ---------- LOGOUT ----------
 		[Authorize]
 		[HttpPost("logout")]
 		public async Task<IActionResult> Logout(LogoutRequest req)
 		{
 			await _logout.Handle(new LogoutCommand(req.RefreshToken));
-			await _signIn.SignOutAsync(); // czyści ewentualne cookies
+			await _signIn.SignOutAsync();
 			return Ok();
 		}
 
-		// TEST
-		/// <summary>
-		/// Szybki endpoint do sprawdzenia czy autoryzacja działa.
-		/// </summary>
+		// ---------- TEST ----------
 		[Authorize]
 		[HttpGet("test")]
 		public IActionResult TestAuth()
