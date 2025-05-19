@@ -13,9 +13,7 @@ public class UseRefreshTokenHandler
 	private readonly IJwtGenerator _jwt;
 	private readonly UserManager<ApplicationUser> _users;
 
-	public UseRefreshTokenHandler(IAppDbContext db,
-								  IJwtGenerator jwt,
-								  UserManager<ApplicationUser> users) => (_db, _jwt, _users) = (db, jwt, users);
+	public UseRefreshTokenHandler(IAppDbContext db, IJwtGenerator jwt, UserManager<ApplicationUser> users) => (_db, _jwt, _users) = (db, jwt, users);
 
 	/// <returns>null gdy refresh jest zły lub wygasły</returns>
 	public async Task<(string? access, string? refresh)> Handle(UseRefreshTokenCommand cmd)
@@ -42,6 +40,17 @@ public class UseRefreshTokenHandler
 		};
 		_db.RefreshTokens.Add(newRt);
 		await _db.SaveChangesAsync();
+
+		// Usuwanie starych tokenów dla tego użytkownika (wygasłe i odwołane)
+		var expiredRevoked = await _db.RefreshTokens
+			.Where(t => t.UserId == user.Id && t.Revoked && t.ExpiresAt < DateTime.UtcNow)
+			.ToListAsync();
+
+		if (expiredRevoked.Any())
+		{
+			_db.RefreshTokens.RemoveRange(expiredRevoked);
+			await _db.SaveChangesAsync();
+		}
 
 		// Nowy access token
 		var newAccess = _jwt.CreateToken(user);

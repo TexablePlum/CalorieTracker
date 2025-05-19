@@ -9,6 +9,5 @@
 		public string Password { get; init; } = null!;
 		public bool EnableSsl { get; init; }
 		public string From { get; init; } = null!;
-		public string ConfirmUrl { get; init; } = null!;
 	}
 }

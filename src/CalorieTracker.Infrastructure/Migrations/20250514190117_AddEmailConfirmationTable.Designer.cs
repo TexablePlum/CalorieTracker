@@ -4,6 +4,7 @@ using CalorieTracker.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CalorieTracker.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250514190117_AddEmailConfirmationTable")]
+    partial class AddEmailConfirmationTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -119,30 +122,6 @@ namespace CalorieTracker.Infrastructure.Migrations
                     b.ToTable("EmailConfirmations");
                 });
 
-            modelBuilder.Entity("CalorieTracker.Domain.Entities.PasswordReset", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Code")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("ExpiresAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("PasswordResets");
-                });
-
             modelBuilder.Entity("CalorieTracker.Domain.Entities.RefreshToken", b =>
                 {
                     b.Property<Guid>("Id")
@@ -191,19 +170,9 @@ namespace CalorieTracker.Infrastructure.Migrations
                     b.Property<float?>("HeightCm")
                         .HasColumnType("real");
 
-                    b.PrimitiveCollection<string>("MealPlan")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<float?>("TargetWeightKg")
-                        .HasColumnType("real");
-
                     b.Property<string>("UserId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
-
-                    b.Property<float?>("WeeklyGoalChangeKg")
-                        .HasColumnType("real");
 
                     b.Property<float?>("WeightKg")
                         .HasColumnType("real");
@@ -350,17 +319,6 @@ namespace CalorieTracker.Infrastructure.Migrations
                 });
 
             modelBuilder.Entity("CalorieTracker.Domain.Entities.EmailConfirmation", b =>
-                {
-                    b.HasOne("CalorieTracker.Domain.Entities.ApplicationUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("CalorieTracker.Domain.Entities.PasswordReset", b =>
                 {
                     b.HasOne("CalorieTracker.Domain.Entities.ApplicationUser", "User")
                         .WithMany()

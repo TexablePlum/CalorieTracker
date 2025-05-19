@@ -106,16 +106,19 @@ builder.Services.AddFluentValidationAutoValidation()
 
 // Application services & handlers
 builder.Services.AddScoped<RegisterUserHandler>();
+builder.Services.AddScoped<GenerateEmailConfirmationHandler>();
 builder.Services.AddScoped<LoginUserHandler>();
 builder.Services.AddScoped<GenerateRefreshTokenHandler>();
 builder.Services.AddScoped<UseRefreshTokenHandler>();
 builder.Services.AddScoped<LogoutHandler>();
+builder.Services.AddScoped<GeneratePasswordResetHandler>();
 
 // JWT generator 
 builder.Services.AddScoped<IJwtGenerator, JwtGenerator>();
 
 // AutoMapper
 builder.Services.AddAutoMapper(typeof(AuthProfile));
+builder.Services.AddAutoMapper(typeof(ProfileMapping));
 
 // Email
 builder.Services.Configure<EmailSettings>(

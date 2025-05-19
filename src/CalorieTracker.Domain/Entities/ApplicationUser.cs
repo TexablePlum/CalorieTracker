@@ -6,5 +6,6 @@ namespace CalorieTracker.Domain.Entities
     {
 		public string? FirstName { get; set; }
 		public string? LastName { get; set; }
+		public UserProfile? Profile { get; set; }
 	}
 }
