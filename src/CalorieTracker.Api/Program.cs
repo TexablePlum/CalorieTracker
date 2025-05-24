@@ -18,6 +18,20 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Polityka CORS dla frontu webowego
+builder.Services.AddCors(options =>
+{
+	options.AddPolicy("AllowFrontendWeb", policy =>
+	{
+		policy.WithOrigins(
+				"http://127.0.0.1:5500",
+				"http://localhost:5500"
+			)
+			.AllowAnyHeader()
+			.AllowAnyMethod();
+	});
+});
+
 // DbContext + SQL Server
 builder.Services.AddDbContext<AppDbContext>(opts =>
 	opts.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
@@ -146,6 +160,7 @@ app.UseSwaggerUI(c =>
 	c.RoutePrefix = string.Empty;
 });
 
+app.UseCors("AllowFrontendWeb");
 app.UseAuthentication();
 app.UseAuthorization();
 
