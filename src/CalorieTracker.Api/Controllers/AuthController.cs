@@ -29,8 +29,8 @@ namespace CalorieTracker.Api.Controllers
 		private readonly LogoutHandler _logout;
 		// narzędzia 
 		private readonly SignInManager<ApplicationUser> _signIn;
-		private readonly IEmailSender _mail;             
-		private readonly EmailSettings _mailCfg;          
+		//private readonly IEmailSender _mail;             
+		//private readonly EmailSettings _mailCfg;          
 		private readonly IMapper _mapper;
 
 		public AuthController(
@@ -48,8 +48,8 @@ namespace CalorieTracker.Api.Controllers
 			_useRefresh = useRefresh;
 			_logout = logout;
 			_signIn = signIn;
-			_mail = mail;                            
-			_mailCfg = mailCfg.Value;                   
+			//_mail = mail;                            
+			//_mailCfg = mailCfg.Value;                   
 			_mapper = mapper;
 		}
 
@@ -116,7 +116,7 @@ namespace CalorieTracker.Api.Controllers
 			{
 				AccessToken = tokens.Value.access,
 				RefreshToken = tokens.Value.refresh,
-				ExpiresAt = DateTime.UtcNow.AddHours(3)
+				ExpiresAt = DateTime.UtcNow.AddMinutes(1)
 			});
 		}
 
@@ -188,7 +188,7 @@ namespace CalorieTracker.Api.Controllers
 										new UseRefreshTokenCommand(req.AccessToken, req.RefreshToken));
 
 			if (access is null)
-				return Unauthorized("Nieprawidłowy lub wygasły refresh token.");
+				return Unauthorized("Nieprawidłowe dane autoryzacji.");
 
 			return Ok(new
 			{

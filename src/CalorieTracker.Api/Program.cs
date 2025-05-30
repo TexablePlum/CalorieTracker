@@ -126,6 +126,13 @@ builder.Services.AddScoped<GenerateRefreshTokenHandler>();
 builder.Services.AddScoped<UseRefreshTokenHandler>();
 builder.Services.AddScoped<LogoutHandler>();
 builder.Services.AddScoped<GeneratePasswordResetHandler>();
+builder.Services.AddScoped<CreateProductHandler>();
+builder.Services.AddScoped<UpdateProductHandler>();
+builder.Services.AddScoped<DeleteProductHandler>();
+builder.Services.AddScoped<SearchProductsHandler>();
+builder.Services.AddScoped<GetProductByIdHandler>();
+builder.Services.AddScoped<GetProductByBarcodeHandler>();
+builder.Services.AddScoped<GetUserProductsHandler>();
 
 // JWT generator 
 builder.Services.AddScoped<IJwtGenerator, JwtGenerator>();
@@ -133,6 +140,7 @@ builder.Services.AddScoped<IJwtGenerator, JwtGenerator>();
 // AutoMapper
 builder.Services.AddAutoMapper(typeof(AuthProfile));
 builder.Services.AddAutoMapper(typeof(ProfileMapping));
+builder.Services.AddAutoMapper(typeof(ProductMappingProfile));
 
 // Email
 builder.Services.Configure<EmailSettings>(

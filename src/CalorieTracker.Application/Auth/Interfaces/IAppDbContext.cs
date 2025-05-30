@@ -8,6 +8,8 @@ public interface IAppDbContext
 	DbSet<RefreshToken> RefreshTokens { get; }
 	DbSet<EmailConfirmation> EmailConfirmations { get; set; }
 	DbSet<PasswordReset> PasswordResets { get; set; }
+	DbSet<UserProfile> UserProfiles { get; set; }
+	DbSet<Product> Products { get; set; }
 
 	Task<int> SaveChangesAsync(CancellationToken ct = default);
 }
