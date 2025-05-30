@@ -12,9 +12,6 @@
 		Milliliter,
 
 		/// <summary>Sztuki - dla produktów liczonych w sztukach (jajka, bułki)</summary>
-		Piece,
-
-		/// <summary>Porcje - dla gotowych porcji/opakowań</summary>
-		Portion
+		Piece
 	}
 }
