@@ -256,10 +256,24 @@ namespace CalorieTracker.Api.Controllers
 			return Ok("Hasło zostało zresetowane.");
 		}
 
+		// ---------- USER DATA ----------
+		[Authorize]
+		[HttpGet("me")]
+		public IActionResult GetCurrentUser()
+		{
+			var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+			var email = User.FindFirstValue(ClaimTypes.Email);
+
+			return Ok(new
+			{
+				id = userId,
+				email = email
+			});
+		}
+
 
 		// ---------- TEST ----------
 		[Authorize]
-		[RequireCompleteProfile]
 		[HttpGet("test")]
 		public IActionResult TestAuth()
 		{
