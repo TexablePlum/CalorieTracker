@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalorieTracker.Infrastructu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalorieTracker.Api", "src\CalorieTracker.Api\CalorieTracker.Api.csproj", "{511DDF28-3759-4FC2-90DC-AFDAED380DA1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "src\CalorieTracker.Tests\Tests.csproj", "{26E556E3-7F03-4149-29E1-3814E8D0C29C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,18 @@ Global
 		{511DDF28-3759-4FC2-90DC-AFDAED380DA1}.Release|x64.Build.0 = Release|Any CPU
 		{511DDF28-3759-4FC2-90DC-AFDAED380DA1}.Release|x86.ActiveCfg = Release|Any CPU
 		{511DDF28-3759-4FC2-90DC-AFDAED380DA1}.Release|x86.Build.0 = Release|Any CPU
+		{26E556E3-7F03-4149-29E1-3814E8D0C29C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26E556E3-7F03-4149-29E1-3814E8D0C29C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26E556E3-7F03-4149-29E1-3814E8D0C29C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{26E556E3-7F03-4149-29E1-3814E8D0C29C}.Debug|x64.Build.0 = Debug|Any CPU
+		{26E556E3-7F03-4149-29E1-3814E8D0C29C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{26E556E3-7F03-4149-29E1-3814E8D0C29C}.Debug|x86.Build.0 = Debug|Any CPU
+		{26E556E3-7F03-4149-29E1-3814E8D0C29C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26E556E3-7F03-4149-29E1-3814E8D0C29C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26E556E3-7F03-4149-29E1-3814E8D0C29C}.Release|x64.ActiveCfg = Release|Any CPU
+		{26E556E3-7F03-4149-29E1-3814E8D0C29C}.Release|x64.Build.0 = Release|Any CPU
+		{26E556E3-7F03-4149-29E1-3814E8D0C29C}.Release|x86.ActiveCfg = Release|Any CPU
+		{26E556E3-7F03-4149-29E1-3814E8D0C29C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,5 +94,8 @@ Global
 		{25A25B57-20F3-4E15-9D43-07E68BDCBF84} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{53712ADB-102E-46A0-9CC7-B711084459C0} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{511DDF28-3759-4FC2-90DC-AFDAED380DA1} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A2167246-8D4E-4671-9E29-4AA078548869}
 	EndGlobalSection
 EndGlobal

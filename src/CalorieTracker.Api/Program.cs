@@ -4,6 +4,7 @@ using CalorieTracker.Application.Auth.Handlers;
 using CalorieTracker.Application.Auth.Interfaces;
 using CalorieTracker.Application.Interfaces;
 using CalorieTracker.Domain.Entities;
+using CalorieTracker.Domain.Services;
 using CalorieTracker.Infrastructure.Auth;
 using CalorieTracker.Infrastructure.Data;
 using CalorieTracker.Infrastructure.Email;
@@ -117,7 +118,8 @@ builder.Services.AddControllers();
 
 // FluentValidation – automatyczna walidacja modeli
 builder.Services.AddFluentValidationAutoValidation()
-				.AddValidatorsFromAssemblyContaining<RegisterRequestValidator>();
+				.AddValidatorsFromAssemblyContaining<RegisterRequestValidator>()
+				.AddValidatorsFromAssemblyContaining<CreateRecipeRequestValidator>();
 
 // Application services & handlers
 builder.Services.AddScoped<RegisterUserHandler>();
@@ -134,6 +136,7 @@ builder.Services.AddScoped<SearchProductsHandler>();
 builder.Services.AddScoped<GetProductByIdHandler>();
 builder.Services.AddScoped<GetProductByBarcodeHandler>();
 builder.Services.AddScoped<GetUserProductsHandler>();
+builder.Services.AddScoped<RecipeNutritionCalculator>();
 
 // JWT generator 
 builder.Services.AddScoped<IJwtGenerator, JwtGenerator>();
@@ -142,6 +145,7 @@ builder.Services.AddScoped<IJwtGenerator, JwtGenerator>();
 builder.Services.AddAutoMapper(typeof(AuthProfile));
 builder.Services.AddAutoMapper(typeof(ProfileMapping));
 builder.Services.AddAutoMapper(typeof(ProductMappingProfile));
+builder.Services.AddAutoMapper(typeof(RecipeMappingProfile));
 
 // Email
 builder.Services.Configure<EmailSettings>(

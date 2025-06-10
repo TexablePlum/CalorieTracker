@@ -15,12 +15,23 @@ namespace CalorieTracker.Infrastructure.Data
 		public DbSet<UserProfile> UserProfiles { get; set; } = null!;
 		public DbSet<EmailConfirmation> EmailConfirmations { get; set; } = null!;
 		public DbSet<PasswordReset> PasswordResets { get; set; } = null!;
+
 		public DbSet<Product> Products { get; set; } = null!;
+
+		public DbSet<Recipe> Recipes { get; set; } = null!;
+		public DbSet<RecipeIngredient> RecipeIngredients { get; set; } = null!;
 
 		protected override void OnModelCreating(ModelBuilder builder)
 		{
 			base.OnModelCreating(builder);
 
+			ConfigureUserProfile(builder);
+			ConfigureProducts(builder);
+			ConfigureRecipes(builder);
+		}
+
+		private void ConfigureUserProfile(ModelBuilder builder) 
+		{
 			// Relacja 1:1 ApplicationUser - UserProfile
 			builder.Entity<ApplicationUser>()
 				.HasOne(u => u.Profile)
@@ -39,8 +50,10 @@ namespace CalorieTracker.Infrastructure.Data
 			builder.Entity<UserProfile>()
 				.Property(p => p.Goal)
 				.HasConversion<string>();
+		}
 
-
+		private void ConfigureProducts(ModelBuilder builder)
+		{
 			// Konfiguracja encji Product
 			builder.Entity<Product>(entity =>
 			{
@@ -76,7 +89,56 @@ namespace CalorieTracker.Infrastructure.Data
 				entity.Property(p => p.Ingredients).HasMaxLength(2000);
 				entity.Property(p => p.Barcode).HasMaxLength(50);
 			});
+		}
 
+		private void ConfigureRecipes(ModelBuilder builder)
+		{
+			// Konfiguracja encji Recipe
+			builder.Entity<Recipe>(entity =>
+			{
+				// Klucz główny
+				entity.HasKey(r => r.Id);
+
+				// Indeksy dla lepszej wydajności
+				entity.HasIndex(r => r.Name);
+				entity.HasIndex(r => r.CreatedByUserId);
+				entity.HasIndex(r => r.CreatedAt);
+
+				// Relacja N:1 z ApplicationUser
+				entity.HasOne(r => r.CreatedByUser)
+					.WithMany()
+					.HasForeignKey(r => r.CreatedByUserId)
+					.OnDelete(DeleteBehavior.Cascade);
+
+				// Relacja 1:N z RecipeIngredient
+				entity.HasMany(r => r.Ingredients)
+					.WithOne(i => i.Recipe)
+					.HasForeignKey(i => i.RecipeId)
+					.OnDelete(DeleteBehavior.Cascade);
+
+				// Ograniczenia długości stringów
+				entity.Property(r => r.Name).HasMaxLength(200);
+				entity.Property(r => r.Instructions).HasMaxLength(5000);
+			});
+
+			// Konfiguracja encji RecipeIngredient
+			builder.Entity<RecipeIngredient>(entity =>
+			{
+				// Klucz główny
+				entity.HasKey(i => i.Id);
+
+				// Indeksy
+				entity.HasIndex(i => i.RecipeId);
+				entity.HasIndex(i => i.ProductId);
+
+				// Relacja N:1 z Recipe (już skonfigurowana wyżej)
+
+				// Relacja N:1 z Product
+				entity.HasOne(i => i.Product)
+					.WithMany()
+					.HasForeignKey(i => i.ProductId)
+					.OnDelete(DeleteBehavior.Restrict); // Nie usuwaj produktu jeśli jest używany w przepisach
+			});
 		}
 	}
 }

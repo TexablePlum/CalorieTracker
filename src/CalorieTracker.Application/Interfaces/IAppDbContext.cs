@@ -9,7 +9,11 @@ public interface IAppDbContext
 	DbSet<EmailConfirmation> EmailConfirmations { get; set; }
 	DbSet<PasswordReset> PasswordResets { get; set; }
 	DbSet<UserProfile> UserProfiles { get; set; }
+
 	DbSet<Product> Products { get; set; }
+
+	DbSet<Recipe> Recipes { get; set; }
+	DbSet<RecipeIngredient> RecipeIngredients { get; set; }
 
 	Task<int> SaveChangesAsync(CancellationToken ct = default);
 }

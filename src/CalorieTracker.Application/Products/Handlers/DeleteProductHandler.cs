@@ -30,7 +30,7 @@ namespace CalorieTracker.Application.Auth.Handlers
 
 		private async Task<bool> IsAdmin(string userId)
 		{
-			return false; // Placeholder
+			return false; // TODO: Może kiedyś jak będą role użytkowników
 		}
 	}
 }
