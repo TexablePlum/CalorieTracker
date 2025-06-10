@@ -28,9 +28,9 @@ namespace CalorieTracker.Application.Auth.Handlers
 			return true;
 		}
 
-		private async Task<bool> IsAdmin(string userId)
+		private Task<bool> IsAdmin(string userId)
 		{
-			return false; // TODO: Może kiedyś jak będą role użytkowników
+			return Task.FromResult(false); // TODO: Może kiedyś jak będą role użytkowników
 		}
 	}
 }

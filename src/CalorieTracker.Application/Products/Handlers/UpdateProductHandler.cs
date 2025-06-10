@@ -48,11 +48,11 @@ namespace CalorieTracker.Application.Auth.Handlers
 			return true;
 		}
 
-		private async Task<bool> IsAdmin(string userId)
+		private Task<bool> IsAdmin(string userId)
 		{
 			// Tu można dodać logikę sprawdzania ról administratora
 			// Na razie nie ma adminów
-			return false;
+			return Task.FromResult(false);
 		}
 	}
 }

@@ -18,7 +18,7 @@ namespace CalorieTracker.Infrastructure.Auth
 			var claims = new[]
 			{
 				new Claim(JwtRegisteredClaimNames.Sub, user.Id),
-				new Claim(JwtRegisteredClaimNames.Email, user.Email)
+				new Claim(JwtRegisteredClaimNames.Email, user.Email ?? string.Empty)
 			};
 
 			var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]!));
