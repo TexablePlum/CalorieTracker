@@ -3,6 +3,7 @@ using CalorieTracker.Api.Validation;
 using CalorieTracker.Application.Auth.Handlers;
 using CalorieTracker.Application.Auth.Interfaces;
 using CalorieTracker.Application.Interfaces;
+using CalorieTracker.Application.Recipes.Handlers;
 using CalorieTracker.Domain.Entities;
 using CalorieTracker.Domain.Services;
 using CalorieTracker.Infrastructure.Auth;
@@ -136,6 +137,13 @@ builder.Services.AddScoped<SearchProductsHandler>();
 builder.Services.AddScoped<GetProductByIdHandler>();
 builder.Services.AddScoped<GetProductByBarcodeHandler>();
 builder.Services.AddScoped<GetUserProductsHandler>();
+builder.Services.AddScoped<CreateRecipeHandler>();
+builder.Services.AddScoped<UpdateRecipeHandler>();
+builder.Services.AddScoped<DeleteRecipeHandler>();
+builder.Services.AddScoped<GetRecipeDetailsHandler>();
+builder.Services.AddScoped<SearchRecipesHandler>();
+builder.Services.AddScoped<GetUserRecipesHandler>();
+builder.Services.AddScoped<GetAllRecipesHandler>();
 builder.Services.AddScoped<RecipeNutritionCalculator>();
 
 // JWT generator 
