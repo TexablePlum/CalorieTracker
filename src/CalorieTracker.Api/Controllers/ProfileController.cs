@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using CalorieTracker.Api.Models.Profile;
 using CalorieTracker.Domain.Entities;
+using CalorieTracker.Domain.Services;
 using CalorieTracker.Infrastructure.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -72,9 +73,15 @@ public class ProfileController : ControllerBase
 	// ---------- PUT PROFILE ----------
 	/// <summary>
 	/// Tworzy lub aktualizuje profil użytkownika.
+	/// Automatycznie tworzy pomiar masy ciała jeśli waga się zmieniła.
 	/// </summary>
 	[HttpPut]
-	public async Task<IActionResult> UpdateProfile([FromBody] UpdateUserProfileRequest req, [FromServices] AppDbContext db, [FromServices] UserManager<ApplicationUser> users, [FromServices] IMapper mapper)
+	public async Task<IActionResult> UpdateProfile(
+		[FromBody] UpdateUserProfileRequest req,
+		[FromServices] AppDbContext db,
+		[FromServices] UserManager<ApplicationUser> users,
+		[FromServices] IMapper mapper,
+		[FromServices] WeightAnalysisService weightAnalysis)
 	{
 		var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 		if (userId is null) return Unauthorized();
@@ -90,6 +97,9 @@ public class ProfileController : ControllerBase
 		// aktualizacja danych profilu
 		var profile = await db.UserProfiles.FirstOrDefaultAsync(p => p.UserId == userId);
 
+		bool isNewProfile = profile is null;
+		float? oldWeight = profile?.WeightKg;
+
 		if (profile is null)
 		{
 			profile = mapper.Map<UserProfile>(req);
@@ -102,7 +112,58 @@ public class ProfileController : ControllerBase
 		}
 
 		await db.SaveChangesAsync();
+
+		// jeśli waga się zmieniła
+		if (req.WeightKg.HasValue && (isNewProfile || oldWeight != req.WeightKg.Value))
+		{
+			// Sprawdza czy nie ma już pomiaru na dzisiaj
+			var today = DateOnly.FromDateTime(DateTime.Today);
+			var existingMeasurement = await db.WeightMeasurements
+				.FirstOrDefaultAsync(w => w.UserId == userId && w.MeasurementDate == today);
+
+			if (existingMeasurement == null)
+			{
+				// Pobiera poprzedni pomiar dla kalkulacji zmiany
+				var previousMeasurement = await db.WeightMeasurements
+					.Where(w => w.UserId == userId && w.MeasurementDate < today)
+					.OrderByDescending(w => w.MeasurementDate)
+					.FirstOrDefaultAsync();
+
+				// Twrzy nowy pomiar
+				var measurement = new WeightMeasurement
+				{
+					UserId = userId,
+					MeasurementDate = today,
+					WeightKg = req.WeightKg.Value,
+					CreatedAt = DateTime.UtcNow,
+					UpdatedAt = DateTime.UtcNow
+				};
+
+				// Wypełnia kalkulowane pola
+				weightAnalysis.FillCalculatedFields(measurement, profile, previousMeasurement);
+
+				db.WeightMeasurements.Add(measurement);
+				await db.SaveChangesAsync();
+			}
+			else
+			{
+				// Aktualizuje istniejący pomiar na dzisiaj
+				existingMeasurement.WeightKg = req.WeightKg.Value;
+				existingMeasurement.UpdatedAt = DateTime.UtcNow;
+
+				// Pobiera poprzedni pomiar dla kalkulacji zmiany
+				var previousMeasurement = await db.WeightMeasurements
+					.Where(w => w.UserId == userId && w.MeasurementDate < today)
+					.OrderByDescending(w => w.MeasurementDate)
+					.FirstOrDefaultAsync();
+
+				// Przelicza kalkulowane pola
+				weightAnalysis.FillCalculatedFields(existingMeasurement, profile, previousMeasurement);
+
+				await db.SaveChangesAsync();
+			}
+		}
+
 		return NoContent();
 	}
-
 }

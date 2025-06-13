@@ -4,6 +4,7 @@ using CalorieTracker.Application.Auth.Handlers;
 using CalorieTracker.Application.Auth.Interfaces;
 using CalorieTracker.Application.Interfaces;
 using CalorieTracker.Application.Recipes.Handlers;
+using CalorieTracker.Application.WeightMeasurements.Handlers;
 using CalorieTracker.Domain.Entities;
 using CalorieTracker.Domain.Services;
 using CalorieTracker.Infrastructure.Auth;
@@ -120,7 +121,8 @@ builder.Services.AddControllers();
 // FluentValidation – automatyczna walidacja modeli
 builder.Services.AddFluentValidationAutoValidation()
 				.AddValidatorsFromAssemblyContaining<RegisterRequestValidator>()
-				.AddValidatorsFromAssemblyContaining<CreateRecipeRequestValidator>();
+				.AddValidatorsFromAssemblyContaining<CreateRecipeRequestValidator>()
+				.AddValidatorsFromAssemblyContaining<CreateWeightMeasurementRequestValidator>();
 
 // Application services & handlers
 builder.Services.AddScoped<RegisterUserHandler>();
@@ -145,6 +147,13 @@ builder.Services.AddScoped<SearchRecipesHandler>();
 builder.Services.AddScoped<GetUserRecipesHandler>();
 builder.Services.AddScoped<GetAllRecipesHandler>();
 builder.Services.AddScoped<RecipeNutritionCalculator>();
+builder.Services.AddScoped<CreateWeightMeasurementHandler>();
+builder.Services.AddScoped<UpdateWeightMeasurementHandler>();
+builder.Services.AddScoped<DeleteWeightMeasurementHandler>();
+builder.Services.AddScoped<GetUserWeightMeasurementsHandler>();
+builder.Services.AddScoped<GetLatestWeightMeasurementHandler>();
+builder.Services.AddScoped<GetWeightMeasurementDetailsHandler>();
+builder.Services.AddScoped<WeightAnalysisService>();
 
 // JWT generator 
 builder.Services.AddScoped<IJwtGenerator, JwtGenerator>();
@@ -154,6 +163,7 @@ builder.Services.AddAutoMapper(typeof(AuthProfile));
 builder.Services.AddAutoMapper(typeof(ProfileMapping));
 builder.Services.AddAutoMapper(typeof(ProductMappingProfile));
 builder.Services.AddAutoMapper(typeof(RecipeMappingProfile));
+builder.Services.AddAutoMapper(typeof(WeightMeasurementMappingProfile));
 
 // Email
 builder.Services.Configure<EmailSettings>(

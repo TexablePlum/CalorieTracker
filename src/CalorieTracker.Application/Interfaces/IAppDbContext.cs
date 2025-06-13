@@ -15,5 +15,7 @@ public interface IAppDbContext
 	DbSet<Recipe> Recipes { get; set; }
 	DbSet<RecipeIngredient> RecipeIngredients { get; set; }
 
+	DbSet<WeightMeasurement> WeightMeasurements { get; set; }
+
 	Task<int> SaveChangesAsync(CancellationToken ct = default);
 }

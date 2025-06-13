@@ -21,6 +21,8 @@ namespace CalorieTracker.Infrastructure.Data
 		public DbSet<Recipe> Recipes { get; set; } = null!;
 		public DbSet<RecipeIngredient> RecipeIngredients { get; set; } = null!;
 
+		public DbSet<WeightMeasurement> WeightMeasurements { get; set; } = null!;
+
 		protected override void OnModelCreating(ModelBuilder builder)
 		{
 			base.OnModelCreating(builder);
@@ -28,6 +30,7 @@ namespace CalorieTracker.Infrastructure.Data
 			ConfigureUserProfile(builder);
 			ConfigureProducts(builder);
 			ConfigureRecipes(builder);
+			ConfigureWeightMeasurements(builder);
 		}
 
 		private void ConfigureUserProfile(ModelBuilder builder) 
@@ -138,6 +141,31 @@ namespace CalorieTracker.Infrastructure.Data
 					.WithMany()
 					.HasForeignKey(i => i.ProductId)
 					.OnDelete(DeleteBehavior.Restrict); // Nie usuwaj produktu jeśli jest używany w przepisach
+			});
+		}
+
+		private void ConfigureWeightMeasurements(ModelBuilder builder)
+		{
+			// Konfiguracja encji WeightMeasurement
+			builder.Entity<WeightMeasurement>(entity =>
+			{
+				// Klucz główny
+				entity.HasKey(w => w.Id);
+
+				// Indeksy dla wydajności
+				entity.HasIndex(w => w.UserId);
+				entity.HasIndex(w => w.MeasurementDate);
+				entity.HasIndex(w => new { w.UserId, w.MeasurementDate }).IsUnique(); // Jeden pomiar na dzień
+
+				// Relacja N:1 z ApplicationUser
+				entity.HasOne(w => w.User)
+					.WithMany()
+					.HasForeignKey(w => w.UserId)
+					.OnDelete(DeleteBehavior.Cascade);
+
+				// Konwersja DateOnly (jeśli potrzebne)
+				entity.Property(w => w.MeasurementDate)
+					.HasConversion<DateOnly>();
 			});
 		}
 	}
