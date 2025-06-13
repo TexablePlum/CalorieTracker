@@ -47,23 +47,29 @@ namespace CalorieTracker.Application.Recipes.Handlers
 			recipe.PreparationTimeMinutes = command.PreparationTimeMinutes;
 			recipe.UpdatedAt = DateTime.UtcNow;
 
-			// Usunięcie starych składników
+			// Usuwanie starych składników
 			_db.RecipeIngredients.RemoveRange(recipe.Ingredients);
 
-			// Dodanie nowych składników
-			recipe.Ingredients.Clear();
+			// Zapisuje zmiany żeby usunąć stare składniki
+			await _db.SaveChangesAsync();
+
+			// Dodaje nowe składniki jako nowe encje
+			var newIngredients = new List<RecipeIngredient>();
 			foreach (var ingredientCommand in command.Ingredients)
 			{
 				var ingredient = new RecipeIngredient
 				{
+					Id = Guid.NewGuid(),
 					RecipeId = recipe.Id,
 					ProductId = ingredientCommand.ProductId,
 					Quantity = ingredientCommand.Quantity
 				};
-				recipe.Ingredients.Add(ingredient);
+				newIngredients.Add(ingredient);
 			}
 
+			_db.RecipeIngredients.AddRange(newIngredients);
 			await _db.SaveChangesAsync();
+
 			return true;
 		}
 	}
