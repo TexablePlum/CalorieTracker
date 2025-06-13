@@ -36,6 +36,7 @@ namespace CalorieTracker.Api.Mapping
 			CreateMap<RecipeIngredient, RecipeIngredientDto>()
 				.ForMember(dest => dest.ProductId, opt => opt.MapFrom(src => src.ProductId))
 				.ForMember(dest => dest.ProductName, opt => opt.MapFrom(src => src.Product.Name))
+				.ForMember(dest => dest.Category, opt => opt.MapFrom(src => src.Product.Category.ToString()))
 				.ForMember(dest => dest.Unit, opt => opt.MapFrom(src => src.Product.Unit.ToString()));
 
 			CreateMap<RecipeNutrition, RecipeNutritionDto>();
