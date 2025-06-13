@@ -34,6 +34,7 @@ namespace CalorieTracker.Api.Mapping
 				.ForMember(dest => dest.TotalNutrition, opt => opt.Ignore()); // Kalkulujemy osobno
 
 			CreateMap<RecipeIngredient, RecipeIngredientDto>()
+				.ForMember(dest => dest.ProductId, opt => opt.MapFrom(src => src.ProductId))
 				.ForMember(dest => dest.ProductName, opt => opt.MapFrom(src => src.Product.Name))
 				.ForMember(dest => dest.Unit, opt => opt.MapFrom(src => src.Product.Unit.ToString()));
 

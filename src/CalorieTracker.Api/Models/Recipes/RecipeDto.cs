@@ -23,6 +23,7 @@
 	/// </summary>
 	public class RecipeIngredientDto
 	{
+		public Guid ProductId { get; set; }
 		public string ProductName { get; set; } = null!;
 		public float Quantity { get; set; }
 		public string Unit { get; set; } = null!;
