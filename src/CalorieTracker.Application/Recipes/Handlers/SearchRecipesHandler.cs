@@ -18,6 +18,8 @@ namespace CalorieTracker.Application.Recipes.Handlers
 		{
 			var searchQuery = _db.Recipes
 				.Include(r => r.CreatedByUser)
+				.Include(r => r.Ingredients)
+					.ThenInclude(i => i.Product)
 				.AsQueryable();
 
 			// Wyszukiwanie po nazwie

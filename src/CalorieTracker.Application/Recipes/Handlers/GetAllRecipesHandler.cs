@@ -18,6 +18,8 @@ namespace CalorieTracker.Application.Recipes.Handlers
 		{
 			return await _db.Recipes
 				.Include(r => r.CreatedByUser)
+				.Include(r => r.Ingredients)
+					.ThenInclude(i => i.Product)
 				.OrderByDescending(r => r.CreatedAt)
 				.Skip(query.Skip)
 				.Take(query.Take)
