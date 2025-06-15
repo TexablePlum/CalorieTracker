@@ -1,4 +1,7 @@
-﻿using CalorieTracker.Application.Interfaces;
+﻿// Plik UpdateRecipeHandler.cs - implementacja handlera aktualizacji przepisu.
+// Odpowiada za proces aktualizacji istniejącego przepisu wraz z walidacją uprawnień i składników.
+
+using CalorieTracker.Application.Interfaces;
 using CalorieTracker.Application.Recipes.Commands;
 using CalorieTracker.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
@@ -6,16 +9,35 @@ using Microsoft.EntityFrameworkCore;
 namespace CalorieTracker.Application.Recipes.Handlers
 {
 	/// <summary>
-	/// Handler do aktualizacji przepisu
+	/// Handler odpowiedzialny za przetwarzanie komendy aktualizacji przepisu.
+	/// Zawiera kompleksową logikę walidacji uprawnień, składników oraz właściwości przepisu.
 	/// </summary>
 	public class UpdateRecipeHandler
 	{
+		/// <summary>
+		/// Kontekst bazy danych aplikacji.
+		/// Umożliwia dostęp do operacji na przepisach i powiązanych encjach.
+		/// </summary>
 		private readonly IAppDbContext _db;
 
+		/// <summary>
+		/// Inicjalizuje nową instancję handlera aktualizacji przepisu.
+		/// </summary>
+		/// <param name="db">Kontekst bazy danych implementujący IAppDbContext</param>
 		public UpdateRecipeHandler(IAppDbContext db) => _db = db;
 
+		/// <summary>
+		/// Główna metoda handlera przetwarzająca komendę aktualizacji.
+		/// </summary>
+		/// <param name="command">Komenda zawierająca dane do aktualizacji i identyfikatory</param>
+		/// <returns>
+		/// True - jeśli przepis został pomyślnie zaktualizowany.
+		/// False - jeśli przepis nie istnieje lub użytkownik nie ma uprawnień.
+		/// </returns>
+		/// <exception cref="ArgumentException">Wyjątek wyrzucany gdy nie znaleziono produktów będących składnikami</exception>
 		public async Task<bool> Handle(UpdateRecipeCommand command)
 		{
+			// Pobranie przepisu z obecnymi składnikami
 			var recipe = await _db.Recipes
 				.Include(r => r.Ingredients)
 				.FirstOrDefaultAsync(r => r.Id == command.Id);
@@ -39,7 +61,7 @@ namespace CalorieTracker.Application.Recipes.Handlers
 				throw new ArgumentException($"Nie znaleziono produktów o ID: {string.Join(", ", missingProducts)}");
 			}
 
-			// Aktualizacja danych przepisu
+			// Aktualizacja podstawowych właściwości przepisu
 			recipe.Name = command.Name;
 			recipe.Instructions = command.Instructions;
 			recipe.ServingsCount = command.ServingsCount;
@@ -50,22 +72,18 @@ namespace CalorieTracker.Application.Recipes.Handlers
 			// Usuwanie starych składników
 			_db.RecipeIngredients.RemoveRange(recipe.Ingredients);
 
-			// Zapisuje zmiany żeby usunąć stare składniki
+			// Zapis zmian przed dodaniem nowych składników
 			await _db.SaveChangesAsync();
 
-			// Dodaje nowe składniki jako nowe encje
-			var newIngredients = new List<RecipeIngredient>();
-			foreach (var ingredientCommand in command.Ingredients)
-			{
-				var ingredient = new RecipeIngredient
+			// Dodawanie nowych składników
+			var newIngredients = command.Ingredients.Select(ingredientCommand =>
+				new RecipeIngredient
 				{
 					Id = Guid.NewGuid(),
 					RecipeId = recipe.Id,
 					ProductId = ingredientCommand.ProductId,
 					Quantity = ingredientCommand.Quantity
-				};
-				newIngredients.Add(ingredient);
-			}
+				}).ToList();
 
 			_db.RecipeIngredients.AddRange(newIngredients);
 			await _db.SaveChangesAsync();

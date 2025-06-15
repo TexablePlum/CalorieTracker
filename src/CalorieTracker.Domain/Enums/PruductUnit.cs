@@ -1,17 +1,27 @@
-﻿namespace CalorieTracker.Domain.Enums
+﻿// Plik ProductUnit.cs - definicja typu wyliczeniowego dla jednostek miary produktów spożywczych.
+// Określa standardowe jednostki używane do ilościowego opisywania produktów.
+
+namespace CalorieTracker.Domain.Enums
 {
-	/// <summary>
-	/// Jednostki miary produktów spożywczych
-	/// </summary>
+	/// &lt;summary>
+	/// Jednostki miary produktów spożywczych.
+	/// Używane do określenia sposobu mierzenia &lt;see cref="Product">produktów&lt;/see>.
+	/// &lt;/summary>
 	public enum ProductUnit
 	{
-		/// <summary>Gramy - dla większości produktów spożywczych</summary>
+		/// &lt;summary>
+		/// Gramy - podstawowa jednostka miary dla większości stałych produktów spożywczych.
+		/// &lt;/summary>
 		Gram,
 
-		/// <summary>Mililitry - dla płynów</summary>
+		/// <summary>
+		/// Mililitry - jednostka miary przeznaczona głównie dla płynów.
+		/// </summary>
 		Milliliter,
 
-		/// <summary>Sztuki - dla produktów liczonych w sztukach (jajka, bułki)</summary>
+		/// <summary>
+		/// Sztuki - jednostka miary dla produktów liczonych indywidualnie (np. jajka, bułki).
+		/// </summary>
 		Piece
 	}
 }

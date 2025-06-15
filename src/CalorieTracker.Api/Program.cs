@@ -1,3 +1,8 @@
+// Plik `Program.cs` - g³ówny punkt wejœcia do aplikacji.
+// Odpowiedzialny za skonfigurowanie i uruchomienie hosta aplikacji webowej,
+// w tym za rejestracjê wszystkich serwisów w kontenerze wstrzykiwania zale¿noœci (DI),
+// oraz za konfiguracjê potoku przetwarzania ¿¹dañ HTTP (middleware).
+
 using CalorieTracker.Api.Mapping;
 using CalorieTracker.Api.Validation;
 using CalorieTracker.Application.Auth.Handlers;
@@ -21,81 +26,89 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Polityka CORS dla frontu webowego
+// Konfiguracja polityki Cross-Origin Resource Sharing (CORS) dla aplikacji klienckiej.
+// TODO: Atrapa na potrzeby zespo³u frontu webowego DO MODYFIKACJI w przysz³oœci !
 builder.Services.AddCors(options =>
 {
 	options.AddPolicy("AllowFrontendWeb", policy =>
 	{
+		// Zezwolenie na ¿¹dania z okreœlonych Ÿróde³.
 		policy.WithOrigins(
 				"http://127.0.0.1:5500",
-				"http://localhost:5500"
+				"http://localhost:5500",
+				"http://127.0.0.1:5501",
+				"http://localhost:5501"
 			)
-			.AllowAnyHeader()
-			.AllowAnyMethod();
+			.AllowAnyHeader() // Zezwolenie na dowolne nag³ówki.
+			.AllowAnyMethod(); // Zezwolenie na dowolne metody HTTP.
 	});
 });
 
-// DbContext + SQL Server
+// Rejestracja kontekstu bazy danych (AppDbContext) z u¿yciem SQL Server.
 builder.Services.AddDbContext<AppDbContext>(opts =>
+	// U¿ycie connection stringa z pliku konfiguracyjnego.
 	opts.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
 );
 
-builder.Services.AddScoped<IAppDbContext>(sp => sp.GetRequiredService<AppDbContext>()); // Abstrakcja AppDbContext aby wyeliminowaæ zale¿noœæ handlerów od modu³u infrastructure
+// Rejestracja abstrakcji IAppDbContext w celu odizolowania warstwy Application od implementacji w Infrastructure.
+builder.Services.AddScoped<IAppDbContext>(sp => sp.GetRequiredService<AppDbContext>());
 
-// Identity
+// Dodanie i konfiguracja systemu to¿samoœci (Identity).
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>(opts =>
 {
-	// U¯YTKOWNIK
-	opts.User.RequireUniqueEmail = true; // unikalny mail
+	// Konfiguracja wymagañ dotycz¹cych u¿ytkownika.
+	opts.User.RequireUniqueEmail = true;
 
-	// HAS£O
+	// Konfiguracja wymagañ dotycz¹cych has³a.
 	opts.Password.RequiredLength = 8;
 	opts.Password.RequireDigit = true;
 	opts.Password.RequireUppercase = true;
 	opts.Password.RequireLowercase = true;
 	opts.Password.RequireNonAlphanumeric = true;
 
-	// LOCKOUT
-	opts.Lockout.MaxFailedAccessAttempts = 5; // liczba b³edów
-	opts.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(15); // - minut przerwy
+	// Konfiguracja mechanizmu blokady konta po nieudanych próbach logowania.
+	opts.Lockout.MaxFailedAccessAttempts = 5;
+	opts.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(15);
 	opts.Lockout.AllowedForNewUsers = true;
 })
 .AddEntityFrameworkStores<AppDbContext>()
-.AddDefaultTokenProviders();
+.AddDefaultTokenProviders(); // Dodanie domyœlnych dostawców tokenów (np. do resetu has³a).
 
-// JWT Authentication
+// Dodanie i konfiguracja uwierzytelniania za pomoc¹ tokenów JWT.
 var jwtKey = builder.Configuration["Jwt:Key"]!;
 var keyBytes = Encoding.UTF8.GetBytes(jwtKey);
 builder.Services.AddAuthentication(options =>
 {
+	// Ustawienie domyœlnych schematów uwierzytelniania.
 	options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
 	options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 })
 .AddJwtBearer(opts =>
 {
+	// Konfiguracja parametrów walidacji tokenu JWT.
 	opts.TokenValidationParameters = new TokenValidationParameters
 	{
-		ValidateIssuer = true,
-		ValidateAudience = true,
-		ValidateLifetime = true,
+		ValidateIssuer = true, // Walidacja wystawcy.
+		ValidateAudience = true, // Walidacja odbiorcy.
+		ValidateLifetime = true, // Walidacja czasu ¿ycia tokenu.
 		ValidIssuer = builder.Configuration["Jwt:Issuer"],
 		ValidAudience = builder.Configuration["Jwt:Audience"],
 		IssuerSigningKey = new SymmetricSecurityKey(keyBytes),
-		ClockSkew = TimeSpan.Zero // TODO: Do usuniêcia !!!
+		ClockSkew = TimeSpan.Zero // Usuniêcie domyœlnej tolerancji czasowej przy walidacji wa¿noœci tokenu.
 	};
 });
 
-// Swagger / OpenAPI
+// Dodanie i konfiguracja generatora dokumentacji Swagger/OpenAPI.
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
 	c.SwaggerDoc("v1", new OpenApiInfo { Title = "CalorieTracker API", Version = "v1" });
 
-	// Definicja schematu bezpieczeñstwa z referencj¹
+	// Zdefiniowanie schematu bezpieczeñstwa "Bearer" dla autoryzacji JWT.
 	var bearerScheme = new OpenApiSecurityScheme
 	{
 		Name = "Authorization",
-		Description = "Wpisz token",
+		Description = "Wprowadzenie tokenu JWT w formacie 'Bearer {token}'",
 		In = ParameterLocation.Header,
 		Type = SecuritySchemeType.Http,
 		Scheme = "bearer",
@@ -108,23 +121,24 @@ builder.Services.AddSwaggerGen(c =>
 	};
 	c.AddSecurityDefinition("Bearer", bearerScheme);
 
-	// Wymaganie tego schematu dla wszystkich endpointów
+	// Wymuszenie stosowania schematu bezpieczeñstwa "Bearer" dla wszystkich endpointów.
 	c.AddSecurityRequirement(new OpenApiSecurityRequirement
 	{
 		{ bearerScheme, new string[] { } }
 	});
 });
 
-// Controllers
+// Dodanie serwisów kontrolerów MVC.
 builder.Services.AddControllers();
 
-// FluentValidation – automatyczna walidacja modeli
+// Dodanie i konfiguracja FluentValidation do automatycznej walidacji ¿¹dañ.
 builder.Services.AddFluentValidationAutoValidation()
+				// Rejestracja walidatorów z okreœlonych assembly.
 				.AddValidatorsFromAssemblyContaining<RegisterRequestValidator>()
 				.AddValidatorsFromAssemblyContaining<CreateRecipeRequestValidator>()
 				.AddValidatorsFromAssemblyContaining<CreateWeightMeasurementRequestValidator>();
 
-// Application services & handlers
+// Rejestracja w kontenerze DI wszystkich serwisów i handlerów z warstwy Application oraz Domain.
 builder.Services.AddScoped<RegisterUserHandler>();
 builder.Services.AddScoped<GenerateEmailConfirmationHandler>();
 builder.Services.AddScoped<LoginUserHandler>();
@@ -155,26 +169,27 @@ builder.Services.AddScoped<GetLatestWeightMeasurementHandler>();
 builder.Services.AddScoped<GetWeightMeasurementDetailsHandler>();
 builder.Services.AddScoped<WeightAnalysisService>();
 
-// JWT generator 
+// Rejestracja generatora tokenów JWT.
 builder.Services.AddScoped<IJwtGenerator, JwtGenerator>();
 
-// AutoMapper
+// Rejestracja profili mapowania AutoMapper.
 builder.Services.AddAutoMapper(typeof(AuthProfile));
 builder.Services.AddAutoMapper(typeof(ProfileMapping));
 builder.Services.AddAutoMapper(typeof(ProductMappingProfile));
 builder.Services.AddAutoMapper(typeof(RecipeMappingProfile));
 builder.Services.AddAutoMapper(typeof(WeightMeasurementMappingProfile));
 
-// Email
+// Konfiguracja ustawieñ poczty email.
 builder.Services.Configure<EmailSettings>(
 	builder.Configuration.GetSection("Email"));
 
+// Rejestracja serwisu do wysy³ania emaili.
 builder.Services.AddTransient<IEmailSender, EmailSender>();
 
 
 var app = builder.Build();
 
-// Automatyczne migracje
+// Zastosowanie automatycznych migracji bazy danych przy starcie aplikacji.
 /*
 using (var scope = app.Services.CreateScope())
 {
@@ -183,18 +198,25 @@ using (var scope = app.Services.CreateScope())
 }
 */
 
-// Swagger
+// W³¹czenie middleware Swagger i Swagger UI.
 app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
+	// Ustawienie endpointu dla definicji API.
 	c.SwaggerEndpoint("/swagger/v1/swagger.json", "CalorieTracker API v1");
+	// Ustawienie interfejsu Swaggera jako strony g³ównej aplikacji.
 	c.RoutePrefix = string.Empty;
 });
 
+// W³¹czenie polityki CORS.
 app.UseCors("AllowFrontendWeb");
+
+// W³¹czenie middleware uwierzytelniania i autoryzacji.
 app.UseAuthentication();
 app.UseAuthorization();
 
+// Zmapowanie tras do kontrolerów.
 app.MapControllers();
 
+// Uruchomienie aplikacji.
 app.Run();

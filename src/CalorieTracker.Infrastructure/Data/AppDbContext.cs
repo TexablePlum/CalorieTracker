@@ -1,28 +1,71 @@
-﻿using CalorieTracker.Application.Interfaces;
+﻿// Plik AppDbContext.cs - implementacja kontekstu bazy danych aplikacji.
+// Odpowiada za mapowanie encji domenowych na struktury bazy danych oraz definiowanie relacji między nimi.
+using CalorieTracker.Application.Interfaces;
 using CalorieTracker.Domain.Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace CalorieTracker.Infrastructure.Data
 {
-    public class AppDbContext : IdentityDbContext<ApplicationUser>, IAppDbContext
+	/// <summary>
+	/// Implementacja interfejsu <see cref="IAppDbContext"/> odpowiedzialna za dostęp do bazy danych.
+	/// Dziedziczy po <see cref="IdentityDbContext{TUser}"/> w celu wykorzystania mechanizmów uwierzytelniania ASP.NET Identity.
+	/// </summary>
+	public class AppDbContext : IdentityDbContext<ApplicationUser>, IAppDbContext
 	{
+		/// <summary>
+		/// Inicjalizuje nową instancję klasy <see cref="AppDbContext"/>.
+		/// </summary>
+		/// <param name="options">Opcje konfiguracji kontekstu bazy danych.</param>
 		public AppDbContext(DbContextOptions<AppDbContext> options)
 			: base(options)
-		{}
+		{ }
 
+		/// <summary>
+		/// Kolekcja tokenów odświeżających dla użytkowników aplikacji.
+		/// </summary>
 		public DbSet<RefreshToken> RefreshTokens { get; set; } = null!;
+
+		/// <summary>
+		/// Kolekcja profili użytkowników zawierających dane osobowe i preferencje.
+		/// </summary>
 		public DbSet<UserProfile> UserProfiles { get; set; } = null!;
+
+		/// <summary>
+		/// Kolekcja potwierdzeń adresów e-mail wykorzystywanych w procesie rejestracji.
+		/// </summary>
 		public DbSet<EmailConfirmation> EmailConfirmations { get; set; } = null!;
+
+		/// <summary>
+		/// Kolekcja żądań resetowania haseł.
+		/// </summary>
 		public DbSet<PasswordReset> PasswordResets { get; set; } = null!;
 
+		/// <summary>
+		/// Kolekcja produktów spożywczych dostępnych w aplikacji.
+		/// </summary>
 		public DbSet<Product> Products { get; set; } = null!;
 
+		/// <summary>
+		/// Kolekcja przepisów kulinarnych tworzonych przez użytkowników.
+		/// </summary>
 		public DbSet<Recipe> Recipes { get; set; } = null!;
+
+		/// <summary>
+		/// Kolekcja składników wchodzących w skład przepisów.
+		/// </summary>
 		public DbSet<RecipeIngredient> RecipeIngredients { get; set; } = null!;
 
+		/// <summary>
+		/// Kolekcja pomiarów wagi użytkowników.
+		/// </summary>
 		public DbSet<WeightMeasurement> WeightMeasurements { get; set; } = null!;
 
+		/// <summary>
+		/// Konfiguruje model bazy danych przy jej tworzeniu.
+		/// Definiuje relacje między encjami, indeksy oraz ograniczenia.
+		/// </summary>
+		/// <param name="builder">Obiekt <see cref="ModelBuilder"/> służący do konfiguracji modelu.</param>
 		protected override void OnModelCreating(ModelBuilder builder)
 		{
 			base.OnModelCreating(builder);
@@ -33,7 +76,11 @@ namespace CalorieTracker.Infrastructure.Data
 			ConfigureWeightMeasurements(builder);
 		}
 
-		private void ConfigureUserProfile(ModelBuilder builder) 
+		/// <summary>
+		/// Konfiguruje relacje i właściwości dla encji UserProfile.
+		/// </summary>
+		/// <param name="builder">Obiekt <see cref="ModelBuilder"/> służący do konfiguracji modelu.</param>
+		private void ConfigureUserProfile(ModelBuilder builder)
 		{
 			// Relacja 1:1 ApplicationUser - UserProfile
 			builder.Entity<ApplicationUser>()
@@ -55,6 +102,10 @@ namespace CalorieTracker.Infrastructure.Data
 				.HasConversion<string>();
 		}
 
+		/// <summary>
+		/// Konfiguruje relacje, indeksy i ograniczenia dla encji Product.
+		/// </summary>
+		/// <param name="builder">Obiekt <see cref="ModelBuilder"/> służący do konfiguracji modelu.</param>
 		private void ConfigureProducts(ModelBuilder builder)
 		{
 			// Konfiguracja encji Product
@@ -94,6 +145,10 @@ namespace CalorieTracker.Infrastructure.Data
 			});
 		}
 
+		/// <summary>
+		/// Konfiguruje relacje, indeksy i ograniczenia dla encji Recipe i RecipeIngredient.
+		/// </summary>
+		/// <param name="builder">Obiekt <see cref="ModelBuilder"/> służący do konfiguracji modelu.</param>
 		private void ConfigureRecipes(ModelBuilder builder)
 		{
 			// Konfiguracja encji Recipe
@@ -144,6 +199,10 @@ namespace CalorieTracker.Infrastructure.Data
 			});
 		}
 
+		/// <summary>
+		/// Konfiguruje relacje, indeksy i ograniczenia dla encji WeightMeasurement.
+		/// </summary>
+		/// <param name="builder">Obiekt <see cref="ModelBuilder"/> służący do konfiguracji modelu.</param>
 		private void ConfigureWeightMeasurements(ModelBuilder builder)
 		{
 			// Konfiguracja encji WeightMeasurement

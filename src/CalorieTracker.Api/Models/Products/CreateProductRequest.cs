@@ -10,7 +10,7 @@
 		public string? Description { get; set; }
 		public string? Ingredients { get; set; }
 		public string? Barcode { get; set; }
-		public string Category { get; set; } = null!; // string dla łatwości parsowania z JSON
+		public string Category { get; set; } = null!;
 		public string Unit { get; set; } = null!;
 		public float ServingSize { get; set; }
 		public float CaloriesPer100g { get; set; }

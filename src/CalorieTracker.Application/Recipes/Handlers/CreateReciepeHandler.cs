@@ -1,4 +1,8 @@
-﻿using CalorieTracker.Application.Interfaces;
+﻿// Plik CreateRecipeHandler.cs - implementacja handlera polecenia tworzenia przepisu.
+// Odpowiada za przetwarzanie komendy CreateRecipeCommand, walidację i zapis nowego przepisu w bazie danych.
+// Specjalnie nie urzyto FluentValidation aby pokazać różne podejścia i możliwość walidacji danych bez tej biblioteki
+
+using CalorieTracker.Application.Interfaces;
 using CalorieTracker.Application.Recipes.Commands;
 using CalorieTracker.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
@@ -6,14 +10,30 @@ using Microsoft.EntityFrameworkCore;
 namespace CalorieTracker.Application.Recipes.Handlers
 {
 	/// <summary>
-	/// Handler do tworzenia nowego przepisu
+	/// Handler odpowiedzialny za przetwarzanie komendy tworzenia nowego przepisu.
+	/// Zawiera logikę walidacji składników oraz tworzenia i zapisu przepisu w bazie danych.
 	/// </summary>
 	public class CreateRecipeHandler
 	{
+		/// <summary>
+		/// Prywatne pole tylko do odczytu, przechowujące kontekst bazy danych.
+		/// Umożliwia dostęp do operacji na bazie danych.
+		/// </summary>
 		private readonly IAppDbContext _db;
 
+		/// <summary>
+		/// Inicjalizuje nową instancję klasy <see cref="CreateRecipeHandler"/>.
+		/// </summary>
+		/// <param name="db">Kontekst bazy danych <see cref="IAppDbContext"/>.</param>
 		public CreateRecipeHandler(IAppDbContext db) => _db = db;
 
+		/// <summary>
+		/// Przetwarza komendę tworzenia nowego przepisu.
+		/// Wykonuje walidację składników, tworzy przepis i zapisuje go w bazie danych.
+		/// </summary>
+		/// <param name="command">Komenda <see cref="CreateRecipeCommand"/> zawierająca dane nowego przepisu.</param>
+		/// <returns>Identyfikator GUID nowo utworzonego przepisu.</returns>
+		/// <exception cref="ArgumentException">Wyjątek wyrzucany gdy nie znaleziono produktów będących składnikami przepisu.</exception>
 		public async Task<Guid> Handle(CreateRecipeCommand command)
 		{
 			// Walidacja - sprawdza czy wszystkie produkty istnieją

@@ -1,19 +1,25 @@
-﻿using CalorieTracker.Domain.Entities;
+﻿// Plik WeightAnalysisService.cs – serwis domenowy do analizy masy ciała użytkownika.
+// Odpowiada za obliczanie wskaźnika BMI, zmiany masy ciała oraz postępu względem celu wagowego.
+// Wykorzystywany przy tworzeniu i analizie pomiarów masy ciała użytkownika.
+
+using CalorieTracker.Domain.Entities;
 
 namespace CalorieTracker.Domain.Services
 {
 	/// <summary>
-	/// Serwis domenowy do kalkulacji BMI i analizy wagi
+	/// Serwis domenowy do kalkulacji BMI i analizy masy ciała użytkownika.
+	/// Zawiera metody do obliczania wskaźnika BMI, zmiany masy oraz różnicy względem celu wagowego.
 	/// </summary>
 	public class WeightAnalysisService
 	{
 		/// <summary>
-		/// Oblicza BMI na podstawie masy ciała i wzrostu
-		/// BMI = masa(kg) / (wzrost(m))²
+		/// Oblicza wskaźnik masy ciała (BMI) na podstawie masy i wzrostu użytkownika.
+		/// Wzór: BMI = masa(kg) / (wzrost(m))²
 		/// </summary>
-		/// <param name="weightKg">Masa ciała w kilogramach</param>
-		/// <param name="heightCm">Wzrost w centymetrach</param>
-		/// <returns>Wartość BMI</returns>
+		/// <param name="weightKg">Masa ciała w kilogramach.</param>
+		/// <param name="heightCm">Wzrost w centymetrach.</param>
+		/// <returns>Wartość BMI (zaokrąglona do jednego miejsca po przecinku).</returns>
+		/// <exception cref="ArgumentException">Rzucany, gdy masa lub wzrost są niedodatnie.</exception>
 		public float CalculateBMI(float weightKg, float heightCm)
 		{
 			if (heightCm <= 0 || weightKg <= 0)
@@ -26,11 +32,11 @@ namespace CalorieTracker.Domain.Services
 		}
 
 		/// <summary>
-		/// Oblicza zmianę masy ciała między dwoma pomiarami
+		/// Oblicza zmianę masy ciała pomiędzy dwoma pomiarami.
 		/// </summary>
-		/// <param name="currentWeight">Aktualna masa ciała</param>
-		/// <param name="previousWeight">Poprzednia masa ciała</param>
-		/// <returns>Zmiana w kg (dodatnia = przyrost, ujemna = spadek)</returns>
+		/// <param name="currentWeight">Aktualna masa ciała.</param>
+		/// <param name="previousWeight">Poprzednia masa ciała.</param>
+		/// <returns>Różnica w kg (dodatnia = przyrost, ujemna = spadek).</returns>
 		public float CalculateWeightChange(float currentWeight, float previousWeight)
 		{
 			var change = currentWeight - previousWeight;
@@ -38,11 +44,11 @@ namespace CalorieTracker.Domain.Services
 		}
 
 		/// <summary>
-		/// Oblicza postęp względem celu wagowego
+		/// Oblicza postęp użytkownika względem docelowej masy ciała.
 		/// </summary>
-		/// <param name="currentWeightKg">Aktualna masa ciała</param>
-		/// <param name="targetWeightKg">Docelowa masa ciała</param>
-		/// <returns>Różnica w kg (dodatnia = nadal trzeba schudnąć, ujemna = przekroczono cel)</returns>
+		/// <param name="currentWeightKg">Aktualna masa ciała.</param>
+		/// <param name="targetWeightKg">Docelowa masa ciała.</param>
+		/// <returns>Różnica w kg (dodatnia = nadal trzeba schudnąć, ujemna = przekroczono cel).</returns>
 		public float CalculateProgressToGoal(float currentWeightKg, float targetWeightKg)
 		{
 			var progress = currentWeightKg - targetWeightKg;
@@ -50,27 +56,28 @@ namespace CalorieTracker.Domain.Services
 		}
 
 		/// <summary>
-		/// Wypełnia kalkulowane pola w pomiarze masy ciała
+		/// Uzupełnia pola pochodne w pomiarze masy ciała, takie jak BMI i zmiana masy.
+		/// Wartości te są obliczane na podstawie aktualnego pomiaru, profilu użytkownika oraz ewentualnego poprzedniego pomiaru.
 		/// </summary>
-		/// <param name="measurement">Pomiar do wypełnienia</param>
-		/// <param name="userProfile">Profil użytkownika z danymi wzrostu i celu</param>
-		/// <param name="previousMeasurement">Poprzedni pomiar (może być null)</param>
+		/// <param name="measurement">Pomiar masy ciała do uzupełnienia.</param>
+		/// <param name="userProfile">Profil użytkownika zawierający dane wzrostu i celu wagowego.</param>
+		/// <param name="previousMeasurement">Poprzedni pomiar masy ciała (może być null).</param>
 		public void FillCalculatedFields(WeightMeasurement measurement, UserProfile userProfile, WeightMeasurement? previousMeasurement)
 		{
-			// Oblicz BMI jeśli jest wzrost w profilu
+			// Oblicza BMI, jeśli wzrost użytkownika jest znany
 			if (userProfile.HeightCm.HasValue)
 			{
 				measurement.BMI = CalculateBMI(measurement.WeightKg, userProfile.HeightCm.Value);
 			}
 
-			// Oblicz zmianę masy ciała jeśli jest poprzedni pomiar
+			// Oblicza zmianę masy ciała w porównaniu do poprzedniego pomiaru
 			if (previousMeasurement != null)
 			{
 				measurement.WeightChangeKg = CalculateWeightChange(measurement.WeightKg, previousMeasurement.WeightKg);
 			}
 			else
 			{
-				measurement.WeightChangeKg = 0f; // Pierwszy pomiar
+				measurement.WeightChangeKg = 0f; // Pierwszy pomiar – brak danych do porównania
 			}
 		}
 	}
