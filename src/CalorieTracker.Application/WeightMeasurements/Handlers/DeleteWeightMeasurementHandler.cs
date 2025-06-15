@@ -7,68 +7,69 @@ using Microsoft.EntityFrameworkCore;
 namespace CalorieTracker.Application.WeightMeasurements.Handlers
 {
 	/// <summary>
-	/// Handler do aktualizacji pomiaru masy ciała
+	/// Handler do usuwania pomiaru masy ciała
 	/// </summary>
-	public class UpdateWeightMeasurementHandler
+	public class DeleteWeightMeasurementHandler
 	{
 		private readonly IAppDbContext _db;
 		private readonly WeightAnalysisService _weightAnalysis;
 
-		public UpdateWeightMeasurementHandler(IAppDbContext db, WeightAnalysisService weightAnalysis)
+		public DeleteWeightMeasurementHandler(IAppDbContext db, WeightAnalysisService weightAnalysis)
 		{
 			_db = db;
 			_weightAnalysis = weightAnalysis;
 		}
 
-		public async Task<bool> Handle(UpdateWeightMeasurementCommand command)
+		public async Task<bool> Handle(DeleteWeightMeasurementCommand command)
 		{
 			var measurement = await _db.WeightMeasurements
 				.FirstOrDefaultAsync(w => w.Id == command.Id && w.UserId == command.UserId);
 
 			if (measurement is null) return false;
 
+			var deletedDate = measurement.MeasurementDate;
+			var userId = command.UserId;
+
 			// Pobierz profil użytkownika
 			var userProfile = await _db.UserProfiles
-				.FirstOrDefaultAsync(p => p.UserId == command.UserId);
+				.FirstOrDefaultAsync(p => p.UserId == userId);
 
 			if (userProfile is null) return false;
 
-			var oldDate = measurement.MeasurementDate;
+			// Usuń pomiar
+			_db.WeightMeasurements.Remove(measurement);
 
-			// Aktualizuj dane
-			measurement.MeasurementDate = command.MeasurementDate;
-			measurement.WeightKg = command.WeightKg;
-			measurement.UpdatedAt = DateTime.UtcNow;
-
-			// ZAPISZ ZMIANY NAJPIERW!
+			// ZAPISZ USUNIĘCIE NAJPIERW!
 			await _db.SaveChangesAsync();
 
-			// PRZELICZ POMIARY KTÓRE MOGŁY BYĆ DOTKNIĘTE ZMIANĄ
-			await RecalculateAffectedMeasurements(command.UserId, oldDate, command.MeasurementDate, userProfile);
+			// PRZELICZ WSZYSTKIE POMIARY PÓŹNIEJSZE NIŻ USUNIĘTY
+			await RecalculateFutureMeasurements(userId, deletedDate, userProfile);
 
-			// Sprawdź czy to najnowszy pomiar - jeśli tak, zaktualizuj profil
+			// Jeśli usuwamy najnowszy pomiar, zaktualizuj profil użytkownika
 			var latestMeasurement = await _db.WeightMeasurements
-				.Where(w => w.UserId == command.UserId)
+				.Where(w => w.UserId == userId)
 				.OrderByDescending(w => w.MeasurementDate)
 				.FirstOrDefaultAsync();
 
-			if (latestMeasurement?.Id == measurement.Id)
+			if (latestMeasurement != null)
 			{
-				userProfile.WeightKg = command.WeightKg;
-				await _db.SaveChangesAsync();
+				userProfile.WeightKg = latestMeasurement.WeightKg;
+			}
+			else
+			{
+				// Brak pomiarów - wyczyść wagę w profilu? Lub zostaw starą wartość
+				// userProfile.WeightKg = null; // Opcjonalnie
 			}
 
+			await _db.SaveChangesAsync();
 			return true;
 		}
 
 		/// <summary>
-		/// Przelicza pomiary dotknięte zmianą (od najwcześniejszej daty do końca)
+		/// Przelicza wszystkie pomiary późniejsze niż usunięty - POPRAWIONA WERSJA!
 		/// </summary>
-		private async Task RecalculateAffectedMeasurements(string userId, DateOnly oldDate, DateOnly newDate, UserProfile userProfile)
+		private async Task RecalculateFutureMeasurements(string userId, DateOnly deletedDate, UserProfile userProfile)
 		{
-			// Znajdź najwcześniejszą datę która mogła być dotknięta
-			var earliestAffectedDate = oldDate < newDate ? oldDate : newDate;
-
 			// Pobierz WSZYSTKIE pomiary użytkownika w kolejności chronologicznej
 			var allMeasurements = await _db.WeightMeasurements
 				.Where(w => w.UserId == userId)
@@ -76,9 +77,9 @@ namespace CalorieTracker.Application.WeightMeasurements.Handlers
 				.ThenBy(w => w.CreatedAt)
 				.ToListAsync();
 
-			// Pomiary do przeliczenia (od najwcześniejszej daty)
+			// Pomiary do przeliczenia (późniejsze niż usunięty)
 			var measurementsToRecalculate = allMeasurements
-				.Where(m => m.MeasurementDate >= earliestAffectedDate)
+				.Where(m => m.MeasurementDate > deletedDate)
 				.ToList();
 
 			// Przelicz każdy pomiar POPRAWNIE!
