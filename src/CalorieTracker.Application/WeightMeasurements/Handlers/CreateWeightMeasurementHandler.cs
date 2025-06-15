@@ -62,6 +62,9 @@ namespace CalorieTracker.Application.WeightMeasurements.Handlers
 			// Dodaj do bazy
 			_db.WeightMeasurements.Add(measurement);
 
+			// KLUCZOWE: Przelicz wszystkie pomiary PÓŹNIEJSZE niż ten nowy
+			await RecalculateFutureMeasurements(command.UserId, command.MeasurementDate, userProfile);
+
 			// Aktualizuj wagę w profilu użytkownika jeśli to najnowszy pomiar
 			var latestMeasurement = await _db.WeightMeasurements
 				.Where(w => w.UserId == command.UserId)
@@ -76,6 +79,40 @@ namespace CalorieTracker.Application.WeightMeasurements.Handlers
 			await _db.SaveChangesAsync();
 
 			return measurement.Id;
+		}
+
+		/// <summary>
+		/// Przelicza wszystkie pomiary późniejsze niż podana data
+		/// </summary>
+		private async Task RecalculateFutureMeasurements(string userId, DateOnly fromDate, UserProfile userProfile)
+		{
+			// Pobierz wszystkie pomiary późniejsze niż nowy pomiar
+			var futureMeasurements = await _db.WeightMeasurements
+				.Where(w => w.UserId == userId && w.MeasurementDate > fromDate)
+				.OrderBy(w => w.MeasurementDate)
+				.ToListAsync();
+
+			// Przelicz każdy pomiar
+			WeightMeasurement? previousMeasurement = null;
+
+			foreach (var futureMeasurement in futureMeasurements)
+			{
+				// Znajdź poprzedni pomiar dla tego pomiaru
+				if (previousMeasurement == null)
+				{
+					previousMeasurement = await _db.WeightMeasurements
+						.Where(w => w.UserId == userId && w.MeasurementDate < futureMeasurement.MeasurementDate)
+						.OrderByDescending(w => w.MeasurementDate)
+						.FirstOrDefaultAsync();
+				}
+
+				// Przelicz kalkulowane pola
+				_weightAnalysis.FillCalculatedFields(futureMeasurement, userProfile, previousMeasurement);
+				futureMeasurement.UpdatedAt = DateTime.UtcNow;
+
+				// Ten pomiar stanie się "poprzednim" dla następnego
+				previousMeasurement = futureMeasurement;
+			}
 		}
 	}
 }
