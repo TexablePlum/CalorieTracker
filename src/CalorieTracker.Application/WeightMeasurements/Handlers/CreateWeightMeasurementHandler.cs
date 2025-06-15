@@ -62,7 +62,10 @@ namespace CalorieTracker.Application.WeightMeasurements.Handlers
 			// Dodaj do bazy
 			_db.WeightMeasurements.Add(measurement);
 
-			// KLUCZOWE: Przelicz wszystkie pomiary PÓŹNIEJSZE niż ten nowy
+			// ZAPISZ NOWY POMIAR NAJPIERW!
+			await _db.SaveChangesAsync();
+
+			// TERAZ PRZELICZ PRZYSZŁE POMIARY
 			await RecalculateFutureMeasurements(command.UserId, command.MeasurementDate, userProfile);
 
 			// Aktualizuj wagę w profilu użytkownika jeśli to najnowszy pomiar
@@ -71,18 +74,17 @@ namespace CalorieTracker.Application.WeightMeasurements.Handlers
 				.OrderByDescending(w => w.MeasurementDate)
 				.FirstOrDefaultAsync();
 
-			if (latestMeasurement == null || command.MeasurementDate >= latestMeasurement.MeasurementDate)
+			if (latestMeasurement?.Id == measurement.Id)
 			{
 				userProfile.WeightKg = command.WeightKg;
+				await _db.SaveChangesAsync();
 			}
-
-			await _db.SaveChangesAsync();
 
 			return measurement.Id;
 		}
 
 		/// <summary>
-		/// Przelicza wszystkie pomiary późniejsze niż podana data
+		/// Przelicza wszystkie pomiary późniejsze niż podana data - POPRAWIONA WERSJA!
 		/// </summary>
 		private async Task RecalculateFutureMeasurements(string userId, DateOnly fromDate, UserProfile userProfile)
 		{
@@ -99,19 +101,22 @@ namespace CalorieTracker.Application.WeightMeasurements.Handlers
 				.ToList();
 
 			// Przelicz każdy pomiar
-			foreach (var measurement in measurementsToRecalculate)
+			foreach (var measurementToRecalc in measurementsToRecalculate)
 			{
 				// Znajdź poprzedni pomiar (najnowszy przed tym pomiarem)
 				var previousMeasurement = allMeasurements
-					.Where(m => m.MeasurementDate < measurement.MeasurementDate)
+					.Where(m => m.MeasurementDate < measurementToRecalc.MeasurementDate)
 					.OrderByDescending(m => m.MeasurementDate)
 					.ThenByDescending(m => m.CreatedAt)
 					.FirstOrDefault();
 
 				// Przelicz kalkulowane pola
-				_weightAnalysis.FillCalculatedFields(measurement, userProfile, previousMeasurement);
-				measurement.UpdatedAt = DateTime.UtcNow;
+				_weightAnalysis.FillCalculatedFields(measurementToRecalc, userProfile, previousMeasurement);
+				measurementToRecalc.UpdatedAt = DateTime.UtcNow;
 			}
+
+			// Zapisz zmiany
+			await _db.SaveChangesAsync();
 		}
 	}
 }
