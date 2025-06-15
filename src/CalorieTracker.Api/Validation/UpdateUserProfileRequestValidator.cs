@@ -1,14 +1,25 @@
-﻿using CalorieTracker.Api.Models.Profile;
+﻿// Plik UpdateUserProfileRequestValidator.cs - implementacja walidatora dla żądania aktualizacji profilu użytkownika.
+// Odpowiada za walidację danych wejściowych podczas aktualizacji profilu użytkownika w systemie.
+
+using CalorieTracker.Api.Models.Profile;
 using CalorieTracker.Domain.Enums;
 using FluentValidation;
 
 namespace CalorieTracker.Api.Validation
 {
+	/// <summary>
+	/// Implementacja walidatora FluentValidation dla klasy <see cref="UpdateUserProfileRequest"/>.
+	/// Sprawdza poprawność danych profilowych użytkownika, w tym danych osobowych, parametrów fizycznych oraz celów żywieniowych.
+	/// </summary>
 	public class UpdateUserProfileRequestValidator : AbstractValidator<UpdateUserProfileRequest>
 	{
+		/// <summary>
+		/// Inicjalizuje nową instancję klasy <see cref="UpdateUserProfileRequestValidator"/>.
+		/// Definiuje kompleksowe reguły walidacji dla wszystkich pól profilu użytkownika.
+		/// </summary>
 		public UpdateUserProfileRequestValidator()
 		{
-			// ---------- Dane konta ----------
+			// ---------- Sekcja walidacji danych konta ----------
 			RuleFor(x => x.FirstName)
 				.NotEmpty().WithMessage("Imię jest wymagane")
 				.MaximumLength(50).WithMessage("Imię może mieć maksymalnie 50 znaków")
@@ -21,7 +32,7 @@ namespace CalorieTracker.Api.Validation
 				.Matches(@"^[A-Za-zÀ-žżźćńółęąśŻŹĆĄŚĘŁÓŃ\s'-]+$")
 				.WithMessage("Nazwisko zawiera niedozwolone znaki");
 
-			// ---------- Dane profilu ----------
+			// ---------- Sekcja walidacji danych profilowych ----------
 			RuleFor(x => x.Age)
 				.NotNull().WithMessage("Wiek jest wymagany")
 				.InclusiveBetween(13, 130).WithMessage("Wiek musi być z przedziału 13-130 lat");
@@ -44,6 +55,7 @@ namespace CalorieTracker.Api.Validation
 				.Must(a => Enum.TryParse<ActivityLevel>(a, true, out _))
 				.WithMessage("Nieprawidłowy poziom aktywności (dozwolone: Sedentary, LightlyActive, ModeratelyActive, VeryActive, ExtremelyActive)");
 
+			// ---------- Sekcja walidacji celów żywieniowych ----------
 			RuleFor(x => x.Goal)
 				.NotEmpty().WithMessage("Cel jest wymagany")
 				.Must(g => Enum.TryParse<GoalType>(g, true, out _))
@@ -58,30 +70,30 @@ namespace CalorieTracker.Api.Validation
 				.Must(p => p != null && p.Count == 6).WithMessage("Plan posiłków musi zawierać dokładnie 6 pozycji (true/false).")
 				.Must(p => p != null && p.Any(x => x)).WithMessage("Wybierz przynajmniej jeden posiłek.");
 
+			// ---------- Zaawansowana walidacja spójności danych ----------
 			RuleFor(x => x.WeeklyGoalChangeKg)
 				.NotNull().WithMessage("Tygodniowa zmiana masy jest wymagana.")
 				.InclusiveBetween(-1.0f, 1.0f).WithMessage("Tygodniowa zmiana masy musi być z przedziału od -1 do 1 kg.")
 				.Must((model, value) =>
-			{
-				if (model.Goal is null || value is null)
-					return false;
-
-				return model.Goal switch
 				{
-					"LoseWeight" => value < 0,
-					"Maintain" => value == 0,
-					"GainWeight" => value > 0,
-					_ => false
-				};
-			})
-			.WithMessage(x => x.Goal switch
-			{
-				"LoseWeight" => "Dla celu redukcji masa musi się zmniejszać (wartość ujemna).",
-				"Maintain" => "Dla celu utrzymania masa nie może się zmieniać (wartość musi być 0).",
-				"GainWeight" => "Dla celu przyrostu masa musi się zwiększać (wartość dodatnia).",
-				_ => "Nieprawidłowy cel."
-			});
+					if (model.Goal is null || value is null)
+						return false;
 
+					return model.Goal switch
+					{
+						"LoseWeight" => value < 0,
+						"Maintain" => value == 0,
+						"GainWeight" => value > 0,
+						_ => false
+					};
+				})
+				.WithMessage(x => x.Goal switch
+				{
+					"LoseWeight" => "Dla celu redukcji masa musi się zmniejszać (wartość ujemna).",
+					"Maintain" => "Dla celu utrzymania masa nie może się zmieniać (wartość musi być 0).",
+					"GainWeight" => "Dla celu przyrostu masa musi się zwiększać (wartość dodatnia).",
+					_ => "Nieprawidłowy cel."
+				});
 		}
 	}
 }

@@ -1,57 +1,42 @@
-﻿namespace CalorieTracker.Api.Models.Recipes
+﻿// Plik Recipes.cs - model transferu danych (DTO) związany z dodawaniem przepisów.
+// Odpowiada za operacje tworzenia przepisów w aplikacji.
+namespace CalorieTracker.Api.Models.Recipes
 {
 	/// <summary>
-	/// DTO do tworzenia przepisu
+	/// Model transferu danych (DTO) do tworzenia nowego przepisu.
+	/// Zawiera wszystkie wymagane dane do utworzenia przepisu w systemie.
 	/// </summary>
 	public class CreateRecipeRequest
 	{
+		/// <summary>
+		/// Nazwa przepisu. Pole wymagane.
+		/// </summary>
 		public string Name { get; set; } = null!;
+
+		/// <summary>
+		/// Instrukcje przygotowania przepisu. Pole wymagane.
+		/// </summary>
 		public string Instructions { get; set; } = null!;
+
+		/// <summary>
+		/// Liczba porcji, na które przygotowany jest przepis.
+		/// </summary>
 		public int ServingsCount { get; set; }
+
+		/// <summary>
+		/// Całkowita waga przepisu w gramach.
+		/// </summary>
 		public float TotalWeightGrams { get; set; }
+
+		/// <summary>
+		/// Czas przygotowania przepisu w minutach.
+		/// </summary>
 		public int PreparationTimeMinutes { get; set; }
+
+		/// <summary>
+		/// Lista składników wchodzących w skład przepisu.
+		/// Domyślnie pusta lista.
+		/// </summary>
 		public List<CreateRecipeIngredientRequest> Ingredients { get; set; } = new();
-	}
-
-	/// <summary>
-	/// DTO składnika podczas tworzenia przepisu
-	/// </summary>
-	public class CreateRecipeIngredientRequest
-	{
-		public Guid ProductId { get; set; }
-		public float Quantity { get; set; }
-	}
-
-	/// <summary>
-	/// DTO do aktualizacji przepisu
-	/// </summary>
-	public class UpdateRecipeRequest
-	{
-		public string Name { get; set; } = null!;
-		public string Instructions { get; set; } = null!;
-		public int ServingsCount { get; set; }
-		public float TotalWeightGrams { get; set; }
-		public int PreparationTimeMinutes { get; set; }
-		public List<CreateRecipeIngredientRequest> Ingredients { get; set; } = new();
-	}
-
-	/// <summary>
-	/// DTO do wyszukiwania przepisów
-	/// </summary>
-	public class SearchRecipesRequest
-	{
-		public string SearchTerm { get; set; } = null!;
-		public int Skip { get; set; } = 0;
-		public int Take { get; set; } = 20;
-	}
-
-	/// <summary>
-	/// Response dla wyszukiwania z paginacją
-	/// </summary>
-	public class SearchRecipesResponse
-	{
-		public List<RecipeSummaryDto> Recipes { get; set; } = new();
-		public int TotalCount { get; set; }
-		public bool HasMore { get; set; }
 	}
 }

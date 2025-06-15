@@ -1,4 +1,7 @@
-﻿using CalorieTracker.Application.Interfaces;
+﻿// Plik DeleteWeightMeasurementHandler.cs - implementacja handlera usuwania pomiaru wagi.
+// Odpowiada za przetwarzanie komendy DeleteWeightMeasurementCommand i zarządzanie logiką biznesową związaną z usuwaniem pomiarów wagi.
+
+using CalorieTracker.Application.Interfaces;
 using CalorieTracker.Application.WeightMeasurements.Commands;
 using CalorieTracker.Domain.Entities;
 using CalorieTracker.Domain.Services;
@@ -7,19 +10,39 @@ using Microsoft.EntityFrameworkCore;
 namespace CalorieTracker.Application.WeightMeasurements.Handlers
 {
 	/// <summary>
-	/// Handler do usuwania pomiaru masy ciała
+	/// Handler odpowiedzialny za przetwarzanie komendy usuwania pomiaru masy ciała.
+	/// Zarządza całą logiką związaną z walidacją, usuwaniem i aktualizacją powiązanych danych.
 	/// </summary>
 	public class DeleteWeightMeasurementHandler
 	{
+		/// <summary>
+		/// Obiekt kontekstu bazy danych aplikacji.
+		/// Umożliwia dostęp do danych użytkowników i pomiarów.
+		/// </summary>
 		private readonly IAppDbContext _db;
+
+		/// <summary>
+		/// Serwis analizy danych wagowych.
+		/// Odpowiada za obliczenia związane z BMI i zmianami wagi.
+		/// </summary>
 		private readonly WeightAnalysisService _weightAnalysis;
 
+		/// <summary>
+		/// Inicjalizuje nową instancję handlera.
+		/// </summary>
+		/// <param name="db">Kontekst bazy danych <see cref="IAppDbContext"/>.</param>
+		/// <param name="weightAnalysis">Serwis analizy wagowej <see cref="WeightAnalysisService"/>.</param>
 		public DeleteWeightMeasurementHandler(IAppDbContext db, WeightAnalysisService weightAnalysis)
 		{
 			_db = db;
 			_weightAnalysis = weightAnalysis;
 		}
 
+		/// <summary>
+		/// Przetwarza komendę usuwania pomiaru wagi.
+		/// </summary>
+		/// <param name="command">Komenda <see cref="DeleteWeightMeasurementCommand"/> zawierająca identyfikator pomiaru i użytkownika.</param>
+		/// <returns>Wartość boolowska wskazująca, czy operacja usunięcia zakończyła się sukcesem.</returns>
 		public async Task<bool> Handle(DeleteWeightMeasurementCommand command)
 		{
 			var measurement = await _db.WeightMeasurements
@@ -30,22 +53,22 @@ namespace CalorieTracker.Application.WeightMeasurements.Handlers
 			var deletedDate = measurement.MeasurementDate;
 			var userId = command.UserId;
 
-			// Pobierz profil użytkownika
+			// Pobiera profil użytkownika
 			var userProfile = await _db.UserProfiles
 				.FirstOrDefaultAsync(p => p.UserId == userId);
 
 			if (userProfile is null) return false;
 
-			// Usuń pomiar
+			// Usuwa pomiar
 			_db.WeightMeasurements.Remove(measurement);
 
-			// ZAPISZ USUNIĘCIE NAJPIERW!
+			// Zapisuje usunięcie
 			await _db.SaveChangesAsync();
 
-			// PRZELICZ WSZYSTKIE POMIARY PÓŹNIEJSZE NIŻ USUNIĘTY
+			// Przelicza wszytskie późniejsze niż usunięty
 			await RecalculateFutureMeasurements(userId, deletedDate, userProfile);
 
-			// Jeśli usuwamy najnowszy pomiar, zaktualizuj profil użytkownika
+			// Jeśli usuwa najnowszy pomiar, aktualizuje profil użytkownika
 			var latestMeasurement = await _db.WeightMeasurements
 				.Where(w => w.UserId == userId)
 				.OrderByDescending(w => w.MeasurementDate)
@@ -57,7 +80,6 @@ namespace CalorieTracker.Application.WeightMeasurements.Handlers
 			}
 			else
 			{
-				// Brak pomiarów - wyczyść wagę w profilu? Lub zostaw starą wartość
 				// userProfile.WeightKg = null; // Opcjonalnie
 			}
 
@@ -66,11 +88,15 @@ namespace CalorieTracker.Application.WeightMeasurements.Handlers
 		}
 
 		/// <summary>
-		/// Przelicza wszystkie pomiary późniejsze niż usunięty - POPRAWIONA WERSJA!
+		/// Przelicza wszystkie pomiary wykonane po dacie usuniętego pomiaru.
+		/// Aktualizuje kalkulowane pola (BMI, zmiana wagi) dla pomiarów wykonanych po usuniętym pomiarze.
 		/// </summary>
+		/// <param name="userId">Identyfikator użytkownika.</param>
+		/// <param name="deletedDate">Data usuniętego pomiaru.</param>
+		/// <param name="userProfile">Profil użytkownika zawierający dane do obliczeń.</param>
 		private async Task RecalculateFutureMeasurements(string userId, DateOnly deletedDate, UserProfile userProfile)
 		{
-			// Pobierz WSZYSTKIE pomiary użytkownika w kolejności chronologicznej
+			// Pobiera wszystkie pomiary użytkownika w kolejności chronologicznej
 			var allMeasurements = await _db.WeightMeasurements
 				.Where(w => w.UserId == userId)
 				.OrderBy(w => w.MeasurementDate)
@@ -82,22 +108,22 @@ namespace CalorieTracker.Application.WeightMeasurements.Handlers
 				.Where(m => m.MeasurementDate > deletedDate)
 				.ToList();
 
-			// Przelicz każdy pomiar POPRAWNIE!
+			// Przelicza każdy pomiar
 			foreach (var measurementToRecalc in measurementsToRecalculate)
 			{
-				// Znajdź poprzedni pomiar (najnowszy przed tym pomiarem)
+				// Znajduje poprzedni pomiar (najnowszy przed tym pomiarem)
 				var previousMeasurement = allMeasurements
 					.Where(m => m.MeasurementDate < measurementToRecalc.MeasurementDate)
 					.OrderByDescending(m => m.MeasurementDate)
 					.ThenByDescending(m => m.CreatedAt)
 					.FirstOrDefault();
 
-				// Przelicz kalkulowane pola
+				// Przelicza kalkulowane pola
 				_weightAnalysis.FillCalculatedFields(measurementToRecalc, userProfile, previousMeasurement);
 				measurementToRecalc.UpdatedAt = DateTime.UtcNow;
 			}
 
-			// Zapisz wszystkie zmiany
+			// Zapisuje wszystkie zmiany
 			await _db.SaveChangesAsync();
 		}
 	}
