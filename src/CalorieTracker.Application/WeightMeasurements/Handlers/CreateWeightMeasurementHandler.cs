@@ -86,32 +86,31 @@ namespace CalorieTracker.Application.WeightMeasurements.Handlers
 		/// </summary>
 		private async Task RecalculateFutureMeasurements(string userId, DateOnly fromDate, UserProfile userProfile)
 		{
-			// Pobierz wszystkie pomiary późniejsze niż nowy pomiar
-			var futureMeasurements = await _db.WeightMeasurements
-				.Where(w => w.UserId == userId && w.MeasurementDate > fromDate)
+			// Pobierz WSZYSTKIE pomiary użytkownika w kolejności chronologicznej
+			var allMeasurements = await _db.WeightMeasurements
+				.Where(w => w.UserId == userId)
 				.OrderBy(w => w.MeasurementDate)
+				.ThenBy(w => w.CreatedAt)
 				.ToListAsync();
 
-			// Przelicz każdy pomiar
-			WeightMeasurement? previousMeasurement = null;
+			// Znajdź pomiary do przeliczenia (późniejsze niż fromDate)
+			var measurementsToRecalculate = allMeasurements
+				.Where(m => m.MeasurementDate > fromDate)
+				.ToList();
 
-			foreach (var futureMeasurement in futureMeasurements)
+			// Przelicz każdy pomiar
+			foreach (var measurement in measurementsToRecalculate)
 			{
-				// Znajdź poprzedni pomiar dla tego pomiaru
-				if (previousMeasurement == null)
-				{
-					previousMeasurement = await _db.WeightMeasurements
-						.Where(w => w.UserId == userId && w.MeasurementDate < futureMeasurement.MeasurementDate)
-						.OrderByDescending(w => w.MeasurementDate)
-						.FirstOrDefaultAsync();
-				}
+				// Znajdź poprzedni pomiar (najnowszy przed tym pomiarem)
+				var previousMeasurement = allMeasurements
+					.Where(m => m.MeasurementDate < measurement.MeasurementDate)
+					.OrderByDescending(m => m.MeasurementDate)
+					.ThenByDescending(m => m.CreatedAt)
+					.FirstOrDefault();
 
 				// Przelicz kalkulowane pola
-				_weightAnalysis.FillCalculatedFields(futureMeasurement, userProfile, previousMeasurement);
-				futureMeasurement.UpdatedAt = DateTime.UtcNow;
-
-				// Ten pomiar stanie się "poprzednim" dla następnego
-				previousMeasurement = futureMeasurement;
+				_weightAnalysis.FillCalculatedFields(measurement, userProfile, previousMeasurement);
+				measurement.UpdatedAt = DateTime.UtcNow;
 			}
 		}
 	}
