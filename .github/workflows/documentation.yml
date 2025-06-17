@@ -2,10 +2,9 @@ name: Build Documentation
 
 on:
   push:
-    branches: [ main, master ]
-    paths: [ 'src/**', 'docs/**' ]
+    branches: [ main ]
   pull_request:
-    branches: [ main, master ]
+    branches: [ main ]
 
 jobs:
   build-docs:
@@ -23,8 +22,10 @@ jobs:
     - name: Install DocFX
       run: dotnet tool install -g docfx
       
-    - name: Build projects
-      run: dotnet build
+    - name: Restore & Build
+      run: |
+        dotnet restore
+        dotnet build --configuration Release
       
     - name: Build documentation
       run: |
