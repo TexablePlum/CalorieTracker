@@ -12,75 +12,99 @@ namespace CalorieTracker.Api.Mapping
 	/// <summary>
 	/// Klasa profilu AutoMappera dla operacji związanych z przepisami.
 	/// Definiuje mapowania między modelami API a obiektami komend, zapytań i encji domenowych.
+	/// Obsługuje transformacje dla operacji CRUD na przepisach oraz kalkulacji wartości odżywczych.
 	/// </summary>
 	public class RecipeMappingProfile : Profile
 	{
 		/// <summary>
 		/// Inicjalizuje nową instancję profilu mapowania dla przepisów.
-		/// Konfiguruje wszystkie mapowania wymagane do przetwarzania operacji na przepisach.
+		/// Konfiguruje mapowania dla:
+		/// - Komendy tworzenia i aktualizacji przepisów
+		/// - Zapytania wyszukiwania przepisów
+		/// - Transformacje encji na DTO z obsługą składników i wartości odżywczych
 		/// </summary>
 		public RecipeMappingProfile()
 		{
-			/// <summary>
-			/// Mapowanie z <see cref="CreateRecipeRequest"/> na <see cref="CreateRecipeCommand"/>.
-			/// Transformuje model żądania utworzenia przepisu na odpowiednią komendę.
-			/// Pomija pole CreatedByUserId, które jest ustawiane w kontrolerze.
-			/// </summary>
+			ConfigureCreateRecipeMapping();
+			ConfigureUpdateRecipeMapping();
+			ConfigureSearchRecipeMapping();
+			ConfigureRecipeToDto();
+			ConfigureIngredientMapping();
+			ConfigureNutritionMapping();
+			ConfigureRecipeToSummary();
+		}
+
+		/// <summary>
+		/// Konfiguruje mapowanie z CreateRecipeRequest na CreateRecipeCommand.
+		/// Pomija pole CreatedByUserId, które jest ustawiane w kontrolerze.
+		/// </summary>
+		private void ConfigureCreateRecipeMapping()
+		{
 			CreateMap<CreateRecipeRequest, CreateRecipeCommand>()
 				.ForMember(dest => dest.CreatedByUserId, opt => opt.Ignore());
 
-			/// <summary>
-			/// Mapowanie z <see cref="CreateRecipeIngredientRequest"/> na <see cref="CreateRecipeIngredientCommand"/>.
-			/// Transformuje model składnika przepisu na odpowiednią komendę.
-			/// </summary>
 			CreateMap<CreateRecipeIngredientRequest, CreateRecipeIngredientCommand>();
+		}
 
-			/// <summary>
-			/// Mapowanie z <see cref="UpdateRecipeRequest"/> na <see cref="UpdateRecipeCommand"/>.
-			/// Transformuje model żądania aktualizacji przepisu na odpowiednią komendę.
-			/// Pomija pola Id i UpdatedByUserId, które są ustawiane w kontrolerze.
-			/// </summary>
+		/// <summary>
+		/// Konfiguruje mapowanie z UpdateRecipeRequest na UpdateRecipeCommand.
+		/// Pomija pola Id i UpdatedByUserId, które są ustawiane w kontrolerze.
+		/// </summary>
+		private void ConfigureUpdateRecipeMapping()
+		{
 			CreateMap<UpdateRecipeRequest, UpdateRecipeCommand>()
 				.ForMember(dest => dest.Id, opt => opt.Ignore())
 				.ForMember(dest => dest.UpdatedByUserId, opt => opt.Ignore());
+		}
 
-			/// <summary>
-			/// Mapowanie z <see cref="SearchRecipesRequest"/> na <see cref="SearchRecipesQuery"/>.
-			/// Transformuje parametry wyszukiwania przepisów na odpowiednie zapytanie.
-			/// </summary>
+		/// <summary>
+		/// Konfiguruje mapowanie z SearchRecipesRequest na SearchRecipesQuery.
+		/// Transformuje parametry wyszukiwania przepisów na odpowiednie zapytanie.
+		/// </summary>
+		private void ConfigureSearchRecipeMapping()
+		{
 			CreateMap<SearchRecipesRequest, SearchRecipesQuery>();
+		}
 
-			/// <summary>
-			/// Mapowanie z encji <see cref="Recipe"/> na model <see cref="RecipeDto"/>.
-			/// Transformuje pełne dane przepisu na format odpowiedzi API.
-			/// Pomija pole TotalNutrition, które jest obliczane osobno przez serwis domenowy.
-			/// </summary>
+		/// <summary>
+		/// Konfiguruje mapowanie z encji Recipe na model RecipeDto.
+		/// Pomija pole TotalNutrition, które jest obliczane osobno przez serwis domenowy.
+		/// </summary>
+		private void ConfigureRecipeToDto()
+		{
 			CreateMap<Recipe, RecipeDto>()
 				.ForMember(dest => dest.Ingredients, opt => opt.MapFrom(src => src.Ingredients))
 				.ForMember(dest => dest.TotalNutrition, opt => opt.Ignore());
+		}
 
-			/// <summary>
-			/// Mapowanie z encji <see cref="RecipeIngredient"/> na model <see cref="RecipeIngredientDto"/>.
-			/// Transformuje dane składnika przepisu na format odpowiedzi API.
-			/// Zawiera dodatkowe informacje o produkcie (nazwa, kategoria, jednostka).
-			/// </summary>
+		/// <summary>
+		/// Konfiguruje mapowanie z encji RecipeIngredient na model RecipeIngredientDto.
+		/// Zawiera dodatkowe informacje o produkcie (nazwa, kategoria, jednostka) z konwersją enum na string.
+		/// </summary>
+		private void ConfigureIngredientMapping()
+		{
 			CreateMap<RecipeIngredient, RecipeIngredientDto>()
 				.ForMember(dest => dest.ProductId, opt => opt.MapFrom(src => src.ProductId))
 				.ForMember(dest => dest.ProductName, opt => opt.MapFrom(src => src.Product.Name))
 				.ForMember(dest => dest.Category, opt => opt.MapFrom(src => src.Product.Category.ToString()))
 				.ForMember(dest => dest.Unit, opt => opt.MapFrom(src => src.Product.Unit.ToString()));
+		}
 
-			/// <summary>
-			/// Mapowanie z obiektu wartości <see cref="RecipeNutrition"/> na model <see cref="RecipeNutritionDto"/>.
-			/// Transformuje wartości odżywcze przepisu na format odpowiedzi API.
-			/// </summary>
+		/// <summary>
+		/// Konfiguruje mapowanie z obiektu wartości RecipeNutrition na model RecipeNutritionDto.
+		/// Transformuje wartości odżywcze przepisu na format odpowiedzi API.
+		/// </summary>
+		private void ConfigureNutritionMapping()
+		{
 			CreateMap<RecipeNutrition, RecipeNutritionDto>();
+		}
 
-			/// <summary>
-			/// Mapowanie z encji <see cref="Recipe"/> na model <see cref="RecipeSummaryDto"/>.
-			/// Transformuje podstawowe dane przepisu na uproszczony format odpowiedzi API.
-			/// Pomija pole TotalCalories, które jest obliczane osobno przez serwis domenowy.
-			/// </summary>
+		/// <summary>
+		/// Konfiguruje mapowanie z encji Recipe na model RecipeSummaryDto.
+		/// Pomija pole TotalCalories, które jest obliczane osobno przez serwis domenowy.
+		/// </summary>
+		private void ConfigureRecipeToSummary()
+		{
 			CreateMap<Recipe, RecipeSummaryDto>()
 				.ForMember(dest => dest.TotalCalories, opt => opt.Ignore());
 		}

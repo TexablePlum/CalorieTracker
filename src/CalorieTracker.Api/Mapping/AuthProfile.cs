@@ -15,20 +15,16 @@ namespace CalorieTracker.Api.Mapping
 	{
 		/// <summary>
 		/// Inicjalizuje nową instancję profilu mapowania dla autentykacji.
-		/// Konfiguruje wszystkie niezbędne mapowania w konstruktorze.
+		/// Konfiguruje mapowanie RegisterRequest -> RegisterUserCommand oraz LoginRequest -> LoginUserQuery.
 		/// </summary>
 		public AuthProfile()
 		{
-			/// <summary>
-			/// Konfiguracja mapowania z <see cref="RegisterRequest"/> na <see cref="RegisterUserCommand"/>.
-			/// Transformuje model żądania rejestracji z API na komendę rejestracji użytkownika.
-			/// </summary>
+			// Konfiguracja mapowania z RegisterRequest na RegisterUserCommand
+			// Transformuje model żądania rejestracji z API na komendę rejestracji użytkownika
 			CreateMap<RegisterRequest, RegisterUserCommand>();
 
-			/// <summary>
-			/// Konfiguracja mapowania z <see cref="LoginRequest"/> na <see cref="LoginUserQuery"/>.
-			/// Transformuje model żądania logowania z API na zapytanie logowania użytkownika.
-			/// </summary>
+			// Konfiguracja mapowania z LoginRequest na LoginUserQuery  
+			// Transformuje model żądania logowania z API na zapytanie logowania użytkownika
 			CreateMap<LoginRequest, LoginUserQuery>();
 		}
 	}

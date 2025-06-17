@@ -11,37 +11,51 @@ namespace CalorieTracker.Api.Mapping
 	/// <summary>
 	/// Klasa profilu AutoMappera dla operacji związanych z pomiarami masy ciała.
 	/// Definiuje mapowania między modelami API a obiektami komend i encji domenowych.
+	/// Obsługuje pomijanie pól ustawianych w kontrolerze oraz kalkulowanych osobno.
 	/// </summary>
 	public class WeightMeasurementMappingProfile : Profile
 	{
 		/// <summary>
 		/// Inicjalizuje nową instancję profilu mapowania dla pomiarów wagi.
-		/// Konfiguruje wszystkie mapowania wymagane do przetwarzania operacji na pomiarach.
+		/// Konfiguruje mapowania dla:
+		/// - CreateWeightMeasurementRequest -> CreateWeightMeasurementCommand (pomija UserId)
+		/// - UpdateWeightMeasurementRequest -> UpdateWeightMeasurementCommand (pomija Id i UserId)
+		/// - WeightMeasurement -> WeightMeasurementDto (pomija ProgressToGoal)
 		/// </summary>
 		public WeightMeasurementMappingProfile()
 		{
-			/// <summary>
-			/// Mapowanie z <see cref="CreateWeightMeasurementRequest"/> na <see cref="CreateWeightMeasurementCommand"/>.
-			/// Transformuje model żądania utworzenia pomiaru na odpowiednią komendę.
-			/// Pomija pole UserId, które jest ustawiane w kontrolerze na podstawie bieżącego użytkownika.
-			/// </summary>
+			ConfigureCreateMeasurementMapping();
+			ConfigureUpdateMeasurementMapping();
+			ConfigureMeasurementToDto();
+		}
+
+		/// <summary>
+		/// Konfiguruje mapowanie z CreateWeightMeasurementRequest na CreateWeightMeasurementCommand.
+		/// Pomija pole UserId, które jest ustawiane w kontrolerze na podstawie bieżącego użytkownika.
+		/// </summary>
+		private void ConfigureCreateMeasurementMapping()
+		{
 			CreateMap<CreateWeightMeasurementRequest, CreateWeightMeasurementCommand>()
 				.ForMember(dest => dest.UserId, opt => opt.Ignore());
+		}
 
-			/// <summary>
-			/// Mapowanie z <see cref="UpdateWeightMeasurementRequest"/> na <see cref="UpdateWeightMeasurementCommand"/>.
-			/// Transformuje model żądania aktualizacji pomiaru na odpowiednią komendę.
-			/// Pomija pola Id i UserId, które są ustawiane w kontrolerze.
-			/// </summary>
+		/// <summary>
+		/// Konfiguruje mapowanie z UpdateWeightMeasurementRequest na UpdateWeightMeasurementCommand.
+		/// Pomija pola Id i UserId, które są ustawiane w kontrolerze.
+		/// </summary>
+		private void ConfigureUpdateMeasurementMapping()
+		{
 			CreateMap<UpdateWeightMeasurementRequest, UpdateWeightMeasurementCommand>()
 				.ForMember(dest => dest.Id, opt => opt.Ignore())
 				.ForMember(dest => dest.UserId, opt => opt.Ignore());
+		}
 
-			/// <summary>
-			/// Mapowanie z encji <see cref="WeightMeasurement"/> na model <see cref="WeightMeasurementDto"/>.
-			/// Transformuje dane pomiaru wagi na format odpowiedzi API.
-			/// Pomija pole ProgressToGoal, które jest obliczane osobno w kontrolerze.
-			/// </summary>
+		/// <summary>
+		/// Konfiguruje mapowanie z encji WeightMeasurement na model WeightMeasurementDto.
+		/// Pomija pole ProgressToGoal, które jest obliczane osobno w kontrolerze.
+		/// </summary>
+		private void ConfigureMeasurementToDto()
+		{
 			CreateMap<WeightMeasurement, WeightMeasurementDto>()
 				.ForMember(dest => dest.ProgressToGoal, opt => opt.Ignore());
 		}
