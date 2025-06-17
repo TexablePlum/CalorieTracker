@@ -10,6 +10,7 @@ using CalorieTracker.Application.Auth.Interfaces;
 using CalorieTracker.Application.Interfaces;
 using CalorieTracker.Application.Recipes.Handlers;
 using CalorieTracker.Application.WeightMeasurements.Handlers;
+using CalorieTracker.Application.WeightMeasurements.Services;
 using CalorieTracker.Domain.Entities;
 using CalorieTracker.Domain.Services;
 using CalorieTracker.Infrastructure.Auth;
@@ -168,6 +169,7 @@ builder.Services.AddScoped<GetUserWeightMeasurementsHandler>();
 builder.Services.AddScoped<GetLatestWeightMeasurementHandler>();
 builder.Services.AddScoped<GetWeightMeasurementDetailsHandler>();
 builder.Services.AddScoped<WeightAnalysisService>();
+builder.Services.AddScoped<WeightMeasurementRecalculationService>();
 
 // Rejestracja generatora tokenów JWT.
 builder.Services.AddScoped<IJwtGenerator, JwtGenerator>();

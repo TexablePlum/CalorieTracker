@@ -1,58 +1,68 @@
 ﻿// Plik UpdateWeightMeasurementHandler.cs - implementacja handlera aktualizacji pomiaru wagi.
-// Odpowiada za aktualizację istniejącego pomiaru wagi i przeliczanie powiązanych danych.
+// Odpowiada za przetwarzanie komendy UpdateWeightMeasurementCommand i zarządzanie logiką biznesową związaną z modyfikacją istniejących pomiarów wagi.
 
 using CalorieTracker.Application.Interfaces;
 using CalorieTracker.Application.WeightMeasurements.Commands;
-using CalorieTracker.Domain.Entities;
+using CalorieTracker.Application.WeightMeasurements.Services;
 using CalorieTracker.Domain.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace CalorieTracker.Application.WeightMeasurements.Handlers
 {
 	/// <summary>
-	/// Handler do aktualizacji pomiaru masy ciała.
-	/// Zarządza procesem aktualizacji pomiaru wagi i automatycznie przelicza powiązane dane.
+	/// Handler odpowiedzialny za przetwarzanie komendy aktualizacji istniejącego pomiaru masy ciała.
+	/// Zarządza całą logiką związaną z walidacją uprawnień, modyfikacją danych oraz przeliczaniem powiązanych pomiarów.
+	/// Automatycznie aktualizuje kalkulowane pola w całej sekwencji pomiarów, które mogły zostać dotknięte zmianą.
 	/// </summary>
 	public class UpdateWeightMeasurementHandler
 	{
 		/// <summary>
-		/// Kontekst bazy danych umożliwiający dostęp do pomiarów wagi.
+		/// Kontekst bazy danych do zarządzania pomiarami wagi i profilami użytkowników.
 		/// </summary>
 		private readonly IAppDbContext _db;
 
 		/// <summary>
-		/// Serwis do analizy i przeliczania danych wagowych.
+		/// Serwis przeliczania pomiarów odpowiedzialny za aktualizację kalkulowanych pól w sekwencji pomiarów.
 		/// </summary>
-		private readonly WeightAnalysisService _weightAnalysis;
+		private readonly WeightMeasurementRecalculationService _recalculationService;
 
 		/// <summary>
-		/// Inicjalizuje nową instancję handlera.
+		/// Inicjalizuje nową instancję handlera aktualizacji pomiaru wagi.
 		/// </summary>
-		/// <param name="db">Kontekst bazy danych</param>
-		/// <param name="weightAnalysis">Serwis analizy wagowej</param>
-		public UpdateWeightMeasurementHandler(IAppDbContext db, WeightAnalysisService weightAnalysis)
+		/// <param name="db">Kontekst bazy danych <see cref="IAppDbContext"/>.</param>
+		/// <param name="recalculationService">Serwis przeliczania pomiarów <see cref="WeightMeasurementRecalculationService"/>.</param>
+		public UpdateWeightMeasurementHandler(
+			IAppDbContext db,
+			WeightMeasurementRecalculationService recalculationService)
 		{
 			_db = db;
-			_weightAnalysis = weightAnalysis;
+			_recalculationService = recalculationService;
 		}
 
 		/// <summary>
-		/// Obsługuje komendę aktualizacji pomiaru wagi.
-		/// Aktualizuje pomiar i przelicza powiązane dane jeśli to konieczne.
+		/// Przetwarza komendę aktualizacji istniejącego pomiaru masy ciała.
+		/// Wykonuje walidację uprawnień dostępu, aktualizuje dane pomiaru, przelicza wszystkie pomiary 
+		/// w zakresie dat, które mogły zostać dotknięte zmianą oraz aktualizuje profil użytkownika 
+		/// jeśli zmodyfikowany pomiar jest najnowszy.
 		/// </summary>
-		/// <param name="command">Komenda aktualizacji z nowymi danymi pomiaru</param>
-		/// <returns>True jeśli aktualizacja się powiodła, false jeśli nie znaleziono pomiaru lub profilu użytkownika</returns>
+		/// <param name="command">Komenda <see cref="UpdateWeightMeasurementCommand"/> zawierająca nowe dane pomiaru oraz identyfikatory.</param>
+		/// <returns>
+		/// Task asynchroniczny zwracający wartość boolowską:
+		/// - true - gdy aktualizacja przebiegła pomyślnie
+		/// - false - gdy pomiar nie został znaleziony, nie należy do użytkownika lub użytkownik nie ma profilu
+		/// </returns>
+		/// <remarks>
+		/// Metoda automatycznie przelicza wszystkie pomiary od najwcześniejszej z dat (starej i nowej),
+		/// aby zapewnić spójność kalkulowanych pól BMI i zmian wagi w całej sekwencji pomiarów.
+		/// </remarks>
 		public async Task<bool> Handle(UpdateWeightMeasurementCommand command)
 		{
 			var measurement = await _db.WeightMeasurements
 				.FirstOrDefaultAsync(w => w.Id == command.Id && w.UserId == command.UserId);
-
 			if (measurement is null) return false;
 
-			// Pobiera profil użytkownika
 			var userProfile = await _db.UserProfiles
 				.FirstOrDefaultAsync(p => p.UserId == command.UserId);
-
 			if (userProfile is null) return false;
 
 			var oldDate = measurement.MeasurementDate;
@@ -61,14 +71,12 @@ namespace CalorieTracker.Application.WeightMeasurements.Handlers
 			measurement.MeasurementDate = command.MeasurementDate;
 			measurement.WeightKg = command.WeightKg;
 			measurement.UpdatedAt = DateTime.UtcNow;
-
-			// Zapisuje zmiany
 			await _db.SaveChangesAsync();
 
 			// Przelicza pomiary które mogły być dotknięte zmianą
-			await RecalculateAffectedMeasurements(command.UserId, oldDate, command.MeasurementDate, userProfile);
+			await _recalculationService.RecalculateFromEarliest(command.UserId, oldDate, command.MeasurementDate, userProfile);
 
-			// Sprawdza czy to najnowszy pomiar - jeśli tak, aktualizuje profil
+			// Sprawdza czy to najnowszy pomiar
 			var latestMeasurement = await _db.WeightMeasurements
 				.Where(w => w.UserId == command.UserId)
 				.OrderByDescending(w => w.MeasurementDate)
@@ -81,49 +89,6 @@ namespace CalorieTracker.Application.WeightMeasurements.Handlers
 			}
 
 			return true;
-		}
-
-		/// <summary>
-		/// Przelicza pomiary dotknięte zmianą (od najwcześniejszej daty do końca).
-		/// </summary>
-		/// <param name="userId">Identyfikator użytkownika</param>
-		/// <param name="oldDate">Poprzednia data pomiaru</param>
-		/// <param name="newDate">Nowa data pomiaru</param>
-		/// <param name="userProfile">Profil użytkownika</param>
-		private async Task RecalculateAffectedMeasurements(string userId, DateOnly oldDate, DateOnly newDate, UserProfile userProfile)
-		{
-			// Znajduje najwcześniejszą datę
-			var earliestAffectedDate = oldDate < newDate ? oldDate : newDate;
-
-			// Pobiera wszystkie pomiary użytkownika w kolejności chronologicznej
-			var allMeasurements = await _db.WeightMeasurements
-				.Where(w => w.UserId == userId)
-				.OrderBy(w => w.MeasurementDate)
-				.ThenBy(w => w.CreatedAt)
-				.ToListAsync();
-
-			// Pomiary do przeliczenia (od najwcześniejszej daty)
-			var measurementsToRecalculate = allMeasurements
-				.Where(m => m.MeasurementDate >= earliestAffectedDate)
-				.ToList();
-
-			// Przelicza każdy pomiar
-			foreach (var measurementToRecalc in measurementsToRecalculate)
-			{
-				// Znajduje poprzedni pomiar (najnowszy przed tym pomiarem)
-				var previousMeasurement = allMeasurements
-					.Where(m => m.MeasurementDate < measurementToRecalc.MeasurementDate)
-					.OrderByDescending(m => m.MeasurementDate)
-					.ThenByDescending(m => m.CreatedAt)
-					.FirstOrDefault();
-
-				// Przelicza kalkulowane pola
-				_weightAnalysis.FillCalculatedFields(measurementToRecalc, userProfile, previousMeasurement);
-				measurementToRecalc.UpdatedAt = DateTime.UtcNow;
-			}
-
-			// Zapisuje wszystkie zmiany
-			await _db.SaveChangesAsync();
 		}
 	}
 }
