@@ -6,6 +6,11 @@ on:
   pull_request:
     branches: [ main ]
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   build-docs:
     runs-on: ubuntu-latest
@@ -33,14 +38,10 @@ jobs:
         docfx docfx.json
         
     - name: Upload documentation artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-pages-artifact@v3
       with:
-        name: documentation
         path: docs/_site/
         
     - name: Deploy to GitHub Pages
       if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: docs/_site
+      uses: actions/deploy-pages@v4
