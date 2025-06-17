@@ -1,0 +1,186 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Application.Auth.Interfaces.IEmailSender
+  commentId: T:CalorieTracker.Application.Auth.Interfaces.IEmailSender
+  id: IEmailSender
+  parent: CalorieTracker.Application.Auth.Interfaces
+  children:
+  - CalorieTracker.Application.Auth.Interfaces.IEmailSender.SendAsync(System.String,System.String,System.String)
+  langs:
+  - csharp
+  - vb
+  name: IEmailSender
+  nameWithType: IEmailSender
+  fullName: CalorieTracker.Application.Auth.Interfaces.IEmailSender
+  type: Interface
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Interfaces/IEmailSender.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: IEmailSender
+    path: ../src/CalorieTracker.Application/Interfaces/IEmailSender.cs
+    startLine: 15
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Auth.Interfaces
+  summary: >-
+    Interfejs serwisu odpowiedzialnego za wysyłkę wiadomości email.
+
+    Definiuje podstawową operację wysyłki wiadomości w systemie.
+  example: []
+  syntax:
+    content: public interface IEmailSender
+    content.vb: Public Interface IEmailSender
+- uid: CalorieTracker.Application.Auth.Interfaces.IEmailSender.SendAsync(System.String,System.String,System.String)
+  commentId: M:CalorieTracker.Application.Auth.Interfaces.IEmailSender.SendAsync(System.String,System.String,System.String)
+  id: SendAsync(System.String,System.String,System.String)
+  parent: CalorieTracker.Application.Auth.Interfaces.IEmailSender
+  langs:
+  - csharp
+  - vb
+  name: SendAsync(string, string, string)
+  nameWithType: IEmailSender.SendAsync(string, string, string)
+  fullName: CalorieTracker.Application.Auth.Interfaces.IEmailSender.SendAsync(string, string, string)
+  type: Method
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Interfaces/IEmailSender.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: SendAsync
+    path: ../src/CalorieTracker.Application/Interfaces/IEmailSender.cs
+    startLine: 25
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Auth.Interfaces
+  summary: Wysyła asynchronicznie wiadomość email do wskazanego odbiorcy.
+  example: []
+  syntax:
+    content: Task SendAsync(string to, string subject, string bodyHtml)
+    parameters:
+    - id: to
+      type: System.String
+      description: Adres email odbiorcy w formacie zgodnym z RFC 5322 (np. user@example.com).
+    - id: subject
+      type: System.String
+      description: Temat wiadomości email. Powinien być zwięzły i opisowy.
+    - id: bodyHtml
+      type: System.String
+      description: Treść wiadomości w formacie HTML. Obsługuje pełne znaczniki HTML.
+    return:
+      type: System.Threading.Tasks.Task
+      description: Task reprezentujący operację asynchroniczną.
+    content.vb: Function SendAsync([to] As String, subject As String, bodyHtml As String) As Task
+  overload: CalorieTracker.Application.Auth.Interfaces.IEmailSender.SendAsync*
+  nameWithType.vb: IEmailSender.SendAsync(String, String, String)
+  fullName.vb: CalorieTracker.Application.Auth.Interfaces.IEmailSender.SendAsync(String, String, String)
+  name.vb: SendAsync(String, String, String)
+references:
+- uid: CalorieTracker.Application.Auth.Interfaces
+  commentId: N:CalorieTracker.Application.Auth.Interfaces
+  href: CalorieTracker.html
+  name: CalorieTracker.Application.Auth.Interfaces
+  nameWithType: CalorieTracker.Application.Auth.Interfaces
+  fullName: CalorieTracker.Application.Auth.Interfaces
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth
+    name: Auth
+    href: CalorieTracker.Application.Auth.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth.Interfaces
+    name: Interfaces
+    href: CalorieTracker.Application.Auth.Interfaces.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth
+    name: Auth
+    href: CalorieTracker.Application.Auth.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth.Interfaces
+    name: Interfaces
+    href: CalorieTracker.Application.Auth.Interfaces.html
+- uid: CalorieTracker.Application.Auth.Interfaces.IEmailSender.SendAsync*
+  commentId: Overload:CalorieTracker.Application.Auth.Interfaces.IEmailSender.SendAsync
+  href: CalorieTracker.Application.Auth.Interfaces.IEmailSender.html#CalorieTracker_Application_Auth_Interfaces_IEmailSender_SendAsync_System_String_System_String_System_String_
+  name: SendAsync
+  nameWithType: IEmailSender.SendAsync
+  fullName: CalorieTracker.Application.Auth.Interfaces.IEmailSender.SendAsync
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

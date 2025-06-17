@@ -1,0 +1,848 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Application.Interfaces.IAppDbContext
+  commentId: T:CalorieTracker.Application.Interfaces.IAppDbContext
+  id: IAppDbContext
+  parent: CalorieTracker.Application.Interfaces
+  children:
+  - CalorieTracker.Application.Interfaces.IAppDbContext.EmailConfirmations
+  - CalorieTracker.Application.Interfaces.IAppDbContext.PasswordResets
+  - CalorieTracker.Application.Interfaces.IAppDbContext.Products
+  - CalorieTracker.Application.Interfaces.IAppDbContext.RecipeIngredients
+  - CalorieTracker.Application.Interfaces.IAppDbContext.Recipes
+  - CalorieTracker.Application.Interfaces.IAppDbContext.RefreshTokens
+  - CalorieTracker.Application.Interfaces.IAppDbContext.SaveChangesAsync(System.Threading.CancellationToken)
+  - CalorieTracker.Application.Interfaces.IAppDbContext.UserProfiles
+  - CalorieTracker.Application.Interfaces.IAppDbContext.WeightMeasurements
+  langs:
+  - csharp
+  - vb
+  name: IAppDbContext
+  nameWithType: IAppDbContext
+  fullName: CalorieTracker.Application.Interfaces.IAppDbContext
+  type: Interface
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Interfaces/IAppDbContext.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: IAppDbContext
+    path: ../src/CalorieTracker.Application/Interfaces/IAppDbContext.cs
+    startLine: 12
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Interfaces
+  summary: >-
+    Główny interfejs kontekstu bazy danych aplikacji.
+
+    Definiuje wszystkie dostępne kolekcje encji oraz podstawowe operacje na bazie danych.
+  example: []
+  syntax:
+    content: public interface IAppDbContext
+    content.vb: Public Interface IAppDbContext
+- uid: CalorieTracker.Application.Interfaces.IAppDbContext.RefreshTokens
+  commentId: P:CalorieTracker.Application.Interfaces.IAppDbContext.RefreshTokens
+  id: RefreshTokens
+  parent: CalorieTracker.Application.Interfaces.IAppDbContext
+  langs:
+  - csharp
+  - vb
+  name: RefreshTokens
+  nameWithType: IAppDbContext.RefreshTokens
+  fullName: CalorieTracker.Application.Interfaces.IAppDbContext.RefreshTokens
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Interfaces/IAppDbContext.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: RefreshTokens
+    path: ../src/CalorieTracker.Application/Interfaces/IAppDbContext.cs
+    startLine: 17
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Interfaces
+  summary: Kolekcja tokenów odświeżających używanych w procesie uwierzytelniania.
+  example: []
+  syntax:
+    content: DbSet<RefreshToken> RefreshTokens { get; }
+    parameters: []
+    return:
+      type: Microsoft.EntityFrameworkCore.DbSet{CalorieTracker.Domain.Entities.RefreshToken}
+    content.vb: ReadOnly Property RefreshTokens As DbSet(Of RefreshToken)
+  overload: CalorieTracker.Application.Interfaces.IAppDbContext.RefreshTokens*
+- uid: CalorieTracker.Application.Interfaces.IAppDbContext.EmailConfirmations
+  commentId: P:CalorieTracker.Application.Interfaces.IAppDbContext.EmailConfirmations
+  id: EmailConfirmations
+  parent: CalorieTracker.Application.Interfaces.IAppDbContext
+  langs:
+  - csharp
+  - vb
+  name: EmailConfirmations
+  nameWithType: IAppDbContext.EmailConfirmations
+  fullName: CalorieTracker.Application.Interfaces.IAppDbContext.EmailConfirmations
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Interfaces/IAppDbContext.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: EmailConfirmations
+    path: ../src/CalorieTracker.Application/Interfaces/IAppDbContext.cs
+    startLine: 22
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Interfaces
+  summary: Kolekcja kodów potwierdzających email użytkownika.
+  example: []
+  syntax:
+    content: DbSet<EmailConfirmation> EmailConfirmations { get; set; }
+    parameters: []
+    return:
+      type: Microsoft.EntityFrameworkCore.DbSet{CalorieTracker.Domain.Entities.EmailConfirmation}
+    content.vb: Property EmailConfirmations As DbSet(Of EmailConfirmation)
+  overload: CalorieTracker.Application.Interfaces.IAppDbContext.EmailConfirmations*
+- uid: CalorieTracker.Application.Interfaces.IAppDbContext.PasswordResets
+  commentId: P:CalorieTracker.Application.Interfaces.IAppDbContext.PasswordResets
+  id: PasswordResets
+  parent: CalorieTracker.Application.Interfaces.IAppDbContext
+  langs:
+  - csharp
+  - vb
+  name: PasswordResets
+  nameWithType: IAppDbContext.PasswordResets
+  fullName: CalorieTracker.Application.Interfaces.IAppDbContext.PasswordResets
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Interfaces/IAppDbContext.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: PasswordResets
+    path: ../src/CalorieTracker.Application/Interfaces/IAppDbContext.cs
+    startLine: 27
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Interfaces
+  summary: Kolekcja kodów resetujących hasło użytkownika.
+  example: []
+  syntax:
+    content: DbSet<PasswordReset> PasswordResets { get; set; }
+    parameters: []
+    return:
+      type: Microsoft.EntityFrameworkCore.DbSet{CalorieTracker.Domain.Entities.PasswordReset}
+    content.vb: Property PasswordResets As DbSet(Of PasswordReset)
+  overload: CalorieTracker.Application.Interfaces.IAppDbContext.PasswordResets*
+- uid: CalorieTracker.Application.Interfaces.IAppDbContext.UserProfiles
+  commentId: P:CalorieTracker.Application.Interfaces.IAppDbContext.UserProfiles
+  id: UserProfiles
+  parent: CalorieTracker.Application.Interfaces.IAppDbContext
+  langs:
+  - csharp
+  - vb
+  name: UserProfiles
+  nameWithType: IAppDbContext.UserProfiles
+  fullName: CalorieTracker.Application.Interfaces.IAppDbContext.UserProfiles
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Interfaces/IAppDbContext.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: UserProfiles
+    path: ../src/CalorieTracker.Application/Interfaces/IAppDbContext.cs
+    startLine: 32
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Interfaces
+  summary: Kolekcja profili użytkowników zawierających dodatkowe dane.
+  example: []
+  syntax:
+    content: DbSet<UserProfile> UserProfiles { get; set; }
+    parameters: []
+    return:
+      type: Microsoft.EntityFrameworkCore.DbSet{CalorieTracker.Domain.Entities.UserProfile}
+    content.vb: Property UserProfiles As DbSet(Of UserProfile)
+  overload: CalorieTracker.Application.Interfaces.IAppDbContext.UserProfiles*
+- uid: CalorieTracker.Application.Interfaces.IAppDbContext.Products
+  commentId: P:CalorieTracker.Application.Interfaces.IAppDbContext.Products
+  id: Products
+  parent: CalorieTracker.Application.Interfaces.IAppDbContext
+  langs:
+  - csharp
+  - vb
+  name: Products
+  nameWithType: IAppDbContext.Products
+  fullName: CalorieTracker.Application.Interfaces.IAppDbContext.Products
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Interfaces/IAppDbContext.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Products
+    path: ../src/CalorieTracker.Application/Interfaces/IAppDbContext.cs
+    startLine: 37
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Interfaces
+  summary: Kolekcja produktów dostępnych w aplikacji.
+  example: []
+  syntax:
+    content: DbSet<Product> Products { get; set; }
+    parameters: []
+    return:
+      type: Microsoft.EntityFrameworkCore.DbSet{CalorieTracker.Domain.Entities.Product}
+    content.vb: Property Products As DbSet(Of Product)
+  overload: CalorieTracker.Application.Interfaces.IAppDbContext.Products*
+- uid: CalorieTracker.Application.Interfaces.IAppDbContext.Recipes
+  commentId: P:CalorieTracker.Application.Interfaces.IAppDbContext.Recipes
+  id: Recipes
+  parent: CalorieTracker.Application.Interfaces.IAppDbContext
+  langs:
+  - csharp
+  - vb
+  name: Recipes
+  nameWithType: IAppDbContext.Recipes
+  fullName: CalorieTracker.Application.Interfaces.IAppDbContext.Recipes
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Interfaces/IAppDbContext.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Recipes
+    path: ../src/CalorieTracker.Application/Interfaces/IAppDbContext.cs
+    startLine: 42
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Interfaces
+  summary: Kolekcja przepisów stworzonych przez użytkowników.
+  example: []
+  syntax:
+    content: DbSet<Recipe> Recipes { get; set; }
+    parameters: []
+    return:
+      type: Microsoft.EntityFrameworkCore.DbSet{CalorieTracker.Domain.Entities.Recipe}
+    content.vb: Property Recipes As DbSet(Of Recipe)
+  overload: CalorieTracker.Application.Interfaces.IAppDbContext.Recipes*
+- uid: CalorieTracker.Application.Interfaces.IAppDbContext.RecipeIngredients
+  commentId: P:CalorieTracker.Application.Interfaces.IAppDbContext.RecipeIngredients
+  id: RecipeIngredients
+  parent: CalorieTracker.Application.Interfaces.IAppDbContext
+  langs:
+  - csharp
+  - vb
+  name: RecipeIngredients
+  nameWithType: IAppDbContext.RecipeIngredients
+  fullName: CalorieTracker.Application.Interfaces.IAppDbContext.RecipeIngredients
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Interfaces/IAppDbContext.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: RecipeIngredients
+    path: ../src/CalorieTracker.Application/Interfaces/IAppDbContext.cs
+    startLine: 47
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Interfaces
+  summary: Kolekcja składników przepisów (tabela łącząca).
+  example: []
+  syntax:
+    content: DbSet<RecipeIngredient> RecipeIngredients { get; set; }
+    parameters: []
+    return:
+      type: Microsoft.EntityFrameworkCore.DbSet{CalorieTracker.Domain.Entities.RecipeIngredient}
+    content.vb: Property RecipeIngredients As DbSet(Of RecipeIngredient)
+  overload: CalorieTracker.Application.Interfaces.IAppDbContext.RecipeIngredients*
+- uid: CalorieTracker.Application.Interfaces.IAppDbContext.WeightMeasurements
+  commentId: P:CalorieTracker.Application.Interfaces.IAppDbContext.WeightMeasurements
+  id: WeightMeasurements
+  parent: CalorieTracker.Application.Interfaces.IAppDbContext
+  langs:
+  - csharp
+  - vb
+  name: WeightMeasurements
+  nameWithType: IAppDbContext.WeightMeasurements
+  fullName: CalorieTracker.Application.Interfaces.IAppDbContext.WeightMeasurements
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Interfaces/IAppDbContext.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: WeightMeasurements
+    path: ../src/CalorieTracker.Application/Interfaces/IAppDbContext.cs
+    startLine: 52
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Interfaces
+  summary: Kolekcja pomiarów wagi użytkowników.
+  example: []
+  syntax:
+    content: DbSet<WeightMeasurement> WeightMeasurements { get; set; }
+    parameters: []
+    return:
+      type: Microsoft.EntityFrameworkCore.DbSet{CalorieTracker.Domain.Entities.WeightMeasurement}
+    content.vb: Property WeightMeasurements As DbSet(Of WeightMeasurement)
+  overload: CalorieTracker.Application.Interfaces.IAppDbContext.WeightMeasurements*
+- uid: CalorieTracker.Application.Interfaces.IAppDbContext.SaveChangesAsync(System.Threading.CancellationToken)
+  commentId: M:CalorieTracker.Application.Interfaces.IAppDbContext.SaveChangesAsync(System.Threading.CancellationToken)
+  id: SaveChangesAsync(System.Threading.CancellationToken)
+  parent: CalorieTracker.Application.Interfaces.IAppDbContext
+  langs:
+  - csharp
+  - vb
+  name: SaveChangesAsync(CancellationToken)
+  nameWithType: IAppDbContext.SaveChangesAsync(CancellationToken)
+  fullName: CalorieTracker.Application.Interfaces.IAppDbContext.SaveChangesAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Interfaces/IAppDbContext.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: SaveChangesAsync
+    path: ../src/CalorieTracker.Application/Interfaces/IAppDbContext.cs
+    startLine: 59
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Interfaces
+  summary: Asynchronicznie zapisuje wszystkie zmiany w kontekście do bazy danych.
+  example: []
+  syntax:
+    content: Task<int> SaveChangesAsync(CancellationToken ct = default)
+    parameters:
+    - id: ct
+      type: System.Threading.CancellationToken
+      description: Token anulowania do bezpiecznego przerwania operacji.
+    return:
+      type: System.Threading.Tasks.Task{System.Int32}
+      description: Liczba zmodyfikowanych encji w bazie danych.
+    content.vb: Function SaveChangesAsync(ct As CancellationToken = Nothing) As Task(Of Integer)
+  overload: CalorieTracker.Application.Interfaces.IAppDbContext.SaveChangesAsync*
+references:
+- uid: CalorieTracker.Application.Interfaces
+  commentId: N:CalorieTracker.Application.Interfaces
+  href: CalorieTracker.html
+  name: CalorieTracker.Application.Interfaces
+  nameWithType: CalorieTracker.Application.Interfaces
+  fullName: CalorieTracker.Application.Interfaces
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Interfaces
+    name: Interfaces
+    href: CalorieTracker.Application.Interfaces.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Interfaces
+    name: Interfaces
+    href: CalorieTracker.Application.Interfaces.html
+- uid: CalorieTracker.Application.Interfaces.IAppDbContext.RefreshTokens*
+  commentId: Overload:CalorieTracker.Application.Interfaces.IAppDbContext.RefreshTokens
+  href: CalorieTracker.Application.Interfaces.IAppDbContext.html#CalorieTracker_Application_Interfaces_IAppDbContext_RefreshTokens
+  name: RefreshTokens
+  nameWithType: IAppDbContext.RefreshTokens
+  fullName: CalorieTracker.Application.Interfaces.IAppDbContext.RefreshTokens
+- uid: Microsoft.EntityFrameworkCore.DbSet{CalorieTracker.Domain.Entities.RefreshToken}
+  commentId: T:Microsoft.EntityFrameworkCore.DbSet{CalorieTracker.Domain.Entities.RefreshToken}
+  parent: Microsoft.EntityFrameworkCore
+  definition: Microsoft.EntityFrameworkCore.DbSet`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  name: DbSet<RefreshToken>
+  nameWithType: DbSet<RefreshToken>
+  fullName: Microsoft.EntityFrameworkCore.DbSet<CalorieTracker.Domain.Entities.RefreshToken>
+  nameWithType.vb: DbSet(Of RefreshToken)
+  fullName.vb: Microsoft.EntityFrameworkCore.DbSet(Of CalorieTracker.Domain.Entities.RefreshToken)
+  name.vb: DbSet(Of RefreshToken)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: <
+  - uid: CalorieTracker.Domain.Entities.RefreshToken
+    name: RefreshToken
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CalorieTracker.Domain.Entities.RefreshToken
+    name: RefreshToken
+  - name: )
+- uid: Microsoft.EntityFrameworkCore.DbSet`1
+  commentId: T:Microsoft.EntityFrameworkCore.DbSet`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  name: DbSet<TEntity>
+  nameWithType: DbSet<TEntity>
+  fullName: Microsoft.EntityFrameworkCore.DbSet<TEntity>
+  nameWithType.vb: DbSet(Of TEntity)
+  fullName.vb: Microsoft.EntityFrameworkCore.DbSet(Of TEntity)
+  name.vb: DbSet(Of TEntity)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: <
+  - name: TEntity
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TEntity
+  - name: )
+- uid: Microsoft.EntityFrameworkCore
+  commentId: N:Microsoft.EntityFrameworkCore
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.EntityFrameworkCore
+  nameWithType: Microsoft.EntityFrameworkCore
+  fullName: Microsoft.EntityFrameworkCore
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.EntityFrameworkCore
+    name: EntityFrameworkCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.EntityFrameworkCore
+    name: EntityFrameworkCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore
+- uid: CalorieTracker.Application.Interfaces.IAppDbContext.EmailConfirmations*
+  commentId: Overload:CalorieTracker.Application.Interfaces.IAppDbContext.EmailConfirmations
+  href: CalorieTracker.Application.Interfaces.IAppDbContext.html#CalorieTracker_Application_Interfaces_IAppDbContext_EmailConfirmations
+  name: EmailConfirmations
+  nameWithType: IAppDbContext.EmailConfirmations
+  fullName: CalorieTracker.Application.Interfaces.IAppDbContext.EmailConfirmations
+- uid: Microsoft.EntityFrameworkCore.DbSet{CalorieTracker.Domain.Entities.EmailConfirmation}
+  commentId: T:Microsoft.EntityFrameworkCore.DbSet{CalorieTracker.Domain.Entities.EmailConfirmation}
+  parent: Microsoft.EntityFrameworkCore
+  definition: Microsoft.EntityFrameworkCore.DbSet`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  name: DbSet<EmailConfirmation>
+  nameWithType: DbSet<EmailConfirmation>
+  fullName: Microsoft.EntityFrameworkCore.DbSet<CalorieTracker.Domain.Entities.EmailConfirmation>
+  nameWithType.vb: DbSet(Of EmailConfirmation)
+  fullName.vb: Microsoft.EntityFrameworkCore.DbSet(Of CalorieTracker.Domain.Entities.EmailConfirmation)
+  name.vb: DbSet(Of EmailConfirmation)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: <
+  - uid: CalorieTracker.Domain.Entities.EmailConfirmation
+    name: EmailConfirmation
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CalorieTracker.Domain.Entities.EmailConfirmation
+    name: EmailConfirmation
+  - name: )
+- uid: CalorieTracker.Application.Interfaces.IAppDbContext.PasswordResets*
+  commentId: Overload:CalorieTracker.Application.Interfaces.IAppDbContext.PasswordResets
+  href: CalorieTracker.Application.Interfaces.IAppDbContext.html#CalorieTracker_Application_Interfaces_IAppDbContext_PasswordResets
+  name: PasswordResets
+  nameWithType: IAppDbContext.PasswordResets
+  fullName: CalorieTracker.Application.Interfaces.IAppDbContext.PasswordResets
+- uid: Microsoft.EntityFrameworkCore.DbSet{CalorieTracker.Domain.Entities.PasswordReset}
+  commentId: T:Microsoft.EntityFrameworkCore.DbSet{CalorieTracker.Domain.Entities.PasswordReset}
+  parent: Microsoft.EntityFrameworkCore
+  definition: Microsoft.EntityFrameworkCore.DbSet`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  name: DbSet<PasswordReset>
+  nameWithType: DbSet<PasswordReset>
+  fullName: Microsoft.EntityFrameworkCore.DbSet<CalorieTracker.Domain.Entities.PasswordReset>
+  nameWithType.vb: DbSet(Of PasswordReset)
+  fullName.vb: Microsoft.EntityFrameworkCore.DbSet(Of CalorieTracker.Domain.Entities.PasswordReset)
+  name.vb: DbSet(Of PasswordReset)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: <
+  - uid: CalorieTracker.Domain.Entities.PasswordReset
+    name: PasswordReset
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CalorieTracker.Domain.Entities.PasswordReset
+    name: PasswordReset
+  - name: )
+- uid: CalorieTracker.Application.Interfaces.IAppDbContext.UserProfiles*
+  commentId: Overload:CalorieTracker.Application.Interfaces.IAppDbContext.UserProfiles
+  href: CalorieTracker.Application.Interfaces.IAppDbContext.html#CalorieTracker_Application_Interfaces_IAppDbContext_UserProfiles
+  name: UserProfiles
+  nameWithType: IAppDbContext.UserProfiles
+  fullName: CalorieTracker.Application.Interfaces.IAppDbContext.UserProfiles
+- uid: Microsoft.EntityFrameworkCore.DbSet{CalorieTracker.Domain.Entities.UserProfile}
+  commentId: T:Microsoft.EntityFrameworkCore.DbSet{CalorieTracker.Domain.Entities.UserProfile}
+  parent: Microsoft.EntityFrameworkCore
+  definition: Microsoft.EntityFrameworkCore.DbSet`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  name: DbSet<UserProfile>
+  nameWithType: DbSet<UserProfile>
+  fullName: Microsoft.EntityFrameworkCore.DbSet<CalorieTracker.Domain.Entities.UserProfile>
+  nameWithType.vb: DbSet(Of UserProfile)
+  fullName.vb: Microsoft.EntityFrameworkCore.DbSet(Of CalorieTracker.Domain.Entities.UserProfile)
+  name.vb: DbSet(Of UserProfile)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: <
+  - uid: CalorieTracker.Domain.Entities.UserProfile
+    name: UserProfile
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CalorieTracker.Domain.Entities.UserProfile
+    name: UserProfile
+  - name: )
+- uid: CalorieTracker.Application.Interfaces.IAppDbContext.Products*
+  commentId: Overload:CalorieTracker.Application.Interfaces.IAppDbContext.Products
+  href: CalorieTracker.Application.Interfaces.IAppDbContext.html#CalorieTracker_Application_Interfaces_IAppDbContext_Products
+  name: Products
+  nameWithType: IAppDbContext.Products
+  fullName: CalorieTracker.Application.Interfaces.IAppDbContext.Products
+- uid: Microsoft.EntityFrameworkCore.DbSet{CalorieTracker.Domain.Entities.Product}
+  commentId: T:Microsoft.EntityFrameworkCore.DbSet{CalorieTracker.Domain.Entities.Product}
+  parent: Microsoft.EntityFrameworkCore
+  definition: Microsoft.EntityFrameworkCore.DbSet`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  name: DbSet<Product>
+  nameWithType: DbSet<Product>
+  fullName: Microsoft.EntityFrameworkCore.DbSet<CalorieTracker.Domain.Entities.Product>
+  nameWithType.vb: DbSet(Of Product)
+  fullName.vb: Microsoft.EntityFrameworkCore.DbSet(Of CalorieTracker.Domain.Entities.Product)
+  name.vb: DbSet(Of Product)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: <
+  - uid: CalorieTracker.Domain.Entities.Product
+    name: Product
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CalorieTracker.Domain.Entities.Product
+    name: Product
+  - name: )
+- uid: CalorieTracker.Application.Interfaces.IAppDbContext.Recipes*
+  commentId: Overload:CalorieTracker.Application.Interfaces.IAppDbContext.Recipes
+  href: CalorieTracker.Application.Interfaces.IAppDbContext.html#CalorieTracker_Application_Interfaces_IAppDbContext_Recipes
+  name: Recipes
+  nameWithType: IAppDbContext.Recipes
+  fullName: CalorieTracker.Application.Interfaces.IAppDbContext.Recipes
+- uid: Microsoft.EntityFrameworkCore.DbSet{CalorieTracker.Domain.Entities.Recipe}
+  commentId: T:Microsoft.EntityFrameworkCore.DbSet{CalorieTracker.Domain.Entities.Recipe}
+  parent: Microsoft.EntityFrameworkCore
+  definition: Microsoft.EntityFrameworkCore.DbSet`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  name: DbSet<Recipe>
+  nameWithType: DbSet<Recipe>
+  fullName: Microsoft.EntityFrameworkCore.DbSet<CalorieTracker.Domain.Entities.Recipe>
+  nameWithType.vb: DbSet(Of Recipe)
+  fullName.vb: Microsoft.EntityFrameworkCore.DbSet(Of CalorieTracker.Domain.Entities.Recipe)
+  name.vb: DbSet(Of Recipe)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: <
+  - uid: CalorieTracker.Domain.Entities.Recipe
+    name: Recipe
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CalorieTracker.Domain.Entities.Recipe
+    name: Recipe
+  - name: )
+- uid: CalorieTracker.Application.Interfaces.IAppDbContext.RecipeIngredients*
+  commentId: Overload:CalorieTracker.Application.Interfaces.IAppDbContext.RecipeIngredients
+  href: CalorieTracker.Application.Interfaces.IAppDbContext.html#CalorieTracker_Application_Interfaces_IAppDbContext_RecipeIngredients
+  name: RecipeIngredients
+  nameWithType: IAppDbContext.RecipeIngredients
+  fullName: CalorieTracker.Application.Interfaces.IAppDbContext.RecipeIngredients
+- uid: Microsoft.EntityFrameworkCore.DbSet{CalorieTracker.Domain.Entities.RecipeIngredient}
+  commentId: T:Microsoft.EntityFrameworkCore.DbSet{CalorieTracker.Domain.Entities.RecipeIngredient}
+  parent: Microsoft.EntityFrameworkCore
+  definition: Microsoft.EntityFrameworkCore.DbSet`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  name: DbSet<RecipeIngredient>
+  nameWithType: DbSet<RecipeIngredient>
+  fullName: Microsoft.EntityFrameworkCore.DbSet<CalorieTracker.Domain.Entities.RecipeIngredient>
+  nameWithType.vb: DbSet(Of RecipeIngredient)
+  fullName.vb: Microsoft.EntityFrameworkCore.DbSet(Of CalorieTracker.Domain.Entities.RecipeIngredient)
+  name.vb: DbSet(Of RecipeIngredient)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: <
+  - uid: CalorieTracker.Domain.Entities.RecipeIngredient
+    name: RecipeIngredient
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CalorieTracker.Domain.Entities.RecipeIngredient
+    name: RecipeIngredient
+  - name: )
+- uid: CalorieTracker.Application.Interfaces.IAppDbContext.WeightMeasurements*
+  commentId: Overload:CalorieTracker.Application.Interfaces.IAppDbContext.WeightMeasurements
+  href: CalorieTracker.Application.Interfaces.IAppDbContext.html#CalorieTracker_Application_Interfaces_IAppDbContext_WeightMeasurements
+  name: WeightMeasurements
+  nameWithType: IAppDbContext.WeightMeasurements
+  fullName: CalorieTracker.Application.Interfaces.IAppDbContext.WeightMeasurements
+- uid: Microsoft.EntityFrameworkCore.DbSet{CalorieTracker.Domain.Entities.WeightMeasurement}
+  commentId: T:Microsoft.EntityFrameworkCore.DbSet{CalorieTracker.Domain.Entities.WeightMeasurement}
+  parent: Microsoft.EntityFrameworkCore
+  definition: Microsoft.EntityFrameworkCore.DbSet`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  name: DbSet<WeightMeasurement>
+  nameWithType: DbSet<WeightMeasurement>
+  fullName: Microsoft.EntityFrameworkCore.DbSet<CalorieTracker.Domain.Entities.WeightMeasurement>
+  nameWithType.vb: DbSet(Of WeightMeasurement)
+  fullName.vb: Microsoft.EntityFrameworkCore.DbSet(Of CalorieTracker.Domain.Entities.WeightMeasurement)
+  name.vb: DbSet(Of WeightMeasurement)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: <
+  - uid: CalorieTracker.Domain.Entities.WeightMeasurement
+    name: WeightMeasurement
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.DbSet`1
+    name: DbSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CalorieTracker.Domain.Entities.WeightMeasurement
+    name: WeightMeasurement
+  - name: )
+- uid: CalorieTracker.Application.Interfaces.IAppDbContext.SaveChangesAsync*
+  commentId: Overload:CalorieTracker.Application.Interfaces.IAppDbContext.SaveChangesAsync
+  href: CalorieTracker.Application.Interfaces.IAppDbContext.html#CalorieTracker_Application_Interfaces_IAppDbContext_SaveChangesAsync_System_Threading_CancellationToken_
+  name: SaveChangesAsync
+  nameWithType: IAppDbContext.SaveChangesAsync
+  fullName: CalorieTracker.Application.Interfaces.IAppDbContext.SaveChangesAsync
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{System.Int32}
+  commentId: T:System.Threading.Tasks.Task{System.Int32}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<int>
+  nameWithType: Task<int>
+  fullName: System.Threading.Tasks.Task<int>
+  nameWithType.vb: Task(Of Integer)
+  fullName.vb: System.Threading.Tasks.Task(Of Integer)
+  name.vb: Task(Of Integer)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

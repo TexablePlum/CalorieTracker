@@ -1,0 +1,603 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Application.Recipes.Handlers.GetUserRecipesHandler
+  commentId: T:CalorieTracker.Application.Recipes.Handlers.GetUserRecipesHandler
+  id: GetUserRecipesHandler
+  parent: CalorieTracker.Application.Recipes.Handlers
+  children:
+  - CalorieTracker.Application.Recipes.Handlers.GetUserRecipesHandler.#ctor(CalorieTracker.Application.Interfaces.IAppDbContext)
+  - CalorieTracker.Application.Recipes.Handlers.GetUserRecipesHandler.Handle(CalorieTracker.Application.Recipes.Queries.GetUserRecipesQuery)
+  langs:
+  - csharp
+  - vb
+  name: GetUserRecipesHandler
+  nameWithType: GetUserRecipesHandler
+  fullName: CalorieTracker.Application.Recipes.Handlers.GetUserRecipesHandler
+  type: Class
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Recipes/Handlers/GetUserRecipesHandler.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: GetUserRecipesHandler
+    path: ../src/CalorieTracker.Application/Recipes/Handlers/GetUserRecipesHandler.cs
+    startLine: 14
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Recipes.Handlers
+  summary: >-
+    Handler odpowiedzialny za przetwarzanie zapytania o przepisy konkretnego użytkownika.
+
+    Zapewnia pobieranie przepisów z pełnymi zależnościami z uwzględnieniem paginacji.
+  example: []
+  syntax:
+    content: public class GetUserRecipesHandler
+    content.vb: Public Class GetUserRecipesHandler
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: CalorieTracker.Application.Recipes.Handlers.GetUserRecipesHandler.#ctor(CalorieTracker.Application.Interfaces.IAppDbContext)
+  commentId: M:CalorieTracker.Application.Recipes.Handlers.GetUserRecipesHandler.#ctor(CalorieTracker.Application.Interfaces.IAppDbContext)
+  id: '#ctor(CalorieTracker.Application.Interfaces.IAppDbContext)'
+  parent: CalorieTracker.Application.Recipes.Handlers.GetUserRecipesHandler
+  langs:
+  - csharp
+  - vb
+  name: GetUserRecipesHandler(IAppDbContext)
+  nameWithType: GetUserRecipesHandler.GetUserRecipesHandler(IAppDbContext)
+  fullName: CalorieTracker.Application.Recipes.Handlers.GetUserRecipesHandler.GetUserRecipesHandler(CalorieTracker.Application.Interfaces.IAppDbContext)
+  type: Constructor
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Recipes/Handlers/GetUserRecipesHandler.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: .ctor
+    path: ../src/CalorieTracker.Application/Recipes/Handlers/GetUserRecipesHandler.cs
+    startLine: 26
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Recipes.Handlers
+  summary: Inicjalizuje nową instancję handlera pobierania przepisów użytkownika.
+  example: []
+  syntax:
+    content: public GetUserRecipesHandler(IAppDbContext db)
+    parameters:
+    - id: db
+      type: CalorieTracker.Application.Interfaces.IAppDbContext
+      description: Kontekst bazy danych implementujący IAppDbContext
+    content.vb: Public Sub New(db As IAppDbContext)
+  overload: CalorieTracker.Application.Recipes.Handlers.GetUserRecipesHandler.#ctor*
+  nameWithType.vb: GetUserRecipesHandler.New(IAppDbContext)
+  fullName.vb: CalorieTracker.Application.Recipes.Handlers.GetUserRecipesHandler.New(CalorieTracker.Application.Interfaces.IAppDbContext)
+  name.vb: New(IAppDbContext)
+- uid: CalorieTracker.Application.Recipes.Handlers.GetUserRecipesHandler.Handle(CalorieTracker.Application.Recipes.Queries.GetUserRecipesQuery)
+  commentId: M:CalorieTracker.Application.Recipes.Handlers.GetUserRecipesHandler.Handle(CalorieTracker.Application.Recipes.Queries.GetUserRecipesQuery)
+  id: Handle(CalorieTracker.Application.Recipes.Queries.GetUserRecipesQuery)
+  parent: CalorieTracker.Application.Recipes.Handlers.GetUserRecipesHandler
+  langs:
+  - csharp
+  - vb
+  name: Handle(GetUserRecipesQuery)
+  nameWithType: GetUserRecipesHandler.Handle(GetUserRecipesQuery)
+  fullName: CalorieTracker.Application.Recipes.Handlers.GetUserRecipesHandler.Handle(CalorieTracker.Application.Recipes.Queries.GetUserRecipesQuery)
+  type: Method
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Recipes/Handlers/GetUserRecipesHandler.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Handle
+    path: ../src/CalorieTracker.Application/Recipes/Handlers/GetUserRecipesHandler.cs
+    startLine: 37
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Recipes.Handlers
+  summary: Główna metoda handlera przetwarzająca zapytanie o przepisy użytkownika.
+  example: []
+  syntax:
+    content: public Task<List<Recipe>> Handle(GetUserRecipesQuery query)
+    parameters:
+    - id: query
+      type: CalorieTracker.Application.Recipes.Queries.GetUserRecipesQuery
+      description: Zapytanie zawierające identyfikator użytkownika oraz parametry paginacji
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.List{CalorieTracker.Domain.Entities.Recipe}}
+      description: >-
+        Lista przepisów należących do określonego użytkownika,
+
+        z dołączonymi danymi autora i składnikami,
+
+        posortowana malejąco według daty utworzenia.
+    content.vb: Public Function Handle(query As GetUserRecipesQuery) As Task(Of List(Of Recipe))
+  overload: CalorieTracker.Application.Recipes.Handlers.GetUserRecipesHandler.Handle*
+references:
+- uid: CalorieTracker.Application.Recipes.Handlers
+  commentId: N:CalorieTracker.Application.Recipes.Handlers
+  href: CalorieTracker.html
+  name: CalorieTracker.Application.Recipes.Handlers
+  nameWithType: CalorieTracker.Application.Recipes.Handlers
+  fullName: CalorieTracker.Application.Recipes.Handlers
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Recipes
+    name: Recipes
+    href: CalorieTracker.Application.Recipes.html
+  - name: .
+  - uid: CalorieTracker.Application.Recipes.Handlers
+    name: Handlers
+    href: CalorieTracker.Application.Recipes.Handlers.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Recipes
+    name: Recipes
+    href: CalorieTracker.Application.Recipes.html
+  - name: .
+  - uid: CalorieTracker.Application.Recipes.Handlers
+    name: Handlers
+    href: CalorieTracker.Application.Recipes.Handlers.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CalorieTracker.Application.Recipes.Handlers.GetUserRecipesHandler.#ctor*
+  commentId: Overload:CalorieTracker.Application.Recipes.Handlers.GetUserRecipesHandler.#ctor
+  href: CalorieTracker.Application.Recipes.Handlers.GetUserRecipesHandler.html#CalorieTracker_Application_Recipes_Handlers_GetUserRecipesHandler__ctor_CalorieTracker_Application_Interfaces_IAppDbContext_
+  name: GetUserRecipesHandler
+  nameWithType: GetUserRecipesHandler.GetUserRecipesHandler
+  fullName: CalorieTracker.Application.Recipes.Handlers.GetUserRecipesHandler.GetUserRecipesHandler
+  nameWithType.vb: GetUserRecipesHandler.New
+  fullName.vb: CalorieTracker.Application.Recipes.Handlers.GetUserRecipesHandler.New
+  name.vb: New
+- uid: CalorieTracker.Application.Interfaces.IAppDbContext
+  commentId: T:CalorieTracker.Application.Interfaces.IAppDbContext
+  parent: CalorieTracker.Application.Interfaces
+  href: CalorieTracker.Application.Interfaces.IAppDbContext.html
+  name: IAppDbContext
+  nameWithType: IAppDbContext
+  fullName: CalorieTracker.Application.Interfaces.IAppDbContext
+- uid: CalorieTracker.Application.Interfaces
+  commentId: N:CalorieTracker.Application.Interfaces
+  href: CalorieTracker.html
+  name: CalorieTracker.Application.Interfaces
+  nameWithType: CalorieTracker.Application.Interfaces
+  fullName: CalorieTracker.Application.Interfaces
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Interfaces
+    name: Interfaces
+    href: CalorieTracker.Application.Interfaces.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Interfaces
+    name: Interfaces
+    href: CalorieTracker.Application.Interfaces.html
+- uid: CalorieTracker.Application.Recipes.Handlers.GetUserRecipesHandler.Handle*
+  commentId: Overload:CalorieTracker.Application.Recipes.Handlers.GetUserRecipesHandler.Handle
+  href: CalorieTracker.Application.Recipes.Handlers.GetUserRecipesHandler.html#CalorieTracker_Application_Recipes_Handlers_GetUserRecipesHandler_Handle_CalorieTracker_Application_Recipes_Queries_GetUserRecipesQuery_
+  name: Handle
+  nameWithType: GetUserRecipesHandler.Handle
+  fullName: CalorieTracker.Application.Recipes.Handlers.GetUserRecipesHandler.Handle
+- uid: CalorieTracker.Application.Recipes.Queries.GetUserRecipesQuery
+  commentId: T:CalorieTracker.Application.Recipes.Queries.GetUserRecipesQuery
+  parent: CalorieTracker.Application.Recipes.Queries
+  href: CalorieTracker.Application.Recipes.Queries.GetUserRecipesQuery.html
+  name: GetUserRecipesQuery
+  nameWithType: GetUserRecipesQuery
+  fullName: CalorieTracker.Application.Recipes.Queries.GetUserRecipesQuery
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.List{CalorieTracker.Domain.Entities.Recipe}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.List{CalorieTracker.Domain.Entities.Recipe}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<List<Recipe>>
+  nameWithType: Task<List<Recipe>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.List<CalorieTracker.Domain.Entities.Recipe>>
+  nameWithType.vb: Task(Of List(Of Recipe))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.List(Of CalorieTracker.Domain.Entities.Recipe))
+  name.vb: Task(Of List(Of Recipe))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: CalorieTracker.Domain.Entities.Recipe
+    name: Recipe
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CalorieTracker.Domain.Entities.Recipe
+    name: Recipe
+  - name: )
+  - name: )
+- uid: CalorieTracker.Application.Recipes.Queries
+  commentId: N:CalorieTracker.Application.Recipes.Queries
+  href: CalorieTracker.html
+  name: CalorieTracker.Application.Recipes.Queries
+  nameWithType: CalorieTracker.Application.Recipes.Queries
+  fullName: CalorieTracker.Application.Recipes.Queries
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Recipes
+    name: Recipes
+    href: CalorieTracker.Application.Recipes.html
+  - name: .
+  - uid: CalorieTracker.Application.Recipes.Queries
+    name: Queries
+    href: CalorieTracker.Application.Recipes.Queries.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Recipes
+    name: Recipes
+    href: CalorieTracker.Application.Recipes.html
+  - name: .
+  - uid: CalorieTracker.Application.Recipes.Queries
+    name: Queries
+    href: CalorieTracker.Application.Recipes.Queries.html
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

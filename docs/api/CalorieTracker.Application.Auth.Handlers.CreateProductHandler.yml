@@ -1,0 +1,588 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Application.Auth.Handlers.CreateProductHandler
+  commentId: T:CalorieTracker.Application.Auth.Handlers.CreateProductHandler
+  id: CreateProductHandler
+  parent: CalorieTracker.Application.Auth.Handlers
+  children:
+  - CalorieTracker.Application.Auth.Handlers.CreateProductHandler.#ctor(CalorieTracker.Application.Interfaces.IAppDbContext)
+  - CalorieTracker.Application.Auth.Handlers.CreateProductHandler.Handle(CalorieTracker.Application.Products.Commands.CreateProductCommand)
+  langs:
+  - csharp
+  - vb
+  name: CreateProductHandler
+  nameWithType: CreateProductHandler
+  fullName: CalorieTracker.Application.Auth.Handlers.CreateProductHandler
+  type: Class
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Products/Handlers/CreateProductHandler.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: CreateProductHandler
+    path: ../src/CalorieTracker.Application/Products/Handlers/CreateProductHandler.cs
+    startLine: 13
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Auth.Handlers
+  summary: >-
+    Handler odpowiedzialny za przetwarzanie komendy tworzenia nowego produktu.
+
+    Mapuje dane z komendy na encję produktu i zapisuje ją w bazie danych.
+  example: []
+  syntax:
+    content: public class CreateProductHandler
+    content.vb: Public Class CreateProductHandler
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: CalorieTracker.Application.Auth.Handlers.CreateProductHandler.#ctor(CalorieTracker.Application.Interfaces.IAppDbContext)
+  commentId: M:CalorieTracker.Application.Auth.Handlers.CreateProductHandler.#ctor(CalorieTracker.Application.Interfaces.IAppDbContext)
+  id: '#ctor(CalorieTracker.Application.Interfaces.IAppDbContext)'
+  parent: CalorieTracker.Application.Auth.Handlers.CreateProductHandler
+  langs:
+  - csharp
+  - vb
+  name: CreateProductHandler(IAppDbContext)
+  nameWithType: CreateProductHandler.CreateProductHandler(IAppDbContext)
+  fullName: CalorieTracker.Application.Auth.Handlers.CreateProductHandler.CreateProductHandler(CalorieTracker.Application.Interfaces.IAppDbContext)
+  type: Constructor
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Products/Handlers/CreateProductHandler.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: .ctor
+    path: ../src/CalorieTracker.Application/Products/Handlers/CreateProductHandler.cs
+    startLine: 24
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Auth.Handlers
+  summary: Inicjalizuje nową instancję handlera tworzenia produktu.
+  example: []
+  syntax:
+    content: public CreateProductHandler(IAppDbContext db)
+    parameters:
+    - id: db
+      type: CalorieTracker.Application.Interfaces.IAppDbContext
+      description: Kontekst bazy danych <xref href="CalorieTracker.Application.Interfaces.IAppDbContext" data-throw-if-not-resolved="false"></xref>.
+    content.vb: Public Sub New(db As IAppDbContext)
+  overload: CalorieTracker.Application.Auth.Handlers.CreateProductHandler.#ctor*
+  nameWithType.vb: CreateProductHandler.New(IAppDbContext)
+  fullName.vb: CalorieTracker.Application.Auth.Handlers.CreateProductHandler.New(CalorieTracker.Application.Interfaces.IAppDbContext)
+  name.vb: New(IAppDbContext)
+- uid: CalorieTracker.Application.Auth.Handlers.CreateProductHandler.Handle(CalorieTracker.Application.Products.Commands.CreateProductCommand)
+  commentId: M:CalorieTracker.Application.Auth.Handlers.CreateProductHandler.Handle(CalorieTracker.Application.Products.Commands.CreateProductCommand)
+  id: Handle(CalorieTracker.Application.Products.Commands.CreateProductCommand)
+  parent: CalorieTracker.Application.Auth.Handlers.CreateProductHandler
+  langs:
+  - csharp
+  - vb
+  name: Handle(CreateProductCommand)
+  nameWithType: CreateProductHandler.Handle(CreateProductCommand)
+  fullName: CalorieTracker.Application.Auth.Handlers.CreateProductHandler.Handle(CalorieTracker.Application.Products.Commands.CreateProductCommand)
+  type: Method
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Products/Handlers/CreateProductHandler.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Handle
+    path: ../src/CalorieTracker.Application/Products/Handlers/CreateProductHandler.cs
+    startLine: 33
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Auth.Handlers
+  summary: Główna metoda handlera wykonująca proces tworzenia produktu.
+  example: []
+  syntax:
+    content: public Task<Guid> Handle(CreateProductCommand command)
+    parameters:
+    - id: command
+      type: CalorieTracker.Application.Products.Commands.CreateProductCommand
+      description: Komenda <xref href="CalorieTracker.Application.Products.Commands.CreateProductCommand" data-throw-if-not-resolved="false"></xref> zawierająca dane nowego produktu.
+    return:
+      type: System.Threading.Tasks.Task{System.Guid}
+      description: Task asynchroniczny zwracający identyfikator GUID nowo utworzonego produktu.
+    content.vb: Public Function Handle(command As CreateProductCommand) As Task(Of Guid)
+  overload: CalorieTracker.Application.Auth.Handlers.CreateProductHandler.Handle*
+references:
+- uid: CalorieTracker.Application.Auth.Handlers
+  commentId: N:CalorieTracker.Application.Auth.Handlers
+  href: CalorieTracker.html
+  name: CalorieTracker.Application.Auth.Handlers
+  nameWithType: CalorieTracker.Application.Auth.Handlers
+  fullName: CalorieTracker.Application.Auth.Handlers
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth
+    name: Auth
+    href: CalorieTracker.Application.Auth.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth.Handlers
+    name: Handlers
+    href: CalorieTracker.Application.Auth.Handlers.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth
+    name: Auth
+    href: CalorieTracker.Application.Auth.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth.Handlers
+    name: Handlers
+    href: CalorieTracker.Application.Auth.Handlers.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CalorieTracker.Application.Interfaces.IAppDbContext
+  commentId: T:CalorieTracker.Application.Interfaces.IAppDbContext
+  parent: CalorieTracker.Application.Interfaces
+  href: CalorieTracker.Application.Interfaces.IAppDbContext.html
+  name: IAppDbContext
+  nameWithType: IAppDbContext
+  fullName: CalorieTracker.Application.Interfaces.IAppDbContext
+- uid: CalorieTracker.Application.Auth.Handlers.CreateProductHandler.#ctor*
+  commentId: Overload:CalorieTracker.Application.Auth.Handlers.CreateProductHandler.#ctor
+  href: CalorieTracker.Application.Auth.Handlers.CreateProductHandler.html#CalorieTracker_Application_Auth_Handlers_CreateProductHandler__ctor_CalorieTracker_Application_Interfaces_IAppDbContext_
+  name: CreateProductHandler
+  nameWithType: CreateProductHandler.CreateProductHandler
+  fullName: CalorieTracker.Application.Auth.Handlers.CreateProductHandler.CreateProductHandler
+  nameWithType.vb: CreateProductHandler.New
+  fullName.vb: CalorieTracker.Application.Auth.Handlers.CreateProductHandler.New
+  name.vb: New
+- uid: CalorieTracker.Application.Interfaces
+  commentId: N:CalorieTracker.Application.Interfaces
+  href: CalorieTracker.html
+  name: CalorieTracker.Application.Interfaces
+  nameWithType: CalorieTracker.Application.Interfaces
+  fullName: CalorieTracker.Application.Interfaces
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Interfaces
+    name: Interfaces
+    href: CalorieTracker.Application.Interfaces.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Interfaces
+    name: Interfaces
+    href: CalorieTracker.Application.Interfaces.html
+- uid: CalorieTracker.Application.Products.Commands.CreateProductCommand
+  commentId: T:CalorieTracker.Application.Products.Commands.CreateProductCommand
+  parent: CalorieTracker.Application.Products.Commands
+  href: CalorieTracker.Application.Products.Commands.CreateProductCommand.html
+  name: CreateProductCommand
+  nameWithType: CreateProductCommand
+  fullName: CalorieTracker.Application.Products.Commands.CreateProductCommand
+- uid: CalorieTracker.Application.Auth.Handlers.CreateProductHandler.Handle*
+  commentId: Overload:CalorieTracker.Application.Auth.Handlers.CreateProductHandler.Handle
+  href: CalorieTracker.Application.Auth.Handlers.CreateProductHandler.html#CalorieTracker_Application_Auth_Handlers_CreateProductHandler_Handle_CalorieTracker_Application_Products_Commands_CreateProductCommand_
+  name: Handle
+  nameWithType: CreateProductHandler.Handle
+  fullName: CalorieTracker.Application.Auth.Handlers.CreateProductHandler.Handle
+- uid: System.Threading.Tasks.Task{System.Guid}
+  commentId: T:System.Threading.Tasks.Task{System.Guid}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<Guid>
+  nameWithType: Task<Guid>
+  fullName: System.Threading.Tasks.Task<System.Guid>
+  nameWithType.vb: Task(Of Guid)
+  fullName.vb: System.Threading.Tasks.Task(Of System.Guid)
+  name.vb: Task(Of Guid)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: )
+- uid: CalorieTracker.Application.Products.Commands
+  commentId: N:CalorieTracker.Application.Products.Commands
+  href: CalorieTracker.html
+  name: CalorieTracker.Application.Products.Commands
+  nameWithType: CalorieTracker.Application.Products.Commands
+  fullName: CalorieTracker.Application.Products.Commands
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Products
+    name: Products
+    href: CalorieTracker.Application.Products.html
+  - name: .
+  - uid: CalorieTracker.Application.Products.Commands
+    name: Commands
+    href: CalorieTracker.Application.Products.Commands.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Products
+    name: Products
+    href: CalorieTracker.Application.Products.html
+  - name: .
+  - uid: CalorieTracker.Application.Products.Commands
+    name: Commands
+    href: CalorieTracker.Application.Products.Commands.html
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

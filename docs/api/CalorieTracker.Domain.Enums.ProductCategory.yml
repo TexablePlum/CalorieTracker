@@ -1,0 +1,443 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Domain.Enums.ProductCategory
+  commentId: T:CalorieTracker.Domain.Enums.ProductCategory
+  id: ProductCategory
+  parent: CalorieTracker.Domain.Enums
+  children:
+  - CalorieTracker.Domain.Enums.ProductCategory.Beverages
+  - CalorieTracker.Domain.Enums.ProductCategory.Dairy
+  - CalorieTracker.Domain.Enums.ProductCategory.FishAndSeafood
+  - CalorieTracker.Domain.Enums.ProductCategory.Fruits
+  - CalorieTracker.Domain.Enums.ProductCategory.GrainsAndCereals
+  - CalorieTracker.Domain.Enums.ProductCategory.MeatAndPoultry
+  - CalorieTracker.Domain.Enums.ProductCategory.NutsAndDriedFruits
+  - CalorieTracker.Domain.Enums.ProductCategory.OilsAndFats
+  - CalorieTracker.Domain.Enums.ProductCategory.Other
+  - CalorieTracker.Domain.Enums.ProductCategory.ReadyMeals
+  - CalorieTracker.Domain.Enums.ProductCategory.SpicesAndHerbs
+  - CalorieTracker.Domain.Enums.ProductCategory.Sweets
+  - CalorieTracker.Domain.Enums.ProductCategory.Vegetables
+  langs:
+  - csharp
+  - vb
+  name: ProductCategory
+  nameWithType: ProductCategory
+  fullName: CalorieTracker.Domain.Enums.ProductCategory
+  type: Enum
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Enums/PruductCategory.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: ProductCategory
+    path: ../src/CalorieTracker.Domain/Enums/PruductCategory.cs
+    startLine: 9
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Enums
+  example: []
+  syntax:
+    content: public enum ProductCategory
+    content.vb: Public Enum ProductCategory
+- uid: CalorieTracker.Domain.Enums.ProductCategory.Fruits
+  commentId: F:CalorieTracker.Domain.Enums.ProductCategory.Fruits
+  id: Fruits
+  parent: CalorieTracker.Domain.Enums.ProductCategory
+  langs:
+  - csharp
+  - vb
+  name: Fruits
+  nameWithType: ProductCategory.Fruits
+  fullName: CalorieTracker.Domain.Enums.ProductCategory.Fruits
+  type: Field
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Enums/PruductCategory.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Fruits
+    path: ../src/CalorieTracker.Domain/Enums/PruductCategory.cs
+    startLine: 14
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Enums
+  example: []
+  syntax:
+    content: Fruits = 0
+    return:
+      type: CalorieTracker.Domain.Enums.ProductCategory
+- uid: CalorieTracker.Domain.Enums.ProductCategory.Vegetables
+  commentId: F:CalorieTracker.Domain.Enums.ProductCategory.Vegetables
+  id: Vegetables
+  parent: CalorieTracker.Domain.Enums.ProductCategory
+  langs:
+  - csharp
+  - vb
+  name: Vegetables
+  nameWithType: ProductCategory.Vegetables
+  fullName: CalorieTracker.Domain.Enums.ProductCategory.Vegetables
+  type: Field
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Enums/PruductCategory.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Vegetables
+    path: ../src/CalorieTracker.Domain/Enums/PruductCategory.cs
+    startLine: 19
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Enums
+  summary: Warzywa.
+  example: []
+  syntax:
+    content: Vegetables = 1
+    return:
+      type: CalorieTracker.Domain.Enums.ProductCategory
+- uid: CalorieTracker.Domain.Enums.ProductCategory.MeatAndPoultry
+  commentId: F:CalorieTracker.Domain.Enums.ProductCategory.MeatAndPoultry
+  id: MeatAndPoultry
+  parent: CalorieTracker.Domain.Enums.ProductCategory
+  langs:
+  - csharp
+  - vb
+  name: MeatAndPoultry
+  nameWithType: ProductCategory.MeatAndPoultry
+  fullName: CalorieTracker.Domain.Enums.ProductCategory.MeatAndPoultry
+  type: Field
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Enums/PruductCategory.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: MeatAndPoultry
+    path: ../src/CalorieTracker.Domain/Enums/PruductCategory.cs
+    startLine: 24
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Enums
+  summary: Mięso i drób.
+  example: []
+  syntax:
+    content: MeatAndPoultry = 2
+    return:
+      type: CalorieTracker.Domain.Enums.ProductCategory
+- uid: CalorieTracker.Domain.Enums.ProductCategory.FishAndSeafood
+  commentId: F:CalorieTracker.Domain.Enums.ProductCategory.FishAndSeafood
+  id: FishAndSeafood
+  parent: CalorieTracker.Domain.Enums.ProductCategory
+  langs:
+  - csharp
+  - vb
+  name: FishAndSeafood
+  nameWithType: ProductCategory.FishAndSeafood
+  fullName: CalorieTracker.Domain.Enums.ProductCategory.FishAndSeafood
+  type: Field
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Enums/PruductCategory.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: FishAndSeafood
+    path: ../src/CalorieTracker.Domain/Enums/PruductCategory.cs
+    startLine: 29
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Enums
+  summary: Ryby i owoce morza.
+  example: []
+  syntax:
+    content: FishAndSeafood = 3
+    return:
+      type: CalorieTracker.Domain.Enums.ProductCategory
+- uid: CalorieTracker.Domain.Enums.ProductCategory.Dairy
+  commentId: F:CalorieTracker.Domain.Enums.ProductCategory.Dairy
+  id: Dairy
+  parent: CalorieTracker.Domain.Enums.ProductCategory
+  langs:
+  - csharp
+  - vb
+  name: Dairy
+  nameWithType: ProductCategory.Dairy
+  fullName: CalorieTracker.Domain.Enums.ProductCategory.Dairy
+  type: Field
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Enums/PruductCategory.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Dairy
+    path: ../src/CalorieTracker.Domain/Enums/PruductCategory.cs
+    startLine: 34
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Enums
+  summary: Nabiał.
+  example: []
+  syntax:
+    content: Dairy = 4
+    return:
+      type: CalorieTracker.Domain.Enums.ProductCategory
+- uid: CalorieTracker.Domain.Enums.ProductCategory.GrainsAndCereals
+  commentId: F:CalorieTracker.Domain.Enums.ProductCategory.GrainsAndCereals
+  id: GrainsAndCereals
+  parent: CalorieTracker.Domain.Enums.ProductCategory
+  langs:
+  - csharp
+  - vb
+  name: GrainsAndCereals
+  nameWithType: ProductCategory.GrainsAndCereals
+  fullName: CalorieTracker.Domain.Enums.ProductCategory.GrainsAndCereals
+  type: Field
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Enums/PruductCategory.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: GrainsAndCereals
+    path: ../src/CalorieTracker.Domain/Enums/PruductCategory.cs
+    startLine: 39
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Enums
+  summary: Zboża i produkty zbożowe.
+  example: []
+  syntax:
+    content: GrainsAndCereals = 5
+    return:
+      type: CalorieTracker.Domain.Enums.ProductCategory
+- uid: CalorieTracker.Domain.Enums.ProductCategory.NutsAndDriedFruits
+  commentId: F:CalorieTracker.Domain.Enums.ProductCategory.NutsAndDriedFruits
+  id: NutsAndDriedFruits
+  parent: CalorieTracker.Domain.Enums.ProductCategory
+  langs:
+  - csharp
+  - vb
+  name: NutsAndDriedFruits
+  nameWithType: ProductCategory.NutsAndDriedFruits
+  fullName: CalorieTracker.Domain.Enums.ProductCategory.NutsAndDriedFruits
+  type: Field
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Enums/PruductCategory.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: NutsAndDriedFruits
+    path: ../src/CalorieTracker.Domain/Enums/PruductCategory.cs
+    startLine: 44
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Enums
+  summary: Bakalie i orzechy.
+  example: []
+  syntax:
+    content: NutsAndDriedFruits = 6
+    return:
+      type: CalorieTracker.Domain.Enums.ProductCategory
+- uid: CalorieTracker.Domain.Enums.ProductCategory.Sweets
+  commentId: F:CalorieTracker.Domain.Enums.ProductCategory.Sweets
+  id: Sweets
+  parent: CalorieTracker.Domain.Enums.ProductCategory
+  langs:
+  - csharp
+  - vb
+  name: Sweets
+  nameWithType: ProductCategory.Sweets
+  fullName: CalorieTracker.Domain.Enums.ProductCategory.Sweets
+  type: Field
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Enums/PruductCategory.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Sweets
+    path: ../src/CalorieTracker.Domain/Enums/PruductCategory.cs
+    startLine: 49
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Enums
+  summary: Słodycze.
+  example: []
+  syntax:
+    content: Sweets = 7
+    return:
+      type: CalorieTracker.Domain.Enums.ProductCategory
+- uid: CalorieTracker.Domain.Enums.ProductCategory.Beverages
+  commentId: F:CalorieTracker.Domain.Enums.ProductCategory.Beverages
+  id: Beverages
+  parent: CalorieTracker.Domain.Enums.ProductCategory
+  langs:
+  - csharp
+  - vb
+  name: Beverages
+  nameWithType: ProductCategory.Beverages
+  fullName: CalorieTracker.Domain.Enums.ProductCategory.Beverages
+  type: Field
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Enums/PruductCategory.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Beverages
+    path: ../src/CalorieTracker.Domain/Enums/PruductCategory.cs
+    startLine: 54
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Enums
+  summary: Napoje.
+  example: []
+  syntax:
+    content: Beverages = 8
+    return:
+      type: CalorieTracker.Domain.Enums.ProductCategory
+- uid: CalorieTracker.Domain.Enums.ProductCategory.OilsAndFats
+  commentId: F:CalorieTracker.Domain.Enums.ProductCategory.OilsAndFats
+  id: OilsAndFats
+  parent: CalorieTracker.Domain.Enums.ProductCategory
+  langs:
+  - csharp
+  - vb
+  name: OilsAndFats
+  nameWithType: ProductCategory.OilsAndFats
+  fullName: CalorieTracker.Domain.Enums.ProductCategory.OilsAndFats
+  type: Field
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Enums/PruductCategory.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: OilsAndFats
+    path: ../src/CalorieTracker.Domain/Enums/PruductCategory.cs
+    startLine: 59
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Enums
+  summary: Oleje i tłuszcze.
+  example: []
+  syntax:
+    content: OilsAndFats = 9
+    return:
+      type: CalorieTracker.Domain.Enums.ProductCategory
+- uid: CalorieTracker.Domain.Enums.ProductCategory.SpicesAndHerbs
+  commentId: F:CalorieTracker.Domain.Enums.ProductCategory.SpicesAndHerbs
+  id: SpicesAndHerbs
+  parent: CalorieTracker.Domain.Enums.ProductCategory
+  langs:
+  - csharp
+  - vb
+  name: SpicesAndHerbs
+  nameWithType: ProductCategory.SpicesAndHerbs
+  fullName: CalorieTracker.Domain.Enums.ProductCategory.SpicesAndHerbs
+  type: Field
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Enums/PruductCategory.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: SpicesAndHerbs
+    path: ../src/CalorieTracker.Domain/Enums/PruductCategory.cs
+    startLine: 64
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Enums
+  summary: Przyprawy i zioła.
+  example: []
+  syntax:
+    content: SpicesAndHerbs = 10
+    return:
+      type: CalorieTracker.Domain.Enums.ProductCategory
+- uid: CalorieTracker.Domain.Enums.ProductCategory.ReadyMeals
+  commentId: F:CalorieTracker.Domain.Enums.ProductCategory.ReadyMeals
+  id: ReadyMeals
+  parent: CalorieTracker.Domain.Enums.ProductCategory
+  langs:
+  - csharp
+  - vb
+  name: ReadyMeals
+  nameWithType: ProductCategory.ReadyMeals
+  fullName: CalorieTracker.Domain.Enums.ProductCategory.ReadyMeals
+  type: Field
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Enums/PruductCategory.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: ReadyMeals
+    path: ../src/CalorieTracker.Domain/Enums/PruductCategory.cs
+    startLine: 69
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Enums
+  summary: Gotowe posiłki.
+  example: []
+  syntax:
+    content: ReadyMeals = 11
+    return:
+      type: CalorieTracker.Domain.Enums.ProductCategory
+- uid: CalorieTracker.Domain.Enums.ProductCategory.Other
+  commentId: F:CalorieTracker.Domain.Enums.ProductCategory.Other
+  id: Other
+  parent: CalorieTracker.Domain.Enums.ProductCategory
+  langs:
+  - csharp
+  - vb
+  name: Other
+  nameWithType: ProductCategory.Other
+  fullName: CalorieTracker.Domain.Enums.ProductCategory.Other
+  type: Field
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Enums/PruductCategory.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Other
+    path: ../src/CalorieTracker.Domain/Enums/PruductCategory.cs
+    startLine: 74
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Enums
+  summary: Inne produkty spożywcze, które nie pasują do pozostałych kategorii.
+  example: []
+  syntax:
+    content: Other = 12
+    return:
+      type: CalorieTracker.Domain.Enums.ProductCategory
+references:
+- uid: CalorieTracker.Domain.Enums
+  commentId: N:CalorieTracker.Domain.Enums
+  href: CalorieTracker.html
+  name: CalorieTracker.Domain.Enums
+  nameWithType: CalorieTracker.Domain.Enums
+  fullName: CalorieTracker.Domain.Enums
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Domain
+    name: Domain
+    href: CalorieTracker.Domain.html
+  - name: .
+  - uid: CalorieTracker.Domain.Enums
+    name: Enums
+    href: CalorieTracker.Domain.Enums.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Domain
+    name: Domain
+    href: CalorieTracker.Domain.html
+  - name: .
+  - uid: CalorieTracker.Domain.Enums
+    name: Enums
+    href: CalorieTracker.Domain.Enums.html
+- uid: CalorieTracker.Domain.Enums.ProductCategory
+  commentId: T:CalorieTracker.Domain.Enums.ProductCategory
+  parent: CalorieTracker.Domain.Enums
+  href: CalorieTracker.Domain.Enums.ProductCategory.html
+  name: ProductCategory
+  nameWithType: ProductCategory
+  fullName: CalorieTracker.Domain.Enums.ProductCategory

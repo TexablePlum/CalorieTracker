@@ -1,0 +1,70 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Application.Auth.Interfaces
+  commentId: N:CalorieTracker.Application.Auth.Interfaces
+  id: CalorieTracker.Application.Auth.Interfaces
+  children:
+  - CalorieTracker.Application.Auth.Interfaces.IEmailSender
+  - CalorieTracker.Application.Auth.Interfaces.IJwtGenerator
+  langs:
+  - csharp
+  - vb
+  name: CalorieTracker.Application.Auth.Interfaces
+  nameWithType: CalorieTracker.Application.Auth.Interfaces
+  fullName: CalorieTracker.Application.Auth.Interfaces
+  type: Namespace
+  assemblies:
+  - CalorieTracker.Application
+references:
+- uid: CalorieTracker.Application.Auth.Interfaces.IEmailSender
+  commentId: T:CalorieTracker.Application.Auth.Interfaces.IEmailSender
+  parent: CalorieTracker.Application.Auth.Interfaces
+  href: CalorieTracker.Application.Auth.Interfaces.IEmailSender.html
+  name: IEmailSender
+  nameWithType: IEmailSender
+  fullName: CalorieTracker.Application.Auth.Interfaces.IEmailSender
+- uid: CalorieTracker.Application.Auth.Interfaces.IJwtGenerator
+  commentId: T:CalorieTracker.Application.Auth.Interfaces.IJwtGenerator
+  parent: CalorieTracker.Application.Auth.Interfaces
+  href: CalorieTracker.Application.Auth.Interfaces.IJwtGenerator.html
+  name: IJwtGenerator
+  nameWithType: IJwtGenerator
+  fullName: CalorieTracker.Application.Auth.Interfaces.IJwtGenerator
+- uid: CalorieTracker.Application.Auth.Interfaces
+  commentId: N:CalorieTracker.Application.Auth.Interfaces
+  href: CalorieTracker.html
+  name: CalorieTracker.Application.Auth.Interfaces
+  nameWithType: CalorieTracker.Application.Auth.Interfaces
+  fullName: CalorieTracker.Application.Auth.Interfaces
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth
+    name: Auth
+    href: CalorieTracker.Application.Auth.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth.Interfaces
+    name: Interfaces
+    href: CalorieTracker.Application.Auth.Interfaces.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth
+    name: Auth
+    href: CalorieTracker.Application.Auth.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth.Interfaces
+    name: Interfaces
+    href: CalorieTracker.Application.Auth.Interfaces.html

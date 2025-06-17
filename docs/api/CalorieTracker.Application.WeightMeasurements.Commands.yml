@@ -1,0 +1,78 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Application.WeightMeasurements.Commands
+  commentId: N:CalorieTracker.Application.WeightMeasurements.Commands
+  id: CalorieTracker.Application.WeightMeasurements.Commands
+  children:
+  - CalorieTracker.Application.WeightMeasurements.Commands.CreateWeightMeasurementCommand
+  - CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand
+  - CalorieTracker.Application.WeightMeasurements.Commands.UpdateWeightMeasurementCommand
+  langs:
+  - csharp
+  - vb
+  name: CalorieTracker.Application.WeightMeasurements.Commands
+  nameWithType: CalorieTracker.Application.WeightMeasurements.Commands
+  fullName: CalorieTracker.Application.WeightMeasurements.Commands
+  type: Namespace
+  assemblies:
+  - CalorieTracker.Application
+references:
+- uid: CalorieTracker.Application.WeightMeasurements.Commands.CreateWeightMeasurementCommand
+  commentId: T:CalorieTracker.Application.WeightMeasurements.Commands.CreateWeightMeasurementCommand
+  parent: CalorieTracker.Application.WeightMeasurements.Commands
+  href: CalorieTracker.Application.WeightMeasurements.Commands.CreateWeightMeasurementCommand.html
+  name: CreateWeightMeasurementCommand
+  nameWithType: CreateWeightMeasurementCommand
+  fullName: CalorieTracker.Application.WeightMeasurements.Commands.CreateWeightMeasurementCommand
+- uid: CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand
+  commentId: T:CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand
+  parent: CalorieTracker.Application.WeightMeasurements.Commands
+  href: CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand.html
+  name: DeleteWeightMeasurementCommand
+  nameWithType: DeleteWeightMeasurementCommand
+  fullName: CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand
+- uid: CalorieTracker.Application.WeightMeasurements.Commands.UpdateWeightMeasurementCommand
+  commentId: T:CalorieTracker.Application.WeightMeasurements.Commands.UpdateWeightMeasurementCommand
+  parent: CalorieTracker.Application.WeightMeasurements.Commands
+  href: CalorieTracker.Application.WeightMeasurements.Commands.UpdateWeightMeasurementCommand.html
+  name: UpdateWeightMeasurementCommand
+  nameWithType: UpdateWeightMeasurementCommand
+  fullName: CalorieTracker.Application.WeightMeasurements.Commands.UpdateWeightMeasurementCommand
+- uid: CalorieTracker.Application.WeightMeasurements.Commands
+  commentId: N:CalorieTracker.Application.WeightMeasurements.Commands
+  href: CalorieTracker.html
+  name: CalorieTracker.Application.WeightMeasurements.Commands
+  nameWithType: CalorieTracker.Application.WeightMeasurements.Commands
+  fullName: CalorieTracker.Application.WeightMeasurements.Commands
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.WeightMeasurements
+    name: WeightMeasurements
+    href: CalorieTracker.Application.WeightMeasurements.html
+  - name: .
+  - uid: CalorieTracker.Application.WeightMeasurements.Commands
+    name: Commands
+    href: CalorieTracker.Application.WeightMeasurements.Commands.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.WeightMeasurements
+    name: WeightMeasurements
+    href: CalorieTracker.Application.WeightMeasurements.html
+  - name: .
+  - uid: CalorieTracker.Application.WeightMeasurements.Commands
+    name: Commands
+    href: CalorieTracker.Application.WeightMeasurements.Commands.html

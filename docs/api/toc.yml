@@ -1,0 +1,558 @@
+### YamlMime:TableOfContent
+items:
+- uid: CalorieTracker.Api.Attributes
+  name: CalorieTracker.Api.Attributes
+  type: Namespace
+  items:
+  - uid: CalorieTracker.Api.Attributes.RequireCompleteProfileAttribute
+    name: RequireCompleteProfileAttribute
+    type: Class
+- uid: CalorieTracker.Api.Controllers
+  name: CalorieTracker.Api.Controllers
+  type: Namespace
+  items:
+  - uid: CalorieTracker.Api.Controllers.AuthController
+    name: AuthController
+    type: Class
+  - uid: CalorieTracker.Api.Controllers.ProductsController
+    name: ProductsController
+    type: Class
+  - uid: CalorieTracker.Api.Controllers.ProfileController
+    name: ProfileController
+    type: Class
+  - uid: CalorieTracker.Api.Controllers.RecipesController
+    name: RecipesController
+    type: Class
+  - uid: CalorieTracker.Api.Controllers.WeightMeasurementsController
+    name: WeightMeasurementsController
+    type: Class
+- uid: CalorieTracker.Api.Mapping
+  name: CalorieTracker.Api.Mapping
+  type: Namespace
+  items:
+  - uid: CalorieTracker.Api.Mapping.AuthProfile
+    name: AuthProfile
+    type: Class
+  - uid: CalorieTracker.Api.Mapping.ProductMappingProfile
+    name: ProductMappingProfile
+    type: Class
+  - uid: CalorieTracker.Api.Mapping.RecipeMappingProfile
+    name: RecipeMappingProfile
+    type: Class
+  - uid: CalorieTracker.Api.Mapping.WeightMeasurementMappingProfile
+    name: WeightMeasurementMappingProfile
+    type: Class
+- uid: CalorieTracker.Api.Models.Auth
+  name: CalorieTracker.Api.Models.Auth
+  type: Namespace
+  items:
+  - uid: CalorieTracker.Api.Models.Auth.AuthResponse
+    name: AuthResponse
+    type: Class
+  - uid: CalorieTracker.Api.Models.Auth.ConfirmEmailRequest
+    name: ConfirmEmailRequest
+    type: Class
+  - uid: CalorieTracker.Api.Models.Auth.ForgotPasswordRequest
+    name: ForgotPasswordRequest
+    type: Class
+  - uid: CalorieTracker.Api.Models.Auth.LoginRequest
+    name: LoginRequest
+    type: Class
+  - uid: CalorieTracker.Api.Models.Auth.LogoutRequest
+    name: LogoutRequest
+    type: Class
+  - uid: CalorieTracker.Api.Models.Auth.RefreshRequest
+    name: RefreshRequest
+    type: Class
+  - uid: CalorieTracker.Api.Models.Auth.RegisterRequest
+    name: RegisterRequest
+    type: Class
+  - uid: CalorieTracker.Api.Models.Auth.ResendConfirmationRequest
+    name: ResendConfirmationRequest
+    type: Class
+  - uid: CalorieTracker.Api.Models.Auth.ResetPasswordRequest
+    name: ResetPasswordRequest
+    type: Class
+- uid: CalorieTracker.Api.Models.Products
+  name: CalorieTracker.Api.Models.Products
+  type: Namespace
+  items:
+  - uid: CalorieTracker.Api.Models.Products.CreateProductRequest
+    name: CreateProductRequest
+    type: Class
+  - uid: CalorieTracker.Api.Models.Products.ProductDto
+    name: ProductDto
+    type: Class
+  - uid: CalorieTracker.Api.Models.Products.ProductSummaryDto
+    name: ProductSummaryDto
+    type: Class
+  - uid: CalorieTracker.Api.Models.Products.SearchProductsRequest
+    name: SearchProductsRequest
+    type: Class
+  - uid: CalorieTracker.Api.Models.Products.SearchProductsResponse
+    name: SearchProductsResponse
+    type: Class
+  - uid: CalorieTracker.Api.Models.Products.UpdateProductRequest
+    name: UpdateProductRequest
+    type: Class
+- uid: CalorieTracker.Api.Models.Profile
+  name: CalorieTracker.Api.Models.Profile
+  type: Namespace
+  items:
+  - uid: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest
+    name: UpdateUserProfileRequest
+    type: Class
+  - uid: CalorieTracker.Api.Models.Profile.UserProfileDto
+    name: UserProfileDto
+    type: Class
+- uid: CalorieTracker.Api.Models.Recipes
+  name: CalorieTracker.Api.Models.Recipes
+  type: Namespace
+  items:
+  - uid: CalorieTracker.Api.Models.Recipes.CreateRecipeIngredientRequest
+    name: CreateRecipeIngredientRequest
+    type: Class
+  - uid: CalorieTracker.Api.Models.Recipes.CreateRecipeRequest
+    name: CreateRecipeRequest
+    type: Class
+  - uid: CalorieTracker.Api.Models.Recipes.RecipeDto
+    name: RecipeDto
+    type: Class
+  - uid: CalorieTracker.Api.Models.Recipes.RecipeIngredientDto
+    name: RecipeIngredientDto
+    type: Class
+  - uid: CalorieTracker.Api.Models.Recipes.RecipeNutritionDto
+    name: RecipeNutritionDto
+    type: Class
+  - uid: CalorieTracker.Api.Models.Recipes.RecipeSummaryDto
+    name: RecipeSummaryDto
+    type: Class
+  - uid: CalorieTracker.Api.Models.Recipes.SearchRecipesRequest
+    name: SearchRecipesRequest
+    type: Class
+  - uid: CalorieTracker.Api.Models.Recipes.SearchRecipesResponse
+    name: SearchRecipesResponse
+    type: Class
+  - uid: CalorieTracker.Api.Models.Recipes.UpdateRecipeRequest
+    name: UpdateRecipeRequest
+    type: Class
+- uid: CalorieTracker.Api.Models.WeightMeasurements
+  name: CalorieTracker.Api.Models.WeightMeasurements
+  type: Namespace
+  items:
+  - uid: CalorieTracker.Api.Models.WeightMeasurements.CreateWeightMeasurementRequest
+    name: CreateWeightMeasurementRequest
+    type: Class
+  - uid: CalorieTracker.Api.Models.WeightMeasurements.UpdateWeightMeasurementRequest
+    name: UpdateWeightMeasurementRequest
+    type: Class
+  - uid: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto
+    name: WeightMeasurementDto
+    type: Class
+  - uid: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementsResponse
+    name: WeightMeasurementsResponse
+    type: Class
+- uid: CalorieTracker.Api.Validation
+  name: CalorieTracker.Api.Validation
+  type: Namespace
+  items:
+  - uid: CalorieTracker.Api.Validation.ConfirmEmailRequestValidator
+    name: ConfirmEmailRequestValidator
+    type: Class
+  - uid: CalorieTracker.Api.Validation.CreateProductRequestValidator
+    name: CreateProductRequestValidator
+    type: Class
+  - uid: CalorieTracker.Api.Validation.CreateRecipeIngredientRequestValidator
+    name: CreateRecipeIngredientRequestValidator
+    type: Class
+  - uid: CalorieTracker.Api.Validation.CreateRecipeRequestValidator
+    name: CreateRecipeRequestValidator
+    type: Class
+  - uid: CalorieTracker.Api.Validation.CreateWeightMeasurementRequestValidator
+    name: CreateWeightMeasurementRequestValidator
+    type: Class
+  - uid: CalorieTracker.Api.Validation.ForgotPasswordRequestValidator
+    name: ForgotPasswordRequestValidator
+    type: Class
+  - uid: CalorieTracker.Api.Validation.LoginRequestValidator
+    name: LoginRequestValidator
+    type: Class
+  - uid: CalorieTracker.Api.Validation.RegisterRequestValidator
+    name: RegisterRequestValidator
+    type: Class
+  - uid: CalorieTracker.Api.Validation.ResetPasswordRequestValidator
+    name: ResetPasswordRequestValidator
+    type: Class
+  - uid: CalorieTracker.Api.Validation.SearchProductsRequestValidator
+    name: SearchProductsRequestValidator
+    type: Class
+  - uid: CalorieTracker.Api.Validation.SearchRecipesRequestValidator
+    name: SearchRecipesRequestValidator
+    type: Class
+  - uid: CalorieTracker.Api.Validation.UpdateProductRequestValidator
+    name: UpdateProductRequestValidator
+    type: Class
+  - uid: CalorieTracker.Api.Validation.UpdateRecipeRequestValidator
+    name: UpdateRecipeRequestValidator
+    type: Class
+  - uid: CalorieTracker.Api.Validation.UpdateUserProfileRequestValidator
+    name: UpdateUserProfileRequestValidator
+    type: Class
+  - uid: CalorieTracker.Api.Validation.UpdateWeightMeasurementRequestValidator
+    name: UpdateWeightMeasurementRequestValidator
+    type: Class
+- uid: CalorieTracker.Application.Auth.Commands
+  name: CalorieTracker.Application.Auth.Commands
+  type: Namespace
+  items:
+  - uid: CalorieTracker.Application.Auth.Commands.DeleteProductCommand
+    name: DeleteProductCommand
+    type: Class
+  - uid: CalorieTracker.Application.Auth.Commands.GenerateRefreshTokenCommand
+    name: GenerateRefreshTokenCommand
+    type: Class
+  - uid: CalorieTracker.Application.Auth.Commands.LogoutCommand
+    name: LogoutCommand
+    type: Class
+  - uid: CalorieTracker.Application.Auth.Commands.RegisterUserCommand
+    name: RegisterUserCommand
+    type: Class
+  - uid: CalorieTracker.Application.Auth.Commands.UpdateProductCommand
+    name: UpdateProductCommand
+    type: Class
+  - uid: CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand
+    name: UseRefreshTokenCommand
+    type: Class
+- uid: CalorieTracker.Application.Auth.Handlers
+  name: CalorieTracker.Application.Auth.Handlers
+  type: Namespace
+  items:
+  - uid: CalorieTracker.Application.Auth.Handlers.CreateProductHandler
+    name: CreateProductHandler
+    type: Class
+  - uid: CalorieTracker.Application.Auth.Handlers.DeleteProductHandler
+    name: DeleteProductHandler
+    type: Class
+  - uid: CalorieTracker.Application.Auth.Handlers.GenerateEmailConfirmationHandler
+    name: GenerateEmailConfirmationHandler
+    type: Class
+  - uid: CalorieTracker.Application.Auth.Handlers.GeneratePasswordResetHandler
+    name: GeneratePasswordResetHandler
+    type: Class
+  - uid: CalorieTracker.Application.Auth.Handlers.GenerateRefreshTokenHandler
+    name: GenerateRefreshTokenHandler
+    type: Class
+  - uid: CalorieTracker.Application.Auth.Handlers.GetProductByBarcodeHandler
+    name: GetProductByBarcodeHandler
+    type: Class
+  - uid: CalorieTracker.Application.Auth.Handlers.GetProductByIdHandler
+    name: GetProductByIdHandler
+    type: Class
+  - uid: CalorieTracker.Application.Auth.Handlers.GetUserProductsHandler
+    name: GetUserProductsHandler
+    type: Class
+  - uid: CalorieTracker.Application.Auth.Handlers.LoginUserHandler
+    name: LoginUserHandler
+    type: Class
+  - uid: CalorieTracker.Application.Auth.Handlers.LogoutHandler
+    name: LogoutHandler
+    type: Class
+  - uid: CalorieTracker.Application.Auth.Handlers.RegisterUserHandler
+    name: RegisterUserHandler
+    type: Class
+  - uid: CalorieTracker.Application.Auth.Handlers.SearchProductsHandler
+    name: SearchProductsHandler
+    type: Class
+  - uid: CalorieTracker.Application.Auth.Handlers.UpdateProductHandler
+    name: UpdateProductHandler
+    type: Class
+  - uid: CalorieTracker.Application.Auth.Handlers.UseRefreshTokenHandler
+    name: UseRefreshTokenHandler
+    type: Class
+- uid: CalorieTracker.Application.Auth.Interfaces
+  name: CalorieTracker.Application.Auth.Interfaces
+  type: Namespace
+  items:
+  - uid: CalorieTracker.Application.Auth.Interfaces.IEmailSender
+    name: IEmailSender
+    type: Interface
+  - uid: CalorieTracker.Application.Auth.Interfaces.IJwtGenerator
+    name: IJwtGenerator
+    type: Interface
+- uid: CalorieTracker.Application.Auth.Queries
+  name: CalorieTracker.Application.Auth.Queries
+  type: Namespace
+  items:
+  - uid: CalorieTracker.Application.Auth.Queries.GetProductByBarcodeQuery
+    name: GetProductByBarcodeQuery
+    type: Class
+  - uid: CalorieTracker.Application.Auth.Queries.GetProductByIdQuery
+    name: GetProductByIdQuery
+    type: Class
+  - uid: CalorieTracker.Application.Auth.Queries.GetUserProductsQuery
+    name: GetUserProductsQuery
+    type: Class
+  - uid: CalorieTracker.Application.Auth.Queries.LoginUserQuery
+    name: LoginUserQuery
+    type: Class
+  - uid: CalorieTracker.Application.Auth.Queries.SearchProductsQuery
+    name: SearchProductsQuery
+    type: Class
+- uid: CalorieTracker.Application.Interfaces
+  name: CalorieTracker.Application.Interfaces
+  type: Namespace
+  items:
+  - uid: CalorieTracker.Application.Interfaces.IAppDbContext
+    name: IAppDbContext
+    type: Interface
+- uid: CalorieTracker.Application.Products.Commands
+  name: CalorieTracker.Application.Products.Commands
+  type: Namespace
+  items:
+  - uid: CalorieTracker.Application.Products.Commands.CreateProductCommand
+    name: CreateProductCommand
+    type: Class
+- uid: CalorieTracker.Application.Recipes.Commands
+  name: CalorieTracker.Application.Recipes.Commands
+  type: Namespace
+  items:
+  - uid: CalorieTracker.Application.Recipes.Commands.CreateRecipeCommand
+    name: CreateRecipeCommand
+    type: Class
+  - uid: CalorieTracker.Application.Recipes.Commands.CreateRecipeIngredientCommand
+    name: CreateRecipeIngredientCommand
+    type: Class
+  - uid: CalorieTracker.Application.Recipes.Commands.DeleteRecipeCommand
+    name: DeleteRecipeCommand
+    type: Class
+  - uid: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand
+    name: UpdateRecipeCommand
+    type: Class
+- uid: CalorieTracker.Application.Recipes.Handlers
+  name: CalorieTracker.Application.Recipes.Handlers
+  type: Namespace
+  items:
+  - uid: CalorieTracker.Application.Recipes.Handlers.CreateRecipeHandler
+    name: CreateRecipeHandler
+    type: Class
+  - uid: CalorieTracker.Application.Recipes.Handlers.DeleteRecipeHandler
+    name: DeleteRecipeHandler
+    type: Class
+  - uid: CalorieTracker.Application.Recipes.Handlers.GetAllRecipesHandler
+    name: GetAllRecipesHandler
+    type: Class
+  - uid: CalorieTracker.Application.Recipes.Handlers.GetRecipeDetailsHandler
+    name: GetRecipeDetailsHandler
+    type: Class
+  - uid: CalorieTracker.Application.Recipes.Handlers.GetUserRecipesHandler
+    name: GetUserRecipesHandler
+    type: Class
+  - uid: CalorieTracker.Application.Recipes.Handlers.SearchRecipesHandler
+    name: SearchRecipesHandler
+    type: Class
+  - uid: CalorieTracker.Application.Recipes.Handlers.UpdateRecipeHandler
+    name: UpdateRecipeHandler
+    type: Class
+- uid: CalorieTracker.Application.Recipes.Queries
+  name: CalorieTracker.Application.Recipes.Queries
+  type: Namespace
+  items:
+  - uid: CalorieTracker.Application.Recipes.Queries.GetAllRecipesQuery
+    name: GetAllRecipesQuery
+    type: Class
+  - uid: CalorieTracker.Application.Recipes.Queries.GetRecipeDetailsQuery
+    name: GetRecipeDetailsQuery
+    type: Class
+  - uid: CalorieTracker.Application.Recipes.Queries.GetUserRecipesQuery
+    name: GetUserRecipesQuery
+    type: Class
+  - uid: CalorieTracker.Application.Recipes.Queries.SearchRecipesQuery
+    name: SearchRecipesQuery
+    type: Class
+- uid: CalorieTracker.Application.WeightMeasurements.Commands
+  name: CalorieTracker.Application.WeightMeasurements.Commands
+  type: Namespace
+  items:
+  - uid: CalorieTracker.Application.WeightMeasurements.Commands.CreateWeightMeasurementCommand
+    name: CreateWeightMeasurementCommand
+    type: Class
+  - uid: CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand
+    name: DeleteWeightMeasurementCommand
+    type: Class
+  - uid: CalorieTracker.Application.WeightMeasurements.Commands.UpdateWeightMeasurementCommand
+    name: UpdateWeightMeasurementCommand
+    type: Class
+- uid: CalorieTracker.Application.WeightMeasurements.Handlers
+  name: CalorieTracker.Application.WeightMeasurements.Handlers
+  type: Namespace
+  items:
+  - uid: CalorieTracker.Application.WeightMeasurements.Handlers.CreateWeightMeasurementHandler
+    name: CreateWeightMeasurementHandler
+    type: Class
+  - uid: CalorieTracker.Application.WeightMeasurements.Handlers.DeleteWeightMeasurementHandler
+    name: DeleteWeightMeasurementHandler
+    type: Class
+  - uid: CalorieTracker.Application.WeightMeasurements.Handlers.GetLatestWeightMeasurementHandler
+    name: GetLatestWeightMeasurementHandler
+    type: Class
+  - uid: CalorieTracker.Application.WeightMeasurements.Handlers.GetUserWeightMeasurementsHandler
+    name: GetUserWeightMeasurementsHandler
+    type: Class
+  - uid: CalorieTracker.Application.WeightMeasurements.Handlers.GetWeightMeasurementDetailsHandler
+    name: GetWeightMeasurementDetailsHandler
+    type: Class
+  - uid: CalorieTracker.Application.WeightMeasurements.Handlers.UpdateWeightMeasurementHandler
+    name: UpdateWeightMeasurementHandler
+    type: Class
+- uid: CalorieTracker.Application.WeightMeasurements.Queries
+  name: CalorieTracker.Application.WeightMeasurements.Queries
+  type: Namespace
+  items:
+  - uid: CalorieTracker.Application.WeightMeasurements.Queries.GetLatestWeightMeasurementQuery
+    name: GetLatestWeightMeasurementQuery
+    type: Class
+  - uid: CalorieTracker.Application.WeightMeasurements.Queries.GetUserWeightMeasurementsQuery
+    name: GetUserWeightMeasurementsQuery
+    type: Class
+  - uid: CalorieTracker.Application.WeightMeasurements.Queries.GetWeightMeasurementDetailsQuery
+    name: GetWeightMeasurementDetailsQuery
+    type: Class
+- uid: CalorieTracker.Domain.Entities
+  name: CalorieTracker.Domain.Entities
+  type: Namespace
+  items:
+  - uid: CalorieTracker.Domain.Entities.ApplicationUser
+    name: ApplicationUser
+    type: Class
+  - uid: CalorieTracker.Domain.Entities.EmailConfirmation
+    name: EmailConfirmation
+    type: Class
+  - uid: CalorieTracker.Domain.Entities.PasswordReset
+    name: PasswordReset
+    type: Class
+  - uid: CalorieTracker.Domain.Entities.Product
+    name: Product
+    type: Class
+  - uid: CalorieTracker.Domain.Entities.Recipe
+    name: Recipe
+    type: Class
+  - uid: CalorieTracker.Domain.Entities.RecipeIngredient
+    name: RecipeIngredient
+    type: Class
+  - uid: CalorieTracker.Domain.Entities.RefreshToken
+    name: RefreshToken
+    type: Class
+  - uid: CalorieTracker.Domain.Entities.UserProfile
+    name: UserProfile
+    type: Class
+  - uid: CalorieTracker.Domain.Entities.WeightMeasurement
+    name: WeightMeasurement
+    type: Class
+- uid: CalorieTracker.Domain.Enums
+  name: CalorieTracker.Domain.Enums
+  type: Namespace
+  items:
+  - uid: CalorieTracker.Domain.Enums.ActivityLevel
+    name: ActivityLevel
+    type: Enum
+  - uid: CalorieTracker.Domain.Enums.Gender
+    name: Gender
+    type: Enum
+  - uid: CalorieTracker.Domain.Enums.GoalType
+    name: GoalType
+    type: Enum
+  - uid: CalorieTracker.Domain.Enums.ProductCategory
+    name: ProductCategory
+    type: Enum
+  - uid: CalorieTracker.Domain.Enums.ProductUnit
+    name: ProductUnit
+    type: Enum
+- uid: CalorieTracker.Domain.Services
+  name: CalorieTracker.Domain.Services
+  type: Namespace
+  items:
+  - uid: CalorieTracker.Domain.Services.RecipeNutritionCalculator
+    name: RecipeNutritionCalculator
+    type: Class
+  - uid: CalorieTracker.Domain.Services.WeightAnalysisService
+    name: WeightAnalysisService
+    type: Class
+- uid: CalorieTracker.Domain.ValueObjects
+  name: CalorieTracker.Domain.ValueObjects
+  type: Namespace
+  items:
+  - uid: CalorieTracker.Domain.ValueObjects.RecipeNutrition
+    name: RecipeNutrition
+    type: Class
+- uid: CalorieTracker.Infrastructure.Auth
+  name: CalorieTracker.Infrastructure.Auth
+  type: Namespace
+  items:
+  - uid: CalorieTracker.Infrastructure.Auth.JwtGenerator
+    name: JwtGenerator
+    type: Class
+- uid: CalorieTracker.Infrastructure.Data
+  name: CalorieTracker.Infrastructure.Data
+  type: Namespace
+  items:
+  - uid: CalorieTracker.Infrastructure.Data.AppDbContext
+    name: AppDbContext
+    type: Class
+- uid: CalorieTracker.Infrastructure.Email
+  name: CalorieTracker.Infrastructure.Email
+  type: Namespace
+  items:
+  - uid: CalorieTracker.Infrastructure.Email.EmailSender
+    name: EmailSender
+    type: Class
+  - uid: CalorieTracker.Infrastructure.Email.EmailSettings
+    name: EmailSettings
+    type: Class
+- uid: CalorieTracker.Infrastructure.Migrations
+  name: CalorieTracker.Infrastructure.Migrations
+  type: Namespace
+  items:
+  - uid: CalorieTracker.Infrastructure.Migrations.AddEmailConfirmationTable
+    name: AddEmailConfirmationTable
+    type: Class
+  - uid: CalorieTracker.Infrastructure.Migrations.AddNutritionTrackingTables
+    name: AddNutritionTrackingTables
+    type: Class
+  - uid: CalorieTracker.Infrastructure.Migrations.AddPasswordResetSupport
+    name: AddPasswordResetSupport
+    type: Class
+  - uid: CalorieTracker.Infrastructure.Migrations.AddProductsTable
+    name: AddProductsTable
+    type: Class
+  - uid: CalorieTracker.Infrastructure.Migrations.AddRecipesAndIngredients
+    name: AddRecipesAndIngredients
+    type: Class
+  - uid: CalorieTracker.Infrastructure.Migrations.AddRefreshTokens
+    name: AddRefreshTokens
+    type: Class
+  - uid: CalorieTracker.Infrastructure.Migrations.AddTargetWeightAndMealPlanToUserProfile
+    name: AddTargetWeightAndMealPlanToUserProfile
+    type: Class
+  - uid: CalorieTracker.Infrastructure.Migrations.AddUserProfile
+    name: AddUserProfile
+    type: Class
+  - uid: CalorieTracker.Infrastructure.Migrations.AddWeightMeasurements
+    name: AddWeightMeasurements
+    type: Class
+  - uid: CalorieTracker.Infrastructure.Migrations.DeleteNutrition
+    name: DeleteNutrition
+    type: Class
+  - uid: CalorieTracker.Infrastructure.Migrations.InitialIdentitySchema
+    name: InitialIdentitySchema
+    type: Class
+- uid: CalorieTracker.Tests.Services
+  name: CalorieTracker.Tests.Services
+  type: Namespace
+  items:
+  - uid: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests
+    name: RecipeNutritionCalculatorTests
+    type: Class
+  - uid: CalorieTracker.Tests.Services.WeightAnalysisServiceTests
+    name: WeightAnalysisServiceTests
+    type: Class
+memberLayout: SamePage

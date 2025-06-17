@@ -1,0 +1,153 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Domain.Enums.ProductUnit
+  commentId: T:CalorieTracker.Domain.Enums.ProductUnit
+  id: ProductUnit
+  parent: CalorieTracker.Domain.Enums
+  children:
+  - CalorieTracker.Domain.Enums.ProductUnit.Gram
+  - CalorieTracker.Domain.Enums.ProductUnit.Milliliter
+  - CalorieTracker.Domain.Enums.ProductUnit.Piece
+  langs:
+  - csharp
+  - vb
+  name: ProductUnit
+  nameWithType: ProductUnit
+  fullName: CalorieTracker.Domain.Enums.ProductUnit
+  type: Enum
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Enums/PruductUnit.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: ProductUnit
+    path: ../src/CalorieTracker.Domain/Enums/PruductUnit.cs
+    startLine: 9
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Enums
+  example: []
+  syntax:
+    content: public enum ProductUnit
+    content.vb: Public Enum ProductUnit
+- uid: CalorieTracker.Domain.Enums.ProductUnit.Gram
+  commentId: F:CalorieTracker.Domain.Enums.ProductUnit.Gram
+  id: Gram
+  parent: CalorieTracker.Domain.Enums.ProductUnit
+  langs:
+  - csharp
+  - vb
+  name: Gram
+  nameWithType: ProductUnit.Gram
+  fullName: CalorieTracker.Domain.Enums.ProductUnit.Gram
+  type: Field
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Enums/PruductUnit.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Gram
+    path: ../src/CalorieTracker.Domain/Enums/PruductUnit.cs
+    startLine: 14
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Enums
+  example: []
+  syntax:
+    content: Gram = 0
+    return:
+      type: CalorieTracker.Domain.Enums.ProductUnit
+- uid: CalorieTracker.Domain.Enums.ProductUnit.Milliliter
+  commentId: F:CalorieTracker.Domain.Enums.ProductUnit.Milliliter
+  id: Milliliter
+  parent: CalorieTracker.Domain.Enums.ProductUnit
+  langs:
+  - csharp
+  - vb
+  name: Milliliter
+  nameWithType: ProductUnit.Milliliter
+  fullName: CalorieTracker.Domain.Enums.ProductUnit.Milliliter
+  type: Field
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Enums/PruductUnit.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Milliliter
+    path: ../src/CalorieTracker.Domain/Enums/PruductUnit.cs
+    startLine: 19
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Enums
+  summary: Mililitry - jednostka miary przeznaczona głównie dla płynów.
+  example: []
+  syntax:
+    content: Milliliter = 1
+    return:
+      type: CalorieTracker.Domain.Enums.ProductUnit
+- uid: CalorieTracker.Domain.Enums.ProductUnit.Piece
+  commentId: F:CalorieTracker.Domain.Enums.ProductUnit.Piece
+  id: Piece
+  parent: CalorieTracker.Domain.Enums.ProductUnit
+  langs:
+  - csharp
+  - vb
+  name: Piece
+  nameWithType: ProductUnit.Piece
+  fullName: CalorieTracker.Domain.Enums.ProductUnit.Piece
+  type: Field
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Enums/PruductUnit.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Piece
+    path: ../src/CalorieTracker.Domain/Enums/PruductUnit.cs
+    startLine: 24
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Enums
+  summary: Sztuki - jednostka miary dla produktów liczonych indywidualnie (np. jajka, bułki).
+  example: []
+  syntax:
+    content: Piece = 2
+    return:
+      type: CalorieTracker.Domain.Enums.ProductUnit
+references:
+- uid: CalorieTracker.Domain.Enums
+  commentId: N:CalorieTracker.Domain.Enums
+  href: CalorieTracker.html
+  name: CalorieTracker.Domain.Enums
+  nameWithType: CalorieTracker.Domain.Enums
+  fullName: CalorieTracker.Domain.Enums
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Domain
+    name: Domain
+    href: CalorieTracker.Domain.html
+  - name: .
+  - uid: CalorieTracker.Domain.Enums
+    name: Enums
+    href: CalorieTracker.Domain.Enums.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Domain
+    name: Domain
+    href: CalorieTracker.Domain.html
+  - name: .
+  - uid: CalorieTracker.Domain.Enums
+    name: Enums
+    href: CalorieTracker.Domain.Enums.html
+- uid: CalorieTracker.Domain.Enums.ProductUnit
+  commentId: T:CalorieTracker.Domain.Enums.ProductUnit
+  parent: CalorieTracker.Domain.Enums
+  href: CalorieTracker.Domain.Enums.ProductUnit.html
+  name: ProductUnit
+  nameWithType: ProductUnit
+  fullName: CalorieTracker.Domain.Enums.ProductUnit

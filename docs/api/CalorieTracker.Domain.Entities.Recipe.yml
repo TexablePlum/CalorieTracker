@@ -1,0 +1,1035 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Domain.Entities.Recipe
+  commentId: T:CalorieTracker.Domain.Entities.Recipe
+  id: Recipe
+  parent: CalorieTracker.Domain.Entities
+  children:
+  - CalorieTracker.Domain.Entities.Recipe.CreatedAt
+  - CalorieTracker.Domain.Entities.Recipe.CreatedByUser
+  - CalorieTracker.Domain.Entities.Recipe.CreatedByUserId
+  - CalorieTracker.Domain.Entities.Recipe.Id
+  - CalorieTracker.Domain.Entities.Recipe.Ingredients
+  - CalorieTracker.Domain.Entities.Recipe.Instructions
+  - CalorieTracker.Domain.Entities.Recipe.Name
+  - CalorieTracker.Domain.Entities.Recipe.PreparationTimeMinutes
+  - CalorieTracker.Domain.Entities.Recipe.ServingsCount
+  - CalorieTracker.Domain.Entities.Recipe.TotalWeightGrams
+  - CalorieTracker.Domain.Entities.Recipe.UpdatedAt
+  langs:
+  - csharp
+  - vb
+  name: Recipe
+  nameWithType: Recipe
+  fullName: CalorieTracker.Domain.Entities.Recipe
+  type: Class
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/Recipe.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Recipe
+    path: ../src/CalorieTracker.Domain/Entities/Recipe.cs
+    startLine: 13
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  example: []
+  syntax:
+    content: public class Recipe
+    content.vb: Public Class Recipe
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: CalorieTracker.Domain.Entities.Recipe.Id
+  commentId: P:CalorieTracker.Domain.Entities.Recipe.Id
+  id: Id
+  parent: CalorieTracker.Domain.Entities.Recipe
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: Recipe.Id
+  fullName: CalorieTracker.Domain.Entities.Recipe.Id
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/Recipe.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Id
+    path: ../src/CalorieTracker.Domain/Entities/Recipe.cs
+    startLine: 19
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  example: []
+  syntax:
+    content: >-
+      [Key]
+
+      public Guid Id { get; set; }
+    parameters: []
+    return:
+      type: System.Guid
+    content.vb: >-
+      <Key>
+
+      Public Property Id As Guid
+  overload: CalorieTracker.Domain.Entities.Recipe.Id*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.KeyAttribute
+    ctor: System.ComponentModel.DataAnnotations.KeyAttribute.#ctor
+    arguments: []
+- uid: CalorieTracker.Domain.Entities.Recipe.Name
+  commentId: P:CalorieTracker.Domain.Entities.Recipe.Name
+  id: Name
+  parent: CalorieTracker.Domain.Entities.Recipe
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: Recipe.Name
+  fullName: CalorieTracker.Domain.Entities.Recipe.Name
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/Recipe.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Name
+    path: ../src/CalorieTracker.Domain/Entities/Recipe.cs
+    startLine: 26
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  summary: >-
+    Nazwa przepisu (np. "Omlet z warzywami").
+
+    Pole wymagane, maksymalna długość 200 znaków.
+  example: []
+  syntax:
+    content: >-
+      [Required]
+
+      [MaxLength(200)]
+
+      public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <Required>
+
+      <MaxLength(200)>
+
+      Public Property Name As String
+  overload: CalorieTracker.Domain.Entities.Recipe.Name*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+  - type: System.ComponentModel.DataAnnotations.MaxLengthAttribute
+    ctor: System.ComponentModel.DataAnnotations.MaxLengthAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 200
+- uid: CalorieTracker.Domain.Entities.Recipe.Instructions
+  commentId: P:CalorieTracker.Domain.Entities.Recipe.Instructions
+  id: Instructions
+  parent: CalorieTracker.Domain.Entities.Recipe
+  langs:
+  - csharp
+  - vb
+  name: Instructions
+  nameWithType: Recipe.Instructions
+  fullName: CalorieTracker.Domain.Entities.Recipe.Instructions
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/Recipe.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Instructions
+    path: ../src/CalorieTracker.Domain/Entities/Recipe.cs
+    startLine: 34
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  summary: >-
+    Instrukcje przygotowania potrawy.
+
+    Pole wymagane, maksymalna długość 5000 znaków.
+  example: []
+  syntax:
+    content: >-
+      [Required]
+
+      [MaxLength(5000)]
+
+      public string Instructions { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <Required>
+
+      <MaxLength(5000)>
+
+      Public Property Instructions As String
+  overload: CalorieTracker.Domain.Entities.Recipe.Instructions*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+  - type: System.ComponentModel.DataAnnotations.MaxLengthAttribute
+    ctor: System.ComponentModel.DataAnnotations.MaxLengthAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 5000
+- uid: CalorieTracker.Domain.Entities.Recipe.ServingsCount
+  commentId: P:CalorieTracker.Domain.Entities.Recipe.ServingsCount
+  id: ServingsCount
+  parent: CalorieTracker.Domain.Entities.Recipe
+  langs:
+  - csharp
+  - vb
+  name: ServingsCount
+  nameWithType: Recipe.ServingsCount
+  fullName: CalorieTracker.Domain.Entities.Recipe.ServingsCount
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/Recipe.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: ServingsCount
+    path: ../src/CalorieTracker.Domain/Entities/Recipe.cs
+    startLine: 42
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  summary: >-
+    Liczba porcji, na które przeznaczony jest przepis.
+
+    Pole wymagane, wartość w zakresie od 1 do 50.
+  example: []
+  syntax:
+    content: >-
+      [Required]
+
+      [Range(1, 50)]
+
+      public int ServingsCount { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: >-
+      <Required>
+
+      <Range(1, 50)>
+
+      Public Property ServingsCount As Integer
+  overload: CalorieTracker.Domain.Entities.Recipe.ServingsCount*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+  - type: System.ComponentModel.DataAnnotations.RangeAttribute
+    ctor: System.ComponentModel.DataAnnotations.RangeAttribute.#ctor(System.Int32,System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 1
+    - type: System.Int32
+      value: 50
+- uid: CalorieTracker.Domain.Entities.Recipe.TotalWeightGrams
+  commentId: P:CalorieTracker.Domain.Entities.Recipe.TotalWeightGrams
+  id: TotalWeightGrams
+  parent: CalorieTracker.Domain.Entities.Recipe
+  langs:
+  - csharp
+  - vb
+  name: TotalWeightGrams
+  nameWithType: Recipe.TotalWeightGrams
+  fullName: CalorieTracker.Domain.Entities.Recipe.TotalWeightGrams
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/Recipe.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: TotalWeightGrams
+    path: ../src/CalorieTracker.Domain/Entities/Recipe.cs
+    startLine: 50
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  summary: >-
+    Całkowita masa gotowej potrawy w gramach.
+
+    Pole wymagane, wartość w zakresie od 1 do 50000.
+  example: []
+  syntax:
+    content: >-
+      [Required]
+
+      [Range(1, 50000)]
+
+      public float TotalWeightGrams { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: >-
+      <Required>
+
+      <Range(1, 50000)>
+
+      Public Property TotalWeightGrams As Single
+  overload: CalorieTracker.Domain.Entities.Recipe.TotalWeightGrams*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+  - type: System.ComponentModel.DataAnnotations.RangeAttribute
+    ctor: System.ComponentModel.DataAnnotations.RangeAttribute.#ctor(System.Int32,System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 1
+    - type: System.Int32
+      value: 50000
+- uid: CalorieTracker.Domain.Entities.Recipe.PreparationTimeMinutes
+  commentId: P:CalorieTracker.Domain.Entities.Recipe.PreparationTimeMinutes
+  id: PreparationTimeMinutes
+  parent: CalorieTracker.Domain.Entities.Recipe
+  langs:
+  - csharp
+  - vb
+  name: PreparationTimeMinutes
+  nameWithType: Recipe.PreparationTimeMinutes
+  fullName: CalorieTracker.Domain.Entities.Recipe.PreparationTimeMinutes
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/Recipe.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: PreparationTimeMinutes
+    path: ../src/CalorieTracker.Domain/Entities/Recipe.cs
+    startLine: 58
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  summary: >-
+    Czas przygotowania potrawy w minutach.
+
+    Pole wymagane, wartość w zakresie od 1 do 1440 (maksymalnie 24 godziny).
+  example: []
+  syntax:
+    content: >-
+      [Required]
+
+      [Range(1, 1440)]
+
+      public int PreparationTimeMinutes { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: >-
+      <Required>
+
+      <Range(1, 1440)>
+
+      Public Property PreparationTimeMinutes As Integer
+  overload: CalorieTracker.Domain.Entities.Recipe.PreparationTimeMinutes*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+  - type: System.ComponentModel.DataAnnotations.RangeAttribute
+    ctor: System.ComponentModel.DataAnnotations.RangeAttribute.#ctor(System.Int32,System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 1
+    - type: System.Int32
+      value: 1440
+- uid: CalorieTracker.Domain.Entities.Recipe.CreatedByUserId
+  commentId: P:CalorieTracker.Domain.Entities.Recipe.CreatedByUserId
+  id: CreatedByUserId
+  parent: CalorieTracker.Domain.Entities.Recipe
+  langs:
+  - csharp
+  - vb
+  name: CreatedByUserId
+  nameWithType: Recipe.CreatedByUserId
+  fullName: CalorieTracker.Domain.Entities.Recipe.CreatedByUserId
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/Recipe.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: CreatedByUserId
+    path: ../src/CalorieTracker.Domain/Entities/Recipe.cs
+    startLine: 68
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  summary: >-
+    Identyfikator użytkownika, który dodał przepis.
+
+    Pole wymagane.
+  example: []
+  syntax:
+    content: >-
+      [Required]
+
+      public string CreatedByUserId { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <Required>
+
+      Public Property CreatedByUserId As String
+  overload: CalorieTracker.Domain.Entities.Recipe.CreatedByUserId*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+- uid: CalorieTracker.Domain.Entities.Recipe.CreatedAt
+  commentId: P:CalorieTracker.Domain.Entities.Recipe.CreatedAt
+  id: CreatedAt
+  parent: CalorieTracker.Domain.Entities.Recipe
+  langs:
+  - csharp
+  - vb
+  name: CreatedAt
+  nameWithType: Recipe.CreatedAt
+  fullName: CalorieTracker.Domain.Entities.Recipe.CreatedAt
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/Recipe.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: CreatedAt
+    path: ../src/CalorieTracker.Domain/Entities/Recipe.cs
+    startLine: 75
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  summary: >-
+    Data i czas utworzenia przepisu.
+
+    Domyślnie ustawiane na aktualny czas UTC.
+  example: []
+  syntax:
+    content: public DateTime CreatedAt { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Property CreatedAt As Date
+  overload: CalorieTracker.Domain.Entities.Recipe.CreatedAt*
+- uid: CalorieTracker.Domain.Entities.Recipe.UpdatedAt
+  commentId: P:CalorieTracker.Domain.Entities.Recipe.UpdatedAt
+  id: UpdatedAt
+  parent: CalorieTracker.Domain.Entities.Recipe
+  langs:
+  - csharp
+  - vb
+  name: UpdatedAt
+  nameWithType: Recipe.UpdatedAt
+  fullName: CalorieTracker.Domain.Entities.Recipe.UpdatedAt
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/Recipe.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: UpdatedAt
+    path: ../src/CalorieTracker.Domain/Entities/Recipe.cs
+    startLine: 81
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  summary: >-
+    Data i czas ostatniej modyfikacji przepisu.
+
+    Domyślnie ustawiane na aktualny czas UTC.
+  example: []
+  syntax:
+    content: public DateTime UpdatedAt { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Property UpdatedAt As Date
+  overload: CalorieTracker.Domain.Entities.Recipe.UpdatedAt*
+- uid: CalorieTracker.Domain.Entities.Recipe.CreatedByUser
+  commentId: P:CalorieTracker.Domain.Entities.Recipe.CreatedByUser
+  id: CreatedByUser
+  parent: CalorieTracker.Domain.Entities.Recipe
+  langs:
+  - csharp
+  - vb
+  name: CreatedByUser
+  nameWithType: Recipe.CreatedByUser
+  fullName: CalorieTracker.Domain.Entities.Recipe.CreatedByUser
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/Recipe.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: CreatedByUser
+    path: ../src/CalorieTracker.Domain/Entities/Recipe.cs
+    startLine: 88
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  summary: Właściwość nawigacyjna do użytkownika <xref href="CalorieTracker.Domain.Entities.ApplicationUser" data-throw-if-not-resolved="false"></xref>, który utworzył przepis.
+  example: []
+  syntax:
+    content: public ApplicationUser CreatedByUser { get; set; }
+    parameters: []
+    return:
+      type: CalorieTracker.Domain.Entities.ApplicationUser
+    content.vb: Public Property CreatedByUser As ApplicationUser
+  overload: CalorieTracker.Domain.Entities.Recipe.CreatedByUser*
+- uid: CalorieTracker.Domain.Entities.Recipe.Ingredients
+  commentId: P:CalorieTracker.Domain.Entities.Recipe.Ingredients
+  id: Ingredients
+  parent: CalorieTracker.Domain.Entities.Recipe
+  langs:
+  - csharp
+  - vb
+  name: Ingredients
+  nameWithType: Recipe.Ingredients
+  fullName: CalorieTracker.Domain.Entities.Recipe.Ingredients
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/Recipe.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Ingredients
+    path: ../src/CalorieTracker.Domain/Entities/Recipe.cs
+    startLine: 94
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  summary: >-
+    Lista składników <xref href="CalorieTracker.Domain.Entities.RecipeIngredient" data-throw-if-not-resolved="false"></xref> należących do tego przepisu.
+
+    Reprezentuje kolekcję powiązanych składników.
+  example: []
+  syntax:
+    content: public List<RecipeIngredient> Ingredients { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{CalorieTracker.Domain.Entities.RecipeIngredient}
+    content.vb: Public Property Ingredients As List(Of RecipeIngredient)
+  overload: CalorieTracker.Domain.Entities.Recipe.Ingredients*
+references:
+- uid: CalorieTracker.Domain.Entities
+  commentId: N:CalorieTracker.Domain.Entities
+  href: CalorieTracker.html
+  name: CalorieTracker.Domain.Entities
+  nameWithType: CalorieTracker.Domain.Entities
+  fullName: CalorieTracker.Domain.Entities
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Domain
+    name: Domain
+    href: CalorieTracker.Domain.html
+  - name: .
+  - uid: CalorieTracker.Domain.Entities
+    name: Entities
+    href: CalorieTracker.Domain.Entities.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Domain
+    name: Domain
+    href: CalorieTracker.Domain.html
+  - name: .
+  - uid: CalorieTracker.Domain.Entities
+    name: Entities
+    href: CalorieTracker.Domain.Entities.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CalorieTracker.Domain.Entities.Recipe.Id*
+  commentId: Overload:CalorieTracker.Domain.Entities.Recipe.Id
+  href: CalorieTracker.Domain.Entities.Recipe.html#CalorieTracker_Domain_Entities_Recipe_Id
+  name: Id
+  nameWithType: Recipe.Id
+  fullName: CalorieTracker.Domain.Entities.Recipe.Id
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.guid
+  name: Guid
+  nameWithType: Guid
+  fullName: System.Guid
+- uid: CalorieTracker.Domain.Entities.Recipe.Name*
+  commentId: Overload:CalorieTracker.Domain.Entities.Recipe.Name
+  href: CalorieTracker.Domain.Entities.Recipe.html#CalorieTracker_Domain_Entities_Recipe_Name
+  name: Name
+  nameWithType: Recipe.Name
+  fullName: CalorieTracker.Domain.Entities.Recipe.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: CalorieTracker.Domain.Entities.Recipe.Instructions*
+  commentId: Overload:CalorieTracker.Domain.Entities.Recipe.Instructions
+  href: CalorieTracker.Domain.Entities.Recipe.html#CalorieTracker_Domain_Entities_Recipe_Instructions
+  name: Instructions
+  nameWithType: Recipe.Instructions
+  fullName: CalorieTracker.Domain.Entities.Recipe.Instructions
+- uid: CalorieTracker.Domain.Entities.Recipe.ServingsCount*
+  commentId: Overload:CalorieTracker.Domain.Entities.Recipe.ServingsCount
+  href: CalorieTracker.Domain.Entities.Recipe.html#CalorieTracker_Domain_Entities_Recipe_ServingsCount
+  name: ServingsCount
+  nameWithType: Recipe.ServingsCount
+  fullName: CalorieTracker.Domain.Entities.Recipe.ServingsCount
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: CalorieTracker.Domain.Entities.Recipe.TotalWeightGrams*
+  commentId: Overload:CalorieTracker.Domain.Entities.Recipe.TotalWeightGrams
+  href: CalorieTracker.Domain.Entities.Recipe.html#CalorieTracker_Domain_Entities_Recipe_TotalWeightGrams
+  name: TotalWeightGrams
+  nameWithType: Recipe.TotalWeightGrams
+  fullName: CalorieTracker.Domain.Entities.Recipe.TotalWeightGrams
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: CalorieTracker.Domain.Entities.Recipe.PreparationTimeMinutes*
+  commentId: Overload:CalorieTracker.Domain.Entities.Recipe.PreparationTimeMinutes
+  href: CalorieTracker.Domain.Entities.Recipe.html#CalorieTracker_Domain_Entities_Recipe_PreparationTimeMinutes
+  name: PreparationTimeMinutes
+  nameWithType: Recipe.PreparationTimeMinutes
+  fullName: CalorieTracker.Domain.Entities.Recipe.PreparationTimeMinutes
+- uid: CalorieTracker.Domain.Entities.Recipe.CreatedByUserId*
+  commentId: Overload:CalorieTracker.Domain.Entities.Recipe.CreatedByUserId
+  href: CalorieTracker.Domain.Entities.Recipe.html#CalorieTracker_Domain_Entities_Recipe_CreatedByUserId
+  name: CreatedByUserId
+  nameWithType: Recipe.CreatedByUserId
+  fullName: CalorieTracker.Domain.Entities.Recipe.CreatedByUserId
+- uid: CalorieTracker.Domain.Entities.Recipe.CreatedAt*
+  commentId: Overload:CalorieTracker.Domain.Entities.Recipe.CreatedAt
+  href: CalorieTracker.Domain.Entities.Recipe.html#CalorieTracker_Domain_Entities_Recipe_CreatedAt
+  name: CreatedAt
+  nameWithType: Recipe.CreatedAt
+  fullName: CalorieTracker.Domain.Entities.Recipe.CreatedAt
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: CalorieTracker.Domain.Entities.Recipe.UpdatedAt*
+  commentId: Overload:CalorieTracker.Domain.Entities.Recipe.UpdatedAt
+  href: CalorieTracker.Domain.Entities.Recipe.html#CalorieTracker_Domain_Entities_Recipe_UpdatedAt
+  name: UpdatedAt
+  nameWithType: Recipe.UpdatedAt
+  fullName: CalorieTracker.Domain.Entities.Recipe.UpdatedAt
+- uid: CalorieTracker.Domain.Entities.ApplicationUser
+  commentId: T:CalorieTracker.Domain.Entities.ApplicationUser
+  parent: CalorieTracker.Domain.Entities
+  href: CalorieTracker.Domain.Entities.ApplicationUser.html
+  name: ApplicationUser
+  nameWithType: ApplicationUser
+  fullName: CalorieTracker.Domain.Entities.ApplicationUser
+- uid: CalorieTracker.Domain.Entities.Recipe.CreatedByUser*
+  commentId: Overload:CalorieTracker.Domain.Entities.Recipe.CreatedByUser
+  href: CalorieTracker.Domain.Entities.Recipe.html#CalorieTracker_Domain_Entities_Recipe_CreatedByUser
+  name: CreatedByUser
+  nameWithType: Recipe.CreatedByUser
+  fullName: CalorieTracker.Domain.Entities.Recipe.CreatedByUser
+- uid: CalorieTracker.Domain.Entities.RecipeIngredient
+  commentId: T:CalorieTracker.Domain.Entities.RecipeIngredient
+  href: CalorieTracker.Domain.Entities.RecipeIngredient.html
+  name: RecipeIngredient
+  nameWithType: RecipeIngredient
+  fullName: CalorieTracker.Domain.Entities.RecipeIngredient
+- uid: CalorieTracker.Domain.Entities.Recipe.Ingredients*
+  commentId: Overload:CalorieTracker.Domain.Entities.Recipe.Ingredients
+  href: CalorieTracker.Domain.Entities.Recipe.html#CalorieTracker_Domain_Entities_Recipe_Ingredients
+  name: Ingredients
+  nameWithType: Recipe.Ingredients
+  fullName: CalorieTracker.Domain.Entities.Recipe.Ingredients
+- uid: System.Collections.Generic.List{CalorieTracker.Domain.Entities.RecipeIngredient}
+  commentId: T:System.Collections.Generic.List{CalorieTracker.Domain.Entities.RecipeIngredient}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<RecipeIngredient>
+  nameWithType: List<RecipeIngredient>
+  fullName: System.Collections.Generic.List<CalorieTracker.Domain.Entities.RecipeIngredient>
+  nameWithType.vb: List(Of RecipeIngredient)
+  fullName.vb: System.Collections.Generic.List(Of CalorieTracker.Domain.Entities.RecipeIngredient)
+  name.vb: List(Of RecipeIngredient)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: CalorieTracker.Domain.Entities.RecipeIngredient
+    name: RecipeIngredient
+    href: CalorieTracker.Domain.Entities.RecipeIngredient.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CalorieTracker.Domain.Entities.RecipeIngredient
+    name: RecipeIngredient
+    href: CalorieTracker.Domain.Entities.RecipeIngredient.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic

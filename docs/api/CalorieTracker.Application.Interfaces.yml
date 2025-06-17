@@ -1,0 +1,54 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Application.Interfaces
+  commentId: N:CalorieTracker.Application.Interfaces
+  id: CalorieTracker.Application.Interfaces
+  children:
+  - CalorieTracker.Application.Interfaces.IAppDbContext
+  langs:
+  - csharp
+  - vb
+  name: CalorieTracker.Application.Interfaces
+  nameWithType: CalorieTracker.Application.Interfaces
+  fullName: CalorieTracker.Application.Interfaces
+  type: Namespace
+  assemblies:
+  - CalorieTracker.Application
+references:
+- uid: CalorieTracker.Application.Interfaces.IAppDbContext
+  commentId: T:CalorieTracker.Application.Interfaces.IAppDbContext
+  parent: CalorieTracker.Application.Interfaces
+  href: CalorieTracker.Application.Interfaces.IAppDbContext.html
+  name: IAppDbContext
+  nameWithType: IAppDbContext
+  fullName: CalorieTracker.Application.Interfaces.IAppDbContext
+- uid: CalorieTracker.Application.Interfaces
+  commentId: N:CalorieTracker.Application.Interfaces
+  href: CalorieTracker.html
+  name: CalorieTracker.Application.Interfaces
+  nameWithType: CalorieTracker.Application.Interfaces
+  fullName: CalorieTracker.Application.Interfaces
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Interfaces
+    name: Interfaces
+    href: CalorieTracker.Application.Interfaces.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Interfaces
+    name: Interfaces
+    href: CalorieTracker.Application.Interfaces.html

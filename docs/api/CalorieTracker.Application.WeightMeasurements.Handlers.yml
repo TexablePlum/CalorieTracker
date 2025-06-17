@@ -1,0 +1,102 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Application.WeightMeasurements.Handlers
+  commentId: N:CalorieTracker.Application.WeightMeasurements.Handlers
+  id: CalorieTracker.Application.WeightMeasurements.Handlers
+  children:
+  - CalorieTracker.Application.WeightMeasurements.Handlers.CreateWeightMeasurementHandler
+  - CalorieTracker.Application.WeightMeasurements.Handlers.DeleteWeightMeasurementHandler
+  - CalorieTracker.Application.WeightMeasurements.Handlers.GetLatestWeightMeasurementHandler
+  - CalorieTracker.Application.WeightMeasurements.Handlers.GetUserWeightMeasurementsHandler
+  - CalorieTracker.Application.WeightMeasurements.Handlers.GetWeightMeasurementDetailsHandler
+  - CalorieTracker.Application.WeightMeasurements.Handlers.UpdateWeightMeasurementHandler
+  langs:
+  - csharp
+  - vb
+  name: CalorieTracker.Application.WeightMeasurements.Handlers
+  nameWithType: CalorieTracker.Application.WeightMeasurements.Handlers
+  fullName: CalorieTracker.Application.WeightMeasurements.Handlers
+  type: Namespace
+  assemblies:
+  - CalorieTracker.Application
+references:
+- uid: CalorieTracker.Application.WeightMeasurements.Handlers.CreateWeightMeasurementHandler
+  commentId: T:CalorieTracker.Application.WeightMeasurements.Handlers.CreateWeightMeasurementHandler
+  parent: CalorieTracker.Application.WeightMeasurements.Handlers
+  href: CalorieTracker.Application.WeightMeasurements.Handlers.CreateWeightMeasurementHandler.html
+  name: CreateWeightMeasurementHandler
+  nameWithType: CreateWeightMeasurementHandler
+  fullName: CalorieTracker.Application.WeightMeasurements.Handlers.CreateWeightMeasurementHandler
+- uid: CalorieTracker.Application.WeightMeasurements.Handlers.DeleteWeightMeasurementHandler
+  commentId: T:CalorieTracker.Application.WeightMeasurements.Handlers.DeleteWeightMeasurementHandler
+  parent: CalorieTracker.Application.WeightMeasurements.Handlers
+  href: CalorieTracker.Application.WeightMeasurements.Handlers.DeleteWeightMeasurementHandler.html
+  name: DeleteWeightMeasurementHandler
+  nameWithType: DeleteWeightMeasurementHandler
+  fullName: CalorieTracker.Application.WeightMeasurements.Handlers.DeleteWeightMeasurementHandler
+- uid: CalorieTracker.Application.WeightMeasurements.Handlers.GetLatestWeightMeasurementHandler
+  commentId: T:CalorieTracker.Application.WeightMeasurements.Handlers.GetLatestWeightMeasurementHandler
+  parent: CalorieTracker.Application.WeightMeasurements.Handlers
+  href: CalorieTracker.Application.WeightMeasurements.Handlers.GetLatestWeightMeasurementHandler.html
+  name: GetLatestWeightMeasurementHandler
+  nameWithType: GetLatestWeightMeasurementHandler
+  fullName: CalorieTracker.Application.WeightMeasurements.Handlers.GetLatestWeightMeasurementHandler
+- uid: CalorieTracker.Application.WeightMeasurements.Handlers.GetUserWeightMeasurementsHandler
+  commentId: T:CalorieTracker.Application.WeightMeasurements.Handlers.GetUserWeightMeasurementsHandler
+  parent: CalorieTracker.Application.WeightMeasurements.Handlers
+  href: CalorieTracker.Application.WeightMeasurements.Handlers.GetUserWeightMeasurementsHandler.html
+  name: GetUserWeightMeasurementsHandler
+  nameWithType: GetUserWeightMeasurementsHandler
+  fullName: CalorieTracker.Application.WeightMeasurements.Handlers.GetUserWeightMeasurementsHandler
+- uid: CalorieTracker.Application.WeightMeasurements.Handlers.GetWeightMeasurementDetailsHandler
+  commentId: T:CalorieTracker.Application.WeightMeasurements.Handlers.GetWeightMeasurementDetailsHandler
+  parent: CalorieTracker.Application.WeightMeasurements.Handlers
+  href: CalorieTracker.Application.WeightMeasurements.Handlers.GetWeightMeasurementDetailsHandler.html
+  name: GetWeightMeasurementDetailsHandler
+  nameWithType: GetWeightMeasurementDetailsHandler
+  fullName: CalorieTracker.Application.WeightMeasurements.Handlers.GetWeightMeasurementDetailsHandler
+- uid: CalorieTracker.Application.WeightMeasurements.Handlers.UpdateWeightMeasurementHandler
+  commentId: T:CalorieTracker.Application.WeightMeasurements.Handlers.UpdateWeightMeasurementHandler
+  parent: CalorieTracker.Application.WeightMeasurements.Handlers
+  href: CalorieTracker.Application.WeightMeasurements.Handlers.UpdateWeightMeasurementHandler.html
+  name: UpdateWeightMeasurementHandler
+  nameWithType: UpdateWeightMeasurementHandler
+  fullName: CalorieTracker.Application.WeightMeasurements.Handlers.UpdateWeightMeasurementHandler
+- uid: CalorieTracker.Application.WeightMeasurements.Handlers
+  commentId: N:CalorieTracker.Application.WeightMeasurements.Handlers
+  href: CalorieTracker.html
+  name: CalorieTracker.Application.WeightMeasurements.Handlers
+  nameWithType: CalorieTracker.Application.WeightMeasurements.Handlers
+  fullName: CalorieTracker.Application.WeightMeasurements.Handlers
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.WeightMeasurements
+    name: WeightMeasurements
+    href: CalorieTracker.Application.WeightMeasurements.html
+  - name: .
+  - uid: CalorieTracker.Application.WeightMeasurements.Handlers
+    name: Handlers
+    href: CalorieTracker.Application.WeightMeasurements.Handlers.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.WeightMeasurements
+    name: WeightMeasurements
+    href: CalorieTracker.Application.WeightMeasurements.html
+  - name: .
+  - uid: CalorieTracker.Application.WeightMeasurements.Handlers
+    name: Handlers
+    href: CalorieTracker.Application.WeightMeasurements.Handlers.html

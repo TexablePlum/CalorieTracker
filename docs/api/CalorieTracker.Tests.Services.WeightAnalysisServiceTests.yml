@@ -1,0 +1,1082 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Tests.Services.WeightAnalysisServiceTests
+  commentId: T:CalorieTracker.Tests.Services.WeightAnalysisServiceTests
+  id: WeightAnalysisServiceTests
+  parent: CalorieTracker.Tests.Services
+  children:
+  - CalorieTracker.Tests.Services.WeightAnalysisServiceTests.#ctor
+  - CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateBMI_EdgeCases_ShouldHandleCorrectly(System.Single,System.Single,System.Single)
+  - CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateBMI_ShouldCalculateCorrectly(System.Single,System.Single,System.Single)
+  - CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateBMI_WithInvalidInput_ShouldThrowException(System.Single,System.Single)
+  - CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateProgressToGoal_ShouldCalculateCorrectly(System.Single,System.Single,System.Single)
+  - CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateWeightChange_ShouldCalculateCorrectly(System.Single,System.Single,System.Single)
+  - CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateWeightChange_WithExtremeValues_ShouldHandleCorrectly
+  - CalorieTracker.Tests.Services.WeightAnalysisServiceTests.FillCalculatedFields_WithNoHeight_ShouldNotCalculateBMI
+  - CalorieTracker.Tests.Services.WeightAnalysisServiceTests.FillCalculatedFields_WithNoPreviousMeasurement_ShouldSetZeroChange
+  - CalorieTracker.Tests.Services.WeightAnalysisServiceTests.FillCalculatedFields_WithValidData_ShouldFillAllFields
+  langs:
+  - csharp
+  - vb
+  name: WeightAnalysisServiceTests
+  nameWithType: WeightAnalysisServiceTests
+  fullName: CalorieTracker.Tests.Services.WeightAnalysisServiceTests
+  type: Class
+  source:
+    remote:
+      path: src/CalorieTracker.Tests/Services/WeightAnalysisServiceTests.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: WeightAnalysisServiceTests
+    path: ../src/CalorieTracker.Tests/Services/WeightAnalysisServiceTests.cs
+    startLine: 23
+  assemblies:
+  - CalorieTracker.Tests
+  namespace: CalorieTracker.Tests.Services
+  summary: >-
+    Klasa testowa weryfikująca poprawność działania serwisu <xref href="CalorieTracker.Domain.Services.WeightAnalysisService" data-throw-if-not-resolved="false"></xref>.
+
+    Zawiera testy jednostkowe dla wszystkich algorytmów analizy masy ciała użytkowników,
+
+    włączając kalkulacje BMI, zmiany wagi oraz postępu względem celów wagowych.
+  remarks: >-
+    <p><strong>Testowane funkcjonalności:</strong></p>
+
+    <ul><li>Kalkulacja wskaźnika BMI dla różnych kategorii wagowych</li><li>Obliczanie zmian masy ciała między pomiarami</li><li>Analiza postępu względem celów wagowych użytkownika</li><li>Automatyczne wypełnianie pól kalkulowanych w pomiarach</li><li>Obsługa przypadków granicznych i błędnych danych</li></ul>
+
+    <p><strong>Wzorce testowe:</strong> AAA Pattern, Theory/InlineData, Helper Methods</p>
+  example: []
+  syntax:
+    content: public class WeightAnalysisServiceTests
+    content.vb: Public Class WeightAnalysisServiceTests
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.#ctor
+  commentId: M:CalorieTracker.Tests.Services.WeightAnalysisServiceTests.#ctor
+  id: '#ctor'
+  parent: CalorieTracker.Tests.Services.WeightAnalysisServiceTests
+  langs:
+  - csharp
+  - vb
+  name: WeightAnalysisServiceTests()
+  nameWithType: WeightAnalysisServiceTests.WeightAnalysisServiceTests()
+  fullName: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.WeightAnalysisServiceTests()
+  type: Constructor
+  source:
+    remote:
+      path: src/CalorieTracker.Tests/Services/WeightAnalysisServiceTests.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: .ctor
+    path: ../src/CalorieTracker.Tests/Services/WeightAnalysisServiceTests.cs
+    startLine: 35
+  assemblies:
+  - CalorieTracker.Tests
+  namespace: CalorieTracker.Tests.Services
+  summary: >-
+    Inicjalizuje nową instancję klasy testowej.
+
+    Tworzy czystą instancję <xref href="CalorieTracker.Domain.Services.WeightAnalysisService" data-throw-if-not-resolved="false"></xref> dla każdego testu.
+  example: []
+  syntax:
+    content: public WeightAnalysisServiceTests()
+    content.vb: Public Sub New()
+  overload: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.#ctor*
+  nameWithType.vb: WeightAnalysisServiceTests.New()
+  fullName.vb: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.New()
+  name.vb: New()
+- uid: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateBMI_ShouldCalculateCorrectly(System.Single,System.Single,System.Single)
+  commentId: M:CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateBMI_ShouldCalculateCorrectly(System.Single,System.Single,System.Single)
+  id: CalculateBMI_ShouldCalculateCorrectly(System.Single,System.Single,System.Single)
+  parent: CalorieTracker.Tests.Services.WeightAnalysisServiceTests
+  langs:
+  - csharp
+  - vb
+  name: CalculateBMI_ShouldCalculateCorrectly(float, float, float)
+  nameWithType: WeightAnalysisServiceTests.CalculateBMI_ShouldCalculateCorrectly(float, float, float)
+  fullName: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateBMI_ShouldCalculateCorrectly(float, float, float)
+  type: Method
+  source:
+    remote:
+      path: src/CalorieTracker.Tests/Services/WeightAnalysisServiceTests.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: CalculateBMI_ShouldCalculateCorrectly
+    path: ../src/CalorieTracker.Tests/Services/WeightAnalysisServiceTests.cs
+    startLine: 69
+  assemblies:
+  - CalorieTracker.Tests
+  namespace: CalorieTracker.Tests.Services
+  summary: >-
+    Weryfikuje poprawność kalkulacji wskaźnika BMI dla różnych kategorii wagowych.
+
+    Test parametryzowany sprawdzający algorytm BMI = waga(kg) / (wzrost(m))².
+  remarks: >-
+    <p><strong>Testowane kategorie BMI:</strong></p>
+
+    <table><tbody><tr><td class="term">Niedowaga</td><td class="description">BMI &lt; 18.5 (45kg, 165cm = 16.5)</td></tr><tr><td class="term">Waga normalna</td><td class="description">BMI 18.5-24.9 (70kg, 175cm = 22.9)</td></tr><tr><td class="term">Nadwaga</td><td class="description">BMI 25-29.9 (90kg, 180cm = 27.8)</td></tr><tr><td class="term">Otyłość</td><td class="description">BMI ≥ 30 (100kg, 170cm = 34.6)</td></tr></tbody></table>
+
+    <p><strong>Precyzja:</strong> Wyniki zaokrąglane do 1 miejsca po przecinku zgodnie z wymogami medycznymi.</p>
+  example: []
+  syntax:
+    content: >-
+      [Theory]
+
+      [InlineData(new object[] { 70, 175, 22.9 })]
+
+      [InlineData(new object[] { 60, 160, 23.4 })]
+
+      [InlineData(new object[] { 90, 180, 27.8 })]
+
+      [InlineData(new object[] { 100, 170, 34.6 })]
+
+      [InlineData(new object[] { 45, 165, 16.5 })]
+
+      public void CalculateBMI_ShouldCalculateCorrectly(float weightKg, float heightCm, float expectedBMI)
+    parameters:
+    - id: weightKg
+      type: System.Single
+      description: Masa ciała w kilogramach.
+    - id: heightCm
+      type: System.Single
+      description: Wzrost w centymetrach.
+    - id: expectedBMI
+      type: System.Single
+      description: Oczekiwana wartość BMI zaokrąglona do 1 miejsca po przecinku.
+    content.vb: >-
+      <Theory>
+
+      <InlineData(New Object() { 70, 175, 22.9 })>
+
+      <InlineData(New Object() { 60, 160, 23.4 })>
+
+      <InlineData(New Object() { 90, 180, 27.8 })>
+
+      <InlineData(New Object() { 100, 170, 34.6 })>
+
+      <InlineData(New Object() { 45, 165, 16.5 })>
+
+      Public Sub CalculateBMI_ShouldCalculateCorrectly(weightKg As Single, heightCm As Single, expectedBMI As Single)
+  overload: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateBMI_ShouldCalculateCorrectly*
+  attributes:
+  - type: Xunit.TheoryAttribute
+    ctor: Xunit.TheoryAttribute.#ctor
+    arguments: []
+  nameWithType.vb: WeightAnalysisServiceTests.CalculateBMI_ShouldCalculateCorrectly(Single, Single, Single)
+  fullName.vb: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateBMI_ShouldCalculateCorrectly(Single, Single, Single)
+  name.vb: CalculateBMI_ShouldCalculateCorrectly(Single, Single, Single)
+- uid: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateBMI_WithInvalidInput_ShouldThrowException(System.Single,System.Single)
+  commentId: M:CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateBMI_WithInvalidInput_ShouldThrowException(System.Single,System.Single)
+  id: CalculateBMI_WithInvalidInput_ShouldThrowException(System.Single,System.Single)
+  parent: CalorieTracker.Tests.Services.WeightAnalysisServiceTests
+  langs:
+  - csharp
+  - vb
+  name: CalculateBMI_WithInvalidInput_ShouldThrowException(float, float)
+  nameWithType: WeightAnalysisServiceTests.CalculateBMI_WithInvalidInput_ShouldThrowException(float, float)
+  fullName: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateBMI_WithInvalidInput_ShouldThrowException(float, float)
+  type: Method
+  source:
+    remote:
+      path: src/CalorieTracker.Tests/Services/WeightAnalysisServiceTests.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: CalculateBMI_WithInvalidInput_ShouldThrowException
+    path: ../src/CalorieTracker.Tests/Services/WeightAnalysisServiceTests.cs
+    startLine: 101
+  assemblies:
+  - CalorieTracker.Tests
+  namespace: CalorieTracker.Tests.Services
+  summary: >-
+    Weryfikuje obsługę nieprawidłowych danych wejściowych w kalkulacji BMI.
+
+    Test parametryzowany sprawdzający walidację biznesową przed wykonaniem obliczeń.
+  remarks: >-
+    <p><strong>Testowane przypadki błędnych danych:</strong></p>
+
+    <ul><li>Waga równa zero (niemożliwa biologicznie)</li><li>Wzrost równy zero (niemożliwy biologicznie)</li><li>Ujemna waga (nieprawidłowe dane wejściowe)</li><li>Ujemny wzrost (nieprawidłowe dane wejściowe)</li></ul>
+
+    <p><strong>Oczekiwane zachowanie:</strong> Wyrzucenie <xref href="System.ArgumentException" data-throw-if-not-resolved="false"></xref> 
+
+    z opisowym komunikatem o wymaganych wartościach dodatnich.</p>
+  example: []
+  syntax:
+    content: >-
+      [Theory]
+
+      [InlineData(new object[] { 0, 175 })]
+
+      [InlineData(new object[] { 70, 0 })]
+
+      [InlineData(new object[] { -10, 175 })]
+
+      [InlineData(new object[] { 70, -160 })]
+
+      public void CalculateBMI_WithInvalidInput_ShouldThrowException(float weightKg, float heightCm)
+    parameters:
+    - id: weightKg
+      type: System.Single
+      description: Nieprawidłowa masa ciała (zero, ujemna).
+    - id: heightCm
+      type: System.Single
+      description: Nieprawidłowy wzrost (zero, ujemny).
+    content.vb: >-
+      <Theory>
+
+      <InlineData(New Object() { 0, 175 })>
+
+      <InlineData(New Object() { 70, 0 })>
+
+      <InlineData(New Object() { -10, 175 })>
+
+      <InlineData(New Object() { 70, -160 })>
+
+      Public Sub CalculateBMI_WithInvalidInput_ShouldThrowException(weightKg As Single, heightCm As Single)
+  overload: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateBMI_WithInvalidInput_ShouldThrowException*
+  attributes:
+  - type: Xunit.TheoryAttribute
+    ctor: Xunit.TheoryAttribute.#ctor
+    arguments: []
+  nameWithType.vb: WeightAnalysisServiceTests.CalculateBMI_WithInvalidInput_ShouldThrowException(Single, Single)
+  fullName.vb: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateBMI_WithInvalidInput_ShouldThrowException(Single, Single)
+  name.vb: CalculateBMI_WithInvalidInput_ShouldThrowException(Single, Single)
+- uid: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateWeightChange_ShouldCalculateCorrectly(System.Single,System.Single,System.Single)
+  commentId: M:CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateWeightChange_ShouldCalculateCorrectly(System.Single,System.Single,System.Single)
+  id: CalculateWeightChange_ShouldCalculateCorrectly(System.Single,System.Single,System.Single)
+  parent: CalorieTracker.Tests.Services.WeightAnalysisServiceTests
+  langs:
+  - csharp
+  - vb
+  name: CalculateWeightChange_ShouldCalculateCorrectly(float, float, float)
+  nameWithType: WeightAnalysisServiceTests.CalculateWeightChange_ShouldCalculateCorrectly(float, float, float)
+  fullName: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateWeightChange_ShouldCalculateCorrectly(float, float, float)
+  type: Method
+  source:
+    remote:
+      path: src/CalorieTracker.Tests/Services/WeightAnalysisServiceTests.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: CalculateWeightChange_ShouldCalculateCorrectly
+    path: ../src/CalorieTracker.Tests/Services/WeightAnalysisServiceTests.cs
+    startLine: 146
+  assemblies:
+  - CalorieTracker.Tests
+  namespace: CalorieTracker.Tests.Services
+  summary: >-
+    Weryfikuje poprawność kalkulacji zmiany masy ciała między dwoma pomiarami.
+
+    Test parametryzowany sprawdzający różnicę: aktualna_waga - poprzednia_waga.
+  remarks: >-
+    <p><strong>Testowane scenariusze zmian:</strong></p>
+
+    <table><tbody><tr><td class="term">Przyrost niewielki</td><td class="description">+0.7kg (76.2 - 75.5)</td></tr><tr><td class="term">Spadek niewielki</td><td class="description">-0.7kg (75.5 - 76.2)</td></tr><tr><td class="term">Brak zmiany</td><td class="description">0.0kg (70.0 - 70.0)</td></tr><tr><td class="term">Znaczący przyrost</td><td class="description">+1.4kg (70.1 - 68.7)</td></tr><tr><td class="term">Znaczący spadek</td><td class="description">-3.4kg (78.9 - 82.3)</td></tr></tbody></table>
+
+    <p><strong>Zastosowanie:</strong> Analiza trendów wagowych, motywacja użytkownika, 
+
+    sygnalizowanie zbyt szybkich zmian.</p>
+  example: []
+  syntax:
+    content: >-
+      [Theory]
+
+      [InlineData(new object[] { 76.2, 75.5, 0.7 })]
+
+      [InlineData(new object[] { 75.5, 76.2, -0.7 })]
+
+      [InlineData(new object[] { 70, 70, 0 })]
+
+      [InlineData(new object[] { 70.1, 68.7, 1.4 })]
+
+      [InlineData(new object[] { 78.9, 82.3, -3.4 })]
+
+      public void CalculateWeightChange_ShouldCalculateCorrectly(float current, float previous, float expectedChange)
+    parameters:
+    - id: current
+      type: System.Single
+      description: Aktualna masa ciała w kg.
+    - id: previous
+      type: System.Single
+      description: Poprzednia masa ciała w kg.
+    - id: expectedChange
+      type: System.Single
+      description: Oczekiwana zmiana w kg (dodatnia = przyrost, ujemna = spadek).
+    content.vb: >-
+      <Theory>
+
+      <InlineData(New Object() { 76.2, 75.5, 0.7 })>
+
+      <InlineData(New Object() { 75.5, 76.2, -0.7 })>
+
+      <InlineData(New Object() { 70, 70, 0 })>
+
+      <InlineData(New Object() { 70.1, 68.7, 1.4 })>
+
+      <InlineData(New Object() { 78.9, 82.3, -3.4 })>
+
+      Public Sub CalculateWeightChange_ShouldCalculateCorrectly(current As Single, previous As Single, expectedChange As Single)
+  overload: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateWeightChange_ShouldCalculateCorrectly*
+  attributes:
+  - type: Xunit.TheoryAttribute
+    ctor: Xunit.TheoryAttribute.#ctor
+    arguments: []
+  nameWithType.vb: WeightAnalysisServiceTests.CalculateWeightChange_ShouldCalculateCorrectly(Single, Single, Single)
+  fullName.vb: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateWeightChange_ShouldCalculateCorrectly(Single, Single, Single)
+  name.vb: CalculateWeightChange_ShouldCalculateCorrectly(Single, Single, Single)
+- uid: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateProgressToGoal_ShouldCalculateCorrectly(System.Single,System.Single,System.Single)
+  commentId: M:CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateProgressToGoal_ShouldCalculateCorrectly(System.Single,System.Single,System.Single)
+  id: CalculateProgressToGoal_ShouldCalculateCorrectly(System.Single,System.Single,System.Single)
+  parent: CalorieTracker.Tests.Services.WeightAnalysisServiceTests
+  langs:
+  - csharp
+  - vb
+  name: CalculateProgressToGoal_ShouldCalculateCorrectly(float, float, float)
+  nameWithType: WeightAnalysisServiceTests.CalculateProgressToGoal_ShouldCalculateCorrectly(float, float, float)
+  fullName: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateProgressToGoal_ShouldCalculateCorrectly(float, float, float)
+  type: Method
+  source:
+    remote:
+      path: src/CalorieTracker.Tests/Services/WeightAnalysisServiceTests.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: CalculateProgressToGoal_ShouldCalculateCorrectly
+    path: ../src/CalorieTracker.Tests/Services/WeightAnalysisServiceTests.cs
+    startLine: 187
+  assemblies:
+  - CalorieTracker.Tests
+  namespace: CalorieTracker.Tests.Services
+  summary: >-
+    Weryfikuje kalkulację postępu użytkownika względem ustalonego celu wagowego.
+
+    Test parametryzowany sprawdzający różnicę: aktualna_waga - cel_wagowy.
+  remarks: >-
+    <p><strong>Interpretacja wyników:</strong></p>
+
+    <table><tbody><tr><td class="term">Wartość dodatnia</td><td class="description">Użytkownik jest powyżej celu wagowego (np. +5.5kg = trzeba schudnąć 5.5kg)</td></tr><tr><td class="term">Wartość ujemna</td><td class="description">Użytkownik przekroczył cel (np. -1.8kg = schudł o 1.8kg więcej niż planował)</td></tr><tr><td class="term">Wartość zero</td><td class="description">Użytkownik osiągnął dokładnie swój cel wagowy</td></tr></tbody></table>
+
+    <p><strong>Zastosowanie UI:</strong> Paski postępu, motywacyjne komunikaty, 
+
+    planowanie kolejnych etapów diety.</p>
+  example: []
+  syntax:
+    content: >-
+      [Theory]
+
+      [InlineData(new object[] { 75.5, 70, 5.5 })]
+
+      [InlineData(new object[] { 68.2, 70, -1.8 })]
+
+      [InlineData(new object[] { 70, 70, 0 })]
+
+      [InlineData(new object[] { 85.7, 80, 5.7 })]
+
+      public void CalculateProgressToGoal_ShouldCalculateCorrectly(float current, float target, float expectedProgress)
+    parameters:
+    - id: current
+      type: System.Single
+      description: Aktualna masa ciała użytkownika w kg.
+    - id: target
+      type: System.Single
+      description: Docelowa masa ciała użytkownika w kg.
+    - id: expectedProgress
+      type: System.Single
+      description: Oczekiwany postęp w kg (dodatni = nad celem, ujemny = poniżej celu).
+    content.vb: >-
+      <Theory>
+
+      <InlineData(New Object() { 75.5, 70, 5.5 })>
+
+      <InlineData(New Object() { 68.2, 70, -1.8 })>
+
+      <InlineData(New Object() { 70, 70, 0 })>
+
+      <InlineData(New Object() { 85.7, 80, 5.7 })>
+
+      Public Sub CalculateProgressToGoal_ShouldCalculateCorrectly(current As Single, target As Single, expectedProgress As Single)
+  overload: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateProgressToGoal_ShouldCalculateCorrectly*
+  attributes:
+  - type: Xunit.TheoryAttribute
+    ctor: Xunit.TheoryAttribute.#ctor
+    arguments: []
+  nameWithType.vb: WeightAnalysisServiceTests.CalculateProgressToGoal_ShouldCalculateCorrectly(Single, Single, Single)
+  fullName.vb: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateProgressToGoal_ShouldCalculateCorrectly(Single, Single, Single)
+  name.vb: CalculateProgressToGoal_ShouldCalculateCorrectly(Single, Single, Single)
+- uid: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.FillCalculatedFields_WithValidData_ShouldFillAllFields
+  commentId: M:CalorieTracker.Tests.Services.WeightAnalysisServiceTests.FillCalculatedFields_WithValidData_ShouldFillAllFields
+  id: FillCalculatedFields_WithValidData_ShouldFillAllFields
+  parent: CalorieTracker.Tests.Services.WeightAnalysisServiceTests
+  langs:
+  - csharp
+  - vb
+  name: FillCalculatedFields_WithValidData_ShouldFillAllFields()
+  nameWithType: WeightAnalysisServiceTests.FillCalculatedFields_WithValidData_ShouldFillAllFields()
+  fullName: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.FillCalculatedFields_WithValidData_ShouldFillAllFields()
+  type: Method
+  source:
+    remote:
+      path: src/CalorieTracker.Tests/Services/WeightAnalysisServiceTests.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: FillCalculatedFields_WithValidData_ShouldFillAllFields
+    path: ../src/CalorieTracker.Tests/Services/WeightAnalysisServiceTests.cs
+    startLine: 229
+  assemblies:
+  - CalorieTracker.Tests
+  namespace: CalorieTracker.Tests.Services
+  summary: >-
+    Weryfikuje automatyczne wypełnianie pól kalkulowanych w pomiarze wagi przy pełnych danych.
+
+    Test integracyjny sprawdzający współpracę wszystkich algorytmów kalkulacyjnych.
+  remarks: >-
+    <p><strong>Scenariusz testowy:</strong></p>
+
+    <table><tbody><tr><td class="term">Profil użytkownika</td><td class="description">Wzrost: 175cm, Cel wagowy: 70kg</td></tr><tr><td class="term">Poprzedni pomiar</td><td class="description">73.5kg</td></tr><tr><td class="term">Aktualny pomiar</td><td class="description">72.8kg</td></tr></tbody></table>
+
+    <p><strong>Oczekiwane kalkulacje:</strong></p>
+
+    <ul><li>BMI: 23.8 (72.8 ÷ 1.75²)</li><li>Zmiana wagi: -0.7kg (72.8 - 73.5)</li></ul>
+
+    <p><strong>Logika biznesowa:</strong> Automatyzacja obliczeń zapewnia spójność danych 
+
+    i odciąża użytkownika od manualnych kalkulacji.</p>
+  example: []
+  syntax:
+    content: >-
+      [Fact]
+
+      public void FillCalculatedFields_WithValidData_ShouldFillAllFields()
+    content.vb: >-
+      <Fact>
+
+      Public Sub FillCalculatedFields_WithValidData_ShouldFillAllFields()
+  overload: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.FillCalculatedFields_WithValidData_ShouldFillAllFields*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.FillCalculatedFields_WithNoPreviousMeasurement_ShouldSetZeroChange
+  commentId: M:CalorieTracker.Tests.Services.WeightAnalysisServiceTests.FillCalculatedFields_WithNoPreviousMeasurement_ShouldSetZeroChange
+  id: FillCalculatedFields_WithNoPreviousMeasurement_ShouldSetZeroChange
+  parent: CalorieTracker.Tests.Services.WeightAnalysisServiceTests
+  langs:
+  - csharp
+  - vb
+  name: FillCalculatedFields_WithNoPreviousMeasurement_ShouldSetZeroChange()
+  nameWithType: WeightAnalysisServiceTests.FillCalculatedFields_WithNoPreviousMeasurement_ShouldSetZeroChange()
+  fullName: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.FillCalculatedFields_WithNoPreviousMeasurement_ShouldSetZeroChange()
+  type: Method
+  source:
+    remote:
+      path: src/CalorieTracker.Tests/Services/WeightAnalysisServiceTests.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: FillCalculatedFields_WithNoPreviousMeasurement_ShouldSetZeroChange
+    path: ../src/CalorieTracker.Tests/Services/WeightAnalysisServiceTests.cs
+    startLine: 264
+  assemblies:
+  - CalorieTracker.Tests
+  namespace: CalorieTracker.Tests.Services
+  summary: >-
+    Weryfikuje obsługę pierwszego pomiaru użytkownika (brak poprzedniego pomiaru do porównania).
+
+    Test sprawdzający inicjalizację systemu pomiarów dla nowych użytkowników.
+  remarks: >-
+    <p><strong>Scenariusz testowy:</strong></p>
+
+    <ul><li>Nowy użytkownik wykonuje pierwszy pomiar wagi</li><li>Brak poprzedniego pomiaru do porównania (previousMeasurement = null)</li><li>Profil zawiera wzrost, więc BMI może być obliczone</li></ul>
+
+    <p><strong>Oczekiwane zachowanie:</strong></p>
+
+    <ul><li>BMI obliczone normalnie na podstawie wzrostu z profilu</li><li>Zmiana wagi ustawiona na 0.0kg (punkt odniesienia)</li></ul>
+
+    <p><strong>Znaczenie biznesowe:</strong> Pierwsze pomiary stanowią baseline 
+
+    dla przyszłych analiz trendów wagowych.</p>
+  example: []
+  syntax:
+    content: >-
+      [Fact]
+
+      public void FillCalculatedFields_WithNoPreviousMeasurement_ShouldSetZeroChange()
+    content.vb: >-
+      <Fact>
+
+      Public Sub FillCalculatedFields_WithNoPreviousMeasurement_ShouldSetZeroChange()
+  overload: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.FillCalculatedFields_WithNoPreviousMeasurement_ShouldSetZeroChange*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.FillCalculatedFields_WithNoHeight_ShouldNotCalculateBMI
+  commentId: M:CalorieTracker.Tests.Services.WeightAnalysisServiceTests.FillCalculatedFields_WithNoHeight_ShouldNotCalculateBMI
+  id: FillCalculatedFields_WithNoHeight_ShouldNotCalculateBMI
+  parent: CalorieTracker.Tests.Services.WeightAnalysisServiceTests
+  langs:
+  - csharp
+  - vb
+  name: FillCalculatedFields_WithNoHeight_ShouldNotCalculateBMI()
+  nameWithType: WeightAnalysisServiceTests.FillCalculatedFields_WithNoHeight_ShouldNotCalculateBMI()
+  fullName: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.FillCalculatedFields_WithNoHeight_ShouldNotCalculateBMI()
+  type: Method
+  source:
+    remote:
+      path: src/CalorieTracker.Tests/Services/WeightAnalysisServiceTests.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: FillCalculatedFields_WithNoHeight_ShouldNotCalculateBMI
+    path: ../src/CalorieTracker.Tests/Services/WeightAnalysisServiceTests.cs
+    startLine: 298
+  assemblies:
+  - CalorieTracker.Tests
+  namespace: CalorieTracker.Tests.Services
+  summary: >-
+    Weryfikuje obsługę niekompletnego profilu użytkownika (brak wzrostu).
+
+    Test sprawdzający graceful degradation funkcjonalności przy niepełnych danych.
+  remarks: >-
+    <p><strong>Scenariusz testowy:</strong></p>
+
+    <ul><li>Profil użytkownika nie zawiera wzrostu (HeightCm = null)</li><li>Dostępne są pomiary wagi do porównania</li><li>Cel wagowy może być ustawiony mimo braku wzrostu</li></ul>
+
+    <p><strong>Oczekiwane zachowanie:</strong></p>
+
+    <ul><li>BMI = 0 (nie może być obliczone bez wzrostu)</li><li>Zmiana wagi obliczona normalnie (nie wymaga wzrostu)</li></ul>
+
+    <p><strong>UX Consideration:</strong> Aplikacja pozostaje funkcjonalna nawet przy niepełnych danych,
+
+    a użytkownik może stopniowo uzupełniać profil.</p>
+  example: []
+  syntax:
+    content: >-
+      [Fact]
+
+      public void FillCalculatedFields_WithNoHeight_ShouldNotCalculateBMI()
+    content.vb: >-
+      <Fact>
+
+      Public Sub FillCalculatedFields_WithNoHeight_ShouldNotCalculateBMI()
+  overload: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.FillCalculatedFields_WithNoHeight_ShouldNotCalculateBMI*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateBMI_EdgeCases_ShouldHandleCorrectly(System.Single,System.Single,System.Single)
+  commentId: M:CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateBMI_EdgeCases_ShouldHandleCorrectly(System.Single,System.Single,System.Single)
+  id: CalculateBMI_EdgeCases_ShouldHandleCorrectly(System.Single,System.Single,System.Single)
+  parent: CalorieTracker.Tests.Services.WeightAnalysisServiceTests
+  langs:
+  - csharp
+  - vb
+  name: CalculateBMI_EdgeCases_ShouldHandleCorrectly(float, float, float)
+  nameWithType: WeightAnalysisServiceTests.CalculateBMI_EdgeCases_ShouldHandleCorrectly(float, float, float)
+  fullName: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateBMI_EdgeCases_ShouldHandleCorrectly(float, float, float)
+  type: Method
+  source:
+    remote:
+      path: src/CalorieTracker.Tests/Services/WeightAnalysisServiceTests.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: CalculateBMI_EdgeCases_ShouldHandleCorrectly
+    path: ../src/CalorieTracker.Tests/Services/WeightAnalysisServiceTests.cs
+    startLine: 340
+  assemblies:
+  - CalorieTracker.Tests
+  namespace: CalorieTracker.Tests.Services
+  summary: >-
+    Weryfikuje obsługę przypadków granicznych w kalkulacji BMI.
+
+    Test parametryzowany sprawdzający skrajne, ale biologicznie możliwe wartości.
+  remarks: >-
+    <p><strong>Testowane przypadki graniczne:</strong></p>
+
+    <table><tbody><tr><td class="term">Normalny przypadek</td><td class="description">72.8kg, 175cm → BMI 23.8 (przypadek referencyjny)</td></tr><tr><td class="term">Niska waga/wzrost</td><td class="description">50kg, 150cm → BMI 22.2 (małe osoby, dzieci)</td></tr><tr><td class="term">Wysoka waga/wzrost</td><td class="description">120kg, 200cm → BMI 30.0 (wysokie osoby, sportowcy)</td></tr></tbody></table>
+
+    <p><strong>Cel testów:</strong> Zapewnienie stabilności algorytmu dla całego spektrum
+
+    ludzkich parametrów antropometrycznych.</p>
+  example: []
+  syntax:
+    content: >-
+      [Theory]
+
+      [InlineData(new object[] { 72.8, 175, 23.8 })]
+
+      [InlineData(new object[] { 50, 150, 22.2 })]
+
+      [InlineData(new object[] { 120, 200, 30 })]
+
+      public void CalculateBMI_EdgeCases_ShouldHandleCorrectly(float weight, float height, float expectedBMI)
+    parameters:
+    - id: weight
+      type: System.Single
+      description: Masa ciała w skrajnym zakresie.
+    - id: height
+      type: System.Single
+      description: Wzrost w skrajnym zakresie.
+    - id: expectedBMI
+      type: System.Single
+      description: Oczekiwana wartość BMI.
+    content.vb: >-
+      <Theory>
+
+      <InlineData(New Object() { 72.8, 175, 23.8 })>
+
+      <InlineData(New Object() { 50, 150, 22.2 })>
+
+      <InlineData(New Object() { 120, 200, 30 })>
+
+      Public Sub CalculateBMI_EdgeCases_ShouldHandleCorrectly(weight As Single, height As Single, expectedBMI As Single)
+  overload: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateBMI_EdgeCases_ShouldHandleCorrectly*
+  attributes:
+  - type: Xunit.TheoryAttribute
+    ctor: Xunit.TheoryAttribute.#ctor
+    arguments: []
+  nameWithType.vb: WeightAnalysisServiceTests.CalculateBMI_EdgeCases_ShouldHandleCorrectly(Single, Single, Single)
+  fullName.vb: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateBMI_EdgeCases_ShouldHandleCorrectly(Single, Single, Single)
+  name.vb: CalculateBMI_EdgeCases_ShouldHandleCorrectly(Single, Single, Single)
+- uid: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateWeightChange_WithExtremeValues_ShouldHandleCorrectly
+  commentId: M:CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateWeightChange_WithExtremeValues_ShouldHandleCorrectly
+  id: CalculateWeightChange_WithExtremeValues_ShouldHandleCorrectly
+  parent: CalorieTracker.Tests.Services.WeightAnalysisServiceTests
+  langs:
+  - csharp
+  - vb
+  name: CalculateWeightChange_WithExtremeValues_ShouldHandleCorrectly()
+  nameWithType: WeightAnalysisServiceTests.CalculateWeightChange_WithExtremeValues_ShouldHandleCorrectly()
+  fullName: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateWeightChange_WithExtremeValues_ShouldHandleCorrectly()
+  type: Method
+  source:
+    remote:
+      path: src/CalorieTracker.Tests/Services/WeightAnalysisServiceTests.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: CalculateWeightChange_WithExtremeValues_ShouldHandleCorrectly
+    path: ../src/CalorieTracker.Tests/Services/WeightAnalysisServiceTests.cs
+    startLine: 374
+  assemblies:
+  - CalorieTracker.Tests
+  namespace: CalorieTracker.Tests.Services
+  summary: >-
+    Weryfikuje obsługę ekstremalnych zmian masy ciała.
+
+    Test sprawdzający stabilność algorytmu przy bardzo dużych różnicach wagowych.
+  remarks: >-
+    <p><strong>Scenariusz testowy:</strong></p>
+
+    <ul><li>Obecna waga: 150.7kg</li><li>Poprzednia waga: 45.3kg</li><li>Różnica: +105.4kg (ekstremalnie duża zmiana)</li></ul>
+
+    <p><strong>Kontekst biznesowy:</strong></p>
+
+    <ul><li>Błędy w danych wejściowych</li><li>Zmiana jednostek miary przez użytkownika</li><li>Długoterminowe zmiany (lata bez pomiarów)</li><li>Przypadki medyczne (ciąża, choroby)</li></ul>
+
+    <p><strong>Oczekiwane zachowanie:</strong> Algorytm nie zawiesza się i zwraca matematycznie
+
+    poprawny wynik, pozostawiając walidację biznesową wyższym warstwom.</p>
+  example: []
+  syntax:
+    content: >-
+      [Fact]
+
+      public void CalculateWeightChange_WithExtremeValues_ShouldHandleCorrectly()
+    content.vb: >-
+      <Fact>
+
+      Public Sub CalculateWeightChange_WithExtremeValues_ShouldHandleCorrectly()
+  overload: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateWeightChange_WithExtremeValues_ShouldHandleCorrectly*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+references:
+- uid: CalorieTracker.Domain.Services.WeightAnalysisService
+  commentId: T:CalorieTracker.Domain.Services.WeightAnalysisService
+  parent: CalorieTracker.Domain.Services
+  href: CalorieTracker.Domain.Services.WeightAnalysisService.html
+  name: WeightAnalysisService
+  nameWithType: WeightAnalysisService
+  fullName: CalorieTracker.Domain.Services.WeightAnalysisService
+- uid: CalorieTracker.Tests.Services
+  commentId: N:CalorieTracker.Tests.Services
+  href: CalorieTracker.html
+  name: CalorieTracker.Tests.Services
+  nameWithType: CalorieTracker.Tests.Services
+  fullName: CalorieTracker.Tests.Services
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Tests
+    name: Tests
+    href: CalorieTracker.Tests.html
+  - name: .
+  - uid: CalorieTracker.Tests.Services
+    name: Services
+    href: CalorieTracker.Tests.Services.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Tests
+    name: Tests
+    href: CalorieTracker.Tests.html
+  - name: .
+  - uid: CalorieTracker.Tests.Services
+    name: Services
+    href: CalorieTracker.Tests.Services.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: CalorieTracker.Domain.Services
+  commentId: N:CalorieTracker.Domain.Services
+  href: CalorieTracker.html
+  name: CalorieTracker.Domain.Services
+  nameWithType: CalorieTracker.Domain.Services
+  fullName: CalorieTracker.Domain.Services
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Domain
+    name: Domain
+    href: CalorieTracker.Domain.html
+  - name: .
+  - uid: CalorieTracker.Domain.Services
+    name: Services
+    href: CalorieTracker.Domain.Services.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Domain
+    name: Domain
+    href: CalorieTracker.Domain.html
+  - name: .
+  - uid: CalorieTracker.Domain.Services
+    name: Services
+    href: CalorieTracker.Domain.Services.html
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.#ctor*
+  commentId: Overload:CalorieTracker.Tests.Services.WeightAnalysisServiceTests.#ctor
+  href: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.html#CalorieTracker_Tests_Services_WeightAnalysisServiceTests__ctor
+  name: WeightAnalysisServiceTests
+  nameWithType: WeightAnalysisServiceTests.WeightAnalysisServiceTests
+  fullName: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.WeightAnalysisServiceTests
+  nameWithType.vb: WeightAnalysisServiceTests.New
+  fullName.vb: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.New
+  name.vb: New
+- uid: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateBMI_ShouldCalculateCorrectly*
+  commentId: Overload:CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateBMI_ShouldCalculateCorrectly
+  href: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.html#CalorieTracker_Tests_Services_WeightAnalysisServiceTests_CalculateBMI_ShouldCalculateCorrectly_System_Single_System_Single_System_Single_
+  name: CalculateBMI_ShouldCalculateCorrectly
+  nameWithType: WeightAnalysisServiceTests.CalculateBMI_ShouldCalculateCorrectly
+  fullName: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateBMI_ShouldCalculateCorrectly
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentexception
+  name: ArgumentException
+  nameWithType: ArgumentException
+  fullName: System.ArgumentException
+- uid: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateBMI_WithInvalidInput_ShouldThrowException*
+  commentId: Overload:CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateBMI_WithInvalidInput_ShouldThrowException
+  href: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.html#CalorieTracker_Tests_Services_WeightAnalysisServiceTests_CalculateBMI_WithInvalidInput_ShouldThrowException_System_Single_System_Single_
+  name: CalculateBMI_WithInvalidInput_ShouldThrowException
+  nameWithType: WeightAnalysisServiceTests.CalculateBMI_WithInvalidInput_ShouldThrowException
+  fullName: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateBMI_WithInvalidInput_ShouldThrowException
+- uid: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateWeightChange_ShouldCalculateCorrectly*
+  commentId: Overload:CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateWeightChange_ShouldCalculateCorrectly
+  href: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.html#CalorieTracker_Tests_Services_WeightAnalysisServiceTests_CalculateWeightChange_ShouldCalculateCorrectly_System_Single_System_Single_System_Single_
+  name: CalculateWeightChange_ShouldCalculateCorrectly
+  nameWithType: WeightAnalysisServiceTests.CalculateWeightChange_ShouldCalculateCorrectly
+  fullName: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateWeightChange_ShouldCalculateCorrectly
+- uid: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateProgressToGoal_ShouldCalculateCorrectly*
+  commentId: Overload:CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateProgressToGoal_ShouldCalculateCorrectly
+  href: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.html#CalorieTracker_Tests_Services_WeightAnalysisServiceTests_CalculateProgressToGoal_ShouldCalculateCorrectly_System_Single_System_Single_System_Single_
+  name: CalculateProgressToGoal_ShouldCalculateCorrectly
+  nameWithType: WeightAnalysisServiceTests.CalculateProgressToGoal_ShouldCalculateCorrectly
+  fullName: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateProgressToGoal_ShouldCalculateCorrectly
+- uid: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.FillCalculatedFields_WithValidData_ShouldFillAllFields*
+  commentId: Overload:CalorieTracker.Tests.Services.WeightAnalysisServiceTests.FillCalculatedFields_WithValidData_ShouldFillAllFields
+  href: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.html#CalorieTracker_Tests_Services_WeightAnalysisServiceTests_FillCalculatedFields_WithValidData_ShouldFillAllFields
+  name: FillCalculatedFields_WithValidData_ShouldFillAllFields
+  nameWithType: WeightAnalysisServiceTests.FillCalculatedFields_WithValidData_ShouldFillAllFields
+  fullName: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.FillCalculatedFields_WithValidData_ShouldFillAllFields
+- uid: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.FillCalculatedFields_WithNoPreviousMeasurement_ShouldSetZeroChange*
+  commentId: Overload:CalorieTracker.Tests.Services.WeightAnalysisServiceTests.FillCalculatedFields_WithNoPreviousMeasurement_ShouldSetZeroChange
+  href: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.html#CalorieTracker_Tests_Services_WeightAnalysisServiceTests_FillCalculatedFields_WithNoPreviousMeasurement_ShouldSetZeroChange
+  name: FillCalculatedFields_WithNoPreviousMeasurement_ShouldSetZeroChange
+  nameWithType: WeightAnalysisServiceTests.FillCalculatedFields_WithNoPreviousMeasurement_ShouldSetZeroChange
+  fullName: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.FillCalculatedFields_WithNoPreviousMeasurement_ShouldSetZeroChange
+- uid: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.FillCalculatedFields_WithNoHeight_ShouldNotCalculateBMI*
+  commentId: Overload:CalorieTracker.Tests.Services.WeightAnalysisServiceTests.FillCalculatedFields_WithNoHeight_ShouldNotCalculateBMI
+  href: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.html#CalorieTracker_Tests_Services_WeightAnalysisServiceTests_FillCalculatedFields_WithNoHeight_ShouldNotCalculateBMI
+  name: FillCalculatedFields_WithNoHeight_ShouldNotCalculateBMI
+  nameWithType: WeightAnalysisServiceTests.FillCalculatedFields_WithNoHeight_ShouldNotCalculateBMI
+  fullName: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.FillCalculatedFields_WithNoHeight_ShouldNotCalculateBMI
+- uid: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateBMI_EdgeCases_ShouldHandleCorrectly*
+  commentId: Overload:CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateBMI_EdgeCases_ShouldHandleCorrectly
+  href: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.html#CalorieTracker_Tests_Services_WeightAnalysisServiceTests_CalculateBMI_EdgeCases_ShouldHandleCorrectly_System_Single_System_Single_System_Single_
+  name: CalculateBMI_EdgeCases_ShouldHandleCorrectly
+  nameWithType: WeightAnalysisServiceTests.CalculateBMI_EdgeCases_ShouldHandleCorrectly
+  fullName: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateBMI_EdgeCases_ShouldHandleCorrectly
+- uid: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateWeightChange_WithExtremeValues_ShouldHandleCorrectly*
+  commentId: Overload:CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateWeightChange_WithExtremeValues_ShouldHandleCorrectly
+  href: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.html#CalorieTracker_Tests_Services_WeightAnalysisServiceTests_CalculateWeightChange_WithExtremeValues_ShouldHandleCorrectly
+  name: CalculateWeightChange_WithExtremeValues_ShouldHandleCorrectly
+  nameWithType: WeightAnalysisServiceTests.CalculateWeightChange_WithExtremeValues_ShouldHandleCorrectly
+  fullName: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.CalculateWeightChange_WithExtremeValues_ShouldHandleCorrectly

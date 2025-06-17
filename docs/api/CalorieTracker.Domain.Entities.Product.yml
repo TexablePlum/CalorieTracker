@@ -1,0 +1,1548 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Domain.Entities.Product
+  commentId: T:CalorieTracker.Domain.Entities.Product
+  id: Product
+  parent: CalorieTracker.Domain.Entities
+  children:
+  - CalorieTracker.Domain.Entities.Product.Barcode
+  - CalorieTracker.Domain.Entities.Product.Brand
+  - CalorieTracker.Domain.Entities.Product.CaloriesPer100g
+  - CalorieTracker.Domain.Entities.Product.CarbohydratesPer100g
+  - CalorieTracker.Domain.Entities.Product.Category
+  - CalorieTracker.Domain.Entities.Product.CreatedAt
+  - CalorieTracker.Domain.Entities.Product.CreatedByUser
+  - CalorieTracker.Domain.Entities.Product.CreatedByUserId
+  - CalorieTracker.Domain.Entities.Product.Description
+  - CalorieTracker.Domain.Entities.Product.FatPer100g
+  - CalorieTracker.Domain.Entities.Product.FiberPer100g
+  - CalorieTracker.Domain.Entities.Product.Id
+  - CalorieTracker.Domain.Entities.Product.Ingredients
+  - CalorieTracker.Domain.Entities.Product.IsVerified
+  - CalorieTracker.Domain.Entities.Product.Name
+  - CalorieTracker.Domain.Entities.Product.ProteinPer100g
+  - CalorieTracker.Domain.Entities.Product.ServingSize
+  - CalorieTracker.Domain.Entities.Product.SodiumPer100g
+  - CalorieTracker.Domain.Entities.Product.SugarsPer100g
+  - CalorieTracker.Domain.Entities.Product.Unit
+  - CalorieTracker.Domain.Entities.Product.UpdatedAt
+  langs:
+  - csharp
+  - vb
+  name: Product
+  nameWithType: Product
+  fullName: CalorieTracker.Domain.Entities.Product
+  type: Class
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/Product.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Product
+    path: ../src/CalorieTracker.Domain/Entities/Product.cs
+    startLine: 12
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  example: []
+  syntax:
+    content: public class Product
+    content.vb: Public Class Product
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: CalorieTracker.Domain.Entities.Product.Id
+  commentId: P:CalorieTracker.Domain.Entities.Product.Id
+  id: Id
+  parent: CalorieTracker.Domain.Entities.Product
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: Product.Id
+  fullName: CalorieTracker.Domain.Entities.Product.Id
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/Product.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Id
+    path: ../src/CalorieTracker.Domain/Entities/Product.cs
+    startLine: 18
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  example: []
+  syntax:
+    content: >-
+      [Key]
+
+      public Guid Id { get; set; }
+    parameters: []
+    return:
+      type: System.Guid
+    content.vb: >-
+      <Key>
+
+      Public Property Id As Guid
+  overload: CalorieTracker.Domain.Entities.Product.Id*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.KeyAttribute
+    ctor: System.ComponentModel.DataAnnotations.KeyAttribute.#ctor
+    arguments: []
+- uid: CalorieTracker.Domain.Entities.Product.Name
+  commentId: P:CalorieTracker.Domain.Entities.Product.Name
+  id: Name
+  parent: CalorieTracker.Domain.Entities.Product
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: Product.Name
+  fullName: CalorieTracker.Domain.Entities.Product.Name
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/Product.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Name
+    path: ../src/CalorieTracker.Domain/Entities/Product.cs
+    startLine: 25
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  summary: >-
+    Nazwa produktu (np. "Jajko kurze", "Mleko 3,2%").
+
+    Pole wymagane, maksymalna długość 200 znaków.
+  example: []
+  syntax:
+    content: >-
+      [Required]
+
+      [MaxLength(200)]
+
+      public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <Required>
+
+      <MaxLength(200)>
+
+      Public Property Name As String
+  overload: CalorieTracker.Domain.Entities.Product.Name*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+  - type: System.ComponentModel.DataAnnotations.MaxLengthAttribute
+    ctor: System.ComponentModel.DataAnnotations.MaxLengthAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 200
+- uid: CalorieTracker.Domain.Entities.Product.Brand
+  commentId: P:CalorieTracker.Domain.Entities.Product.Brand
+  id: Brand
+  parent: CalorieTracker.Domain.Entities.Product
+  langs:
+  - csharp
+  - vb
+  name: Brand
+  nameWithType: Product.Brand
+  fullName: CalorieTracker.Domain.Entities.Product.Brand
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/Product.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Brand
+    path: ../src/CalorieTracker.Domain/Entities/Product.cs
+    startLine: 33
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  summary: >-
+    Marka produktu (opcjonalna).
+
+    Maksymalna długość 100 znaków.
+  example: []
+  syntax:
+    content: >-
+      [MaxLength(100)]
+
+      public string? Brand { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <MaxLength(100)>
+
+      Public Property Brand As String
+  overload: CalorieTracker.Domain.Entities.Product.Brand*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.MaxLengthAttribute
+    ctor: System.ComponentModel.DataAnnotations.MaxLengthAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 100
+- uid: CalorieTracker.Domain.Entities.Product.Description
+  commentId: P:CalorieTracker.Domain.Entities.Product.Description
+  id: Description
+  parent: CalorieTracker.Domain.Entities.Product
+  langs:
+  - csharp
+  - vb
+  name: Description
+  nameWithType: Product.Description
+  fullName: CalorieTracker.Domain.Entities.Product.Description
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/Product.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Description
+    path: ../src/CalorieTracker.Domain/Entities/Product.cs
+    startLine: 40
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  summary: >-
+    Opis produktu.
+
+    Maksymalna długość 1000 znaków.
+  example: []
+  syntax:
+    content: >-
+      [MaxLength(1000)]
+
+      public string? Description { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <MaxLength(1000)>
+
+      Public Property Description As String
+  overload: CalorieTracker.Domain.Entities.Product.Description*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.MaxLengthAttribute
+    ctor: System.ComponentModel.DataAnnotations.MaxLengthAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 1000
+- uid: CalorieTracker.Domain.Entities.Product.Ingredients
+  commentId: P:CalorieTracker.Domain.Entities.Product.Ingredients
+  id: Ingredients
+  parent: CalorieTracker.Domain.Entities.Product
+  langs:
+  - csharp
+  - vb
+  name: Ingredients
+  nameWithType: Product.Ingredients
+  fullName: CalorieTracker.Domain.Entities.Product.Ingredients
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/Product.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Ingredients
+    path: ../src/CalorieTracker.Domain/Entities/Product.cs
+    startLine: 47
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  summary: >-
+    Skład produktu.
+
+    Maksymalna długość 2000 znaków.
+  example: []
+  syntax:
+    content: >-
+      [MaxLength(2000)]
+
+      public string? Ingredients { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <MaxLength(2000)>
+
+      Public Property Ingredients As String
+  overload: CalorieTracker.Domain.Entities.Product.Ingredients*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.MaxLengthAttribute
+    ctor: System.ComponentModel.DataAnnotations.MaxLengthAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 2000
+- uid: CalorieTracker.Domain.Entities.Product.Barcode
+  commentId: P:CalorieTracker.Domain.Entities.Product.Barcode
+  id: Barcode
+  parent: CalorieTracker.Domain.Entities.Product
+  langs:
+  - csharp
+  - vb
+  name: Barcode
+  nameWithType: Product.Barcode
+  fullName: CalorieTracker.Domain.Entities.Product.Barcode
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/Product.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Barcode
+    path: ../src/CalorieTracker.Domain/Entities/Product.cs
+    startLine: 54
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  summary: >-
+    Kod kreskowy produktu (opcjonalny).
+
+    Maksymalna długość 50 znaków.
+  example: []
+  syntax:
+    content: >-
+      [MaxLength(50)]
+
+      public string? Barcode { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <MaxLength(50)>
+
+      Public Property Barcode As String
+  overload: CalorieTracker.Domain.Entities.Product.Barcode*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.MaxLengthAttribute
+    ctor: System.ComponentModel.DataAnnotations.MaxLengthAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 50
+- uid: CalorieTracker.Domain.Entities.Product.Category
+  commentId: P:CalorieTracker.Domain.Entities.Product.Category
+  id: Category
+  parent: CalorieTracker.Domain.Entities.Product
+  langs:
+  - csharp
+  - vb
+  name: Category
+  nameWithType: Product.Category
+  fullName: CalorieTracker.Domain.Entities.Product.Category
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/Product.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Category
+    path: ../src/CalorieTracker.Domain/Entities/Product.cs
+    startLine: 61
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  summary: >-
+    Kategoria produktu, zdefiniowana przez <xref href="CalorieTracker.Domain.Enums.ProductCategory" data-throw-if-not-resolved="false"></xref>.
+
+    Pole wymagane.
+  example: []
+  syntax:
+    content: >-
+      [Required]
+
+      public ProductCategory Category { get; set; }
+    parameters: []
+    return:
+      type: CalorieTracker.Domain.Enums.ProductCategory
+    content.vb: >-
+      <Required>
+
+      Public Property Category As ProductCategory
+  overload: CalorieTracker.Domain.Entities.Product.Category*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+- uid: CalorieTracker.Domain.Entities.Product.Unit
+  commentId: P:CalorieTracker.Domain.Entities.Product.Unit
+  id: Unit
+  parent: CalorieTracker.Domain.Entities.Product
+  langs:
+  - csharp
+  - vb
+  name: Unit
+  nameWithType: Product.Unit
+  fullName: CalorieTracker.Domain.Entities.Product.Unit
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/Product.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Unit
+    path: ../src/CalorieTracker.Domain/Entities/Product.cs
+    startLine: 68
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  summary: >-
+    Jednostka miary produktu, zdefiniowana przez <xref href="CalorieTracker.Domain.Enums.ProductUnit" data-throw-if-not-resolved="false"></xref>.
+
+    Pole wymagane.
+  example: []
+  syntax:
+    content: >-
+      [Required]
+
+      public ProductUnit Unit { get; set; }
+    parameters: []
+    return:
+      type: CalorieTracker.Domain.Enums.ProductUnit
+    content.vb: >-
+      <Required>
+
+      Public Property Unit As ProductUnit
+  overload: CalorieTracker.Domain.Entities.Product.Unit*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+- uid: CalorieTracker.Domain.Entities.Product.ServingSize
+  commentId: P:CalorieTracker.Domain.Entities.Product.ServingSize
+  id: ServingSize
+  parent: CalorieTracker.Domain.Entities.Product
+  langs:
+  - csharp
+  - vb
+  name: ServingSize
+  nameWithType: Product.ServingSize
+  fullName: CalorieTracker.Domain.Entities.Product.ServingSize
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/Product.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: ServingSize
+    path: ../src/CalorieTracker.Domain/Entities/Product.cs
+    startLine: 75
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  summary: >-
+    Ilość jednostek, na którą odnoszą się wartości odżywcze (np. 100g, 1 sztuka).
+
+    Pole wymagane.
+  example: []
+  syntax:
+    content: >-
+      [Required]
+
+      public float ServingSize { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: >-
+      <Required>
+
+      Public Property ServingSize As Single
+  overload: CalorieTracker.Domain.Entities.Product.ServingSize*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+- uid: CalorieTracker.Domain.Entities.Product.CaloriesPer100g
+  commentId: P:CalorieTracker.Domain.Entities.Product.CaloriesPer100g
+  id: CaloriesPer100g
+  parent: CalorieTracker.Domain.Entities.Product
+  langs:
+  - csharp
+  - vb
+  name: CaloriesPer100g
+  nameWithType: Product.CaloriesPer100g
+  fullName: CalorieTracker.Domain.Entities.Product.CaloriesPer100g
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/Product.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: CaloriesPer100g
+    path: ../src/CalorieTracker.Domain/Entities/Product.cs
+    startLine: 84
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  summary: >-
+    Kalorie na porcję referencyjną (np. 100g lub 1 sztukę).
+
+    Pole wymagane, wartość w zakresie od 0 do 9999.
+  example: []
+  syntax:
+    content: >-
+      [Required]
+
+      [Range(0, 9999)]
+
+      public float CaloriesPer100g { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: >-
+      <Required>
+
+      <Range(0, 9999)>
+
+      Public Property CaloriesPer100g As Single
+  overload: CalorieTracker.Domain.Entities.Product.CaloriesPer100g*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+  - type: System.ComponentModel.DataAnnotations.RangeAttribute
+    ctor: System.ComponentModel.DataAnnotations.RangeAttribute.#ctor(System.Int32,System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 0
+    - type: System.Int32
+      value: 9999
+- uid: CalorieTracker.Domain.Entities.Product.ProteinPer100g
+  commentId: P:CalorieTracker.Domain.Entities.Product.ProteinPer100g
+  id: ProteinPer100g
+  parent: CalorieTracker.Domain.Entities.Product
+  langs:
+  - csharp
+  - vb
+  name: ProteinPer100g
+  nameWithType: Product.ProteinPer100g
+  fullName: CalorieTracker.Domain.Entities.Product.ProteinPer100g
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/Product.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: ProteinPer100g
+    path: ../src/CalorieTracker.Domain/Entities/Product.cs
+    startLine: 92
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  summary: >-
+    Ilość białka w gramach na porcję referencyjną.
+
+    Pole wymagane, wartość w zakresie od 0 do 999.
+  example: []
+  syntax:
+    content: >-
+      [Required]
+
+      [Range(0, 999)]
+
+      public float ProteinPer100g { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: >-
+      <Required>
+
+      <Range(0, 999)>
+
+      Public Property ProteinPer100g As Single
+  overload: CalorieTracker.Domain.Entities.Product.ProteinPer100g*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+  - type: System.ComponentModel.DataAnnotations.RangeAttribute
+    ctor: System.ComponentModel.DataAnnotations.RangeAttribute.#ctor(System.Int32,System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 0
+    - type: System.Int32
+      value: 999
+- uid: CalorieTracker.Domain.Entities.Product.FatPer100g
+  commentId: P:CalorieTracker.Domain.Entities.Product.FatPer100g
+  id: FatPer100g
+  parent: CalorieTracker.Domain.Entities.Product
+  langs:
+  - csharp
+  - vb
+  name: FatPer100g
+  nameWithType: Product.FatPer100g
+  fullName: CalorieTracker.Domain.Entities.Product.FatPer100g
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/Product.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: FatPer100g
+    path: ../src/CalorieTracker.Domain/Entities/Product.cs
+    startLine: 100
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  summary: >-
+    Ilość tłuszczów w gramach na porcję referencyjną.
+
+    Pole wymagane, wartość w zakresie od 0 do 999.
+  example: []
+  syntax:
+    content: >-
+      [Required]
+
+      [Range(0, 999)]
+
+      public float FatPer100g { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: >-
+      <Required>
+
+      <Range(0, 999)>
+
+      Public Property FatPer100g As Single
+  overload: CalorieTracker.Domain.Entities.Product.FatPer100g*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+  - type: System.ComponentModel.DataAnnotations.RangeAttribute
+    ctor: System.ComponentModel.DataAnnotations.RangeAttribute.#ctor(System.Int32,System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 0
+    - type: System.Int32
+      value: 999
+- uid: CalorieTracker.Domain.Entities.Product.CarbohydratesPer100g
+  commentId: P:CalorieTracker.Domain.Entities.Product.CarbohydratesPer100g
+  id: CarbohydratesPer100g
+  parent: CalorieTracker.Domain.Entities.Product
+  langs:
+  - csharp
+  - vb
+  name: CarbohydratesPer100g
+  nameWithType: Product.CarbohydratesPer100g
+  fullName: CalorieTracker.Domain.Entities.Product.CarbohydratesPer100g
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/Product.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: CarbohydratesPer100g
+    path: ../src/CalorieTracker.Domain/Entities/Product.cs
+    startLine: 108
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  summary: >-
+    Ilość węglowodanów w gramach na porcję referencyjną.
+
+    Pole wymagane, wartość w zakresie od 0 do 999.
+  example: []
+  syntax:
+    content: >-
+      [Required]
+
+      [Range(0, 999)]
+
+      public float CarbohydratesPer100g { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: >-
+      <Required>
+
+      <Range(0, 999)>
+
+      Public Property CarbohydratesPer100g As Single
+  overload: CalorieTracker.Domain.Entities.Product.CarbohydratesPer100g*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+  - type: System.ComponentModel.DataAnnotations.RangeAttribute
+    ctor: System.ComponentModel.DataAnnotations.RangeAttribute.#ctor(System.Int32,System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 0
+    - type: System.Int32
+      value: 999
+- uid: CalorieTracker.Domain.Entities.Product.FiberPer100g
+  commentId: P:CalorieTracker.Domain.Entities.Product.FiberPer100g
+  id: FiberPer100g
+  parent: CalorieTracker.Domain.Entities.Product
+  langs:
+  - csharp
+  - vb
+  name: FiberPer100g
+  nameWithType: Product.FiberPer100g
+  fullName: CalorieTracker.Domain.Entities.Product.FiberPer100g
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/Product.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: FiberPer100g
+    path: ../src/CalorieTracker.Domain/Entities/Product.cs
+    startLine: 116
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  summary: >-
+    Ilość błonnika w gramach na porcję referencyjną (opcjonalny).
+
+    Wartość w zakresie od 0 do 999.
+  example: []
+  syntax:
+    content: >-
+      [Range(0, 999)]
+
+      public float? FiberPer100g { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Single}
+    content.vb: >-
+      <Range(0, 999)>
+
+      Public Property FiberPer100g As Single?
+  overload: CalorieTracker.Domain.Entities.Product.FiberPer100g*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RangeAttribute
+    ctor: System.ComponentModel.DataAnnotations.RangeAttribute.#ctor(System.Int32,System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 0
+    - type: System.Int32
+      value: 999
+- uid: CalorieTracker.Domain.Entities.Product.SugarsPer100g
+  commentId: P:CalorieTracker.Domain.Entities.Product.SugarsPer100g
+  id: SugarsPer100g
+  parent: CalorieTracker.Domain.Entities.Product
+  langs:
+  - csharp
+  - vb
+  name: SugarsPer100g
+  nameWithType: Product.SugarsPer100g
+  fullName: CalorieTracker.Domain.Entities.Product.SugarsPer100g
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/Product.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: SugarsPer100g
+    path: ../src/CalorieTracker.Domain/Entities/Product.cs
+    startLine: 123
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  summary: >-
+    Ilość cukrów w gramach na porcję referencyjną (opcjonalny).
+
+    Wartość w zakresie od 0 do 999.
+  example: []
+  syntax:
+    content: >-
+      [Range(0, 999)]
+
+      public float? SugarsPer100g { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Single}
+    content.vb: >-
+      <Range(0, 999)>
+
+      Public Property SugarsPer100g As Single?
+  overload: CalorieTracker.Domain.Entities.Product.SugarsPer100g*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RangeAttribute
+    ctor: System.ComponentModel.DataAnnotations.RangeAttribute.#ctor(System.Int32,System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 0
+    - type: System.Int32
+      value: 999
+- uid: CalorieTracker.Domain.Entities.Product.SodiumPer100g
+  commentId: P:CalorieTracker.Domain.Entities.Product.SodiumPer100g
+  id: SodiumPer100g
+  parent: CalorieTracker.Domain.Entities.Product
+  langs:
+  - csharp
+  - vb
+  name: SodiumPer100g
+  nameWithType: Product.SodiumPer100g
+  fullName: CalorieTracker.Domain.Entities.Product.SodiumPer100g
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/Product.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: SodiumPer100g
+    path: ../src/CalorieTracker.Domain/Entities/Product.cs
+    startLine: 130
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  summary: >-
+    Ilość sodu w miligramach na porcję referencyjną (opcjonalny).
+
+    Wartość w zakresie od 0 do 99999.
+  example: []
+  syntax:
+    content: >-
+      [Range(0, 99999)]
+
+      public float? SodiumPer100g { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Single}
+    content.vb: >-
+      <Range(0, 99999)>
+
+      Public Property SodiumPer100g As Single?
+  overload: CalorieTracker.Domain.Entities.Product.SodiumPer100g*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RangeAttribute
+    ctor: System.ComponentModel.DataAnnotations.RangeAttribute.#ctor(System.Int32,System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 0
+    - type: System.Int32
+      value: 99999
+- uid: CalorieTracker.Domain.Entities.Product.IsVerified
+  commentId: P:CalorieTracker.Domain.Entities.Product.IsVerified
+  id: IsVerified
+  parent: CalorieTracker.Domain.Entities.Product
+  langs:
+  - csharp
+  - vb
+  name: IsVerified
+  nameWithType: Product.IsVerified
+  fullName: CalorieTracker.Domain.Entities.Product.IsVerified
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/Product.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: IsVerified
+    path: ../src/CalorieTracker.Domain/Entities/Product.cs
+    startLine: 139
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  summary: >-
+    Wskazuje, czy produkt został zweryfikowany przez administratora.
+
+    Domyślnie `false`.
+  example: []
+  syntax:
+    content: public bool IsVerified { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsVerified As Boolean
+  overload: CalorieTracker.Domain.Entities.Product.IsVerified*
+- uid: CalorieTracker.Domain.Entities.Product.CreatedByUserId
+  commentId: P:CalorieTracker.Domain.Entities.Product.CreatedByUserId
+  id: CreatedByUserId
+  parent: CalorieTracker.Domain.Entities.Product
+  langs:
+  - csharp
+  - vb
+  name: CreatedByUserId
+  nameWithType: Product.CreatedByUserId
+  fullName: CalorieTracker.Domain.Entities.Product.CreatedByUserId
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/Product.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: CreatedByUserId
+    path: ../src/CalorieTracker.Domain/Entities/Product.cs
+    startLine: 145
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  summary: >-
+    Identyfikator użytkownika, który dodał produkt.
+
+    Jest `null` dla produktów systemowych.
+  example: []
+  syntax:
+    content: public string? CreatedByUserId { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property CreatedByUserId As String
+  overload: CalorieTracker.Domain.Entities.Product.CreatedByUserId*
+- uid: CalorieTracker.Domain.Entities.Product.CreatedAt
+  commentId: P:CalorieTracker.Domain.Entities.Product.CreatedAt
+  id: CreatedAt
+  parent: CalorieTracker.Domain.Entities.Product
+  langs:
+  - csharp
+  - vb
+  name: CreatedAt
+  nameWithType: Product.CreatedAt
+  fullName: CalorieTracker.Domain.Entities.Product.CreatedAt
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/Product.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: CreatedAt
+    path: ../src/CalorieTracker.Domain/Entities/Product.cs
+    startLine: 151
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  summary: >-
+    Data i czas utworzenia produktu.
+
+    Domyślnie ustawiane na aktualny czas UTC.
+  example: []
+  syntax:
+    content: public DateTime CreatedAt { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Property CreatedAt As Date
+  overload: CalorieTracker.Domain.Entities.Product.CreatedAt*
+- uid: CalorieTracker.Domain.Entities.Product.UpdatedAt
+  commentId: P:CalorieTracker.Domain.Entities.Product.UpdatedAt
+  id: UpdatedAt
+  parent: CalorieTracker.Domain.Entities.Product
+  langs:
+  - csharp
+  - vb
+  name: UpdatedAt
+  nameWithType: Product.UpdatedAt
+  fullName: CalorieTracker.Domain.Entities.Product.UpdatedAt
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/Product.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: UpdatedAt
+    path: ../src/CalorieTracker.Domain/Entities/Product.cs
+    startLine: 157
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  summary: >-
+    Data i czas ostatniej modyfikacji produktu.
+
+    Domyślnie ustawiane na aktualny czas UTC.
+  example: []
+  syntax:
+    content: public DateTime UpdatedAt { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Property UpdatedAt As Date
+  overload: CalorieTracker.Domain.Entities.Product.UpdatedAt*
+- uid: CalorieTracker.Domain.Entities.Product.CreatedByUser
+  commentId: P:CalorieTracker.Domain.Entities.Product.CreatedByUser
+  id: CreatedByUser
+  parent: CalorieTracker.Domain.Entities.Product
+  langs:
+  - csharp
+  - vb
+  name: CreatedByUser
+  nameWithType: Product.CreatedByUser
+  fullName: CalorieTracker.Domain.Entities.Product.CreatedByUser
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/Product.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: CreatedByUser
+    path: ../src/CalorieTracker.Domain/Entities/Product.cs
+    startLine: 164
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  summary: Właściwość nawigacyjna do użytkownika <xref href="CalorieTracker.Domain.Entities.ApplicationUser" data-throw-if-not-resolved="false"></xref>, który utworzył produkt.
+  example: []
+  syntax:
+    content: public ApplicationUser? CreatedByUser { get; set; }
+    parameters: []
+    return:
+      type: CalorieTracker.Domain.Entities.ApplicationUser
+    content.vb: Public Property CreatedByUser As ApplicationUser
+  overload: CalorieTracker.Domain.Entities.Product.CreatedByUser*
+references:
+- uid: CalorieTracker.Domain.Entities
+  commentId: N:CalorieTracker.Domain.Entities
+  href: CalorieTracker.html
+  name: CalorieTracker.Domain.Entities
+  nameWithType: CalorieTracker.Domain.Entities
+  fullName: CalorieTracker.Domain.Entities
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Domain
+    name: Domain
+    href: CalorieTracker.Domain.html
+  - name: .
+  - uid: CalorieTracker.Domain.Entities
+    name: Entities
+    href: CalorieTracker.Domain.Entities.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Domain
+    name: Domain
+    href: CalorieTracker.Domain.html
+  - name: .
+  - uid: CalorieTracker.Domain.Entities
+    name: Entities
+    href: CalorieTracker.Domain.Entities.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CalorieTracker.Domain.Entities.Product.Id*
+  commentId: Overload:CalorieTracker.Domain.Entities.Product.Id
+  href: CalorieTracker.Domain.Entities.Product.html#CalorieTracker_Domain_Entities_Product_Id
+  name: Id
+  nameWithType: Product.Id
+  fullName: CalorieTracker.Domain.Entities.Product.Id
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.guid
+  name: Guid
+  nameWithType: Guid
+  fullName: System.Guid
+- uid: CalorieTracker.Domain.Entities.Product.Name*
+  commentId: Overload:CalorieTracker.Domain.Entities.Product.Name
+  href: CalorieTracker.Domain.Entities.Product.html#CalorieTracker_Domain_Entities_Product_Name
+  name: Name
+  nameWithType: Product.Name
+  fullName: CalorieTracker.Domain.Entities.Product.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: CalorieTracker.Domain.Entities.Product.Brand*
+  commentId: Overload:CalorieTracker.Domain.Entities.Product.Brand
+  href: CalorieTracker.Domain.Entities.Product.html#CalorieTracker_Domain_Entities_Product_Brand
+  name: Brand
+  nameWithType: Product.Brand
+  fullName: CalorieTracker.Domain.Entities.Product.Brand
+- uid: CalorieTracker.Domain.Entities.Product.Description*
+  commentId: Overload:CalorieTracker.Domain.Entities.Product.Description
+  href: CalorieTracker.Domain.Entities.Product.html#CalorieTracker_Domain_Entities_Product_Description
+  name: Description
+  nameWithType: Product.Description
+  fullName: CalorieTracker.Domain.Entities.Product.Description
+- uid: CalorieTracker.Domain.Entities.Product.Ingredients*
+  commentId: Overload:CalorieTracker.Domain.Entities.Product.Ingredients
+  href: CalorieTracker.Domain.Entities.Product.html#CalorieTracker_Domain_Entities_Product_Ingredients
+  name: Ingredients
+  nameWithType: Product.Ingredients
+  fullName: CalorieTracker.Domain.Entities.Product.Ingredients
+- uid: CalorieTracker.Domain.Entities.Product.Barcode*
+  commentId: Overload:CalorieTracker.Domain.Entities.Product.Barcode
+  href: CalorieTracker.Domain.Entities.Product.html#CalorieTracker_Domain_Entities_Product_Barcode
+  name: Barcode
+  nameWithType: Product.Barcode
+  fullName: CalorieTracker.Domain.Entities.Product.Barcode
+- uid: CalorieTracker.Domain.Enums.ProductCategory
+  commentId: T:CalorieTracker.Domain.Enums.ProductCategory
+  parent: CalorieTracker.Domain.Enums
+  href: CalorieTracker.Domain.Enums.ProductCategory.html
+  name: ProductCategory
+  nameWithType: ProductCategory
+  fullName: CalorieTracker.Domain.Enums.ProductCategory
+- uid: CalorieTracker.Domain.Entities.Product.Category*
+  commentId: Overload:CalorieTracker.Domain.Entities.Product.Category
+  href: CalorieTracker.Domain.Entities.Product.html#CalorieTracker_Domain_Entities_Product_Category
+  name: Category
+  nameWithType: Product.Category
+  fullName: CalorieTracker.Domain.Entities.Product.Category
+- uid: CalorieTracker.Domain.Enums
+  commentId: N:CalorieTracker.Domain.Enums
+  href: CalorieTracker.html
+  name: CalorieTracker.Domain.Enums
+  nameWithType: CalorieTracker.Domain.Enums
+  fullName: CalorieTracker.Domain.Enums
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Domain
+    name: Domain
+    href: CalorieTracker.Domain.html
+  - name: .
+  - uid: CalorieTracker.Domain.Enums
+    name: Enums
+    href: CalorieTracker.Domain.Enums.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Domain
+    name: Domain
+    href: CalorieTracker.Domain.html
+  - name: .
+  - uid: CalorieTracker.Domain.Enums
+    name: Enums
+    href: CalorieTracker.Domain.Enums.html
+- uid: CalorieTracker.Domain.Enums.ProductUnit
+  commentId: T:CalorieTracker.Domain.Enums.ProductUnit
+  parent: CalorieTracker.Domain.Enums
+  href: CalorieTracker.Domain.Enums.ProductUnit.html
+  name: ProductUnit
+  nameWithType: ProductUnit
+  fullName: CalorieTracker.Domain.Enums.ProductUnit
+- uid: CalorieTracker.Domain.Entities.Product.Unit*
+  commentId: Overload:CalorieTracker.Domain.Entities.Product.Unit
+  href: CalorieTracker.Domain.Entities.Product.html#CalorieTracker_Domain_Entities_Product_Unit
+  name: Unit
+  nameWithType: Product.Unit
+  fullName: CalorieTracker.Domain.Entities.Product.Unit
+- uid: CalorieTracker.Domain.Entities.Product.ServingSize*
+  commentId: Overload:CalorieTracker.Domain.Entities.Product.ServingSize
+  href: CalorieTracker.Domain.Entities.Product.html#CalorieTracker_Domain_Entities_Product_ServingSize
+  name: ServingSize
+  nameWithType: Product.ServingSize
+  fullName: CalorieTracker.Domain.Entities.Product.ServingSize
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: CalorieTracker.Domain.Entities.Product.CaloriesPer100g*
+  commentId: Overload:CalorieTracker.Domain.Entities.Product.CaloriesPer100g
+  href: CalorieTracker.Domain.Entities.Product.html#CalorieTracker_Domain_Entities_Product_CaloriesPer100g
+  name: CaloriesPer100g
+  nameWithType: Product.CaloriesPer100g
+  fullName: CalorieTracker.Domain.Entities.Product.CaloriesPer100g
+- uid: CalorieTracker.Domain.Entities.Product.ProteinPer100g*
+  commentId: Overload:CalorieTracker.Domain.Entities.Product.ProteinPer100g
+  href: CalorieTracker.Domain.Entities.Product.html#CalorieTracker_Domain_Entities_Product_ProteinPer100g
+  name: ProteinPer100g
+  nameWithType: Product.ProteinPer100g
+  fullName: CalorieTracker.Domain.Entities.Product.ProteinPer100g
+- uid: CalorieTracker.Domain.Entities.Product.FatPer100g*
+  commentId: Overload:CalorieTracker.Domain.Entities.Product.FatPer100g
+  href: CalorieTracker.Domain.Entities.Product.html#CalorieTracker_Domain_Entities_Product_FatPer100g
+  name: FatPer100g
+  nameWithType: Product.FatPer100g
+  fullName: CalorieTracker.Domain.Entities.Product.FatPer100g
+- uid: CalorieTracker.Domain.Entities.Product.CarbohydratesPer100g*
+  commentId: Overload:CalorieTracker.Domain.Entities.Product.CarbohydratesPer100g
+  href: CalorieTracker.Domain.Entities.Product.html#CalorieTracker_Domain_Entities_Product_CarbohydratesPer100g
+  name: CarbohydratesPer100g
+  nameWithType: Product.CarbohydratesPer100g
+  fullName: CalorieTracker.Domain.Entities.Product.CarbohydratesPer100g
+- uid: CalorieTracker.Domain.Entities.Product.FiberPer100g*
+  commentId: Overload:CalorieTracker.Domain.Entities.Product.FiberPer100g
+  href: CalorieTracker.Domain.Entities.Product.html#CalorieTracker_Domain_Entities_Product_FiberPer100g
+  name: FiberPer100g
+  nameWithType: Product.FiberPer100g
+  fullName: CalorieTracker.Domain.Entities.Product.FiberPer100g
+- uid: System.Nullable{System.Single}
+  commentId: T:System.Nullable{System.Single}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float?
+  nameWithType: float?
+  fullName: float?
+  nameWithType.vb: Single?
+  fullName.vb: Single?
+  name.vb: Single?
+  spec.csharp:
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '?'
+  spec.vb:
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: CalorieTracker.Domain.Entities.Product.SugarsPer100g*
+  commentId: Overload:CalorieTracker.Domain.Entities.Product.SugarsPer100g
+  href: CalorieTracker.Domain.Entities.Product.html#CalorieTracker_Domain_Entities_Product_SugarsPer100g
+  name: SugarsPer100g
+  nameWithType: Product.SugarsPer100g
+  fullName: CalorieTracker.Domain.Entities.Product.SugarsPer100g
+- uid: CalorieTracker.Domain.Entities.Product.SodiumPer100g*
+  commentId: Overload:CalorieTracker.Domain.Entities.Product.SodiumPer100g
+  href: CalorieTracker.Domain.Entities.Product.html#CalorieTracker_Domain_Entities_Product_SodiumPer100g
+  name: SodiumPer100g
+  nameWithType: Product.SodiumPer100g
+  fullName: CalorieTracker.Domain.Entities.Product.SodiumPer100g
+- uid: CalorieTracker.Domain.Entities.Product.IsVerified*
+  commentId: Overload:CalorieTracker.Domain.Entities.Product.IsVerified
+  href: CalorieTracker.Domain.Entities.Product.html#CalorieTracker_Domain_Entities_Product_IsVerified
+  name: IsVerified
+  nameWithType: Product.IsVerified
+  fullName: CalorieTracker.Domain.Entities.Product.IsVerified
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: CalorieTracker.Domain.Entities.Product.CreatedByUserId*
+  commentId: Overload:CalorieTracker.Domain.Entities.Product.CreatedByUserId
+  href: CalorieTracker.Domain.Entities.Product.html#CalorieTracker_Domain_Entities_Product_CreatedByUserId
+  name: CreatedByUserId
+  nameWithType: Product.CreatedByUserId
+  fullName: CalorieTracker.Domain.Entities.Product.CreatedByUserId
+- uid: CalorieTracker.Domain.Entities.Product.CreatedAt*
+  commentId: Overload:CalorieTracker.Domain.Entities.Product.CreatedAt
+  href: CalorieTracker.Domain.Entities.Product.html#CalorieTracker_Domain_Entities_Product_CreatedAt
+  name: CreatedAt
+  nameWithType: Product.CreatedAt
+  fullName: CalorieTracker.Domain.Entities.Product.CreatedAt
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: CalorieTracker.Domain.Entities.Product.UpdatedAt*
+  commentId: Overload:CalorieTracker.Domain.Entities.Product.UpdatedAt
+  href: CalorieTracker.Domain.Entities.Product.html#CalorieTracker_Domain_Entities_Product_UpdatedAt
+  name: UpdatedAt
+  nameWithType: Product.UpdatedAt
+  fullName: CalorieTracker.Domain.Entities.Product.UpdatedAt
+- uid: CalorieTracker.Domain.Entities.ApplicationUser
+  commentId: T:CalorieTracker.Domain.Entities.ApplicationUser
+  parent: CalorieTracker.Domain.Entities
+  href: CalorieTracker.Domain.Entities.ApplicationUser.html
+  name: ApplicationUser
+  nameWithType: ApplicationUser
+  fullName: CalorieTracker.Domain.Entities.ApplicationUser
+- uid: CalorieTracker.Domain.Entities.Product.CreatedByUser*
+  commentId: Overload:CalorieTracker.Domain.Entities.Product.CreatedByUser
+  href: CalorieTracker.Domain.Entities.Product.html#CalorieTracker_Domain_Entities_Product_CreatedByUser
+  name: CreatedByUser
+  nameWithType: Product.CreatedByUser
+  fullName: CalorieTracker.Domain.Entities.Product.CreatedByUser

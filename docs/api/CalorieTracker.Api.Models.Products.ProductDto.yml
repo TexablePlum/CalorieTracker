@@ -1,0 +1,1182 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Api.Models.Products.ProductDto
+  commentId: T:CalorieTracker.Api.Models.Products.ProductDto
+  id: ProductDto
+  parent: CalorieTracker.Api.Models.Products
+  children:
+  - CalorieTracker.Api.Models.Products.ProductDto.Barcode
+  - CalorieTracker.Api.Models.Products.ProductDto.Brand
+  - CalorieTracker.Api.Models.Products.ProductDto.CaloriesPer100g
+  - CalorieTracker.Api.Models.Products.ProductDto.CarbohydratesPer100g
+  - CalorieTracker.Api.Models.Products.ProductDto.Category
+  - CalorieTracker.Api.Models.Products.ProductDto.CreatedAt
+  - CalorieTracker.Api.Models.Products.ProductDto.CreatedByUserId
+  - CalorieTracker.Api.Models.Products.ProductDto.Description
+  - CalorieTracker.Api.Models.Products.ProductDto.FatPer100g
+  - CalorieTracker.Api.Models.Products.ProductDto.FiberPer100g
+  - CalorieTracker.Api.Models.Products.ProductDto.Id
+  - CalorieTracker.Api.Models.Products.ProductDto.Ingredients
+  - CalorieTracker.Api.Models.Products.ProductDto.IsVerified
+  - CalorieTracker.Api.Models.Products.ProductDto.Name
+  - CalorieTracker.Api.Models.Products.ProductDto.ProteinPer100g
+  - CalorieTracker.Api.Models.Products.ProductDto.ServingSize
+  - CalorieTracker.Api.Models.Products.ProductDto.SodiumPer100g
+  - CalorieTracker.Api.Models.Products.ProductDto.SugarsPer100g
+  - CalorieTracker.Api.Models.Products.ProductDto.Unit
+  - CalorieTracker.Api.Models.Products.ProductDto.UpdatedAt
+  langs:
+  - csharp
+  - vb
+  name: ProductDto
+  nameWithType: ProductDto
+  fullName: CalorieTracker.Api.Models.Products.ProductDto
+  type: Class
+  source:
+    remote:
+      path: src/CalorieTracker.Api/Models/Products/ProductDto.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: ProductDto
+    path: ../src/CalorieTracker.Api/Models/Products/ProductDto.cs
+    startLine: 9
+  assemblies:
+  - CalorieTracker.Api
+  namespace: CalorieTracker.Api.Models.Products
+  summary: >-
+    Model DTO reprezentujący pełne dane produktu w systemie.
+
+    Zawiera podstawowe informacje, dane żywieniowe oraz metadane dotyczące produktu.
+  example: []
+  syntax:
+    content: public class ProductDto
+    content.vb: Public Class ProductDto
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: CalorieTracker.Api.Models.Products.ProductDto.Id
+  commentId: P:CalorieTracker.Api.Models.Products.ProductDto.Id
+  id: Id
+  parent: CalorieTracker.Api.Models.Products.ProductDto
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: ProductDto.Id
+  fullName: CalorieTracker.Api.Models.Products.ProductDto.Id
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Api/Models/Products/ProductDto.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Id
+    path: ../src/CalorieTracker.Api/Models/Products/ProductDto.cs
+    startLine: 14
+  assemblies:
+  - CalorieTracker.Api
+  namespace: CalorieTracker.Api.Models.Products
+  summary: Unikalny identyfikator produktu.
+  example: []
+  syntax:
+    content: public Guid Id { get; set; }
+    parameters: []
+    return:
+      type: System.Guid
+    content.vb: Public Property Id As Guid
+  overload: CalorieTracker.Api.Models.Products.ProductDto.Id*
+- uid: CalorieTracker.Api.Models.Products.ProductDto.Name
+  commentId: P:CalorieTracker.Api.Models.Products.ProductDto.Name
+  id: Name
+  parent: CalorieTracker.Api.Models.Products.ProductDto
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: ProductDto.Name
+  fullName: CalorieTracker.Api.Models.Products.ProductDto.Name
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Api/Models/Products/ProductDto.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Name
+    path: ../src/CalorieTracker.Api/Models/Products/ProductDto.cs
+    startLine: 19
+  assemblies:
+  - CalorieTracker.Api
+  namespace: CalorieTracker.Api.Models.Products
+  summary: Nazwa produktu. Pole wymagane.
+  example: []
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: CalorieTracker.Api.Models.Products.ProductDto.Name*
+- uid: CalorieTracker.Api.Models.Products.ProductDto.Brand
+  commentId: P:CalorieTracker.Api.Models.Products.ProductDto.Brand
+  id: Brand
+  parent: CalorieTracker.Api.Models.Products.ProductDto
+  langs:
+  - csharp
+  - vb
+  name: Brand
+  nameWithType: ProductDto.Brand
+  fullName: CalorieTracker.Api.Models.Products.ProductDto.Brand
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Api/Models/Products/ProductDto.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Brand
+    path: ../src/CalorieTracker.Api/Models/Products/ProductDto.cs
+    startLine: 24
+  assemblies:
+  - CalorieTracker.Api
+  namespace: CalorieTracker.Api.Models.Products
+  summary: Marka/producent produktu (opcjonalne).
+  example: []
+  syntax:
+    content: public string? Brand { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Brand As String
+  overload: CalorieTracker.Api.Models.Products.ProductDto.Brand*
+- uid: CalorieTracker.Api.Models.Products.ProductDto.Description
+  commentId: P:CalorieTracker.Api.Models.Products.ProductDto.Description
+  id: Description
+  parent: CalorieTracker.Api.Models.Products.ProductDto
+  langs:
+  - csharp
+  - vb
+  name: Description
+  nameWithType: ProductDto.Description
+  fullName: CalorieTracker.Api.Models.Products.ProductDto.Description
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Api/Models/Products/ProductDto.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Description
+    path: ../src/CalorieTracker.Api/Models/Products/ProductDto.cs
+    startLine: 29
+  assemblies:
+  - CalorieTracker.Api
+  namespace: CalorieTracker.Api.Models.Products
+  summary: Opis produktu (opcjonalne).
+  example: []
+  syntax:
+    content: public string? Description { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Description As String
+  overload: CalorieTracker.Api.Models.Products.ProductDto.Description*
+- uid: CalorieTracker.Api.Models.Products.ProductDto.Ingredients
+  commentId: P:CalorieTracker.Api.Models.Products.ProductDto.Ingredients
+  id: Ingredients
+  parent: CalorieTracker.Api.Models.Products.ProductDto
+  langs:
+  - csharp
+  - vb
+  name: Ingredients
+  nameWithType: ProductDto.Ingredients
+  fullName: CalorieTracker.Api.Models.Products.ProductDto.Ingredients
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Api/Models/Products/ProductDto.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Ingredients
+    path: ../src/CalorieTracker.Api/Models/Products/ProductDto.cs
+    startLine: 34
+  assemblies:
+  - CalorieTracker.Api
+  namespace: CalorieTracker.Api.Models.Products
+  summary: Składniki produktu (opcjonalne).
+  example: []
+  syntax:
+    content: public string? Ingredients { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Ingredients As String
+  overload: CalorieTracker.Api.Models.Products.ProductDto.Ingredients*
+- uid: CalorieTracker.Api.Models.Products.ProductDto.Barcode
+  commentId: P:CalorieTracker.Api.Models.Products.ProductDto.Barcode
+  id: Barcode
+  parent: CalorieTracker.Api.Models.Products.ProductDto
+  langs:
+  - csharp
+  - vb
+  name: Barcode
+  nameWithType: ProductDto.Barcode
+  fullName: CalorieTracker.Api.Models.Products.ProductDto.Barcode
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Api/Models/Products/ProductDto.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Barcode
+    path: ../src/CalorieTracker.Api/Models/Products/ProductDto.cs
+    startLine: 39
+  assemblies:
+  - CalorieTracker.Api
+  namespace: CalorieTracker.Api.Models.Products
+  summary: Kod kreskowy produktu (opcjonalne).
+  example: []
+  syntax:
+    content: public string? Barcode { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Barcode As String
+  overload: CalorieTracker.Api.Models.Products.ProductDto.Barcode*
+- uid: CalorieTracker.Api.Models.Products.ProductDto.Category
+  commentId: P:CalorieTracker.Api.Models.Products.ProductDto.Category
+  id: Category
+  parent: CalorieTracker.Api.Models.Products.ProductDto
+  langs:
+  - csharp
+  - vb
+  name: Category
+  nameWithType: ProductDto.Category
+  fullName: CalorieTracker.Api.Models.Products.ProductDto.Category
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Api/Models/Products/ProductDto.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Category
+    path: ../src/CalorieTracker.Api/Models/Products/ProductDto.cs
+    startLine: 44
+  assemblies:
+  - CalorieTracker.Api
+  namespace: CalorieTracker.Api.Models.Products
+  summary: Kategoria produktu. Pole wymagane.
+  example: []
+  syntax:
+    content: public string Category { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Category As String
+  overload: CalorieTracker.Api.Models.Products.ProductDto.Category*
+- uid: CalorieTracker.Api.Models.Products.ProductDto.Unit
+  commentId: P:CalorieTracker.Api.Models.Products.ProductDto.Unit
+  id: Unit
+  parent: CalorieTracker.Api.Models.Products.ProductDto
+  langs:
+  - csharp
+  - vb
+  name: Unit
+  nameWithType: ProductDto.Unit
+  fullName: CalorieTracker.Api.Models.Products.ProductDto.Unit
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Api/Models/Products/ProductDto.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Unit
+    path: ../src/CalorieTracker.Api/Models/Products/ProductDto.cs
+    startLine: 49
+  assemblies:
+  - CalorieTracker.Api
+  namespace: CalorieTracker.Api.Models.Products
+  summary: Jednostka miary produktu (np. 'g', 'ml'). Pole wymagane.
+  example: []
+  syntax:
+    content: public string Unit { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Unit As String
+  overload: CalorieTracker.Api.Models.Products.ProductDto.Unit*
+- uid: CalorieTracker.Api.Models.Products.ProductDto.ServingSize
+  commentId: P:CalorieTracker.Api.Models.Products.ProductDto.ServingSize
+  id: ServingSize
+  parent: CalorieTracker.Api.Models.Products.ProductDto
+  langs:
+  - csharp
+  - vb
+  name: ServingSize
+  nameWithType: ProductDto.ServingSize
+  fullName: CalorieTracker.Api.Models.Products.ProductDto.ServingSize
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Api/Models/Products/ProductDto.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: ServingSize
+    path: ../src/CalorieTracker.Api/Models/Products/ProductDto.cs
+    startLine: 54
+  assemblies:
+  - CalorieTracker.Api
+  namespace: CalorieTracker.Api.Models.Products
+  summary: Wielkość porcji w podanych jednostkach.
+  example: []
+  syntax:
+    content: public float ServingSize { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property ServingSize As Single
+  overload: CalorieTracker.Api.Models.Products.ProductDto.ServingSize*
+- uid: CalorieTracker.Api.Models.Products.ProductDto.CaloriesPer100g
+  commentId: P:CalorieTracker.Api.Models.Products.ProductDto.CaloriesPer100g
+  id: CaloriesPer100g
+  parent: CalorieTracker.Api.Models.Products.ProductDto
+  langs:
+  - csharp
+  - vb
+  name: CaloriesPer100g
+  nameWithType: ProductDto.CaloriesPer100g
+  fullName: CalorieTracker.Api.Models.Products.ProductDto.CaloriesPer100g
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Api/Models/Products/ProductDto.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: CaloriesPer100g
+    path: ../src/CalorieTracker.Api/Models/Products/ProductDto.cs
+    startLine: 59
+  assemblies:
+  - CalorieTracker.Api
+  namespace: CalorieTracker.Api.Models.Products
+  summary: Kalorie na 100g/ml produktu.
+  example: []
+  syntax:
+    content: public float CaloriesPer100g { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property CaloriesPer100g As Single
+  overload: CalorieTracker.Api.Models.Products.ProductDto.CaloriesPer100g*
+- uid: CalorieTracker.Api.Models.Products.ProductDto.ProteinPer100g
+  commentId: P:CalorieTracker.Api.Models.Products.ProductDto.ProteinPer100g
+  id: ProteinPer100g
+  parent: CalorieTracker.Api.Models.Products.ProductDto
+  langs:
+  - csharp
+  - vb
+  name: ProteinPer100g
+  nameWithType: ProductDto.ProteinPer100g
+  fullName: CalorieTracker.Api.Models.Products.ProductDto.ProteinPer100g
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Api/Models/Products/ProductDto.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: ProteinPer100g
+    path: ../src/CalorieTracker.Api/Models/Products/ProductDto.cs
+    startLine: 64
+  assemblies:
+  - CalorieTracker.Api
+  namespace: CalorieTracker.Api.Models.Products
+  summary: Białko na 100g/ml produktu.
+  example: []
+  syntax:
+    content: public float ProteinPer100g { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property ProteinPer100g As Single
+  overload: CalorieTracker.Api.Models.Products.ProductDto.ProteinPer100g*
+- uid: CalorieTracker.Api.Models.Products.ProductDto.FatPer100g
+  commentId: P:CalorieTracker.Api.Models.Products.ProductDto.FatPer100g
+  id: FatPer100g
+  parent: CalorieTracker.Api.Models.Products.ProductDto
+  langs:
+  - csharp
+  - vb
+  name: FatPer100g
+  nameWithType: ProductDto.FatPer100g
+  fullName: CalorieTracker.Api.Models.Products.ProductDto.FatPer100g
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Api/Models/Products/ProductDto.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: FatPer100g
+    path: ../src/CalorieTracker.Api/Models/Products/ProductDto.cs
+    startLine: 69
+  assemblies:
+  - CalorieTracker.Api
+  namespace: CalorieTracker.Api.Models.Products
+  summary: Tłuszcze na 100g/ml produktu.
+  example: []
+  syntax:
+    content: public float FatPer100g { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property FatPer100g As Single
+  overload: CalorieTracker.Api.Models.Products.ProductDto.FatPer100g*
+- uid: CalorieTracker.Api.Models.Products.ProductDto.CarbohydratesPer100g
+  commentId: P:CalorieTracker.Api.Models.Products.ProductDto.CarbohydratesPer100g
+  id: CarbohydratesPer100g
+  parent: CalorieTracker.Api.Models.Products.ProductDto
+  langs:
+  - csharp
+  - vb
+  name: CarbohydratesPer100g
+  nameWithType: ProductDto.CarbohydratesPer100g
+  fullName: CalorieTracker.Api.Models.Products.ProductDto.CarbohydratesPer100g
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Api/Models/Products/ProductDto.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: CarbohydratesPer100g
+    path: ../src/CalorieTracker.Api/Models/Products/ProductDto.cs
+    startLine: 74
+  assemblies:
+  - CalorieTracker.Api
+  namespace: CalorieTracker.Api.Models.Products
+  summary: Węglowodany na 100g/ml produktu.
+  example: []
+  syntax:
+    content: public float CarbohydratesPer100g { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property CarbohydratesPer100g As Single
+  overload: CalorieTracker.Api.Models.Products.ProductDto.CarbohydratesPer100g*
+- uid: CalorieTracker.Api.Models.Products.ProductDto.FiberPer100g
+  commentId: P:CalorieTracker.Api.Models.Products.ProductDto.FiberPer100g
+  id: FiberPer100g
+  parent: CalorieTracker.Api.Models.Products.ProductDto
+  langs:
+  - csharp
+  - vb
+  name: FiberPer100g
+  nameWithType: ProductDto.FiberPer100g
+  fullName: CalorieTracker.Api.Models.Products.ProductDto.FiberPer100g
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Api/Models/Products/ProductDto.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: FiberPer100g
+    path: ../src/CalorieTracker.Api/Models/Products/ProductDto.cs
+    startLine: 79
+  assemblies:
+  - CalorieTracker.Api
+  namespace: CalorieTracker.Api.Models.Products
+  summary: Błonnik na 100g/ml produktu (opcjonalne).
+  example: []
+  syntax:
+    content: public float? FiberPer100g { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Single}
+    content.vb: Public Property FiberPer100g As Single?
+  overload: CalorieTracker.Api.Models.Products.ProductDto.FiberPer100g*
+- uid: CalorieTracker.Api.Models.Products.ProductDto.SugarsPer100g
+  commentId: P:CalorieTracker.Api.Models.Products.ProductDto.SugarsPer100g
+  id: SugarsPer100g
+  parent: CalorieTracker.Api.Models.Products.ProductDto
+  langs:
+  - csharp
+  - vb
+  name: SugarsPer100g
+  nameWithType: ProductDto.SugarsPer100g
+  fullName: CalorieTracker.Api.Models.Products.ProductDto.SugarsPer100g
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Api/Models/Products/ProductDto.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: SugarsPer100g
+    path: ../src/CalorieTracker.Api/Models/Products/ProductDto.cs
+    startLine: 84
+  assemblies:
+  - CalorieTracker.Api
+  namespace: CalorieTracker.Api.Models.Products
+  summary: Cukry na 100g/ml produktu (opcjonalne).
+  example: []
+  syntax:
+    content: public float? SugarsPer100g { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Single}
+    content.vb: Public Property SugarsPer100g As Single?
+  overload: CalorieTracker.Api.Models.Products.ProductDto.SugarsPer100g*
+- uid: CalorieTracker.Api.Models.Products.ProductDto.SodiumPer100g
+  commentId: P:CalorieTracker.Api.Models.Products.ProductDto.SodiumPer100g
+  id: SodiumPer100g
+  parent: CalorieTracker.Api.Models.Products.ProductDto
+  langs:
+  - csharp
+  - vb
+  name: SodiumPer100g
+  nameWithType: ProductDto.SodiumPer100g
+  fullName: CalorieTracker.Api.Models.Products.ProductDto.SodiumPer100g
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Api/Models/Products/ProductDto.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: SodiumPer100g
+    path: ../src/CalorieTracker.Api/Models/Products/ProductDto.cs
+    startLine: 89
+  assemblies:
+  - CalorieTracker.Api
+  namespace: CalorieTracker.Api.Models.Products
+  summary: Sód na 100g/ml produktu (opcjonalne).
+  example: []
+  syntax:
+    content: public float? SodiumPer100g { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Single}
+    content.vb: Public Property SodiumPer100g As Single?
+  overload: CalorieTracker.Api.Models.Products.ProductDto.SodiumPer100g*
+- uid: CalorieTracker.Api.Models.Products.ProductDto.IsVerified
+  commentId: P:CalorieTracker.Api.Models.Products.ProductDto.IsVerified
+  id: IsVerified
+  parent: CalorieTracker.Api.Models.Products.ProductDto
+  langs:
+  - csharp
+  - vb
+  name: IsVerified
+  nameWithType: ProductDto.IsVerified
+  fullName: CalorieTracker.Api.Models.Products.ProductDto.IsVerified
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Api/Models/Products/ProductDto.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: IsVerified
+    path: ../src/CalorieTracker.Api/Models/Products/ProductDto.cs
+    startLine: 94
+  assemblies:
+  - CalorieTracker.Api
+  namespace: CalorieTracker.Api.Models.Products
+  summary: Flaga wskazująca czy produkt został zweryfikowany przez administratora.
+  example: []
+  syntax:
+    content: public bool IsVerified { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsVerified As Boolean
+  overload: CalorieTracker.Api.Models.Products.ProductDto.IsVerified*
+- uid: CalorieTracker.Api.Models.Products.ProductDto.CreatedByUserId
+  commentId: P:CalorieTracker.Api.Models.Products.ProductDto.CreatedByUserId
+  id: CreatedByUserId
+  parent: CalorieTracker.Api.Models.Products.ProductDto
+  langs:
+  - csharp
+  - vb
+  name: CreatedByUserId
+  nameWithType: ProductDto.CreatedByUserId
+  fullName: CalorieTracker.Api.Models.Products.ProductDto.CreatedByUserId
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Api/Models/Products/ProductDto.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: CreatedByUserId
+    path: ../src/CalorieTracker.Api/Models/Products/ProductDto.cs
+    startLine: 99
+  assemblies:
+  - CalorieTracker.Api
+  namespace: CalorieTracker.Api.Models.Products
+  summary: Identyfikator użytkownika, który dodał produkt (opcjonalne).
+  example: []
+  syntax:
+    content: public string? CreatedByUserId { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property CreatedByUserId As String
+  overload: CalorieTracker.Api.Models.Products.ProductDto.CreatedByUserId*
+- uid: CalorieTracker.Api.Models.Products.ProductDto.CreatedAt
+  commentId: P:CalorieTracker.Api.Models.Products.ProductDto.CreatedAt
+  id: CreatedAt
+  parent: CalorieTracker.Api.Models.Products.ProductDto
+  langs:
+  - csharp
+  - vb
+  name: CreatedAt
+  nameWithType: ProductDto.CreatedAt
+  fullName: CalorieTracker.Api.Models.Products.ProductDto.CreatedAt
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Api/Models/Products/ProductDto.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: CreatedAt
+    path: ../src/CalorieTracker.Api/Models/Products/ProductDto.cs
+    startLine: 104
+  assemblies:
+  - CalorieTracker.Api
+  namespace: CalorieTracker.Api.Models.Products
+  summary: Data i czas utworzenia produktu.
+  example: []
+  syntax:
+    content: public DateTime CreatedAt { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Property CreatedAt As Date
+  overload: CalorieTracker.Api.Models.Products.ProductDto.CreatedAt*
+- uid: CalorieTracker.Api.Models.Products.ProductDto.UpdatedAt
+  commentId: P:CalorieTracker.Api.Models.Products.ProductDto.UpdatedAt
+  id: UpdatedAt
+  parent: CalorieTracker.Api.Models.Products.ProductDto
+  langs:
+  - csharp
+  - vb
+  name: UpdatedAt
+  nameWithType: ProductDto.UpdatedAt
+  fullName: CalorieTracker.Api.Models.Products.ProductDto.UpdatedAt
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Api/Models/Products/ProductDto.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: UpdatedAt
+    path: ../src/CalorieTracker.Api/Models/Products/ProductDto.cs
+    startLine: 109
+  assemblies:
+  - CalorieTracker.Api
+  namespace: CalorieTracker.Api.Models.Products
+  summary: Data i czas ostatniej aktualizacji produktu.
+  example: []
+  syntax:
+    content: public DateTime UpdatedAt { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Property UpdatedAt As Date
+  overload: CalorieTracker.Api.Models.Products.ProductDto.UpdatedAt*
+references:
+- uid: CalorieTracker.Api.Models.Products
+  commentId: N:CalorieTracker.Api.Models.Products
+  href: CalorieTracker.html
+  name: CalorieTracker.Api.Models.Products
+  nameWithType: CalorieTracker.Api.Models.Products
+  fullName: CalorieTracker.Api.Models.Products
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Api
+    name: Api
+    href: CalorieTracker.Api.html
+  - name: .
+  - uid: CalorieTracker.Api.Models
+    name: Models
+    href: CalorieTracker.Api.Models.html
+  - name: .
+  - uid: CalorieTracker.Api.Models.Products
+    name: Products
+    href: CalorieTracker.Api.Models.Products.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Api
+    name: Api
+    href: CalorieTracker.Api.html
+  - name: .
+  - uid: CalorieTracker.Api.Models
+    name: Models
+    href: CalorieTracker.Api.Models.html
+  - name: .
+  - uid: CalorieTracker.Api.Models.Products
+    name: Products
+    href: CalorieTracker.Api.Models.Products.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CalorieTracker.Api.Models.Products.ProductDto.Id*
+  commentId: Overload:CalorieTracker.Api.Models.Products.ProductDto.Id
+  href: CalorieTracker.Api.Models.Products.ProductDto.html#CalorieTracker_Api_Models_Products_ProductDto_Id
+  name: Id
+  nameWithType: ProductDto.Id
+  fullName: CalorieTracker.Api.Models.Products.ProductDto.Id
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.guid
+  name: Guid
+  nameWithType: Guid
+  fullName: System.Guid
+- uid: CalorieTracker.Api.Models.Products.ProductDto.Name*
+  commentId: Overload:CalorieTracker.Api.Models.Products.ProductDto.Name
+  href: CalorieTracker.Api.Models.Products.ProductDto.html#CalorieTracker_Api_Models_Products_ProductDto_Name
+  name: Name
+  nameWithType: ProductDto.Name
+  fullName: CalorieTracker.Api.Models.Products.ProductDto.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: CalorieTracker.Api.Models.Products.ProductDto.Brand*
+  commentId: Overload:CalorieTracker.Api.Models.Products.ProductDto.Brand
+  href: CalorieTracker.Api.Models.Products.ProductDto.html#CalorieTracker_Api_Models_Products_ProductDto_Brand
+  name: Brand
+  nameWithType: ProductDto.Brand
+  fullName: CalorieTracker.Api.Models.Products.ProductDto.Brand
+- uid: CalorieTracker.Api.Models.Products.ProductDto.Description*
+  commentId: Overload:CalorieTracker.Api.Models.Products.ProductDto.Description
+  href: CalorieTracker.Api.Models.Products.ProductDto.html#CalorieTracker_Api_Models_Products_ProductDto_Description
+  name: Description
+  nameWithType: ProductDto.Description
+  fullName: CalorieTracker.Api.Models.Products.ProductDto.Description
+- uid: CalorieTracker.Api.Models.Products.ProductDto.Ingredients*
+  commentId: Overload:CalorieTracker.Api.Models.Products.ProductDto.Ingredients
+  href: CalorieTracker.Api.Models.Products.ProductDto.html#CalorieTracker_Api_Models_Products_ProductDto_Ingredients
+  name: Ingredients
+  nameWithType: ProductDto.Ingredients
+  fullName: CalorieTracker.Api.Models.Products.ProductDto.Ingredients
+- uid: CalorieTracker.Api.Models.Products.ProductDto.Barcode*
+  commentId: Overload:CalorieTracker.Api.Models.Products.ProductDto.Barcode
+  href: CalorieTracker.Api.Models.Products.ProductDto.html#CalorieTracker_Api_Models_Products_ProductDto_Barcode
+  name: Barcode
+  nameWithType: ProductDto.Barcode
+  fullName: CalorieTracker.Api.Models.Products.ProductDto.Barcode
+- uid: CalorieTracker.Api.Models.Products.ProductDto.Category*
+  commentId: Overload:CalorieTracker.Api.Models.Products.ProductDto.Category
+  href: CalorieTracker.Api.Models.Products.ProductDto.html#CalorieTracker_Api_Models_Products_ProductDto_Category
+  name: Category
+  nameWithType: ProductDto.Category
+  fullName: CalorieTracker.Api.Models.Products.ProductDto.Category
+- uid: CalorieTracker.Api.Models.Products.ProductDto.Unit*
+  commentId: Overload:CalorieTracker.Api.Models.Products.ProductDto.Unit
+  href: CalorieTracker.Api.Models.Products.ProductDto.html#CalorieTracker_Api_Models_Products_ProductDto_Unit
+  name: Unit
+  nameWithType: ProductDto.Unit
+  fullName: CalorieTracker.Api.Models.Products.ProductDto.Unit
+- uid: CalorieTracker.Api.Models.Products.ProductDto.ServingSize*
+  commentId: Overload:CalorieTracker.Api.Models.Products.ProductDto.ServingSize
+  href: CalorieTracker.Api.Models.Products.ProductDto.html#CalorieTracker_Api_Models_Products_ProductDto_ServingSize
+  name: ServingSize
+  nameWithType: ProductDto.ServingSize
+  fullName: CalorieTracker.Api.Models.Products.ProductDto.ServingSize
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: CalorieTracker.Api.Models.Products.ProductDto.CaloriesPer100g*
+  commentId: Overload:CalorieTracker.Api.Models.Products.ProductDto.CaloriesPer100g
+  href: CalorieTracker.Api.Models.Products.ProductDto.html#CalorieTracker_Api_Models_Products_ProductDto_CaloriesPer100g
+  name: CaloriesPer100g
+  nameWithType: ProductDto.CaloriesPer100g
+  fullName: CalorieTracker.Api.Models.Products.ProductDto.CaloriesPer100g
+- uid: CalorieTracker.Api.Models.Products.ProductDto.ProteinPer100g*
+  commentId: Overload:CalorieTracker.Api.Models.Products.ProductDto.ProteinPer100g
+  href: CalorieTracker.Api.Models.Products.ProductDto.html#CalorieTracker_Api_Models_Products_ProductDto_ProteinPer100g
+  name: ProteinPer100g
+  nameWithType: ProductDto.ProteinPer100g
+  fullName: CalorieTracker.Api.Models.Products.ProductDto.ProteinPer100g
+- uid: CalorieTracker.Api.Models.Products.ProductDto.FatPer100g*
+  commentId: Overload:CalorieTracker.Api.Models.Products.ProductDto.FatPer100g
+  href: CalorieTracker.Api.Models.Products.ProductDto.html#CalorieTracker_Api_Models_Products_ProductDto_FatPer100g
+  name: FatPer100g
+  nameWithType: ProductDto.FatPer100g
+  fullName: CalorieTracker.Api.Models.Products.ProductDto.FatPer100g
+- uid: CalorieTracker.Api.Models.Products.ProductDto.CarbohydratesPer100g*
+  commentId: Overload:CalorieTracker.Api.Models.Products.ProductDto.CarbohydratesPer100g
+  href: CalorieTracker.Api.Models.Products.ProductDto.html#CalorieTracker_Api_Models_Products_ProductDto_CarbohydratesPer100g
+  name: CarbohydratesPer100g
+  nameWithType: ProductDto.CarbohydratesPer100g
+  fullName: CalorieTracker.Api.Models.Products.ProductDto.CarbohydratesPer100g
+- uid: CalorieTracker.Api.Models.Products.ProductDto.FiberPer100g*
+  commentId: Overload:CalorieTracker.Api.Models.Products.ProductDto.FiberPer100g
+  href: CalorieTracker.Api.Models.Products.ProductDto.html#CalorieTracker_Api_Models_Products_ProductDto_FiberPer100g
+  name: FiberPer100g
+  nameWithType: ProductDto.FiberPer100g
+  fullName: CalorieTracker.Api.Models.Products.ProductDto.FiberPer100g
+- uid: System.Nullable{System.Single}
+  commentId: T:System.Nullable{System.Single}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float?
+  nameWithType: float?
+  fullName: float?
+  nameWithType.vb: Single?
+  fullName.vb: Single?
+  name.vb: Single?
+  spec.csharp:
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '?'
+  spec.vb:
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: CalorieTracker.Api.Models.Products.ProductDto.SugarsPer100g*
+  commentId: Overload:CalorieTracker.Api.Models.Products.ProductDto.SugarsPer100g
+  href: CalorieTracker.Api.Models.Products.ProductDto.html#CalorieTracker_Api_Models_Products_ProductDto_SugarsPer100g
+  name: SugarsPer100g
+  nameWithType: ProductDto.SugarsPer100g
+  fullName: CalorieTracker.Api.Models.Products.ProductDto.SugarsPer100g
+- uid: CalorieTracker.Api.Models.Products.ProductDto.SodiumPer100g*
+  commentId: Overload:CalorieTracker.Api.Models.Products.ProductDto.SodiumPer100g
+  href: CalorieTracker.Api.Models.Products.ProductDto.html#CalorieTracker_Api_Models_Products_ProductDto_SodiumPer100g
+  name: SodiumPer100g
+  nameWithType: ProductDto.SodiumPer100g
+  fullName: CalorieTracker.Api.Models.Products.ProductDto.SodiumPer100g
+- uid: CalorieTracker.Api.Models.Products.ProductDto.IsVerified*
+  commentId: Overload:CalorieTracker.Api.Models.Products.ProductDto.IsVerified
+  href: CalorieTracker.Api.Models.Products.ProductDto.html#CalorieTracker_Api_Models_Products_ProductDto_IsVerified
+  name: IsVerified
+  nameWithType: ProductDto.IsVerified
+  fullName: CalorieTracker.Api.Models.Products.ProductDto.IsVerified
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: CalorieTracker.Api.Models.Products.ProductDto.CreatedByUserId*
+  commentId: Overload:CalorieTracker.Api.Models.Products.ProductDto.CreatedByUserId
+  href: CalorieTracker.Api.Models.Products.ProductDto.html#CalorieTracker_Api_Models_Products_ProductDto_CreatedByUserId
+  name: CreatedByUserId
+  nameWithType: ProductDto.CreatedByUserId
+  fullName: CalorieTracker.Api.Models.Products.ProductDto.CreatedByUserId
+- uid: CalorieTracker.Api.Models.Products.ProductDto.CreatedAt*
+  commentId: Overload:CalorieTracker.Api.Models.Products.ProductDto.CreatedAt
+  href: CalorieTracker.Api.Models.Products.ProductDto.html#CalorieTracker_Api_Models_Products_ProductDto_CreatedAt
+  name: CreatedAt
+  nameWithType: ProductDto.CreatedAt
+  fullName: CalorieTracker.Api.Models.Products.ProductDto.CreatedAt
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: CalorieTracker.Api.Models.Products.ProductDto.UpdatedAt*
+  commentId: Overload:CalorieTracker.Api.Models.Products.ProductDto.UpdatedAt
+  href: CalorieTracker.Api.Models.Products.ProductDto.html#CalorieTracker_Api_Models_Products_ProductDto_UpdatedAt
+  name: UpdatedAt
+  nameWithType: ProductDto.UpdatedAt
+  fullName: CalorieTracker.Api.Models.Products.ProductDto.UpdatedAt

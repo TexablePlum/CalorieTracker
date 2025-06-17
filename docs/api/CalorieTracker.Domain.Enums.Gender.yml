@@ -1,0 +1,124 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Domain.Enums.Gender
+  commentId: T:CalorieTracker.Domain.Enums.Gender
+  id: Gender
+  parent: CalorieTracker.Domain.Enums
+  children:
+  - CalorieTracker.Domain.Enums.Gender.Female
+  - CalorieTracker.Domain.Enums.Gender.Male
+  langs:
+  - csharp
+  - vb
+  name: Gender
+  nameWithType: Gender
+  fullName: CalorieTracker.Domain.Enums.Gender
+  type: Enum
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Enums/Gender.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Gender
+    path: ../src/CalorieTracker.Domain/Enums/Gender.cs
+    startLine: 9
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Enums
+  example: []
+  syntax:
+    content: public enum Gender
+    content.vb: Public Enum Gender
+- uid: CalorieTracker.Domain.Enums.Gender.Male
+  commentId: F:CalorieTracker.Domain.Enums.Gender.Male
+  id: Male
+  parent: CalorieTracker.Domain.Enums.Gender
+  langs:
+  - csharp
+  - vb
+  name: Male
+  nameWithType: Gender.Male
+  fullName: CalorieTracker.Domain.Enums.Gender.Male
+  type: Field
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Enums/Gender.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Male
+    path: ../src/CalorieTracker.Domain/Enums/Gender.cs
+    startLine: 14
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Enums
+  example: []
+  syntax:
+    content: Male = 0
+    return:
+      type: CalorieTracker.Domain.Enums.Gender
+- uid: CalorieTracker.Domain.Enums.Gender.Female
+  commentId: F:CalorieTracker.Domain.Enums.Gender.Female
+  id: Female
+  parent: CalorieTracker.Domain.Enums.Gender
+  langs:
+  - csharp
+  - vb
+  name: Female
+  nameWithType: Gender.Female
+  fullName: CalorieTracker.Domain.Enums.Gender.Female
+  type: Field
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Enums/Gender.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Female
+    path: ../src/CalorieTracker.Domain/Enums/Gender.cs
+    startLine: 19
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Enums
+  summary: Oznacza płeć żeńską.
+  example: []
+  syntax:
+    content: Female = 1
+    return:
+      type: CalorieTracker.Domain.Enums.Gender
+references:
+- uid: CalorieTracker.Domain.Enums
+  commentId: N:CalorieTracker.Domain.Enums
+  href: CalorieTracker.html
+  name: CalorieTracker.Domain.Enums
+  nameWithType: CalorieTracker.Domain.Enums
+  fullName: CalorieTracker.Domain.Enums
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Domain
+    name: Domain
+    href: CalorieTracker.Domain.html
+  - name: .
+  - uid: CalorieTracker.Domain.Enums
+    name: Enums
+    href: CalorieTracker.Domain.Enums.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Domain
+    name: Domain
+    href: CalorieTracker.Domain.html
+  - name: .
+  - uid: CalorieTracker.Domain.Enums
+    name: Enums
+    href: CalorieTracker.Domain.Enums.html
+- uid: CalorieTracker.Domain.Enums.Gender
+  commentId: T:CalorieTracker.Domain.Enums.Gender
+  parent: CalorieTracker.Domain.Enums
+  href: CalorieTracker.Domain.Enums.Gender.html
+  name: Gender
+  nameWithType: Gender
+  fullName: CalorieTracker.Domain.Enums.Gender

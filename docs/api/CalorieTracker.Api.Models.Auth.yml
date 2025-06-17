@@ -1,0 +1,125 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Api.Models.Auth
+  commentId: N:CalorieTracker.Api.Models.Auth
+  id: CalorieTracker.Api.Models.Auth
+  children:
+  - CalorieTracker.Api.Models.Auth.AuthResponse
+  - CalorieTracker.Api.Models.Auth.ConfirmEmailRequest
+  - CalorieTracker.Api.Models.Auth.ForgotPasswordRequest
+  - CalorieTracker.Api.Models.Auth.LoginRequest
+  - CalorieTracker.Api.Models.Auth.LogoutRequest
+  - CalorieTracker.Api.Models.Auth.RefreshRequest
+  - CalorieTracker.Api.Models.Auth.RegisterRequest
+  - CalorieTracker.Api.Models.Auth.ResendConfirmationRequest
+  - CalorieTracker.Api.Models.Auth.ResetPasswordRequest
+  langs:
+  - csharp
+  - vb
+  name: CalorieTracker.Api.Models.Auth
+  nameWithType: CalorieTracker.Api.Models.Auth
+  fullName: CalorieTracker.Api.Models.Auth
+  type: Namespace
+  assemblies:
+  - CalorieTracker.Api
+references:
+- uid: CalorieTracker.Api.Models.Auth.AuthResponse
+  commentId: T:CalorieTracker.Api.Models.Auth.AuthResponse
+  href: CalorieTracker.Api.Models.Auth.AuthResponse.html
+  name: AuthResponse
+  nameWithType: AuthResponse
+  fullName: CalorieTracker.Api.Models.Auth.AuthResponse
+- uid: CalorieTracker.Api.Models.Auth.ConfirmEmailRequest
+  commentId: T:CalorieTracker.Api.Models.Auth.ConfirmEmailRequest
+  parent: CalorieTracker.Api.Models.Auth
+  href: CalorieTracker.Api.Models.Auth.ConfirmEmailRequest.html
+  name: ConfirmEmailRequest
+  nameWithType: ConfirmEmailRequest
+  fullName: CalorieTracker.Api.Models.Auth.ConfirmEmailRequest
+- uid: CalorieTracker.Api.Models.Auth.ForgotPasswordRequest
+  commentId: T:CalorieTracker.Api.Models.Auth.ForgotPasswordRequest
+  parent: CalorieTracker.Api.Models.Auth
+  href: CalorieTracker.Api.Models.Auth.ForgotPasswordRequest.html
+  name: ForgotPasswordRequest
+  nameWithType: ForgotPasswordRequest
+  fullName: CalorieTracker.Api.Models.Auth.ForgotPasswordRequest
+- uid: CalorieTracker.Api.Models.Auth.LoginRequest
+  commentId: T:CalorieTracker.Api.Models.Auth.LoginRequest
+  parent: CalorieTracker.Api.Models.Auth
+  href: CalorieTracker.Api.Models.Auth.LoginRequest.html
+  name: LoginRequest
+  nameWithType: LoginRequest
+  fullName: CalorieTracker.Api.Models.Auth.LoginRequest
+- uid: CalorieTracker.Api.Models.Auth.LogoutRequest
+  commentId: T:CalorieTracker.Api.Models.Auth.LogoutRequest
+  parent: CalorieTracker.Api.Models.Auth
+  href: CalorieTracker.Api.Models.Auth.LogoutRequest.html
+  name: LogoutRequest
+  nameWithType: LogoutRequest
+  fullName: CalorieTracker.Api.Models.Auth.LogoutRequest
+- uid: CalorieTracker.Api.Models.Auth.RefreshRequest
+  commentId: T:CalorieTracker.Api.Models.Auth.RefreshRequest
+  parent: CalorieTracker.Api.Models.Auth
+  href: CalorieTracker.Api.Models.Auth.RefreshRequest.html
+  name: RefreshRequest
+  nameWithType: RefreshRequest
+  fullName: CalorieTracker.Api.Models.Auth.RefreshRequest
+- uid: CalorieTracker.Api.Models.Auth.RegisterRequest
+  commentId: T:CalorieTracker.Api.Models.Auth.RegisterRequest
+  parent: CalorieTracker.Api.Models.Auth
+  href: CalorieTracker.Api.Models.Auth.RegisterRequest.html
+  name: RegisterRequest
+  nameWithType: RegisterRequest
+  fullName: CalorieTracker.Api.Models.Auth.RegisterRequest
+- uid: CalorieTracker.Api.Models.Auth.ResendConfirmationRequest
+  commentId: T:CalorieTracker.Api.Models.Auth.ResendConfirmationRequest
+  parent: CalorieTracker.Api.Models.Auth
+  href: CalorieTracker.Api.Models.Auth.ResendConfirmationRequest.html
+  name: ResendConfirmationRequest
+  nameWithType: ResendConfirmationRequest
+  fullName: CalorieTracker.Api.Models.Auth.ResendConfirmationRequest
+- uid: CalorieTracker.Api.Models.Auth.ResetPasswordRequest
+  commentId: T:CalorieTracker.Api.Models.Auth.ResetPasswordRequest
+  parent: CalorieTracker.Api.Models.Auth
+  href: CalorieTracker.Api.Models.Auth.ResetPasswordRequest.html
+  name: ResetPasswordRequest
+  nameWithType: ResetPasswordRequest
+  fullName: CalorieTracker.Api.Models.Auth.ResetPasswordRequest
+- uid: CalorieTracker.Api.Models.Auth
+  commentId: N:CalorieTracker.Api.Models.Auth
+  href: CalorieTracker.html
+  name: CalorieTracker.Api.Models.Auth
+  nameWithType: CalorieTracker.Api.Models.Auth
+  fullName: CalorieTracker.Api.Models.Auth
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Api
+    name: Api
+    href: CalorieTracker.Api.html
+  - name: .
+  - uid: CalorieTracker.Api.Models
+    name: Models
+    href: CalorieTracker.Api.Models.html
+  - name: .
+  - uid: CalorieTracker.Api.Models.Auth
+    name: Auth
+    href: CalorieTracker.Api.Models.Auth.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Api
+    name: Api
+    href: CalorieTracker.Api.html
+  - name: .
+  - uid: CalorieTracker.Api.Models
+    name: Models
+    href: CalorieTracker.Api.Models.html
+  - name: .
+  - uid: CalorieTracker.Api.Models.Auth
+    name: Auth
+    href: CalorieTracker.Api.Models.Auth.html

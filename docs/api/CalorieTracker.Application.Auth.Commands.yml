@@ -1,0 +1,102 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Application.Auth.Commands
+  commentId: N:CalorieTracker.Application.Auth.Commands
+  id: CalorieTracker.Application.Auth.Commands
+  children:
+  - CalorieTracker.Application.Auth.Commands.DeleteProductCommand
+  - CalorieTracker.Application.Auth.Commands.GenerateRefreshTokenCommand
+  - CalorieTracker.Application.Auth.Commands.LogoutCommand
+  - CalorieTracker.Application.Auth.Commands.RegisterUserCommand
+  - CalorieTracker.Application.Auth.Commands.UpdateProductCommand
+  - CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand
+  langs:
+  - csharp
+  - vb
+  name: CalorieTracker.Application.Auth.Commands
+  nameWithType: CalorieTracker.Application.Auth.Commands
+  fullName: CalorieTracker.Application.Auth.Commands
+  type: Namespace
+  assemblies:
+  - CalorieTracker.Application
+references:
+- uid: CalorieTracker.Application.Auth.Commands.GenerateRefreshTokenCommand
+  commentId: T:CalorieTracker.Application.Auth.Commands.GenerateRefreshTokenCommand
+  parent: CalorieTracker.Application.Auth.Commands
+  href: CalorieTracker.Application.Auth.Commands.GenerateRefreshTokenCommand.html
+  name: GenerateRefreshTokenCommand
+  nameWithType: GenerateRefreshTokenCommand
+  fullName: CalorieTracker.Application.Auth.Commands.GenerateRefreshTokenCommand
+- uid: CalorieTracker.Application.Auth.Commands.LogoutCommand
+  commentId: T:CalorieTracker.Application.Auth.Commands.LogoutCommand
+  parent: CalorieTracker.Application.Auth.Commands
+  href: CalorieTracker.Application.Auth.Commands.LogoutCommand.html
+  name: LogoutCommand
+  nameWithType: LogoutCommand
+  fullName: CalorieTracker.Application.Auth.Commands.LogoutCommand
+- uid: CalorieTracker.Application.Auth.Commands.RegisterUserCommand
+  commentId: T:CalorieTracker.Application.Auth.Commands.RegisterUserCommand
+  parent: CalorieTracker.Application.Auth.Commands
+  href: CalorieTracker.Application.Auth.Commands.RegisterUserCommand.html
+  name: RegisterUserCommand
+  nameWithType: RegisterUserCommand
+  fullName: CalorieTracker.Application.Auth.Commands.RegisterUserCommand
+- uid: CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand
+  commentId: T:CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand
+  parent: CalorieTracker.Application.Auth.Commands
+  href: CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand.html
+  name: UseRefreshTokenCommand
+  nameWithType: UseRefreshTokenCommand
+  fullName: CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand
+- uid: CalorieTracker.Application.Auth.Commands.DeleteProductCommand
+  commentId: T:CalorieTracker.Application.Auth.Commands.DeleteProductCommand
+  parent: CalorieTracker.Application.Auth.Commands
+  href: CalorieTracker.Application.Auth.Commands.DeleteProductCommand.html
+  name: DeleteProductCommand
+  nameWithType: DeleteProductCommand
+  fullName: CalorieTracker.Application.Auth.Commands.DeleteProductCommand
+- uid: CalorieTracker.Application.Auth.Commands.UpdateProductCommand
+  commentId: T:CalorieTracker.Application.Auth.Commands.UpdateProductCommand
+  parent: CalorieTracker.Application.Auth.Commands
+  href: CalorieTracker.Application.Auth.Commands.UpdateProductCommand.html
+  name: UpdateProductCommand
+  nameWithType: UpdateProductCommand
+  fullName: CalorieTracker.Application.Auth.Commands.UpdateProductCommand
+- uid: CalorieTracker.Application.Auth.Commands
+  commentId: N:CalorieTracker.Application.Auth.Commands
+  href: CalorieTracker.html
+  name: CalorieTracker.Application.Auth.Commands
+  nameWithType: CalorieTracker.Application.Auth.Commands
+  fullName: CalorieTracker.Application.Auth.Commands
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth
+    name: Auth
+    href: CalorieTracker.Application.Auth.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth.Commands
+    name: Commands
+    href: CalorieTracker.Application.Auth.Commands.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth
+    name: Auth
+    href: CalorieTracker.Application.Auth.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth.Commands
+    name: Commands
+    href: CalorieTracker.Application.Auth.Commands.html

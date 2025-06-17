@@ -1,0 +1,84 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Api.Models.WeightMeasurements
+  commentId: N:CalorieTracker.Api.Models.WeightMeasurements
+  id: CalorieTracker.Api.Models.WeightMeasurements
+  children:
+  - CalorieTracker.Api.Models.WeightMeasurements.CreateWeightMeasurementRequest
+  - CalorieTracker.Api.Models.WeightMeasurements.UpdateWeightMeasurementRequest
+  - CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto
+  - CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementsResponse
+  langs:
+  - csharp
+  - vb
+  name: CalorieTracker.Api.Models.WeightMeasurements
+  nameWithType: CalorieTracker.Api.Models.WeightMeasurements
+  fullName: CalorieTracker.Api.Models.WeightMeasurements
+  type: Namespace
+  assemblies:
+  - CalorieTracker.Api
+references:
+- uid: CalorieTracker.Api.Models.WeightMeasurements.CreateWeightMeasurementRequest
+  commentId: T:CalorieTracker.Api.Models.WeightMeasurements.CreateWeightMeasurementRequest
+  parent: CalorieTracker.Api.Models.WeightMeasurements
+  href: CalorieTracker.Api.Models.WeightMeasurements.CreateWeightMeasurementRequest.html
+  name: CreateWeightMeasurementRequest
+  nameWithType: CreateWeightMeasurementRequest
+  fullName: CalorieTracker.Api.Models.WeightMeasurements.CreateWeightMeasurementRequest
+- uid: CalorieTracker.Api.Models.WeightMeasurements.UpdateWeightMeasurementRequest
+  commentId: T:CalorieTracker.Api.Models.WeightMeasurements.UpdateWeightMeasurementRequest
+  parent: CalorieTracker.Api.Models.WeightMeasurements
+  href: CalorieTracker.Api.Models.WeightMeasurements.UpdateWeightMeasurementRequest.html
+  name: UpdateWeightMeasurementRequest
+  nameWithType: UpdateWeightMeasurementRequest
+  fullName: CalorieTracker.Api.Models.WeightMeasurements.UpdateWeightMeasurementRequest
+- uid: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto
+  commentId: T:CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto
+  href: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.html
+  name: WeightMeasurementDto
+  nameWithType: WeightMeasurementDto
+  fullName: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto
+- uid: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementsResponse
+  commentId: T:CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementsResponse
+  href: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementsResponse.html
+  name: WeightMeasurementsResponse
+  nameWithType: WeightMeasurementsResponse
+  fullName: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementsResponse
+- uid: CalorieTracker.Api.Models.WeightMeasurements
+  commentId: N:CalorieTracker.Api.Models.WeightMeasurements
+  href: CalorieTracker.html
+  name: CalorieTracker.Api.Models.WeightMeasurements
+  nameWithType: CalorieTracker.Api.Models.WeightMeasurements
+  fullName: CalorieTracker.Api.Models.WeightMeasurements
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Api
+    name: Api
+    href: CalorieTracker.Api.html
+  - name: .
+  - uid: CalorieTracker.Api.Models
+    name: Models
+    href: CalorieTracker.Api.Models.html
+  - name: .
+  - uid: CalorieTracker.Api.Models.WeightMeasurements
+    name: WeightMeasurements
+    href: CalorieTracker.Api.Models.WeightMeasurements.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Api
+    name: Api
+    href: CalorieTracker.Api.html
+  - name: .
+  - uid: CalorieTracker.Api.Models
+    name: Models
+    href: CalorieTracker.Api.Models.html
+  - name: .
+  - uid: CalorieTracker.Api.Models.WeightMeasurements
+    name: WeightMeasurements
+    href: CalorieTracker.Api.Models.WeightMeasurements.html

@@ -1,0 +1,520 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand
+  commentId: T:CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand
+  id: UseRefreshTokenCommand
+  parent: CalorieTracker.Application.Auth.Commands
+  children:
+  - CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand.#ctor(System.String,System.String)
+  - CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand.AccessToken
+  - CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand.RefreshToken
+  langs:
+  - csharp
+  - vb
+  name: UseRefreshTokenCommand
+  nameWithType: UseRefreshTokenCommand
+  fullName: CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand
+  type: Class
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Auth/Commands/UseRefreshTokenCommand.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: UseRefreshTokenCommand
+    path: ../src/CalorieTracker.Application/Auth/Commands/UseRefreshTokenCommand.cs
+    startLine: 11
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Auth.Commands
+  summary: >-
+    Rekord reprezentujący komendę użycia tokena odświeżającego.
+
+    Zawiera zarówno aktualny token dostępowy jak i token odświeżający potrzebne do procesu odnowienia autentykacji.
+  example: []
+  syntax:
+    content: 'public record UseRefreshTokenCommand : IEquatable<UseRefreshTokenCommand>'
+    content.vb: Public Class UseRefreshTokenCommand Implements IEquatable(Of UseRefreshTokenCommand)
+  inheritance:
+  - System.Object
+  implements:
+  - System.IEquatable{CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand.#ctor(System.String,System.String)
+  commentId: M:CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand.#ctor(System.String,System.String)
+  id: '#ctor(System.String,System.String)'
+  parent: CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand
+  langs:
+  - csharp
+  - vb
+  name: UseRefreshTokenCommand(string, string)
+  nameWithType: UseRefreshTokenCommand.UseRefreshTokenCommand(string, string)
+  fullName: CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand.UseRefreshTokenCommand(string, string)
+  type: Constructor
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Auth/Commands/UseRefreshTokenCommand.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: .ctor
+    path: ../src/CalorieTracker.Application/Auth/Commands/UseRefreshTokenCommand.cs
+    startLine: 11
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Auth.Commands
+  summary: >-
+    Rekord reprezentujący komendę użycia tokena odświeżającego.
+
+    Zawiera zarówno aktualny token dostępowy jak i token odświeżający potrzebne do procesu odnowienia autentykacji.
+  example: []
+  syntax:
+    content: public UseRefreshTokenCommand(string AccessToken, string RefreshToken)
+    parameters:
+    - id: AccessToken
+      type: System.String
+      description: Aktualny token JWT użytkownika wymagający odświeżenia.
+    - id: RefreshToken
+      type: System.String
+      description: Token odświeżający używany do weryfikacji i generowania nowego tokena dostępowego.
+    content.vb: Public Sub New(AccessToken As String, RefreshToken As String)
+  overload: CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand.#ctor*
+  nameWithType.vb: UseRefreshTokenCommand.New(String, String)
+  fullName.vb: CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand.New(String, String)
+  name.vb: New(String, String)
+- uid: CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand.AccessToken
+  commentId: P:CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand.AccessToken
+  id: AccessToken
+  parent: CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand
+  langs:
+  - csharp
+  - vb
+  name: AccessToken
+  nameWithType: UseRefreshTokenCommand.AccessToken
+  fullName: CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand.AccessToken
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Auth/Commands/UseRefreshTokenCommand.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: AccessToken
+    path: ../src/CalorieTracker.Application/Auth/Commands/UseRefreshTokenCommand.cs
+    startLine: 11
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Auth.Commands
+  summary: Aktualny token JWT użytkownika wymagający odświeżenia.
+  example: []
+  syntax:
+    content: public string AccessToken { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property AccessToken As String
+  overload: CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand.AccessToken*
+- uid: CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand.RefreshToken
+  commentId: P:CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand.RefreshToken
+  id: RefreshToken
+  parent: CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand
+  langs:
+  - csharp
+  - vb
+  name: RefreshToken
+  nameWithType: UseRefreshTokenCommand.RefreshToken
+  fullName: CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand.RefreshToken
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Auth/Commands/UseRefreshTokenCommand.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: RefreshToken
+    path: ../src/CalorieTracker.Application/Auth/Commands/UseRefreshTokenCommand.cs
+    startLine: 11
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Auth.Commands
+  summary: Token odświeżający używany do weryfikacji i generowania nowego tokena dostępowego.
+  example: []
+  syntax:
+    content: public string RefreshToken { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property RefreshToken As String
+  overload: CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand.RefreshToken*
+references:
+- uid: CalorieTracker.Application.Auth.Commands
+  commentId: N:CalorieTracker.Application.Auth.Commands
+  href: CalorieTracker.html
+  name: CalorieTracker.Application.Auth.Commands
+  nameWithType: CalorieTracker.Application.Auth.Commands
+  fullName: CalorieTracker.Application.Auth.Commands
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth
+    name: Auth
+    href: CalorieTracker.Application.Auth.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth.Commands
+    name: Commands
+    href: CalorieTracker.Application.Auth.Commands.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth
+    name: Auth
+    href: CalorieTracker.Application.Auth.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth.Commands
+    name: Commands
+    href: CalorieTracker.Application.Auth.Commands.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IEquatable{CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand}
+  commentId: T:System.IEquatable{CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<UseRefreshTokenCommand>
+  nameWithType: IEquatable<UseRefreshTokenCommand>
+  fullName: System.IEquatable<CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand>
+  nameWithType.vb: IEquatable(Of UseRefreshTokenCommand)
+  fullName.vb: System.IEquatable(Of CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand)
+  name.vb: IEquatable(Of UseRefreshTokenCommand)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand
+    name: UseRefreshTokenCommand
+    href: CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand
+    name: UseRefreshTokenCommand
+    href: CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand.#ctor*
+  commentId: Overload:CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand.#ctor
+  href: CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand.html#CalorieTracker_Application_Auth_Commands_UseRefreshTokenCommand__ctor_System_String_System_String_
+  name: UseRefreshTokenCommand
+  nameWithType: UseRefreshTokenCommand.UseRefreshTokenCommand
+  fullName: CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand.UseRefreshTokenCommand
+  nameWithType.vb: UseRefreshTokenCommand.New
+  fullName.vb: CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand.New
+  name.vb: New
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand.AccessToken*
+  commentId: Overload:CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand.AccessToken
+  href: CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand.html#CalorieTracker_Application_Auth_Commands_UseRefreshTokenCommand_AccessToken
+  name: AccessToken
+  nameWithType: UseRefreshTokenCommand.AccessToken
+  fullName: CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand.AccessToken
+- uid: CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand.RefreshToken*
+  commentId: Overload:CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand.RefreshToken
+  href: CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand.html#CalorieTracker_Application_Auth_Commands_UseRefreshTokenCommand_RefreshToken
+  name: RefreshToken
+  nameWithType: UseRefreshTokenCommand.RefreshToken
+  fullName: CalorieTracker.Application.Auth.Commands.UseRefreshTokenCommand.RefreshToken

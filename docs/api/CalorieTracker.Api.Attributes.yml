@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Api.Attributes
+  commentId: N:CalorieTracker.Api.Attributes
+  id: CalorieTracker.Api.Attributes
+  children:
+  - CalorieTracker.Api.Attributes.RequireCompleteProfileAttribute
+  langs:
+  - csharp
+  - vb
+  name: CalorieTracker.Api.Attributes
+  nameWithType: CalorieTracker.Api.Attributes
+  fullName: CalorieTracker.Api.Attributes
+  type: Namespace
+  assemblies:
+  - CalorieTracker.Api
+references:
+- uid: CalorieTracker.Api.Attributes.RequireCompleteProfileAttribute
+  commentId: T:CalorieTracker.Api.Attributes.RequireCompleteProfileAttribute
+  href: CalorieTracker.Api.Attributes.RequireCompleteProfileAttribute.html
+  name: RequireCompleteProfileAttribute
+  nameWithType: RequireCompleteProfileAttribute
+  fullName: CalorieTracker.Api.Attributes.RequireCompleteProfileAttribute

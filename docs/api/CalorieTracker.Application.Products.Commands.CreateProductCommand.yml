@@ -1,0 +1,1107 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Application.Products.Commands.CreateProductCommand
+  commentId: T:CalorieTracker.Application.Products.Commands.CreateProductCommand
+  id: CreateProductCommand
+  parent: CalorieTracker.Application.Products.Commands
+  children:
+  - CalorieTracker.Application.Products.Commands.CreateProductCommand.Barcode
+  - CalorieTracker.Application.Products.Commands.CreateProductCommand.Brand
+  - CalorieTracker.Application.Products.Commands.CreateProductCommand.CaloriesPer100g
+  - CalorieTracker.Application.Products.Commands.CreateProductCommand.CarbohydratesPer100g
+  - CalorieTracker.Application.Products.Commands.CreateProductCommand.Category
+  - CalorieTracker.Application.Products.Commands.CreateProductCommand.CreatedByUserId
+  - CalorieTracker.Application.Products.Commands.CreateProductCommand.Description
+  - CalorieTracker.Application.Products.Commands.CreateProductCommand.FatPer100g
+  - CalorieTracker.Application.Products.Commands.CreateProductCommand.FiberPer100g
+  - CalorieTracker.Application.Products.Commands.CreateProductCommand.Ingredients
+  - CalorieTracker.Application.Products.Commands.CreateProductCommand.Name
+  - CalorieTracker.Application.Products.Commands.CreateProductCommand.ProteinPer100g
+  - CalorieTracker.Application.Products.Commands.CreateProductCommand.ServingSize
+  - CalorieTracker.Application.Products.Commands.CreateProductCommand.SodiumPer100g
+  - CalorieTracker.Application.Products.Commands.CreateProductCommand.SugarsPer100g
+  - CalorieTracker.Application.Products.Commands.CreateProductCommand.Unit
+  langs:
+  - csharp
+  - vb
+  name: CreateProductCommand
+  nameWithType: CreateProductCommand
+  fullName: CalorieTracker.Application.Products.Commands.CreateProductCommand
+  type: Class
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Products/Commands/CreateProductCommand.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: CreateProductCommand
+    path: ../src/CalorieTracker.Application/Products/Commands/CreateProductCommand.cs
+    startLine: 11
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Products.Commands
+  summary: >-
+    Rekord reprezentujący komendę tworzenia nowego produktu spożywczego.
+
+    Zawiera pełne dane żywieniowe oraz metadane produktu.
+  example: []
+  syntax:
+    content: 'public record CreateProductCommand : IEquatable<CreateProductCommand>'
+    content.vb: Public Class CreateProductCommand Implements IEquatable(Of CreateProductCommand)
+  inheritance:
+  - System.Object
+  implements:
+  - System.IEquatable{CalorieTracker.Application.Products.Commands.CreateProductCommand}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: CalorieTracker.Application.Products.Commands.CreateProductCommand.Name
+  commentId: P:CalorieTracker.Application.Products.Commands.CreateProductCommand.Name
+  id: Name
+  parent: CalorieTracker.Application.Products.Commands.CreateProductCommand
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: CreateProductCommand.Name
+  fullName: CalorieTracker.Application.Products.Commands.CreateProductCommand.Name
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Products/Commands/CreateProductCommand.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Name
+    path: ../src/CalorieTracker.Application/Products/Commands/CreateProductCommand.cs
+    startLine: 16
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Products.Commands
+  summary: Nazwa produktu. Pole wymagane.
+  example: []
+  syntax:
+    content: public string Name { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: CalorieTracker.Application.Products.Commands.CreateProductCommand.Name*
+- uid: CalorieTracker.Application.Products.Commands.CreateProductCommand.Brand
+  commentId: P:CalorieTracker.Application.Products.Commands.CreateProductCommand.Brand
+  id: Brand
+  parent: CalorieTracker.Application.Products.Commands.CreateProductCommand
+  langs:
+  - csharp
+  - vb
+  name: Brand
+  nameWithType: CreateProductCommand.Brand
+  fullName: CalorieTracker.Application.Products.Commands.CreateProductCommand.Brand
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Products/Commands/CreateProductCommand.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Brand
+    path: ../src/CalorieTracker.Application/Products/Commands/CreateProductCommand.cs
+    startLine: 21
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Products.Commands
+  summary: Marka/producent produktu. Pole opcjonalne.
+  example: []
+  syntax:
+    content: public string? Brand { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Brand As String
+  overload: CalorieTracker.Application.Products.Commands.CreateProductCommand.Brand*
+- uid: CalorieTracker.Application.Products.Commands.CreateProductCommand.Description
+  commentId: P:CalorieTracker.Application.Products.Commands.CreateProductCommand.Description
+  id: Description
+  parent: CalorieTracker.Application.Products.Commands.CreateProductCommand
+  langs:
+  - csharp
+  - vb
+  name: Description
+  nameWithType: CreateProductCommand.Description
+  fullName: CalorieTracker.Application.Products.Commands.CreateProductCommand.Description
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Products/Commands/CreateProductCommand.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Description
+    path: ../src/CalorieTracker.Application/Products/Commands/CreateProductCommand.cs
+    startLine: 26
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Products.Commands
+  summary: Opis produktu. Pole opcjonalne.
+  example: []
+  syntax:
+    content: public string? Description { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Description As String
+  overload: CalorieTracker.Application.Products.Commands.CreateProductCommand.Description*
+- uid: CalorieTracker.Application.Products.Commands.CreateProductCommand.Ingredients
+  commentId: P:CalorieTracker.Application.Products.Commands.CreateProductCommand.Ingredients
+  id: Ingredients
+  parent: CalorieTracker.Application.Products.Commands.CreateProductCommand
+  langs:
+  - csharp
+  - vb
+  name: Ingredients
+  nameWithType: CreateProductCommand.Ingredients
+  fullName: CalorieTracker.Application.Products.Commands.CreateProductCommand.Ingredients
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Products/Commands/CreateProductCommand.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Ingredients
+    path: ../src/CalorieTracker.Application/Products/Commands/CreateProductCommand.cs
+    startLine: 31
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Products.Commands
+  summary: Składniki produktu. Pole opcjonalne.
+  example: []
+  syntax:
+    content: public string? Ingredients { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Ingredients As String
+  overload: CalorieTracker.Application.Products.Commands.CreateProductCommand.Ingredients*
+- uid: CalorieTracker.Application.Products.Commands.CreateProductCommand.Barcode
+  commentId: P:CalorieTracker.Application.Products.Commands.CreateProductCommand.Barcode
+  id: Barcode
+  parent: CalorieTracker.Application.Products.Commands.CreateProductCommand
+  langs:
+  - csharp
+  - vb
+  name: Barcode
+  nameWithType: CreateProductCommand.Barcode
+  fullName: CalorieTracker.Application.Products.Commands.CreateProductCommand.Barcode
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Products/Commands/CreateProductCommand.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Barcode
+    path: ../src/CalorieTracker.Application/Products/Commands/CreateProductCommand.cs
+    startLine: 36
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Products.Commands
+  summary: Kod kreskowy produktu (EAN/UPC). Pole opcjonalne.
+  example: []
+  syntax:
+    content: public string? Barcode { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Barcode As String
+  overload: CalorieTracker.Application.Products.Commands.CreateProductCommand.Barcode*
+- uid: CalorieTracker.Application.Products.Commands.CreateProductCommand.Category
+  commentId: P:CalorieTracker.Application.Products.Commands.CreateProductCommand.Category
+  id: Category
+  parent: CalorieTracker.Application.Products.Commands.CreateProductCommand
+  langs:
+  - csharp
+  - vb
+  name: Category
+  nameWithType: CreateProductCommand.Category
+  fullName: CalorieTracker.Application.Products.Commands.CreateProductCommand.Category
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Products/Commands/CreateProductCommand.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Category
+    path: ../src/CalorieTracker.Application/Products/Commands/CreateProductCommand.cs
+    startLine: 41
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Products.Commands
+  summary: Kategoria produktu zdefiniowana w enumie ProductCategory.
+  example: []
+  syntax:
+    content: public ProductCategory Category { get; init; }
+    parameters: []
+    return:
+      type: CalorieTracker.Domain.Enums.ProductCategory
+    content.vb: Public Property Category As ProductCategory
+  overload: CalorieTracker.Application.Products.Commands.CreateProductCommand.Category*
+- uid: CalorieTracker.Application.Products.Commands.CreateProductCommand.Unit
+  commentId: P:CalorieTracker.Application.Products.Commands.CreateProductCommand.Unit
+  id: Unit
+  parent: CalorieTracker.Application.Products.Commands.CreateProductCommand
+  langs:
+  - csharp
+  - vb
+  name: Unit
+  nameWithType: CreateProductCommand.Unit
+  fullName: CalorieTracker.Application.Products.Commands.CreateProductCommand.Unit
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Products/Commands/CreateProductCommand.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Unit
+    path: ../src/CalorieTracker.Application/Products/Commands/CreateProductCommand.cs
+    startLine: 46
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Products.Commands
+  summary: Jednostka miary produktu zdefiniowana w enumie ProductUnit.
+  example: []
+  syntax:
+    content: public ProductUnit Unit { get; init; }
+    parameters: []
+    return:
+      type: CalorieTracker.Domain.Enums.ProductUnit
+    content.vb: Public Property Unit As ProductUnit
+  overload: CalorieTracker.Application.Products.Commands.CreateProductCommand.Unit*
+- uid: CalorieTracker.Application.Products.Commands.CreateProductCommand.ServingSize
+  commentId: P:CalorieTracker.Application.Products.Commands.CreateProductCommand.ServingSize
+  id: ServingSize
+  parent: CalorieTracker.Application.Products.Commands.CreateProductCommand
+  langs:
+  - csharp
+  - vb
+  name: ServingSize
+  nameWithType: CreateProductCommand.ServingSize
+  fullName: CalorieTracker.Application.Products.Commands.CreateProductCommand.ServingSize
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Products/Commands/CreateProductCommand.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: ServingSize
+    path: ../src/CalorieTracker.Application/Products/Commands/CreateProductCommand.cs
+    startLine: 51
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Products.Commands
+  summary: Wielkość porcji produktu w podanych jednostkach.
+  example: []
+  syntax:
+    content: public float ServingSize { get; init; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property ServingSize As Single
+  overload: CalorieTracker.Application.Products.Commands.CreateProductCommand.ServingSize*
+- uid: CalorieTracker.Application.Products.Commands.CreateProductCommand.CaloriesPer100g
+  commentId: P:CalorieTracker.Application.Products.Commands.CreateProductCommand.CaloriesPer100g
+  id: CaloriesPer100g
+  parent: CalorieTracker.Application.Products.Commands.CreateProductCommand
+  langs:
+  - csharp
+  - vb
+  name: CaloriesPer100g
+  nameWithType: CreateProductCommand.CaloriesPer100g
+  fullName: CalorieTracker.Application.Products.Commands.CreateProductCommand.CaloriesPer100g
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Products/Commands/CreateProductCommand.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: CaloriesPer100g
+    path: ../src/CalorieTracker.Application/Products/Commands/CreateProductCommand.cs
+    startLine: 56
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Products.Commands
+  summary: Ilość kalorii na 100g/ml produktu.
+  example: []
+  syntax:
+    content: public float CaloriesPer100g { get; init; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property CaloriesPer100g As Single
+  overload: CalorieTracker.Application.Products.Commands.CreateProductCommand.CaloriesPer100g*
+- uid: CalorieTracker.Application.Products.Commands.CreateProductCommand.ProteinPer100g
+  commentId: P:CalorieTracker.Application.Products.Commands.CreateProductCommand.ProteinPer100g
+  id: ProteinPer100g
+  parent: CalorieTracker.Application.Products.Commands.CreateProductCommand
+  langs:
+  - csharp
+  - vb
+  name: ProteinPer100g
+  nameWithType: CreateProductCommand.ProteinPer100g
+  fullName: CalorieTracker.Application.Products.Commands.CreateProductCommand.ProteinPer100g
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Products/Commands/CreateProductCommand.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: ProteinPer100g
+    path: ../src/CalorieTracker.Application/Products/Commands/CreateProductCommand.cs
+    startLine: 61
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Products.Commands
+  summary: Ilość białka na 100g/ml produktu.
+  example: []
+  syntax:
+    content: public float ProteinPer100g { get; init; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property ProteinPer100g As Single
+  overload: CalorieTracker.Application.Products.Commands.CreateProductCommand.ProteinPer100g*
+- uid: CalorieTracker.Application.Products.Commands.CreateProductCommand.FatPer100g
+  commentId: P:CalorieTracker.Application.Products.Commands.CreateProductCommand.FatPer100g
+  id: FatPer100g
+  parent: CalorieTracker.Application.Products.Commands.CreateProductCommand
+  langs:
+  - csharp
+  - vb
+  name: FatPer100g
+  nameWithType: CreateProductCommand.FatPer100g
+  fullName: CalorieTracker.Application.Products.Commands.CreateProductCommand.FatPer100g
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Products/Commands/CreateProductCommand.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: FatPer100g
+    path: ../src/CalorieTracker.Application/Products/Commands/CreateProductCommand.cs
+    startLine: 66
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Products.Commands
+  summary: Ilość tłuszczu na 100g/ml produktu.
+  example: []
+  syntax:
+    content: public float FatPer100g { get; init; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property FatPer100g As Single
+  overload: CalorieTracker.Application.Products.Commands.CreateProductCommand.FatPer100g*
+- uid: CalorieTracker.Application.Products.Commands.CreateProductCommand.CarbohydratesPer100g
+  commentId: P:CalorieTracker.Application.Products.Commands.CreateProductCommand.CarbohydratesPer100g
+  id: CarbohydratesPer100g
+  parent: CalorieTracker.Application.Products.Commands.CreateProductCommand
+  langs:
+  - csharp
+  - vb
+  name: CarbohydratesPer100g
+  nameWithType: CreateProductCommand.CarbohydratesPer100g
+  fullName: CalorieTracker.Application.Products.Commands.CreateProductCommand.CarbohydratesPer100g
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Products/Commands/CreateProductCommand.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: CarbohydratesPer100g
+    path: ../src/CalorieTracker.Application/Products/Commands/CreateProductCommand.cs
+    startLine: 71
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Products.Commands
+  summary: Ilość węglowodanów na 100g/ml produktu.
+  example: []
+  syntax:
+    content: public float CarbohydratesPer100g { get; init; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property CarbohydratesPer100g As Single
+  overload: CalorieTracker.Application.Products.Commands.CreateProductCommand.CarbohydratesPer100g*
+- uid: CalorieTracker.Application.Products.Commands.CreateProductCommand.FiberPer100g
+  commentId: P:CalorieTracker.Application.Products.Commands.CreateProductCommand.FiberPer100g
+  id: FiberPer100g
+  parent: CalorieTracker.Application.Products.Commands.CreateProductCommand
+  langs:
+  - csharp
+  - vb
+  name: FiberPer100g
+  nameWithType: CreateProductCommand.FiberPer100g
+  fullName: CalorieTracker.Application.Products.Commands.CreateProductCommand.FiberPer100g
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Products/Commands/CreateProductCommand.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: FiberPer100g
+    path: ../src/CalorieTracker.Application/Products/Commands/CreateProductCommand.cs
+    startLine: 76
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Products.Commands
+  summary: Ilość błonnika na 100g/ml produktu. Pole opcjonalne.
+  example: []
+  syntax:
+    content: public float? FiberPer100g { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Single}
+    content.vb: Public Property FiberPer100g As Single?
+  overload: CalorieTracker.Application.Products.Commands.CreateProductCommand.FiberPer100g*
+- uid: CalorieTracker.Application.Products.Commands.CreateProductCommand.SugarsPer100g
+  commentId: P:CalorieTracker.Application.Products.Commands.CreateProductCommand.SugarsPer100g
+  id: SugarsPer100g
+  parent: CalorieTracker.Application.Products.Commands.CreateProductCommand
+  langs:
+  - csharp
+  - vb
+  name: SugarsPer100g
+  nameWithType: CreateProductCommand.SugarsPer100g
+  fullName: CalorieTracker.Application.Products.Commands.CreateProductCommand.SugarsPer100g
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Products/Commands/CreateProductCommand.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: SugarsPer100g
+    path: ../src/CalorieTracker.Application/Products/Commands/CreateProductCommand.cs
+    startLine: 81
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Products.Commands
+  summary: Ilość cukrów na 100g/ml produktu. Pole opcjonalne.
+  example: []
+  syntax:
+    content: public float? SugarsPer100g { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Single}
+    content.vb: Public Property SugarsPer100g As Single?
+  overload: CalorieTracker.Application.Products.Commands.CreateProductCommand.SugarsPer100g*
+- uid: CalorieTracker.Application.Products.Commands.CreateProductCommand.SodiumPer100g
+  commentId: P:CalorieTracker.Application.Products.Commands.CreateProductCommand.SodiumPer100g
+  id: SodiumPer100g
+  parent: CalorieTracker.Application.Products.Commands.CreateProductCommand
+  langs:
+  - csharp
+  - vb
+  name: SodiumPer100g
+  nameWithType: CreateProductCommand.SodiumPer100g
+  fullName: CalorieTracker.Application.Products.Commands.CreateProductCommand.SodiumPer100g
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Products/Commands/CreateProductCommand.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: SodiumPer100g
+    path: ../src/CalorieTracker.Application/Products/Commands/CreateProductCommand.cs
+    startLine: 86
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Products.Commands
+  summary: Ilość sodu na 100g/ml produktu. Pole opcjonalne.
+  example: []
+  syntax:
+    content: public float? SodiumPer100g { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Single}
+    content.vb: Public Property SodiumPer100g As Single?
+  overload: CalorieTracker.Application.Products.Commands.CreateProductCommand.SodiumPer100g*
+- uid: CalorieTracker.Application.Products.Commands.CreateProductCommand.CreatedByUserId
+  commentId: P:CalorieTracker.Application.Products.Commands.CreateProductCommand.CreatedByUserId
+  id: CreatedByUserId
+  parent: CalorieTracker.Application.Products.Commands.CreateProductCommand
+  langs:
+  - csharp
+  - vb
+  name: CreatedByUserId
+  nameWithType: CreateProductCommand.CreatedByUserId
+  fullName: CalorieTracker.Application.Products.Commands.CreateProductCommand.CreatedByUserId
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Products/Commands/CreateProductCommand.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: CreatedByUserId
+    path: ../src/CalorieTracker.Application/Products/Commands/CreateProductCommand.cs
+    startLine: 91
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Products.Commands
+  summary: Identyfikator użytkownika tworzącego produkt. Pole wymagane.
+  example: []
+  syntax:
+    content: public string CreatedByUserId { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property CreatedByUserId As String
+  overload: CalorieTracker.Application.Products.Commands.CreateProductCommand.CreatedByUserId*
+references:
+- uid: CalorieTracker.Application.Products.Commands
+  commentId: N:CalorieTracker.Application.Products.Commands
+  href: CalorieTracker.html
+  name: CalorieTracker.Application.Products.Commands
+  nameWithType: CalorieTracker.Application.Products.Commands
+  fullName: CalorieTracker.Application.Products.Commands
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Products
+    name: Products
+    href: CalorieTracker.Application.Products.html
+  - name: .
+  - uid: CalorieTracker.Application.Products.Commands
+    name: Commands
+    href: CalorieTracker.Application.Products.Commands.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Products
+    name: Products
+    href: CalorieTracker.Application.Products.html
+  - name: .
+  - uid: CalorieTracker.Application.Products.Commands
+    name: Commands
+    href: CalorieTracker.Application.Products.Commands.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IEquatable{CalorieTracker.Application.Products.Commands.CreateProductCommand}
+  commentId: T:System.IEquatable{CalorieTracker.Application.Products.Commands.CreateProductCommand}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<CreateProductCommand>
+  nameWithType: IEquatable<CreateProductCommand>
+  fullName: System.IEquatable<CalorieTracker.Application.Products.Commands.CreateProductCommand>
+  nameWithType.vb: IEquatable(Of CreateProductCommand)
+  fullName.vb: System.IEquatable(Of CalorieTracker.Application.Products.Commands.CreateProductCommand)
+  name.vb: IEquatable(Of CreateProductCommand)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: CalorieTracker.Application.Products.Commands.CreateProductCommand
+    name: CreateProductCommand
+    href: CalorieTracker.Application.Products.Commands.CreateProductCommand.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CalorieTracker.Application.Products.Commands.CreateProductCommand
+    name: CreateProductCommand
+    href: CalorieTracker.Application.Products.Commands.CreateProductCommand.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: CalorieTracker.Application.Products.Commands.CreateProductCommand.Name*
+  commentId: Overload:CalorieTracker.Application.Products.Commands.CreateProductCommand.Name
+  href: CalorieTracker.Application.Products.Commands.CreateProductCommand.html#CalorieTracker_Application_Products_Commands_CreateProductCommand_Name
+  name: Name
+  nameWithType: CreateProductCommand.Name
+  fullName: CalorieTracker.Application.Products.Commands.CreateProductCommand.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: CalorieTracker.Application.Products.Commands.CreateProductCommand.Brand*
+  commentId: Overload:CalorieTracker.Application.Products.Commands.CreateProductCommand.Brand
+  href: CalorieTracker.Application.Products.Commands.CreateProductCommand.html#CalorieTracker_Application_Products_Commands_CreateProductCommand_Brand
+  name: Brand
+  nameWithType: CreateProductCommand.Brand
+  fullName: CalorieTracker.Application.Products.Commands.CreateProductCommand.Brand
+- uid: CalorieTracker.Application.Products.Commands.CreateProductCommand.Description*
+  commentId: Overload:CalorieTracker.Application.Products.Commands.CreateProductCommand.Description
+  href: CalorieTracker.Application.Products.Commands.CreateProductCommand.html#CalorieTracker_Application_Products_Commands_CreateProductCommand_Description
+  name: Description
+  nameWithType: CreateProductCommand.Description
+  fullName: CalorieTracker.Application.Products.Commands.CreateProductCommand.Description
+- uid: CalorieTracker.Application.Products.Commands.CreateProductCommand.Ingredients*
+  commentId: Overload:CalorieTracker.Application.Products.Commands.CreateProductCommand.Ingredients
+  href: CalorieTracker.Application.Products.Commands.CreateProductCommand.html#CalorieTracker_Application_Products_Commands_CreateProductCommand_Ingredients
+  name: Ingredients
+  nameWithType: CreateProductCommand.Ingredients
+  fullName: CalorieTracker.Application.Products.Commands.CreateProductCommand.Ingredients
+- uid: CalorieTracker.Application.Products.Commands.CreateProductCommand.Barcode*
+  commentId: Overload:CalorieTracker.Application.Products.Commands.CreateProductCommand.Barcode
+  href: CalorieTracker.Application.Products.Commands.CreateProductCommand.html#CalorieTracker_Application_Products_Commands_CreateProductCommand_Barcode
+  name: Barcode
+  nameWithType: CreateProductCommand.Barcode
+  fullName: CalorieTracker.Application.Products.Commands.CreateProductCommand.Barcode
+- uid: CalorieTracker.Application.Products.Commands.CreateProductCommand.Category*
+  commentId: Overload:CalorieTracker.Application.Products.Commands.CreateProductCommand.Category
+  href: CalorieTracker.Application.Products.Commands.CreateProductCommand.html#CalorieTracker_Application_Products_Commands_CreateProductCommand_Category
+  name: Category
+  nameWithType: CreateProductCommand.Category
+  fullName: CalorieTracker.Application.Products.Commands.CreateProductCommand.Category
+- uid: CalorieTracker.Domain.Enums.ProductCategory
+  commentId: T:CalorieTracker.Domain.Enums.ProductCategory
+  parent: CalorieTracker.Domain.Enums
+  href: CalorieTracker.Domain.Enums.ProductCategory.html
+  name: ProductCategory
+  nameWithType: ProductCategory
+  fullName: CalorieTracker.Domain.Enums.ProductCategory
+- uid: CalorieTracker.Domain.Enums
+  commentId: N:CalorieTracker.Domain.Enums
+  href: CalorieTracker.html
+  name: CalorieTracker.Domain.Enums
+  nameWithType: CalorieTracker.Domain.Enums
+  fullName: CalorieTracker.Domain.Enums
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Domain
+    name: Domain
+    href: CalorieTracker.Domain.html
+  - name: .
+  - uid: CalorieTracker.Domain.Enums
+    name: Enums
+    href: CalorieTracker.Domain.Enums.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Domain
+    name: Domain
+    href: CalorieTracker.Domain.html
+  - name: .
+  - uid: CalorieTracker.Domain.Enums
+    name: Enums
+    href: CalorieTracker.Domain.Enums.html
+- uid: CalorieTracker.Application.Products.Commands.CreateProductCommand.Unit*
+  commentId: Overload:CalorieTracker.Application.Products.Commands.CreateProductCommand.Unit
+  href: CalorieTracker.Application.Products.Commands.CreateProductCommand.html#CalorieTracker_Application_Products_Commands_CreateProductCommand_Unit
+  name: Unit
+  nameWithType: CreateProductCommand.Unit
+  fullName: CalorieTracker.Application.Products.Commands.CreateProductCommand.Unit
+- uid: CalorieTracker.Domain.Enums.ProductUnit
+  commentId: T:CalorieTracker.Domain.Enums.ProductUnit
+  parent: CalorieTracker.Domain.Enums
+  href: CalorieTracker.Domain.Enums.ProductUnit.html
+  name: ProductUnit
+  nameWithType: ProductUnit
+  fullName: CalorieTracker.Domain.Enums.ProductUnit
+- uid: CalorieTracker.Application.Products.Commands.CreateProductCommand.ServingSize*
+  commentId: Overload:CalorieTracker.Application.Products.Commands.CreateProductCommand.ServingSize
+  href: CalorieTracker.Application.Products.Commands.CreateProductCommand.html#CalorieTracker_Application_Products_Commands_CreateProductCommand_ServingSize
+  name: ServingSize
+  nameWithType: CreateProductCommand.ServingSize
+  fullName: CalorieTracker.Application.Products.Commands.CreateProductCommand.ServingSize
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: CalorieTracker.Application.Products.Commands.CreateProductCommand.CaloriesPer100g*
+  commentId: Overload:CalorieTracker.Application.Products.Commands.CreateProductCommand.CaloriesPer100g
+  href: CalorieTracker.Application.Products.Commands.CreateProductCommand.html#CalorieTracker_Application_Products_Commands_CreateProductCommand_CaloriesPer100g
+  name: CaloriesPer100g
+  nameWithType: CreateProductCommand.CaloriesPer100g
+  fullName: CalorieTracker.Application.Products.Commands.CreateProductCommand.CaloriesPer100g
+- uid: CalorieTracker.Application.Products.Commands.CreateProductCommand.ProteinPer100g*
+  commentId: Overload:CalorieTracker.Application.Products.Commands.CreateProductCommand.ProteinPer100g
+  href: CalorieTracker.Application.Products.Commands.CreateProductCommand.html#CalorieTracker_Application_Products_Commands_CreateProductCommand_ProteinPer100g
+  name: ProteinPer100g
+  nameWithType: CreateProductCommand.ProteinPer100g
+  fullName: CalorieTracker.Application.Products.Commands.CreateProductCommand.ProteinPer100g
+- uid: CalorieTracker.Application.Products.Commands.CreateProductCommand.FatPer100g*
+  commentId: Overload:CalorieTracker.Application.Products.Commands.CreateProductCommand.FatPer100g
+  href: CalorieTracker.Application.Products.Commands.CreateProductCommand.html#CalorieTracker_Application_Products_Commands_CreateProductCommand_FatPer100g
+  name: FatPer100g
+  nameWithType: CreateProductCommand.FatPer100g
+  fullName: CalorieTracker.Application.Products.Commands.CreateProductCommand.FatPer100g
+- uid: CalorieTracker.Application.Products.Commands.CreateProductCommand.CarbohydratesPer100g*
+  commentId: Overload:CalorieTracker.Application.Products.Commands.CreateProductCommand.CarbohydratesPer100g
+  href: CalorieTracker.Application.Products.Commands.CreateProductCommand.html#CalorieTracker_Application_Products_Commands_CreateProductCommand_CarbohydratesPer100g
+  name: CarbohydratesPer100g
+  nameWithType: CreateProductCommand.CarbohydratesPer100g
+  fullName: CalorieTracker.Application.Products.Commands.CreateProductCommand.CarbohydratesPer100g
+- uid: CalorieTracker.Application.Products.Commands.CreateProductCommand.FiberPer100g*
+  commentId: Overload:CalorieTracker.Application.Products.Commands.CreateProductCommand.FiberPer100g
+  href: CalorieTracker.Application.Products.Commands.CreateProductCommand.html#CalorieTracker_Application_Products_Commands_CreateProductCommand_FiberPer100g
+  name: FiberPer100g
+  nameWithType: CreateProductCommand.FiberPer100g
+  fullName: CalorieTracker.Application.Products.Commands.CreateProductCommand.FiberPer100g
+- uid: System.Nullable{System.Single}
+  commentId: T:System.Nullable{System.Single}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float?
+  nameWithType: float?
+  fullName: float?
+  nameWithType.vb: Single?
+  fullName.vb: Single?
+  name.vb: Single?
+  spec.csharp:
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '?'
+  spec.vb:
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: CalorieTracker.Application.Products.Commands.CreateProductCommand.SugarsPer100g*
+  commentId: Overload:CalorieTracker.Application.Products.Commands.CreateProductCommand.SugarsPer100g
+  href: CalorieTracker.Application.Products.Commands.CreateProductCommand.html#CalorieTracker_Application_Products_Commands_CreateProductCommand_SugarsPer100g
+  name: SugarsPer100g
+  nameWithType: CreateProductCommand.SugarsPer100g
+  fullName: CalorieTracker.Application.Products.Commands.CreateProductCommand.SugarsPer100g
+- uid: CalorieTracker.Application.Products.Commands.CreateProductCommand.SodiumPer100g*
+  commentId: Overload:CalorieTracker.Application.Products.Commands.CreateProductCommand.SodiumPer100g
+  href: CalorieTracker.Application.Products.Commands.CreateProductCommand.html#CalorieTracker_Application_Products_Commands_CreateProductCommand_SodiumPer100g
+  name: SodiumPer100g
+  nameWithType: CreateProductCommand.SodiumPer100g
+  fullName: CalorieTracker.Application.Products.Commands.CreateProductCommand.SodiumPer100g
+- uid: CalorieTracker.Application.Products.Commands.CreateProductCommand.CreatedByUserId*
+  commentId: Overload:CalorieTracker.Application.Products.Commands.CreateProductCommand.CreatedByUserId
+  href: CalorieTracker.Application.Products.Commands.CreateProductCommand.html#CalorieTracker_Application_Products_Commands_CreateProductCommand_CreatedByUserId
+  name: CreatedByUserId
+  nameWithType: CreateProductCommand.CreatedByUserId
+  fullName: CalorieTracker.Application.Products.Commands.CreateProductCommand.CreatedByUserId

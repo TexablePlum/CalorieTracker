@@ -1,0 +1,846 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand
+  commentId: T:CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand
+  id: UpdateRecipeCommand
+  parent: CalorieTracker.Application.Recipes.Commands
+  children:
+  - CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.Id
+  - CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.Ingredients
+  - CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.Instructions
+  - CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.Name
+  - CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.PreparationTimeMinutes
+  - CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.ServingsCount
+  - CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.TotalWeightGrams
+  - CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.UpdatedByUserId
+  langs:
+  - csharp
+  - vb
+  name: UpdateRecipeCommand
+  nameWithType: UpdateRecipeCommand
+  fullName: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand
+  type: Class
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Recipes/Commands/UpdateRecipeCommand.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: UpdateRecipeCommand
+    path: ../src/CalorieTracker.Application/Recipes/Commands/UpdateRecipeCommand.cs
+    startLine: 13
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Recipes.Commands
+  summary: >-
+    Rekord reprezentujący komendę aktualizacji przepisu kulinarnego.
+
+    Zawiera wszystkie możliwe do zaktualizowania dane przepisu wraz z listą składników.
+  remarks: >-
+    Wykorzystanie typu record gwarantuje niezmienność danych transferowych.
+
+    Przed wykonaniem komendy należy zweryfikować uprawnienia użytkownika (UpdatedByUserId).
+  example: []
+  syntax:
+    content: 'public record UpdateRecipeCommand : IEquatable<UpdateRecipeCommand>'
+    content.vb: Public Class UpdateRecipeCommand Implements IEquatable(Of UpdateRecipeCommand)
+  inheritance:
+  - System.Object
+  implements:
+  - System.IEquatable{CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.Id
+  commentId: P:CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.Id
+  id: Id
+  parent: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: UpdateRecipeCommand.Id
+  fullName: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.Id
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Recipes/Commands/UpdateRecipeCommand.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Id
+    path: ../src/CalorieTracker.Application/Recipes/Commands/UpdateRecipeCommand.cs
+    startLine: 21
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Recipes.Commands
+  summary: Identyfikator przepisu do aktualizacji
+  example: []
+  syntax:
+    content: public Guid Id { get; init; }
+    parameters: []
+    return:
+      type: System.Guid
+      description: Wartość typu Guid reprezentująca unikalny identyfikator istniejącego przepisu w systemie.
+    content.vb: Public Property Id As Guid
+  overload: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.Id*
+- uid: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.Name
+  commentId: P:CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.Name
+  id: Name
+  parent: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: UpdateRecipeCommand.Name
+  fullName: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.Name
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Recipes/Commands/UpdateRecipeCommand.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Name
+    path: ../src/CalorieTracker.Application/Recipes/Commands/UpdateRecipeCommand.cs
+    startLine: 29
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Recipes.Commands
+  summary: Nowa nazwa przepisu
+  example: []
+  syntax:
+    content: public string Name { get; init; }
+    parameters: []
+    return:
+      type: System.String
+      description: Ciąg znaków reprezentujący zaktualizowaną nazwę przepisu. Wymagane, nie może być puste.
+    content.vb: Public Property Name As String
+  overload: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.Name*
+- uid: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.Instructions
+  commentId: P:CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.Instructions
+  id: Instructions
+  parent: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand
+  langs:
+  - csharp
+  - vb
+  name: Instructions
+  nameWithType: UpdateRecipeCommand.Instructions
+  fullName: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.Instructions
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Recipes/Commands/UpdateRecipeCommand.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Instructions
+    path: ../src/CalorieTracker.Application/Recipes/Commands/UpdateRecipeCommand.cs
+    startLine: 37
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Recipes.Commands
+  summary: Nowe instrukcje przygotowania przepisu
+  example: []
+  syntax:
+    content: public string Instructions { get; init; }
+    parameters: []
+    return:
+      type: System.String
+      description: Tekst zawierający zaktualizowane kroki przygotowania potrawy. Wymagane, nie może być puste.
+    content.vb: Public Property Instructions As String
+  overload: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.Instructions*
+- uid: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.ServingsCount
+  commentId: P:CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.ServingsCount
+  id: ServingsCount
+  parent: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand
+  langs:
+  - csharp
+  - vb
+  name: ServingsCount
+  nameWithType: UpdateRecipeCommand.ServingsCount
+  fullName: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.ServingsCount
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Recipes/Commands/UpdateRecipeCommand.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: ServingsCount
+    path: ../src/CalorieTracker.Application/Recipes/Commands/UpdateRecipeCommand.cs
+    startLine: 45
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Recipes.Commands
+  summary: Zaktualizowana liczba porcji
+  example: []
+  syntax:
+    content: public int ServingsCount { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+      description: Liczba całkowita określająca dla ilu osób jest przepis. Wartość musi być dodatnia.
+    content.vb: Public Property ServingsCount As Integer
+  overload: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.ServingsCount*
+- uid: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.TotalWeightGrams
+  commentId: P:CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.TotalWeightGrams
+  id: TotalWeightGrams
+  parent: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand
+  langs:
+  - csharp
+  - vb
+  name: TotalWeightGrams
+  nameWithType: UpdateRecipeCommand.TotalWeightGrams
+  fullName: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.TotalWeightGrams
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Recipes/Commands/UpdateRecipeCommand.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: TotalWeightGrams
+    path: ../src/CalorieTracker.Application/Recipes/Commands/UpdateRecipeCommand.cs
+    startLine: 53
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Recipes.Commands
+  summary: Zaktualizowana całkowita waga przepisu
+  example: []
+  syntax:
+    content: public float TotalWeightGrams { get; init; }
+    parameters: []
+    return:
+      type: System.Single
+      description: Wartość zmiennoprzecinkowa określająca łączną wagę wszystkich składników w gramach.
+    content.vb: Public Property TotalWeightGrams As Single
+  overload: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.TotalWeightGrams*
+- uid: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.PreparationTimeMinutes
+  commentId: P:CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.PreparationTimeMinutes
+  id: PreparationTimeMinutes
+  parent: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand
+  langs:
+  - csharp
+  - vb
+  name: PreparationTimeMinutes
+  nameWithType: UpdateRecipeCommand.PreparationTimeMinutes
+  fullName: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.PreparationTimeMinutes
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Recipes/Commands/UpdateRecipeCommand.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: PreparationTimeMinutes
+    path: ../src/CalorieTracker.Application/Recipes/Commands/UpdateRecipeCommand.cs
+    startLine: 61
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Recipes.Commands
+  summary: Zaktualizowany czas przygotowania
+  example: []
+  syntax:
+    content: public int PreparationTimeMinutes { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+      description: Liczba całkowita określająca czas potrzebny na przygotowanie przepisu w minutach.
+    content.vb: Public Property PreparationTimeMinutes As Integer
+  overload: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.PreparationTimeMinutes*
+- uid: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.UpdatedByUserId
+  commentId: P:CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.UpdatedByUserId
+  id: UpdatedByUserId
+  parent: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand
+  langs:
+  - csharp
+  - vb
+  name: UpdatedByUserId
+  nameWithType: UpdateRecipeCommand.UpdatedByUserId
+  fullName: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.UpdatedByUserId
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Recipes/Commands/UpdateRecipeCommand.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: UpdatedByUserId
+    path: ../src/CalorieTracker.Application/Recipes/Commands/UpdateRecipeCommand.cs
+    startLine: 69
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Recipes.Commands
+  summary: Identyfikator użytkownika aktualizującego przepis
+  example: []
+  syntax:
+    content: public string UpdatedByUserId { get; init; }
+    parameters: []
+    return:
+      type: System.String
+      description: Ciąg znaków reprezentujący identyfikator użytkownika. Wymagany do weryfikacji uprawnień.
+    content.vb: Public Property UpdatedByUserId As String
+  overload: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.UpdatedByUserId*
+- uid: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.Ingredients
+  commentId: P:CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.Ingredients
+  id: Ingredients
+  parent: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand
+  langs:
+  - csharp
+  - vb
+  name: Ingredients
+  nameWithType: UpdateRecipeCommand.Ingredients
+  fullName: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.Ingredients
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Recipes/Commands/UpdateRecipeCommand.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Ingredients
+    path: ../src/CalorieTracker.Application/Recipes/Commands/UpdateRecipeCommand.cs
+    startLine: 78
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Recipes.Commands
+  summary: Lista składników przepisu
+  example: []
+  syntax:
+    content: public List<CreateRecipeIngredientCommand> Ingredients { get; init; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{CalorieTracker.Application.Recipes.Commands.CreateRecipeIngredientCommand}
+      description: >-
+        Kolekcja obiektów <xref href="CalorieTracker.Application.Recipes.Commands.CreateRecipeIngredientCommand" data-throw-if-not-resolved="false"></xref> reprezentujących zaktualizowaną listę składników.
+
+        Domyślnie pusta lista. W przypadku aktualizacji całkowicie zastępuje istniejące składniki.
+    content.vb: Public Property Ingredients As List(Of CreateRecipeIngredientCommand)
+  overload: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.Ingredients*
+references:
+- uid: CalorieTracker.Application.Recipes.Commands
+  commentId: N:CalorieTracker.Application.Recipes.Commands
+  href: CalorieTracker.html
+  name: CalorieTracker.Application.Recipes.Commands
+  nameWithType: CalorieTracker.Application.Recipes.Commands
+  fullName: CalorieTracker.Application.Recipes.Commands
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Recipes
+    name: Recipes
+    href: CalorieTracker.Application.Recipes.html
+  - name: .
+  - uid: CalorieTracker.Application.Recipes.Commands
+    name: Commands
+    href: CalorieTracker.Application.Recipes.Commands.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Recipes
+    name: Recipes
+    href: CalorieTracker.Application.Recipes.html
+  - name: .
+  - uid: CalorieTracker.Application.Recipes.Commands
+    name: Commands
+    href: CalorieTracker.Application.Recipes.Commands.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IEquatable{CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand}
+  commentId: T:System.IEquatable{CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<UpdateRecipeCommand>
+  nameWithType: IEquatable<UpdateRecipeCommand>
+  fullName: System.IEquatable<CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand>
+  nameWithType.vb: IEquatable(Of UpdateRecipeCommand)
+  fullName.vb: System.IEquatable(Of CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand)
+  name.vb: IEquatable(Of UpdateRecipeCommand)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand
+    name: UpdateRecipeCommand
+    href: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand
+    name: UpdateRecipeCommand
+    href: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.Id*
+  commentId: Overload:CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.Id
+  href: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.html#CalorieTracker_Application_Recipes_Commands_UpdateRecipeCommand_Id
+  name: Id
+  nameWithType: UpdateRecipeCommand.Id
+  fullName: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.Id
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.guid
+  name: Guid
+  nameWithType: Guid
+  fullName: System.Guid
+- uid: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.Name*
+  commentId: Overload:CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.Name
+  href: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.html#CalorieTracker_Application_Recipes_Commands_UpdateRecipeCommand_Name
+  name: Name
+  nameWithType: UpdateRecipeCommand.Name
+  fullName: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.Instructions*
+  commentId: Overload:CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.Instructions
+  href: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.html#CalorieTracker_Application_Recipes_Commands_UpdateRecipeCommand_Instructions
+  name: Instructions
+  nameWithType: UpdateRecipeCommand.Instructions
+  fullName: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.Instructions
+- uid: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.ServingsCount*
+  commentId: Overload:CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.ServingsCount
+  href: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.html#CalorieTracker_Application_Recipes_Commands_UpdateRecipeCommand_ServingsCount
+  name: ServingsCount
+  nameWithType: UpdateRecipeCommand.ServingsCount
+  fullName: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.ServingsCount
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.TotalWeightGrams*
+  commentId: Overload:CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.TotalWeightGrams
+  href: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.html#CalorieTracker_Application_Recipes_Commands_UpdateRecipeCommand_TotalWeightGrams
+  name: TotalWeightGrams
+  nameWithType: UpdateRecipeCommand.TotalWeightGrams
+  fullName: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.TotalWeightGrams
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.PreparationTimeMinutes*
+  commentId: Overload:CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.PreparationTimeMinutes
+  href: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.html#CalorieTracker_Application_Recipes_Commands_UpdateRecipeCommand_PreparationTimeMinutes
+  name: PreparationTimeMinutes
+  nameWithType: UpdateRecipeCommand.PreparationTimeMinutes
+  fullName: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.PreparationTimeMinutes
+- uid: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.UpdatedByUserId*
+  commentId: Overload:CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.UpdatedByUserId
+  href: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.html#CalorieTracker_Application_Recipes_Commands_UpdateRecipeCommand_UpdatedByUserId
+  name: UpdatedByUserId
+  nameWithType: UpdateRecipeCommand.UpdatedByUserId
+  fullName: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.UpdatedByUserId
+- uid: CalorieTracker.Application.Recipes.Commands.CreateRecipeIngredientCommand
+  commentId: T:CalorieTracker.Application.Recipes.Commands.CreateRecipeIngredientCommand
+  href: CalorieTracker.Application.Recipes.Commands.CreateRecipeIngredientCommand.html
+  name: CreateRecipeIngredientCommand
+  nameWithType: CreateRecipeIngredientCommand
+  fullName: CalorieTracker.Application.Recipes.Commands.CreateRecipeIngredientCommand
+- uid: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.Ingredients*
+  commentId: Overload:CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.Ingredients
+  href: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.html#CalorieTracker_Application_Recipes_Commands_UpdateRecipeCommand_Ingredients
+  name: Ingredients
+  nameWithType: UpdateRecipeCommand.Ingredients
+  fullName: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.Ingredients
+- uid: System.Collections.Generic.List{CalorieTracker.Application.Recipes.Commands.CreateRecipeIngredientCommand}
+  commentId: T:System.Collections.Generic.List{CalorieTracker.Application.Recipes.Commands.CreateRecipeIngredientCommand}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<CreateRecipeIngredientCommand>
+  nameWithType: List<CreateRecipeIngredientCommand>
+  fullName: System.Collections.Generic.List<CalorieTracker.Application.Recipes.Commands.CreateRecipeIngredientCommand>
+  nameWithType.vb: List(Of CreateRecipeIngredientCommand)
+  fullName.vb: System.Collections.Generic.List(Of CalorieTracker.Application.Recipes.Commands.CreateRecipeIngredientCommand)
+  name.vb: List(Of CreateRecipeIngredientCommand)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: CalorieTracker.Application.Recipes.Commands.CreateRecipeIngredientCommand
+    name: CreateRecipeIngredientCommand
+    href: CalorieTracker.Application.Recipes.Commands.CreateRecipeIngredientCommand.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CalorieTracker.Application.Recipes.Commands.CreateRecipeIngredientCommand
+    name: CreateRecipeIngredientCommand
+    href: CalorieTracker.Application.Recipes.Commands.CreateRecipeIngredientCommand.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic

@@ -1,0 +1,62 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Application.Products.Commands
+  commentId: N:CalorieTracker.Application.Products.Commands
+  id: CalorieTracker.Application.Products.Commands
+  children:
+  - CalorieTracker.Application.Products.Commands.CreateProductCommand
+  langs:
+  - csharp
+  - vb
+  name: CalorieTracker.Application.Products.Commands
+  nameWithType: CalorieTracker.Application.Products.Commands
+  fullName: CalorieTracker.Application.Products.Commands
+  type: Namespace
+  assemblies:
+  - CalorieTracker.Application
+references:
+- uid: CalorieTracker.Application.Products.Commands.CreateProductCommand
+  commentId: T:CalorieTracker.Application.Products.Commands.CreateProductCommand
+  parent: CalorieTracker.Application.Products.Commands
+  href: CalorieTracker.Application.Products.Commands.CreateProductCommand.html
+  name: CreateProductCommand
+  nameWithType: CreateProductCommand
+  fullName: CalorieTracker.Application.Products.Commands.CreateProductCommand
+- uid: CalorieTracker.Application.Products.Commands
+  commentId: N:CalorieTracker.Application.Products.Commands
+  href: CalorieTracker.html
+  name: CalorieTracker.Application.Products.Commands
+  nameWithType: CalorieTracker.Application.Products.Commands
+  fullName: CalorieTracker.Application.Products.Commands
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Products
+    name: Products
+    href: CalorieTracker.Application.Products.html
+  - name: .
+  - uid: CalorieTracker.Application.Products.Commands
+    name: Commands
+    href: CalorieTracker.Application.Products.Commands.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Products
+    name: Products
+    href: CalorieTracker.Application.Products.html
+  - name: .
+  - uid: CalorieTracker.Application.Products.Commands
+    name: Commands
+    href: CalorieTracker.Application.Products.Commands.html

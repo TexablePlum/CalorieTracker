@@ -1,0 +1,114 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Domain.Entities
+  commentId: N:CalorieTracker.Domain.Entities
+  id: CalorieTracker.Domain.Entities
+  children:
+  - CalorieTracker.Domain.Entities.ApplicationUser
+  - CalorieTracker.Domain.Entities.EmailConfirmation
+  - CalorieTracker.Domain.Entities.PasswordReset
+  - CalorieTracker.Domain.Entities.Product
+  - CalorieTracker.Domain.Entities.Recipe
+  - CalorieTracker.Domain.Entities.RecipeIngredient
+  - CalorieTracker.Domain.Entities.RefreshToken
+  - CalorieTracker.Domain.Entities.UserProfile
+  - CalorieTracker.Domain.Entities.WeightMeasurement
+  langs:
+  - csharp
+  - vb
+  name: CalorieTracker.Domain.Entities
+  nameWithType: CalorieTracker.Domain.Entities
+  fullName: CalorieTracker.Domain.Entities
+  type: Namespace
+  assemblies:
+  - CalorieTracker.Domain
+references:
+- uid: CalorieTracker.Domain.Entities.ApplicationUser
+  commentId: T:CalorieTracker.Domain.Entities.ApplicationUser
+  parent: CalorieTracker.Domain.Entities
+  href: CalorieTracker.Domain.Entities.ApplicationUser.html
+  name: ApplicationUser
+  nameWithType: ApplicationUser
+  fullName: CalorieTracker.Domain.Entities.ApplicationUser
+- uid: CalorieTracker.Domain.Entities.EmailConfirmation
+  commentId: T:CalorieTracker.Domain.Entities.EmailConfirmation
+  href: CalorieTracker.Domain.Entities.EmailConfirmation.html
+  name: EmailConfirmation
+  nameWithType: EmailConfirmation
+  fullName: CalorieTracker.Domain.Entities.EmailConfirmation
+- uid: CalorieTracker.Domain.Entities.PasswordReset
+  commentId: T:CalorieTracker.Domain.Entities.PasswordReset
+  href: CalorieTracker.Domain.Entities.PasswordReset.html
+  name: PasswordReset
+  nameWithType: PasswordReset
+  fullName: CalorieTracker.Domain.Entities.PasswordReset
+- uid: CalorieTracker.Domain.Entities.Product
+  commentId: T:CalorieTracker.Domain.Entities.Product
+  parent: CalorieTracker.Domain.Entities
+  href: CalorieTracker.Domain.Entities.Product.html
+  name: Product
+  nameWithType: Product
+  fullName: CalorieTracker.Domain.Entities.Product
+- uid: CalorieTracker.Domain.Entities.Recipe
+  commentId: T:CalorieTracker.Domain.Entities.Recipe
+  parent: CalorieTracker.Domain.Entities
+  href: CalorieTracker.Domain.Entities.Recipe.html
+  name: Recipe
+  nameWithType: Recipe
+  fullName: CalorieTracker.Domain.Entities.Recipe
+- uid: CalorieTracker.Domain.Entities.RecipeIngredient
+  commentId: T:CalorieTracker.Domain.Entities.RecipeIngredient
+  href: CalorieTracker.Domain.Entities.RecipeIngredient.html
+  name: RecipeIngredient
+  nameWithType: RecipeIngredient
+  fullName: CalorieTracker.Domain.Entities.RecipeIngredient
+- uid: CalorieTracker.Domain.Entities.RefreshToken
+  commentId: T:CalorieTracker.Domain.Entities.RefreshToken
+  href: CalorieTracker.Domain.Entities.RefreshToken.html
+  name: RefreshToken
+  nameWithType: RefreshToken
+  fullName: CalorieTracker.Domain.Entities.RefreshToken
+- uid: CalorieTracker.Domain.Entities.UserProfile
+  commentId: T:CalorieTracker.Domain.Entities.UserProfile
+  parent: CalorieTracker.Domain.Entities
+  href: CalorieTracker.Domain.Entities.UserProfile.html
+  name: UserProfile
+  nameWithType: UserProfile
+  fullName: CalorieTracker.Domain.Entities.UserProfile
+- uid: CalorieTracker.Domain.Entities.WeightMeasurement
+  commentId: T:CalorieTracker.Domain.Entities.WeightMeasurement
+  parent: CalorieTracker.Domain.Entities
+  href: CalorieTracker.Domain.Entities.WeightMeasurement.html
+  name: WeightMeasurement
+  nameWithType: WeightMeasurement
+  fullName: CalorieTracker.Domain.Entities.WeightMeasurement
+- uid: CalorieTracker.Domain.Entities
+  commentId: N:CalorieTracker.Domain.Entities
+  href: CalorieTracker.html
+  name: CalorieTracker.Domain.Entities
+  nameWithType: CalorieTracker.Domain.Entities
+  fullName: CalorieTracker.Domain.Entities
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Domain
+    name: Domain
+    href: CalorieTracker.Domain.html
+  - name: .
+  - uid: CalorieTracker.Domain.Entities
+    name: Entities
+    href: CalorieTracker.Domain.Entities.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Domain
+    name: Domain
+    href: CalorieTracker.Domain.html
+  - name: .
+  - uid: CalorieTracker.Domain.Entities
+    name: Entities
+    href: CalorieTracker.Domain.Entities.html

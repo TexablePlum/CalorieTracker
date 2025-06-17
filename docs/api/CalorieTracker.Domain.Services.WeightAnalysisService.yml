@@ -1,0 +1,575 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Domain.Services.WeightAnalysisService
+  commentId: T:CalorieTracker.Domain.Services.WeightAnalysisService
+  id: WeightAnalysisService
+  parent: CalorieTracker.Domain.Services
+  children:
+  - CalorieTracker.Domain.Services.WeightAnalysisService.CalculateBMI(System.Single,System.Single)
+  - CalorieTracker.Domain.Services.WeightAnalysisService.CalculateProgressToGoal(System.Single,System.Single)
+  - CalorieTracker.Domain.Services.WeightAnalysisService.CalculateWeightChange(System.Single,System.Single)
+  - CalorieTracker.Domain.Services.WeightAnalysisService.FillCalculatedFields(CalorieTracker.Domain.Entities.WeightMeasurement,CalorieTracker.Domain.Entities.UserProfile,CalorieTracker.Domain.Entities.WeightMeasurement)
+  langs:
+  - csharp
+  - vb
+  name: WeightAnalysisService
+  nameWithType: WeightAnalysisService
+  fullName: CalorieTracker.Domain.Services.WeightAnalysisService
+  type: Class
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Services/WeightAnalysisService.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: WeightAnalysisService
+    path: ../src/CalorieTracker.Domain/Services/WeightAnalysisService.cs
+    startLine: 12
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Services
+  summary: >-
+    Serwis domenowy do kalkulacji BMI i analizy masy ciała użytkownika.
+
+    Zawiera metody do obliczania wskaźnika BMI, zmiany masy oraz różnicy względem celu wagowego.
+  example: []
+  syntax:
+    content: public class WeightAnalysisService
+    content.vb: Public Class WeightAnalysisService
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: CalorieTracker.Domain.Services.WeightAnalysisService.CalculateBMI(System.Single,System.Single)
+  commentId: M:CalorieTracker.Domain.Services.WeightAnalysisService.CalculateBMI(System.Single,System.Single)
+  id: CalculateBMI(System.Single,System.Single)
+  parent: CalorieTracker.Domain.Services.WeightAnalysisService
+  langs:
+  - csharp
+  - vb
+  name: CalculateBMI(float, float)
+  nameWithType: WeightAnalysisService.CalculateBMI(float, float)
+  fullName: CalorieTracker.Domain.Services.WeightAnalysisService.CalculateBMI(float, float)
+  type: Method
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Services/WeightAnalysisService.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: CalculateBMI
+    path: ../src/CalorieTracker.Domain/Services/WeightAnalysisService.cs
+    startLine: 22
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Services
+  summary: >-
+    Oblicza wskaźnik masy ciała (BMI) na podstawie masy i wzrostu użytkownika.
+
+    Wzór: BMI = masa(kg) / (wzrost(m))²
+  example: []
+  syntax:
+    content: public float CalculateBMI(float weightKg, float heightCm)
+    parameters:
+    - id: weightKg
+      type: System.Single
+      description: Masa ciała w kilogramach.
+    - id: heightCm
+      type: System.Single
+      description: Wzrost w centymetrach.
+    return:
+      type: System.Single
+      description: Wartość BMI (zaokrąglona do jednego miejsca po przecinku).
+    content.vb: Public Function CalculateBMI(weightKg As Single, heightCm As Single) As Single
+  overload: CalorieTracker.Domain.Services.WeightAnalysisService.CalculateBMI*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Rzucany, gdy masa lub wzrost są niedodatnie.
+  nameWithType.vb: WeightAnalysisService.CalculateBMI(Single, Single)
+  fullName.vb: CalorieTracker.Domain.Services.WeightAnalysisService.CalculateBMI(Single, Single)
+  name.vb: CalculateBMI(Single, Single)
+- uid: CalorieTracker.Domain.Services.WeightAnalysisService.CalculateWeightChange(System.Single,System.Single)
+  commentId: M:CalorieTracker.Domain.Services.WeightAnalysisService.CalculateWeightChange(System.Single,System.Single)
+  id: CalculateWeightChange(System.Single,System.Single)
+  parent: CalorieTracker.Domain.Services.WeightAnalysisService
+  langs:
+  - csharp
+  - vb
+  name: CalculateWeightChange(float, float)
+  nameWithType: WeightAnalysisService.CalculateWeightChange(float, float)
+  fullName: CalorieTracker.Domain.Services.WeightAnalysisService.CalculateWeightChange(float, float)
+  type: Method
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Services/WeightAnalysisService.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: CalculateWeightChange
+    path: ../src/CalorieTracker.Domain/Services/WeightAnalysisService.cs
+    startLine: 39
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Services
+  summary: Oblicza zmianę masy ciała pomiędzy dwoma pomiarami.
+  example: []
+  syntax:
+    content: public float CalculateWeightChange(float currentWeight, float previousWeight)
+    parameters:
+    - id: currentWeight
+      type: System.Single
+      description: Aktualna masa ciała.
+    - id: previousWeight
+      type: System.Single
+      description: Poprzednia masa ciała.
+    return:
+      type: System.Single
+      description: Różnica w kg (dodatnia = przyrost, ujemna = spadek).
+    content.vb: Public Function CalculateWeightChange(currentWeight As Single, previousWeight As Single) As Single
+  overload: CalorieTracker.Domain.Services.WeightAnalysisService.CalculateWeightChange*
+  nameWithType.vb: WeightAnalysisService.CalculateWeightChange(Single, Single)
+  fullName.vb: CalorieTracker.Domain.Services.WeightAnalysisService.CalculateWeightChange(Single, Single)
+  name.vb: CalculateWeightChange(Single, Single)
+- uid: CalorieTracker.Domain.Services.WeightAnalysisService.CalculateProgressToGoal(System.Single,System.Single)
+  commentId: M:CalorieTracker.Domain.Services.WeightAnalysisService.CalculateProgressToGoal(System.Single,System.Single)
+  id: CalculateProgressToGoal(System.Single,System.Single)
+  parent: CalorieTracker.Domain.Services.WeightAnalysisService
+  langs:
+  - csharp
+  - vb
+  name: CalculateProgressToGoal(float, float)
+  nameWithType: WeightAnalysisService.CalculateProgressToGoal(float, float)
+  fullName: CalorieTracker.Domain.Services.WeightAnalysisService.CalculateProgressToGoal(float, float)
+  type: Method
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Services/WeightAnalysisService.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: CalculateProgressToGoal
+    path: ../src/CalorieTracker.Domain/Services/WeightAnalysisService.cs
+    startLine: 51
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Services
+  summary: Oblicza postęp użytkownika względem docelowej masy ciała.
+  example: []
+  syntax:
+    content: public float CalculateProgressToGoal(float currentWeightKg, float targetWeightKg)
+    parameters:
+    - id: currentWeightKg
+      type: System.Single
+      description: Aktualna masa ciała.
+    - id: targetWeightKg
+      type: System.Single
+      description: Docelowa masa ciała.
+    return:
+      type: System.Single
+      description: Różnica w kg (dodatnia = nadal trzeba schudnąć, ujemna = przekroczono cel).
+    content.vb: Public Function CalculateProgressToGoal(currentWeightKg As Single, targetWeightKg As Single) As Single
+  overload: CalorieTracker.Domain.Services.WeightAnalysisService.CalculateProgressToGoal*
+  nameWithType.vb: WeightAnalysisService.CalculateProgressToGoal(Single, Single)
+  fullName.vb: CalorieTracker.Domain.Services.WeightAnalysisService.CalculateProgressToGoal(Single, Single)
+  name.vb: CalculateProgressToGoal(Single, Single)
+- uid: CalorieTracker.Domain.Services.WeightAnalysisService.FillCalculatedFields(CalorieTracker.Domain.Entities.WeightMeasurement,CalorieTracker.Domain.Entities.UserProfile,CalorieTracker.Domain.Entities.WeightMeasurement)
+  commentId: M:CalorieTracker.Domain.Services.WeightAnalysisService.FillCalculatedFields(CalorieTracker.Domain.Entities.WeightMeasurement,CalorieTracker.Domain.Entities.UserProfile,CalorieTracker.Domain.Entities.WeightMeasurement)
+  id: FillCalculatedFields(CalorieTracker.Domain.Entities.WeightMeasurement,CalorieTracker.Domain.Entities.UserProfile,CalorieTracker.Domain.Entities.WeightMeasurement)
+  parent: CalorieTracker.Domain.Services.WeightAnalysisService
+  langs:
+  - csharp
+  - vb
+  name: FillCalculatedFields(WeightMeasurement, UserProfile, WeightMeasurement?)
+  nameWithType: WeightAnalysisService.FillCalculatedFields(WeightMeasurement, UserProfile, WeightMeasurement?)
+  fullName: CalorieTracker.Domain.Services.WeightAnalysisService.FillCalculatedFields(CalorieTracker.Domain.Entities.WeightMeasurement, CalorieTracker.Domain.Entities.UserProfile, CalorieTracker.Domain.Entities.WeightMeasurement?)
+  type: Method
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Services/WeightAnalysisService.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: FillCalculatedFields
+    path: ../src/CalorieTracker.Domain/Services/WeightAnalysisService.cs
+    startLine: 64
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Services
+  summary: >-
+    Uzupełnia pola pochodne w pomiarze masy ciała, takie jak BMI i zmiana masy.
+
+    Wartości te są obliczane na podstawie aktualnego pomiaru, profilu użytkownika oraz ewentualnego poprzedniego pomiaru.
+  example: []
+  syntax:
+    content: public void FillCalculatedFields(WeightMeasurement measurement, UserProfile userProfile, WeightMeasurement? previousMeasurement)
+    parameters:
+    - id: measurement
+      type: CalorieTracker.Domain.Entities.WeightMeasurement
+      description: Pomiar masy ciała do uzupełnienia.
+    - id: userProfile
+      type: CalorieTracker.Domain.Entities.UserProfile
+      description: Profil użytkownika zawierający dane wzrostu i celu wagowego.
+    - id: previousMeasurement
+      type: CalorieTracker.Domain.Entities.WeightMeasurement
+      description: Poprzedni pomiar masy ciała (może być null).
+    content.vb: Public Sub FillCalculatedFields(measurement As WeightMeasurement, userProfile As UserProfile, previousMeasurement As WeightMeasurement)
+  overload: CalorieTracker.Domain.Services.WeightAnalysisService.FillCalculatedFields*
+  nameWithType.vb: WeightAnalysisService.FillCalculatedFields(WeightMeasurement, UserProfile, WeightMeasurement)
+  fullName.vb: CalorieTracker.Domain.Services.WeightAnalysisService.FillCalculatedFields(CalorieTracker.Domain.Entities.WeightMeasurement, CalorieTracker.Domain.Entities.UserProfile, CalorieTracker.Domain.Entities.WeightMeasurement)
+  name.vb: FillCalculatedFields(WeightMeasurement, UserProfile, WeightMeasurement)
+references:
+- uid: CalorieTracker.Domain.Services
+  commentId: N:CalorieTracker.Domain.Services
+  href: CalorieTracker.html
+  name: CalorieTracker.Domain.Services
+  nameWithType: CalorieTracker.Domain.Services
+  fullName: CalorieTracker.Domain.Services
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Domain
+    name: Domain
+    href: CalorieTracker.Domain.html
+  - name: .
+  - uid: CalorieTracker.Domain.Services
+    name: Services
+    href: CalorieTracker.Domain.Services.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Domain
+    name: Domain
+    href: CalorieTracker.Domain.html
+  - name: .
+  - uid: CalorieTracker.Domain.Services
+    name: Services
+    href: CalorieTracker.Domain.Services.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentexception
+  name: ArgumentException
+  nameWithType: ArgumentException
+  fullName: System.ArgumentException
+- uid: CalorieTracker.Domain.Services.WeightAnalysisService.CalculateBMI*
+  commentId: Overload:CalorieTracker.Domain.Services.WeightAnalysisService.CalculateBMI
+  href: CalorieTracker.Domain.Services.WeightAnalysisService.html#CalorieTracker_Domain_Services_WeightAnalysisService_CalculateBMI_System_Single_System_Single_
+  name: CalculateBMI
+  nameWithType: WeightAnalysisService.CalculateBMI
+  fullName: CalorieTracker.Domain.Services.WeightAnalysisService.CalculateBMI
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: CalorieTracker.Domain.Services.WeightAnalysisService.CalculateWeightChange*
+  commentId: Overload:CalorieTracker.Domain.Services.WeightAnalysisService.CalculateWeightChange
+  href: CalorieTracker.Domain.Services.WeightAnalysisService.html#CalorieTracker_Domain_Services_WeightAnalysisService_CalculateWeightChange_System_Single_System_Single_
+  name: CalculateWeightChange
+  nameWithType: WeightAnalysisService.CalculateWeightChange
+  fullName: CalorieTracker.Domain.Services.WeightAnalysisService.CalculateWeightChange
+- uid: CalorieTracker.Domain.Services.WeightAnalysisService.CalculateProgressToGoal*
+  commentId: Overload:CalorieTracker.Domain.Services.WeightAnalysisService.CalculateProgressToGoal
+  href: CalorieTracker.Domain.Services.WeightAnalysisService.html#CalorieTracker_Domain_Services_WeightAnalysisService_CalculateProgressToGoal_System_Single_System_Single_
+  name: CalculateProgressToGoal
+  nameWithType: WeightAnalysisService.CalculateProgressToGoal
+  fullName: CalorieTracker.Domain.Services.WeightAnalysisService.CalculateProgressToGoal
+- uid: CalorieTracker.Domain.Services.WeightAnalysisService.FillCalculatedFields*
+  commentId: Overload:CalorieTracker.Domain.Services.WeightAnalysisService.FillCalculatedFields
+  href: CalorieTracker.Domain.Services.WeightAnalysisService.html#CalorieTracker_Domain_Services_WeightAnalysisService_FillCalculatedFields_CalorieTracker_Domain_Entities_WeightMeasurement_CalorieTracker_Domain_Entities_UserProfile_CalorieTracker_Domain_Entities_WeightMeasurement_
+  name: FillCalculatedFields
+  nameWithType: WeightAnalysisService.FillCalculatedFields
+  fullName: CalorieTracker.Domain.Services.WeightAnalysisService.FillCalculatedFields
+- uid: CalorieTracker.Domain.Entities.WeightMeasurement
+  commentId: T:CalorieTracker.Domain.Entities.WeightMeasurement
+  parent: CalorieTracker.Domain.Entities
+  href: CalorieTracker.Domain.Entities.WeightMeasurement.html
+  name: WeightMeasurement
+  nameWithType: WeightMeasurement
+  fullName: CalorieTracker.Domain.Entities.WeightMeasurement
+- uid: CalorieTracker.Domain.Entities.UserProfile
+  commentId: T:CalorieTracker.Domain.Entities.UserProfile
+  parent: CalorieTracker.Domain.Entities
+  href: CalorieTracker.Domain.Entities.UserProfile.html
+  name: UserProfile
+  nameWithType: UserProfile
+  fullName: CalorieTracker.Domain.Entities.UserProfile
+- uid: CalorieTracker.Domain.Entities
+  commentId: N:CalorieTracker.Domain.Entities
+  href: CalorieTracker.html
+  name: CalorieTracker.Domain.Entities
+  nameWithType: CalorieTracker.Domain.Entities
+  fullName: CalorieTracker.Domain.Entities
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Domain
+    name: Domain
+    href: CalorieTracker.Domain.html
+  - name: .
+  - uid: CalorieTracker.Domain.Entities
+    name: Entities
+    href: CalorieTracker.Domain.Entities.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Domain
+    name: Domain
+    href: CalorieTracker.Domain.html
+  - name: .
+  - uid: CalorieTracker.Domain.Entities
+    name: Entities
+    href: CalorieTracker.Domain.Entities.html

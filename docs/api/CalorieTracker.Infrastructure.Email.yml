@@ -1,0 +1,30 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Infrastructure.Email
+  commentId: N:CalorieTracker.Infrastructure.Email
+  id: CalorieTracker.Infrastructure.Email
+  children:
+  - CalorieTracker.Infrastructure.Email.EmailSender
+  - CalorieTracker.Infrastructure.Email.EmailSettings
+  langs:
+  - csharp
+  - vb
+  name: CalorieTracker.Infrastructure.Email
+  nameWithType: CalorieTracker.Infrastructure.Email
+  fullName: CalorieTracker.Infrastructure.Email
+  type: Namespace
+  assemblies:
+  - CalorieTracker.Infrastructure
+references:
+- uid: CalorieTracker.Infrastructure.Email.EmailSender
+  commentId: T:CalorieTracker.Infrastructure.Email.EmailSender
+  href: CalorieTracker.Infrastructure.Email.EmailSender.html
+  name: EmailSender
+  nameWithType: EmailSender
+  fullName: CalorieTracker.Infrastructure.Email.EmailSender
+- uid: CalorieTracker.Infrastructure.Email.EmailSettings
+  commentId: T:CalorieTracker.Infrastructure.Email.EmailSettings
+  href: CalorieTracker.Infrastructure.Email.EmailSettings.html
+  name: EmailSettings
+  nameWithType: EmailSettings
+  fullName: CalorieTracker.Infrastructure.Email.EmailSettings

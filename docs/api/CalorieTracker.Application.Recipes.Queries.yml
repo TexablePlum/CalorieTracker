@@ -1,0 +1,86 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Application.Recipes.Queries
+  commentId: N:CalorieTracker.Application.Recipes.Queries
+  id: CalorieTracker.Application.Recipes.Queries
+  children:
+  - CalorieTracker.Application.Recipes.Queries.GetAllRecipesQuery
+  - CalorieTracker.Application.Recipes.Queries.GetRecipeDetailsQuery
+  - CalorieTracker.Application.Recipes.Queries.GetUserRecipesQuery
+  - CalorieTracker.Application.Recipes.Queries.SearchRecipesQuery
+  langs:
+  - csharp
+  - vb
+  name: CalorieTracker.Application.Recipes.Queries
+  nameWithType: CalorieTracker.Application.Recipes.Queries
+  fullName: CalorieTracker.Application.Recipes.Queries
+  type: Namespace
+  assemblies:
+  - CalorieTracker.Application
+references:
+- uid: CalorieTracker.Application.Recipes.Queries.GetAllRecipesQuery
+  commentId: T:CalorieTracker.Application.Recipes.Queries.GetAllRecipesQuery
+  parent: CalorieTracker.Application.Recipes.Queries
+  href: CalorieTracker.Application.Recipes.Queries.GetAllRecipesQuery.html
+  name: GetAllRecipesQuery
+  nameWithType: GetAllRecipesQuery
+  fullName: CalorieTracker.Application.Recipes.Queries.GetAllRecipesQuery
+- uid: CalorieTracker.Application.Recipes.Queries.GetRecipeDetailsQuery
+  commentId: T:CalorieTracker.Application.Recipes.Queries.GetRecipeDetailsQuery
+  parent: CalorieTracker.Application.Recipes.Queries
+  href: CalorieTracker.Application.Recipes.Queries.GetRecipeDetailsQuery.html
+  name: GetRecipeDetailsQuery
+  nameWithType: GetRecipeDetailsQuery
+  fullName: CalorieTracker.Application.Recipes.Queries.GetRecipeDetailsQuery
+- uid: CalorieTracker.Application.Recipes.Queries.GetUserRecipesQuery
+  commentId: T:CalorieTracker.Application.Recipes.Queries.GetUserRecipesQuery
+  parent: CalorieTracker.Application.Recipes.Queries
+  href: CalorieTracker.Application.Recipes.Queries.GetUserRecipesQuery.html
+  name: GetUserRecipesQuery
+  nameWithType: GetUserRecipesQuery
+  fullName: CalorieTracker.Application.Recipes.Queries.GetUserRecipesQuery
+- uid: CalorieTracker.Application.Recipes.Queries.SearchRecipesQuery
+  commentId: T:CalorieTracker.Application.Recipes.Queries.SearchRecipesQuery
+  parent: CalorieTracker.Application.Recipes.Queries
+  href: CalorieTracker.Application.Recipes.Queries.SearchRecipesQuery.html
+  name: SearchRecipesQuery
+  nameWithType: SearchRecipesQuery
+  fullName: CalorieTracker.Application.Recipes.Queries.SearchRecipesQuery
+- uid: CalorieTracker.Application.Recipes.Queries
+  commentId: N:CalorieTracker.Application.Recipes.Queries
+  href: CalorieTracker.html
+  name: CalorieTracker.Application.Recipes.Queries
+  nameWithType: CalorieTracker.Application.Recipes.Queries
+  fullName: CalorieTracker.Application.Recipes.Queries
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Recipes
+    name: Recipes
+    href: CalorieTracker.Application.Recipes.html
+  - name: .
+  - uid: CalorieTracker.Application.Recipes.Queries
+    name: Queries
+    href: CalorieTracker.Application.Recipes.Queries.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Recipes
+    name: Recipes
+    href: CalorieTracker.Application.Recipes.html
+  - name: .
+  - uid: CalorieTracker.Application.Recipes.Queries
+    name: Queries
+    href: CalorieTracker.Application.Recipes.Queries.html

@@ -1,0 +1,121 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Api.Models.Recipes
+  commentId: N:CalorieTracker.Api.Models.Recipes
+  id: CalorieTracker.Api.Models.Recipes
+  children:
+  - CalorieTracker.Api.Models.Recipes.CreateRecipeIngredientRequest
+  - CalorieTracker.Api.Models.Recipes.CreateRecipeRequest
+  - CalorieTracker.Api.Models.Recipes.RecipeDto
+  - CalorieTracker.Api.Models.Recipes.RecipeIngredientDto
+  - CalorieTracker.Api.Models.Recipes.RecipeNutritionDto
+  - CalorieTracker.Api.Models.Recipes.RecipeSummaryDto
+  - CalorieTracker.Api.Models.Recipes.SearchRecipesRequest
+  - CalorieTracker.Api.Models.Recipes.SearchRecipesResponse
+  - CalorieTracker.Api.Models.Recipes.UpdateRecipeRequest
+  langs:
+  - csharp
+  - vb
+  name: CalorieTracker.Api.Models.Recipes
+  nameWithType: CalorieTracker.Api.Models.Recipes
+  fullName: CalorieTracker.Api.Models.Recipes
+  type: Namespace
+  assemblies:
+  - CalorieTracker.Api
+references:
+- uid: CalorieTracker.Api.Models.Recipes.CreateRecipeIngredientRequest
+  commentId: T:CalorieTracker.Api.Models.Recipes.CreateRecipeIngredientRequest
+  href: CalorieTracker.Api.Models.Recipes.CreateRecipeIngredientRequest.html
+  name: CreateRecipeIngredientRequest
+  nameWithType: CreateRecipeIngredientRequest
+  fullName: CalorieTracker.Api.Models.Recipes.CreateRecipeIngredientRequest
+- uid: CalorieTracker.Api.Models.Recipes.CreateRecipeRequest
+  commentId: T:CalorieTracker.Api.Models.Recipes.CreateRecipeRequest
+  parent: CalorieTracker.Api.Models.Recipes
+  href: CalorieTracker.Api.Models.Recipes.CreateRecipeRequest.html
+  name: CreateRecipeRequest
+  nameWithType: CreateRecipeRequest
+  fullName: CalorieTracker.Api.Models.Recipes.CreateRecipeRequest
+- uid: CalorieTracker.Api.Models.Recipes.RecipeDto
+  commentId: T:CalorieTracker.Api.Models.Recipes.RecipeDto
+  href: CalorieTracker.Api.Models.Recipes.RecipeDto.html
+  name: RecipeDto
+  nameWithType: RecipeDto
+  fullName: CalorieTracker.Api.Models.Recipes.RecipeDto
+- uid: CalorieTracker.Api.Models.Recipes.RecipeIngredientDto
+  commentId: T:CalorieTracker.Api.Models.Recipes.RecipeIngredientDto
+  href: CalorieTracker.Api.Models.Recipes.RecipeIngredientDto.html
+  name: RecipeIngredientDto
+  nameWithType: RecipeIngredientDto
+  fullName: CalorieTracker.Api.Models.Recipes.RecipeIngredientDto
+- uid: CalorieTracker.Api.Models.Recipes.RecipeNutritionDto
+  commentId: T:CalorieTracker.Api.Models.Recipes.RecipeNutritionDto
+  parent: CalorieTracker.Api.Models.Recipes
+  href: CalorieTracker.Api.Models.Recipes.RecipeNutritionDto.html
+  name: RecipeNutritionDto
+  nameWithType: RecipeNutritionDto
+  fullName: CalorieTracker.Api.Models.Recipes.RecipeNutritionDto
+- uid: CalorieTracker.Api.Models.Recipes.RecipeSummaryDto
+  commentId: T:CalorieTracker.Api.Models.Recipes.RecipeSummaryDto
+  href: CalorieTracker.Api.Models.Recipes.RecipeSummaryDto.html
+  name: RecipeSummaryDto
+  nameWithType: RecipeSummaryDto
+  fullName: CalorieTracker.Api.Models.Recipes.RecipeSummaryDto
+- uid: CalorieTracker.Api.Models.Recipes.SearchRecipesRequest
+  commentId: T:CalorieTracker.Api.Models.Recipes.SearchRecipesRequest
+  parent: CalorieTracker.Api.Models.Recipes
+  href: CalorieTracker.Api.Models.Recipes.SearchRecipesRequest.html
+  name: SearchRecipesRequest
+  nameWithType: SearchRecipesRequest
+  fullName: CalorieTracker.Api.Models.Recipes.SearchRecipesRequest
+- uid: CalorieTracker.Api.Models.Recipes.SearchRecipesResponse
+  commentId: T:CalorieTracker.Api.Models.Recipes.SearchRecipesResponse
+  href: CalorieTracker.Api.Models.Recipes.SearchRecipesResponse.html
+  name: SearchRecipesResponse
+  nameWithType: SearchRecipesResponse
+  fullName: CalorieTracker.Api.Models.Recipes.SearchRecipesResponse
+- uid: CalorieTracker.Api.Models.Recipes.UpdateRecipeRequest
+  commentId: T:CalorieTracker.Api.Models.Recipes.UpdateRecipeRequest
+  parent: CalorieTracker.Api.Models.Recipes
+  href: CalorieTracker.Api.Models.Recipes.UpdateRecipeRequest.html
+  name: UpdateRecipeRequest
+  nameWithType: UpdateRecipeRequest
+  fullName: CalorieTracker.Api.Models.Recipes.UpdateRecipeRequest
+- uid: CalorieTracker.Api.Models.Recipes
+  commentId: N:CalorieTracker.Api.Models.Recipes
+  href: CalorieTracker.html
+  name: CalorieTracker.Api.Models.Recipes
+  nameWithType: CalorieTracker.Api.Models.Recipes
+  fullName: CalorieTracker.Api.Models.Recipes
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Api
+    name: Api
+    href: CalorieTracker.Api.html
+  - name: .
+  - uid: CalorieTracker.Api.Models
+    name: Models
+    href: CalorieTracker.Api.Models.html
+  - name: .
+  - uid: CalorieTracker.Api.Models.Recipes
+    name: Recipes
+    href: CalorieTracker.Api.Models.Recipes.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Api
+    name: Api
+    href: CalorieTracker.Api.html
+  - name: .
+  - uid: CalorieTracker.Api.Models
+    name: Models
+    href: CalorieTracker.Api.Models.html
+  - name: .
+  - uid: CalorieTracker.Api.Models.Recipes
+    name: Recipes
+    href: CalorieTracker.Api.Models.Recipes.html

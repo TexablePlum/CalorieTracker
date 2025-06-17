@@ -1,0 +1,99 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Api.Models.Products
+  commentId: N:CalorieTracker.Api.Models.Products
+  id: CalorieTracker.Api.Models.Products
+  children:
+  - CalorieTracker.Api.Models.Products.CreateProductRequest
+  - CalorieTracker.Api.Models.Products.ProductDto
+  - CalorieTracker.Api.Models.Products.ProductSummaryDto
+  - CalorieTracker.Api.Models.Products.SearchProductsRequest
+  - CalorieTracker.Api.Models.Products.SearchProductsResponse
+  - CalorieTracker.Api.Models.Products.UpdateProductRequest
+  langs:
+  - csharp
+  - vb
+  name: CalorieTracker.Api.Models.Products
+  nameWithType: CalorieTracker.Api.Models.Products
+  fullName: CalorieTracker.Api.Models.Products
+  type: Namespace
+  assemblies:
+  - CalorieTracker.Api
+references:
+- uid: CalorieTracker.Api.Models.Products.CreateProductRequest
+  commentId: T:CalorieTracker.Api.Models.Products.CreateProductRequest
+  parent: CalorieTracker.Api.Models.Products
+  href: CalorieTracker.Api.Models.Products.CreateProductRequest.html
+  name: CreateProductRequest
+  nameWithType: CreateProductRequest
+  fullName: CalorieTracker.Api.Models.Products.CreateProductRequest
+- uid: CalorieTracker.Api.Models.Products.ProductDto
+  commentId: T:CalorieTracker.Api.Models.Products.ProductDto
+  href: CalorieTracker.Api.Models.Products.ProductDto.html
+  name: ProductDto
+  nameWithType: ProductDto
+  fullName: CalorieTracker.Api.Models.Products.ProductDto
+- uid: CalorieTracker.Api.Models.Products.ProductSummaryDto
+  commentId: T:CalorieTracker.Api.Models.Products.ProductSummaryDto
+  href: CalorieTracker.Api.Models.Products.ProductSummaryDto.html
+  name: ProductSummaryDto
+  nameWithType: ProductSummaryDto
+  fullName: CalorieTracker.Api.Models.Products.ProductSummaryDto
+- uid: CalorieTracker.Api.Models.Products.SearchProductsRequest
+  commentId: T:CalorieTracker.Api.Models.Products.SearchProductsRequest
+  parent: CalorieTracker.Api.Models.Products
+  href: CalorieTracker.Api.Models.Products.SearchProductsRequest.html
+  name: SearchProductsRequest
+  nameWithType: SearchProductsRequest
+  fullName: CalorieTracker.Api.Models.Products.SearchProductsRequest
+- uid: CalorieTracker.Api.Models.Products.SearchProductsResponse
+  commentId: T:CalorieTracker.Api.Models.Products.SearchProductsResponse
+  href: CalorieTracker.Api.Models.Products.SearchProductsResponse.html
+  name: SearchProductsResponse
+  nameWithType: SearchProductsResponse
+  fullName: CalorieTracker.Api.Models.Products.SearchProductsResponse
+- uid: CalorieTracker.Api.Models.Products.UpdateProductRequest
+  commentId: T:CalorieTracker.Api.Models.Products.UpdateProductRequest
+  parent: CalorieTracker.Api.Models.Products
+  href: CalorieTracker.Api.Models.Products.UpdateProductRequest.html
+  name: UpdateProductRequest
+  nameWithType: UpdateProductRequest
+  fullName: CalorieTracker.Api.Models.Products.UpdateProductRequest
+- uid: CalorieTracker.Api.Models.Products
+  commentId: N:CalorieTracker.Api.Models.Products
+  href: CalorieTracker.html
+  name: CalorieTracker.Api.Models.Products
+  nameWithType: CalorieTracker.Api.Models.Products
+  fullName: CalorieTracker.Api.Models.Products
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Api
+    name: Api
+    href: CalorieTracker.Api.html
+  - name: .
+  - uid: CalorieTracker.Api.Models
+    name: Models
+    href: CalorieTracker.Api.Models.html
+  - name: .
+  - uid: CalorieTracker.Api.Models.Products
+    name: Products
+    href: CalorieTracker.Api.Models.Products.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Api
+    name: Api
+    href: CalorieTracker.Api.html
+  - name: .
+  - uid: CalorieTracker.Api.Models
+    name: Models
+    href: CalorieTracker.Api.Models.html
+  - name: .
+  - uid: CalorieTracker.Api.Models.Products
+    name: Products
+    href: CalorieTracker.Api.Models.Products.html

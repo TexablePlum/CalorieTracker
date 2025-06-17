@@ -1,0 +1,153 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Domain.Enums.GoalType
+  commentId: T:CalorieTracker.Domain.Enums.GoalType
+  id: GoalType
+  parent: CalorieTracker.Domain.Enums
+  children:
+  - CalorieTracker.Domain.Enums.GoalType.GainWeight
+  - CalorieTracker.Domain.Enums.GoalType.LoseWeight
+  - CalorieTracker.Domain.Enums.GoalType.Maintain
+  langs:
+  - csharp
+  - vb
+  name: GoalType
+  nameWithType: GoalType
+  fullName: CalorieTracker.Domain.Enums.GoalType
+  type: Enum
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Enums/GoalType.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: GoalType
+    path: ../src/CalorieTracker.Domain/Enums/GoalType.cs
+    startLine: 9
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Enums
+  example: []
+  syntax:
+    content: public enum GoalType
+    content.vb: Public Enum GoalType
+- uid: CalorieTracker.Domain.Enums.GoalType.LoseWeight
+  commentId: F:CalorieTracker.Domain.Enums.GoalType.LoseWeight
+  id: LoseWeight
+  parent: CalorieTracker.Domain.Enums.GoalType
+  langs:
+  - csharp
+  - vb
+  name: LoseWeight
+  nameWithType: GoalType.LoseWeight
+  fullName: CalorieTracker.Domain.Enums.GoalType.LoseWeight
+  type: Field
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Enums/GoalType.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: LoseWeight
+    path: ../src/CalorieTracker.Domain/Enums/GoalType.cs
+    startLine: 14
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Enums
+  example: []
+  syntax:
+    content: LoseWeight = 0
+    return:
+      type: CalorieTracker.Domain.Enums.GoalType
+- uid: CalorieTracker.Domain.Enums.GoalType.Maintain
+  commentId: F:CalorieTracker.Domain.Enums.GoalType.Maintain
+  id: Maintain
+  parent: CalorieTracker.Domain.Enums.GoalType
+  langs:
+  - csharp
+  - vb
+  name: Maintain
+  nameWithType: GoalType.Maintain
+  fullName: CalorieTracker.Domain.Enums.GoalType.Maintain
+  type: Field
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Enums/GoalType.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Maintain
+    path: ../src/CalorieTracker.Domain/Enums/GoalType.cs
+    startLine: 19
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Enums
+  summary: Oznacza cel utrzymania aktualnej masy ciała.
+  example: []
+  syntax:
+    content: Maintain = 1
+    return:
+      type: CalorieTracker.Domain.Enums.GoalType
+- uid: CalorieTracker.Domain.Enums.GoalType.GainWeight
+  commentId: F:CalorieTracker.Domain.Enums.GoalType.GainWeight
+  id: GainWeight
+  parent: CalorieTracker.Domain.Enums.GoalType
+  langs:
+  - csharp
+  - vb
+  name: GainWeight
+  nameWithType: GoalType.GainWeight
+  fullName: CalorieTracker.Domain.Enums.GoalType.GainWeight
+  type: Field
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Enums/GoalType.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: GainWeight
+    path: ../src/CalorieTracker.Domain/Enums/GoalType.cs
+    startLine: 24
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Enums
+  summary: Oznacza cel przyrostu masy ciała.
+  example: []
+  syntax:
+    content: GainWeight = 2
+    return:
+      type: CalorieTracker.Domain.Enums.GoalType
+references:
+- uid: CalorieTracker.Domain.Enums
+  commentId: N:CalorieTracker.Domain.Enums
+  href: CalorieTracker.html
+  name: CalorieTracker.Domain.Enums
+  nameWithType: CalorieTracker.Domain.Enums
+  fullName: CalorieTracker.Domain.Enums
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Domain
+    name: Domain
+    href: CalorieTracker.Domain.html
+  - name: .
+  - uid: CalorieTracker.Domain.Enums
+    name: Enums
+    href: CalorieTracker.Domain.Enums.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Domain
+    name: Domain
+    href: CalorieTracker.Domain.html
+  - name: .
+  - uid: CalorieTracker.Domain.Enums
+    name: Enums
+    href: CalorieTracker.Domain.Enums.html
+- uid: CalorieTracker.Domain.Enums.GoalType
+  commentId: T:CalorieTracker.Domain.Enums.GoalType
+  parent: CalorieTracker.Domain.Enums
+  href: CalorieTracker.Domain.Enums.GoalType.html
+  name: GoalType
+  nameWithType: GoalType
+  fullName: CalorieTracker.Domain.Enums.GoalType

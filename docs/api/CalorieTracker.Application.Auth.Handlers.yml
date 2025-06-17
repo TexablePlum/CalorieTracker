@@ -1,0 +1,166 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Application.Auth.Handlers
+  commentId: N:CalorieTracker.Application.Auth.Handlers
+  id: CalorieTracker.Application.Auth.Handlers
+  children:
+  - CalorieTracker.Application.Auth.Handlers.CreateProductHandler
+  - CalorieTracker.Application.Auth.Handlers.DeleteProductHandler
+  - CalorieTracker.Application.Auth.Handlers.GenerateEmailConfirmationHandler
+  - CalorieTracker.Application.Auth.Handlers.GeneratePasswordResetHandler
+  - CalorieTracker.Application.Auth.Handlers.GenerateRefreshTokenHandler
+  - CalorieTracker.Application.Auth.Handlers.GetProductByBarcodeHandler
+  - CalorieTracker.Application.Auth.Handlers.GetProductByIdHandler
+  - CalorieTracker.Application.Auth.Handlers.GetUserProductsHandler
+  - CalorieTracker.Application.Auth.Handlers.LoginUserHandler
+  - CalorieTracker.Application.Auth.Handlers.LogoutHandler
+  - CalorieTracker.Application.Auth.Handlers.RegisterUserHandler
+  - CalorieTracker.Application.Auth.Handlers.SearchProductsHandler
+  - CalorieTracker.Application.Auth.Handlers.UpdateProductHandler
+  - CalorieTracker.Application.Auth.Handlers.UseRefreshTokenHandler
+  langs:
+  - csharp
+  - vb
+  name: CalorieTracker.Application.Auth.Handlers
+  nameWithType: CalorieTracker.Application.Auth.Handlers
+  fullName: CalorieTracker.Application.Auth.Handlers
+  type: Namespace
+  assemblies:
+  - CalorieTracker.Application
+references:
+- uid: CalorieTracker.Application.Auth.Handlers.GenerateEmailConfirmationHandler
+  commentId: T:CalorieTracker.Application.Auth.Handlers.GenerateEmailConfirmationHandler
+  parent: CalorieTracker.Application.Auth.Handlers
+  href: CalorieTracker.Application.Auth.Handlers.GenerateEmailConfirmationHandler.html
+  name: GenerateEmailConfirmationHandler
+  nameWithType: GenerateEmailConfirmationHandler
+  fullName: CalorieTracker.Application.Auth.Handlers.GenerateEmailConfirmationHandler
+- uid: CalorieTracker.Application.Auth.Handlers.GeneratePasswordResetHandler
+  commentId: T:CalorieTracker.Application.Auth.Handlers.GeneratePasswordResetHandler
+  parent: CalorieTracker.Application.Auth.Handlers
+  href: CalorieTracker.Application.Auth.Handlers.GeneratePasswordResetHandler.html
+  name: GeneratePasswordResetHandler
+  nameWithType: GeneratePasswordResetHandler
+  fullName: CalorieTracker.Application.Auth.Handlers.GeneratePasswordResetHandler
+- uid: CalorieTracker.Application.Auth.Handlers.GenerateRefreshTokenHandler
+  commentId: T:CalorieTracker.Application.Auth.Handlers.GenerateRefreshTokenHandler
+  parent: CalorieTracker.Application.Auth.Handlers
+  href: CalorieTracker.Application.Auth.Handlers.GenerateRefreshTokenHandler.html
+  name: GenerateRefreshTokenHandler
+  nameWithType: GenerateRefreshTokenHandler
+  fullName: CalorieTracker.Application.Auth.Handlers.GenerateRefreshTokenHandler
+- uid: CalorieTracker.Application.Auth.Handlers.LoginUserHandler
+  commentId: T:CalorieTracker.Application.Auth.Handlers.LoginUserHandler
+  parent: CalorieTracker.Application.Auth.Handlers
+  href: CalorieTracker.Application.Auth.Handlers.LoginUserHandler.html
+  name: LoginUserHandler
+  nameWithType: LoginUserHandler
+  fullName: CalorieTracker.Application.Auth.Handlers.LoginUserHandler
+- uid: CalorieTracker.Application.Auth.Handlers.LogoutHandler
+  commentId: T:CalorieTracker.Application.Auth.Handlers.LogoutHandler
+  parent: CalorieTracker.Application.Auth.Handlers
+  href: CalorieTracker.Application.Auth.Handlers.LogoutHandler.html
+  name: LogoutHandler
+  nameWithType: LogoutHandler
+  fullName: CalorieTracker.Application.Auth.Handlers.LogoutHandler
+- uid: CalorieTracker.Application.Auth.Handlers.RegisterUserHandler
+  commentId: T:CalorieTracker.Application.Auth.Handlers.RegisterUserHandler
+  parent: CalorieTracker.Application.Auth.Handlers
+  href: CalorieTracker.Application.Auth.Handlers.RegisterUserHandler.html
+  name: RegisterUserHandler
+  nameWithType: RegisterUserHandler
+  fullName: CalorieTracker.Application.Auth.Handlers.RegisterUserHandler
+- uid: CalorieTracker.Application.Auth.Handlers.UseRefreshTokenHandler
+  commentId: T:CalorieTracker.Application.Auth.Handlers.UseRefreshTokenHandler
+  parent: CalorieTracker.Application.Auth.Handlers
+  href: CalorieTracker.Application.Auth.Handlers.UseRefreshTokenHandler.html
+  name: UseRefreshTokenHandler
+  nameWithType: UseRefreshTokenHandler
+  fullName: CalorieTracker.Application.Auth.Handlers.UseRefreshTokenHandler
+- uid: CalorieTracker.Application.Auth.Handlers.CreateProductHandler
+  commentId: T:CalorieTracker.Application.Auth.Handlers.CreateProductHandler
+  parent: CalorieTracker.Application.Auth.Handlers
+  href: CalorieTracker.Application.Auth.Handlers.CreateProductHandler.html
+  name: CreateProductHandler
+  nameWithType: CreateProductHandler
+  fullName: CalorieTracker.Application.Auth.Handlers.CreateProductHandler
+- uid: CalorieTracker.Application.Auth.Handlers.DeleteProductHandler
+  commentId: T:CalorieTracker.Application.Auth.Handlers.DeleteProductHandler
+  parent: CalorieTracker.Application.Auth.Handlers
+  href: CalorieTracker.Application.Auth.Handlers.DeleteProductHandler.html
+  name: DeleteProductHandler
+  nameWithType: DeleteProductHandler
+  fullName: CalorieTracker.Application.Auth.Handlers.DeleteProductHandler
+- uid: CalorieTracker.Application.Auth.Handlers.GetProductByBarcodeHandler
+  commentId: T:CalorieTracker.Application.Auth.Handlers.GetProductByBarcodeHandler
+  parent: CalorieTracker.Application.Auth.Handlers
+  href: CalorieTracker.Application.Auth.Handlers.GetProductByBarcodeHandler.html
+  name: GetProductByBarcodeHandler
+  nameWithType: GetProductByBarcodeHandler
+  fullName: CalorieTracker.Application.Auth.Handlers.GetProductByBarcodeHandler
+- uid: CalorieTracker.Application.Auth.Handlers.GetProductByIdHandler
+  commentId: T:CalorieTracker.Application.Auth.Handlers.GetProductByIdHandler
+  parent: CalorieTracker.Application.Auth.Handlers
+  href: CalorieTracker.Application.Auth.Handlers.GetProductByIdHandler.html
+  name: GetProductByIdHandler
+  nameWithType: GetProductByIdHandler
+  fullName: CalorieTracker.Application.Auth.Handlers.GetProductByIdHandler
+- uid: CalorieTracker.Application.Auth.Handlers.GetUserProductsHandler
+  commentId: T:CalorieTracker.Application.Auth.Handlers.GetUserProductsHandler
+  parent: CalorieTracker.Application.Auth.Handlers
+  href: CalorieTracker.Application.Auth.Handlers.GetUserProductsHandler.html
+  name: GetUserProductsHandler
+  nameWithType: GetUserProductsHandler
+  fullName: CalorieTracker.Application.Auth.Handlers.GetUserProductsHandler
+- uid: CalorieTracker.Application.Auth.Handlers.SearchProductsHandler
+  commentId: T:CalorieTracker.Application.Auth.Handlers.SearchProductsHandler
+  parent: CalorieTracker.Application.Auth.Handlers
+  href: CalorieTracker.Application.Auth.Handlers.SearchProductsHandler.html
+  name: SearchProductsHandler
+  nameWithType: SearchProductsHandler
+  fullName: CalorieTracker.Application.Auth.Handlers.SearchProductsHandler
+- uid: CalorieTracker.Application.Auth.Handlers.UpdateProductHandler
+  commentId: T:CalorieTracker.Application.Auth.Handlers.UpdateProductHandler
+  parent: CalorieTracker.Application.Auth.Handlers
+  href: CalorieTracker.Application.Auth.Handlers.UpdateProductHandler.html
+  name: UpdateProductHandler
+  nameWithType: UpdateProductHandler
+  fullName: CalorieTracker.Application.Auth.Handlers.UpdateProductHandler
+- uid: CalorieTracker.Application.Auth.Handlers
+  commentId: N:CalorieTracker.Application.Auth.Handlers
+  href: CalorieTracker.html
+  name: CalorieTracker.Application.Auth.Handlers
+  nameWithType: CalorieTracker.Application.Auth.Handlers
+  fullName: CalorieTracker.Application.Auth.Handlers
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth
+    name: Auth
+    href: CalorieTracker.Application.Auth.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth.Handlers
+    name: Handlers
+    href: CalorieTracker.Application.Auth.Handlers.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth
+    name: Auth
+    href: CalorieTracker.Application.Auth.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth.Handlers
+    name: Handlers
+    href: CalorieTracker.Application.Auth.Handlers.html

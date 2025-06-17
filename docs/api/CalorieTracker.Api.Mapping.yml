@@ -1,0 +1,44 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Api.Mapping
+  commentId: N:CalorieTracker.Api.Mapping
+  id: CalorieTracker.Api.Mapping
+  children:
+  - CalorieTracker.Api.Mapping.AuthProfile
+  - CalorieTracker.Api.Mapping.ProductMappingProfile
+  - CalorieTracker.Api.Mapping.RecipeMappingProfile
+  - CalorieTracker.Api.Mapping.WeightMeasurementMappingProfile
+  langs:
+  - csharp
+  - vb
+  name: CalorieTracker.Api.Mapping
+  nameWithType: CalorieTracker.Api.Mapping
+  fullName: CalorieTracker.Api.Mapping
+  type: Namespace
+  assemblies:
+  - CalorieTracker.Api
+references:
+- uid: CalorieTracker.Api.Mapping.AuthProfile
+  commentId: T:CalorieTracker.Api.Mapping.AuthProfile
+  href: CalorieTracker.Api.Mapping.AuthProfile.html
+  name: AuthProfile
+  nameWithType: AuthProfile
+  fullName: CalorieTracker.Api.Mapping.AuthProfile
+- uid: CalorieTracker.Api.Mapping.ProductMappingProfile
+  commentId: T:CalorieTracker.Api.Mapping.ProductMappingProfile
+  href: CalorieTracker.Api.Mapping.ProductMappingProfile.html
+  name: ProductMappingProfile
+  nameWithType: ProductMappingProfile
+  fullName: CalorieTracker.Api.Mapping.ProductMappingProfile
+- uid: CalorieTracker.Api.Mapping.RecipeMappingProfile
+  commentId: T:CalorieTracker.Api.Mapping.RecipeMappingProfile
+  href: CalorieTracker.Api.Mapping.RecipeMappingProfile.html
+  name: RecipeMappingProfile
+  nameWithType: RecipeMappingProfile
+  fullName: CalorieTracker.Api.Mapping.RecipeMappingProfile
+- uid: CalorieTracker.Api.Mapping.WeightMeasurementMappingProfile
+  commentId: T:CalorieTracker.Api.Mapping.WeightMeasurementMappingProfile
+  href: CalorieTracker.Api.Mapping.WeightMeasurementMappingProfile.html
+  name: WeightMeasurementMappingProfile
+  nameWithType: WeightMeasurementMappingProfile
+  fullName: CalorieTracker.Api.Mapping.WeightMeasurementMappingProfile

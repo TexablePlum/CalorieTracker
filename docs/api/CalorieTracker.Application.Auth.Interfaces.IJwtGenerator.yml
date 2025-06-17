@@ -1,0 +1,174 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Application.Auth.Interfaces.IJwtGenerator
+  commentId: T:CalorieTracker.Application.Auth.Interfaces.IJwtGenerator
+  id: IJwtGenerator
+  parent: CalorieTracker.Application.Auth.Interfaces
+  children:
+  - CalorieTracker.Application.Auth.Interfaces.IJwtGenerator.CreateToken(CalorieTracker.Domain.Entities.ApplicationUser)
+  langs:
+  - csharp
+  - vb
+  name: IJwtGenerator
+  nameWithType: IJwtGenerator
+  fullName: CalorieTracker.Application.Auth.Interfaces.IJwtGenerator
+  type: Interface
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Interfaces/IJwtGenerator.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: IJwtGenerator
+    path: ../src/CalorieTracker.Application/Interfaces/IJwtGenerator.cs
+    startLine: 11
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Auth.Interfaces
+  summary: >-
+    Interfejs generatora tokenów JWT (JSON Web Tokens).
+
+    Definiuje operację tworzenia tokenów uwierzytelniających dla użytkowników systemu.
+  example: []
+  syntax:
+    content: public interface IJwtGenerator
+    content.vb: Public Interface IJwtGenerator
+- uid: CalorieTracker.Application.Auth.Interfaces.IJwtGenerator.CreateToken(CalorieTracker.Domain.Entities.ApplicationUser)
+  commentId: M:CalorieTracker.Application.Auth.Interfaces.IJwtGenerator.CreateToken(CalorieTracker.Domain.Entities.ApplicationUser)
+  id: CreateToken(CalorieTracker.Domain.Entities.ApplicationUser)
+  parent: CalorieTracker.Application.Auth.Interfaces.IJwtGenerator
+  langs:
+  - csharp
+  - vb
+  name: CreateToken(ApplicationUser)
+  nameWithType: IJwtGenerator.CreateToken(ApplicationUser)
+  fullName: CalorieTracker.Application.Auth.Interfaces.IJwtGenerator.CreateToken(CalorieTracker.Domain.Entities.ApplicationUser)
+  type: Method
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Interfaces/IJwtGenerator.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: CreateToken
+    path: ../src/CalorieTracker.Application/Interfaces/IJwtGenerator.cs
+    startLine: 22
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Auth.Interfaces
+  summary: Generuje token JWT dla określonego użytkownika.
+  example: []
+  syntax:
+    content: string CreateToken(ApplicationUser user)
+    parameters:
+    - id: user
+      type: CalorieTracker.Domain.Entities.ApplicationUser
+      description: >-
+        Obiekt użytkownika <xref href="CalorieTracker.Domain.Entities.ApplicationUser" data-throw-if-not-resolved="false"></xref>, dla którego generowany jest token.
+            Powinien zawierać minimalnie identyfikator i adres email użytkownika.
+    return:
+      type: System.String
+      description: >-
+        Ciąg znaków reprezentujący wygenerowany token JWT w formacie zgodnym z RFC 7519.
+
+        Token zawiera standardowe claimy (sub, email) oraz informacje o ważności.
+    content.vb: Function CreateToken(user As ApplicationUser) As String
+  overload: CalorieTracker.Application.Auth.Interfaces.IJwtGenerator.CreateToken*
+references:
+- uid: CalorieTracker.Application.Auth.Interfaces
+  commentId: N:CalorieTracker.Application.Auth.Interfaces
+  href: CalorieTracker.html
+  name: CalorieTracker.Application.Auth.Interfaces
+  nameWithType: CalorieTracker.Application.Auth.Interfaces
+  fullName: CalorieTracker.Application.Auth.Interfaces
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth
+    name: Auth
+    href: CalorieTracker.Application.Auth.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth.Interfaces
+    name: Interfaces
+    href: CalorieTracker.Application.Auth.Interfaces.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth
+    name: Auth
+    href: CalorieTracker.Application.Auth.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth.Interfaces
+    name: Interfaces
+    href: CalorieTracker.Application.Auth.Interfaces.html
+- uid: CalorieTracker.Domain.Entities.ApplicationUser
+  commentId: T:CalorieTracker.Domain.Entities.ApplicationUser
+  parent: CalorieTracker.Domain.Entities
+  href: CalorieTracker.Domain.Entities.ApplicationUser.html
+  name: ApplicationUser
+  nameWithType: ApplicationUser
+  fullName: CalorieTracker.Domain.Entities.ApplicationUser
+- uid: CalorieTracker.Application.Auth.Interfaces.IJwtGenerator.CreateToken*
+  commentId: Overload:CalorieTracker.Application.Auth.Interfaces.IJwtGenerator.CreateToken
+  href: CalorieTracker.Application.Auth.Interfaces.IJwtGenerator.html#CalorieTracker_Application_Auth_Interfaces_IJwtGenerator_CreateToken_CalorieTracker_Domain_Entities_ApplicationUser_
+  name: CreateToken
+  nameWithType: IJwtGenerator.CreateToken
+  fullName: CalorieTracker.Application.Auth.Interfaces.IJwtGenerator.CreateToken
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: CalorieTracker.Domain.Entities
+  commentId: N:CalorieTracker.Domain.Entities
+  href: CalorieTracker.html
+  name: CalorieTracker.Domain.Entities
+  nameWithType: CalorieTracker.Domain.Entities
+  fullName: CalorieTracker.Domain.Entities
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Domain
+    name: Domain
+    href: CalorieTracker.Domain.html
+  - name: .
+  - uid: CalorieTracker.Domain.Entities
+    name: Entities
+    href: CalorieTracker.Domain.Entities.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Domain
+    name: Domain
+    href: CalorieTracker.Domain.html
+  - name: .
+  - uid: CalorieTracker.Domain.Entities
+    name: Entities
+    href: CalorieTracker.Domain.Entities.html
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

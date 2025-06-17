@@ -1,0 +1,51 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Api.Controllers
+  commentId: N:CalorieTracker.Api.Controllers
+  id: CalorieTracker.Api.Controllers
+  children:
+  - CalorieTracker.Api.Controllers.AuthController
+  - CalorieTracker.Api.Controllers.ProductsController
+  - CalorieTracker.Api.Controllers.ProfileController
+  - CalorieTracker.Api.Controllers.RecipesController
+  - CalorieTracker.Api.Controllers.WeightMeasurementsController
+  langs:
+  - csharp
+  - vb
+  name: CalorieTracker.Api.Controllers
+  nameWithType: CalorieTracker.Api.Controllers
+  fullName: CalorieTracker.Api.Controllers
+  type: Namespace
+  assemblies:
+  - CalorieTracker.Api
+references:
+- uid: CalorieTracker.Api.Controllers.AuthController
+  commentId: T:CalorieTracker.Api.Controllers.AuthController
+  href: CalorieTracker.Api.Controllers.AuthController.html
+  name: AuthController
+  nameWithType: AuthController
+  fullName: CalorieTracker.Api.Controllers.AuthController
+- uid: CalorieTracker.Api.Controllers.ProductsController
+  commentId: T:CalorieTracker.Api.Controllers.ProductsController
+  href: CalorieTracker.Api.Controllers.ProductsController.html
+  name: ProductsController
+  nameWithType: ProductsController
+  fullName: CalorieTracker.Api.Controllers.ProductsController
+- uid: CalorieTracker.Api.Controllers.ProfileController
+  commentId: T:CalorieTracker.Api.Controllers.ProfileController
+  href: CalorieTracker.Api.Controllers.ProfileController.html
+  name: ProfileController
+  nameWithType: ProfileController
+  fullName: CalorieTracker.Api.Controllers.ProfileController
+- uid: CalorieTracker.Api.Controllers.RecipesController
+  commentId: T:CalorieTracker.Api.Controllers.RecipesController
+  href: CalorieTracker.Api.Controllers.RecipesController.html
+  name: RecipesController
+  nameWithType: RecipesController
+  fullName: CalorieTracker.Api.Controllers.RecipesController
+- uid: CalorieTracker.Api.Controllers.WeightMeasurementsController
+  commentId: T:CalorieTracker.Api.Controllers.WeightMeasurementsController
+  href: CalorieTracker.Api.Controllers.WeightMeasurementsController.html
+  name: WeightMeasurementsController
+  nameWithType: WeightMeasurementsController
+  fullName: CalorieTracker.Api.Controllers.WeightMeasurementsController

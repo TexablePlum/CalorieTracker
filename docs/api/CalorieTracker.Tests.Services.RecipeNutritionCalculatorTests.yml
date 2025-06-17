@@ -1,0 +1,967 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests
+  commentId: T:CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests
+  id: RecipeNutritionCalculatorTests
+  parent: CalorieTracker.Tests.Services
+  children:
+  - CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.#ctor
+  - CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithEmptyIngredients_ShouldReturnZeroValues
+  - CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithFractionalQuantity_ShouldCalculateCorrectly
+  - CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithGramBasedProduct_ShouldCalculateCorrectly
+  - CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithMilliliterBasedProduct_ShouldCalculateCorrectly
+  - CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithMultipleIngredients_ShouldSumCorrectly
+  - CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithOptionalNutrients_ShouldHandleNullValues
+  - CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithPieceBasedProduct_ShouldCalculateCorrectly
+  - CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.ConvertToGrams_ShouldCalculateCorrectWeight(CalorieTracker.Domain.Enums.ProductUnit,System.Single,System.Single)
+  langs:
+  - csharp
+  - vb
+  name: RecipeNutritionCalculatorTests
+  nameWithType: RecipeNutritionCalculatorTests
+  fullName: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests
+  type: Class
+  source:
+    remote:
+      path: src/CalorieTracker.Tests/Services/RecipeNutritionCalculatorTests.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: RecipeNutritionCalculatorTests
+    path: ../src/CalorieTracker.Tests/Services/RecipeNutritionCalculatorTests.cs
+    startLine: 30
+  assemblies:
+  - CalorieTracker.Tests
+  namespace: CalorieTracker.Tests.Services
+  summary: >-
+    Klasa testowa weryfikująca poprawność działania serwisu <xref href="CalorieTracker.Domain.Services.RecipeNutritionCalculator" data-throw-if-not-resolved="false"></xref>.
+
+    Zawiera testy jednostkowe dla wszystkich scenariuszy kalkulacji wartości odżywczych przepisów kulinarnych,
+
+    włączając różne jednostki miary produktów, wieloskładnikowe receptury i przypadki graniczne.
+  remarks: >-
+    <p><strong>Testowane algorytmy kalkulacyjne:</strong></p>
+
+    <ul><li>Konwersja jednostek miary (gram, milliliter, sztuka) na wspólną podstawę gramową</li><li>Proporcjonalne przeliczanie wartości odżywczych z "na 100g" na faktyczne ilości składników</li><li>Sumowanie makroskładników i mikroelementów z wielu produktów w przepisie</li><li>Obsługa opcjonalnych składników odżywczych (błonnik, cukier, sód) z wartościami null</li><li>Walidacja przypadków granicznych (ilości ułamkowe, puste przepisy, skrajne wartości)</li></ul>
+
+    <p><strong>Logika biznesowa testowana:</strong></p>
+
+    <ul><li>Wszystkie wartości odżywcze produktów przechowywane są w systemie "na 100g/100ml"</li><li>Rzeczywiste kalkulacje wymagają proporcjonalnego przeliczania według faktycznych ilości</li><li>Różne jednostki miary wymagają unifikacji do gramów przed obliczeniami</li><li>Wartości opcjonalne muszą być propagowane prawidłowo (null + wartość = wartość)</li></ul>
+
+    <p><strong>Zastosowane wzorce testowe:</strong> AAA Pattern, Builder Pattern, Theory/InlineData, Factory Methods</p>
+  example: []
+  syntax:
+    content: public class RecipeNutritionCalculatorTests
+    content.vb: Public Class RecipeNutritionCalculatorTests
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.#ctor
+  commentId: M:CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.#ctor
+  id: '#ctor'
+  parent: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests
+  langs:
+  - csharp
+  - vb
+  name: RecipeNutritionCalculatorTests()
+  nameWithType: RecipeNutritionCalculatorTests.RecipeNutritionCalculatorTests()
+  fullName: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.RecipeNutritionCalculatorTests()
+  type: Constructor
+  source:
+    remote:
+      path: src/CalorieTracker.Tests/Services/RecipeNutritionCalculatorTests.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: .ctor
+    path: ../src/CalorieTracker.Tests/Services/RecipeNutritionCalculatorTests.cs
+    startLine: 43
+  assemblies:
+  - CalorieTracker.Tests
+  namespace: CalorieTracker.Tests.Services
+  summary: >-
+    Inicjalizuje nową instancję klasy testowej.
+
+    Tworzy czystą instancję <xref href="CalorieTracker.Domain.Services.RecipeNutritionCalculator" data-throw-if-not-resolved="false"></xref> dla każdego zestawu testów.
+  example: []
+  syntax:
+    content: public RecipeNutritionCalculatorTests()
+    content.vb: Public Sub New()
+  overload: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.#ctor*
+  nameWithType.vb: RecipeNutritionCalculatorTests.New()
+  fullName.vb: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.New()
+  name.vb: New()
+- uid: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithGramBasedProduct_ShouldCalculateCorrectly
+  commentId: M:CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithGramBasedProduct_ShouldCalculateCorrectly
+  id: CalculateForRecipe_WithGramBasedProduct_ShouldCalculateCorrectly
+  parent: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests
+  langs:
+  - csharp
+  - vb
+  name: CalculateForRecipe_WithGramBasedProduct_ShouldCalculateCorrectly()
+  nameWithType: RecipeNutritionCalculatorTests.CalculateForRecipe_WithGramBasedProduct_ShouldCalculateCorrectly()
+  fullName: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithGramBasedProduct_ShouldCalculateCorrectly()
+  type: Method
+  source:
+    remote:
+      path: src/CalorieTracker.Tests/Services/RecipeNutritionCalculatorTests.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: CalculateForRecipe_WithGramBasedProduct_ShouldCalculateCorrectly
+    path: ../src/CalorieTracker.Tests/Services/RecipeNutritionCalculatorTests.cs
+    startLine: 77
+  assemblies:
+  - CalorieTracker.Tests
+  namespace: CalorieTracker.Tests.Services
+  summary: >-
+    Weryfikuje poprawność kalkulacji wartości odżywczych dla produktów mierzonych w gramach.
+
+    Test podstawowego scenariusza z najprostszą jednostką miary - bezpośrednia konwersja 1:1.
+  remarks: >-
+    <p><strong>Scenariusz testowy:</strong></p>
+
+    <table><tbody><tr><td class="term">Produkt</td><td class="description">Masło - 717 kcal/100g, 0.9g białka/100g, 81g tłuszczu/100g, 0.1g węglowodanów/100g</td></tr><tr><td class="term">Ilość użyta</td><td class="description">50g (połowa porcji referencyjnej)</td></tr><tr><td class="term">Oczekiwane kalorie</td><td class="description">358.5 kcal (50g × 717 kcal/100g = 358.5)</td></tr></tbody></table>
+
+    <p><strong>Weryfikowane aspekty kalkulacyjne:</strong></p>
+
+    <ul><li>Proporcjonalne przeliczanie wszystkich makroskładników</li><li>Zachowanie precyzji obliczeń (dokładność do miejsc po przecinku)</li><li>Poprawność wzoru: (ilość_składnika / 100g) × wartość_na_100g</li></ul>
+
+    <p><strong>Reprezentatywność:</strong> Test stanowi wzorzec dla wszystkich produktów gramowych,
+
+    które stanowią większość składników stałych w przepisach kulinarnych.</p>
+  example: []
+  syntax:
+    content: >-
+      [Fact]
+
+      public void CalculateForRecipe_WithGramBasedProduct_ShouldCalculateCorrectly()
+    content.vb: >-
+      <Fact>
+
+      Public Sub CalculateForRecipe_WithGramBasedProduct_ShouldCalculateCorrectly()
+  overload: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithGramBasedProduct_ShouldCalculateCorrectly*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithPieceBasedProduct_ShouldCalculateCorrectly
+  commentId: M:CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithPieceBasedProduct_ShouldCalculateCorrectly
+  id: CalculateForRecipe_WithPieceBasedProduct_ShouldCalculateCorrectly
+  parent: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests
+  langs:
+  - csharp
+  - vb
+  name: CalculateForRecipe_WithPieceBasedProduct_ShouldCalculateCorrectly()
+  nameWithType: RecipeNutritionCalculatorTests.CalculateForRecipe_WithPieceBasedProduct_ShouldCalculateCorrectly()
+  fullName: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithPieceBasedProduct_ShouldCalculateCorrectly()
+  type: Method
+  source:
+    remote:
+      path: src/CalorieTracker.Tests/Services/RecipeNutritionCalculatorTests.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: CalculateForRecipe_WithPieceBasedProduct_ShouldCalculateCorrectly
+    path: ../src/CalorieTracker.Tests/Services/RecipeNutritionCalculatorTests.cs
+    startLine: 124
+  assemblies:
+  - CalorieTracker.Tests
+  namespace: CalorieTracker.Tests.Services
+  summary: >-
+    Weryfikuje poprawność kalkulacji dla produktów mierzonych w sztukach.
+
+    Test konwersji jednostek sztukowych na gramy przez ServingSize produktu.
+  remarks: >-
+    <p><strong>Scenariusz testowy:</strong></p>
+
+    <table><tbody><tr><td class="term">Produkt</td><td class="description">Jajko - 155 kcal/100g, 13g białka/100g, 11g tłuszczu/100g, 1.1g węglowodanów/100g</td></tr><tr><td class="term">Jednostka i wielkość</td><td class="description">1 sztuka = 50g (ServingSize)</td></tr><tr><td class="term">Ilość użyta</td><td class="description">2 jajka = 2 × 50g = 100g składnika</td></tr></tbody></table>
+
+    <p><strong>Logika konwersji testowana:</strong></p>
+
+    <ul><li>quantity × ServingSize = masa_w_gramach</li><li>2 sztuki × 50g/sztuka = 100g</li><li>100g = dokładnie porcja referencyjna → pełne wartości odżywcze</li></ul>
+
+    <p><strong>Przypadki użycia:</strong> Jajka, bułki, owoce, warzywa - produkty naturalnie liczone w sztukach.
+
+    Kluczowe dla intuicyjnego użytkowania aplikacji przez kucharzy.</p>
+  example: []
+  syntax:
+    content: >-
+      [Fact]
+
+      public void CalculateForRecipe_WithPieceBasedProduct_ShouldCalculateCorrectly()
+    content.vb: >-
+      <Fact>
+
+      Public Sub CalculateForRecipe_WithPieceBasedProduct_ShouldCalculateCorrectly()
+  overload: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithPieceBasedProduct_ShouldCalculateCorrectly*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithMilliliterBasedProduct_ShouldCalculateCorrectly
+  commentId: M:CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithMilliliterBasedProduct_ShouldCalculateCorrectly
+  id: CalculateForRecipe_WithMilliliterBasedProduct_ShouldCalculateCorrectly
+  parent: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests
+  langs:
+  - csharp
+  - vb
+  name: CalculateForRecipe_WithMilliliterBasedProduct_ShouldCalculateCorrectly()
+  nameWithType: RecipeNutritionCalculatorTests.CalculateForRecipe_WithMilliliterBasedProduct_ShouldCalculateCorrectly()
+  fullName: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithMilliliterBasedProduct_ShouldCalculateCorrectly()
+  type: Method
+  source:
+    remote:
+      path: src/CalorieTracker.Tests/Services/RecipeNutritionCalculatorTests.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: CalculateForRecipe_WithMilliliterBasedProduct_ShouldCalculateCorrectly
+    path: ../src/CalorieTracker.Tests/Services/RecipeNutritionCalculatorTests.cs
+    startLine: 172
+  assemblies:
+  - CalorieTracker.Tests
+  namespace: CalorieTracker.Tests.Services
+  summary: >-
+    Weryfikuje poprawność kalkulacji dla produktów płynnych mierzonych w mililitrach.
+
+    Test konwersji objętości na masę z założeniem gęstości zbliżonej do wody (1ml ≈ 1g).
+  remarks: >-
+    <p><strong>Scenariusz testowy:</strong></p>
+
+    <table><tbody><tr><td class="term">Produkt</td><td class="description">Mleko - 42 kcal/100ml, 3.4g białka/100ml, 1g tłuszczu/100ml, 4.8g węglowodanów/100ml</td></tr><tr><td class="term">Objętość użyta</td><td class="description">250ml (2.5 × porcja referencyjna 100ml)</td></tr><tr><td class="term">Konwersja gęstości</td><td class="description">250ml ≈ 250g (założenie 1:1 dla większości płynów spożywczych)</td></tr></tbody></table>
+
+    <p><strong>Weryfikowane obliczenia:</strong></p>
+
+    <ul><li>Kalorie: 250ml × 42 kcal/100ml = 105 kcal</li><li>Białko: 250ml × 3.4g/100ml = 8.5g</li><li>Tłuszcz: 250ml × 1g/100ml = 2.5g</li><li>Węglowodany: 250ml × 4.8g/100ml = 12g</li></ul>
+
+    <p><strong>Przypadki użycia:</strong> Mleko, soki, oleje, octy, buliony - wszystkie płyny kuchenne.
+
+    Założenie gęstości 1:1 jest wystarczająco precyzyjne dla celów kulinarnych.</p>
+  example: []
+  syntax:
+    content: >-
+      [Fact]
+
+      public void CalculateForRecipe_WithMilliliterBasedProduct_ShouldCalculateCorrectly()
+    content.vb: >-
+      <Fact>
+
+      Public Sub CalculateForRecipe_WithMilliliterBasedProduct_ShouldCalculateCorrectly()
+  overload: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithMilliliterBasedProduct_ShouldCalculateCorrectly*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithFractionalQuantity_ShouldCalculateCorrectly
+  commentId: M:CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithFractionalQuantity_ShouldCalculateCorrectly
+  id: CalculateForRecipe_WithFractionalQuantity_ShouldCalculateCorrectly
+  parent: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests
+  langs:
+  - csharp
+  - vb
+  name: CalculateForRecipe_WithFractionalQuantity_ShouldCalculateCorrectly()
+  nameWithType: RecipeNutritionCalculatorTests.CalculateForRecipe_WithFractionalQuantity_ShouldCalculateCorrectly()
+  fullName: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithFractionalQuantity_ShouldCalculateCorrectly()
+  type: Method
+  source:
+    remote:
+      path: src/CalorieTracker.Tests/Services/RecipeNutritionCalculatorTests.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: CalculateForRecipe_WithFractionalQuantity_ShouldCalculateCorrectly
+    path: ../src/CalorieTracker.Tests/Services/RecipeNutritionCalculatorTests.cs
+    startLine: 222
+  assemblies:
+  - CalorieTracker.Tests
+  namespace: CalorieTracker.Tests.Services
+  summary: >-
+    Weryfikuje poprawność kalkulacji dla ułamkowych ilości składników.
+
+    Test precyzji obliczeń przy niestandardowych proporcjach używanych w kuchni.
+  remarks: >-
+    <p><strong>Scenariusz testowy:</strong></p>
+
+    <table><tbody><tr><td class="term">Produkt</td><td class="description">Jajko (jak w poprzednich testach)</td></tr><tr><td class="term">Ilość ułamkowa</td><td class="description">0.5 jajka (pół jajka - częsty przypadek w przepisach)</td></tr><tr><td class="term">Masa składnika</td><td class="description">0.5 × 50g = 25g = 0.25 porcji referencyjnej</td></tr></tbody></table>
+
+    <p><strong>Weryfikowane obliczenia ułamkowe:</strong></p>
+
+    <ul><li>Kalorie: 25g × 155 kcal/100g = 38.75 kcal</li><li>Białko: 25g × 13g/100g = 3.25g</li><li>Tłuszcz: 25g × 11g/100g = 2.75g</li><li>Węglowodany: 25g × 1.1g/100g = 0.275g</li></ul>
+
+    <p><strong>Znaczenie praktyczne:</strong> Przepisy często wymagają ułamków składników
+
+    (pół jajka, ćwierć cebuli, 1.5 łyżki oleju). Test zapewnia precyzję dla takich przypadków.</p>
+
+    <p><strong>Precyzja:</strong> Różne tolerancje dla różnych składników odpowiadają rzeczywistej
+
+    dokładności pomiarów w kuchni (2-3 miejsca po przecinku).</p>
+  example: []
+  syntax:
+    content: >-
+      [Fact]
+
+      public void CalculateForRecipe_WithFractionalQuantity_ShouldCalculateCorrectly()
+    content.vb: >-
+      <Fact>
+
+      Public Sub CalculateForRecipe_WithFractionalQuantity_ShouldCalculateCorrectly()
+  overload: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithFractionalQuantity_ShouldCalculateCorrectly*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithMultipleIngredients_ShouldSumCorrectly
+  commentId: M:CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithMultipleIngredients_ShouldSumCorrectly
+  id: CalculateForRecipe_WithMultipleIngredients_ShouldSumCorrectly
+  parent: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests
+  langs:
+  - csharp
+  - vb
+  name: CalculateForRecipe_WithMultipleIngredients_ShouldSumCorrectly()
+  nameWithType: RecipeNutritionCalculatorTests.CalculateForRecipe_WithMultipleIngredients_ShouldSumCorrectly()
+  fullName: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithMultipleIngredients_ShouldSumCorrectly()
+  type: Method
+  source:
+    remote:
+      path: src/CalorieTracker.Tests/Services/RecipeNutritionCalculatorTests.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: CalculateForRecipe_WithMultipleIngredients_ShouldSumCorrectly
+    path: ../src/CalorieTracker.Tests/Services/RecipeNutritionCalculatorTests.cs
+    startLine: 275
+  assemblies:
+  - CalorieTracker.Tests
+  namespace: CalorieTracker.Tests.Services
+  summary: >-
+    Weryfikuje poprawność sumowania wartości odżywczych z wielu różnorodnych składników.
+
+    Test integracyjny sprawdzający współpracę wszystkich algorytmów konwersji i sumowania.
+  remarks: >-
+    <p><strong>Scenariusz testowy - Omlet trzuskładnikowy:</strong></p>
+
+    <table><tbody><tr><td class="term">Składnik 1</td><td class="description">2 jajka (sztuki): 2 × 50g = 100g → 155 kcal, 13g białka, 11g tłuszczu, 1.1g węglowodanów</td></tr><tr><td class="term">Składnik 2</td><td class="description">10g masła (gramy): 10g → 71.7 kcal, 0.09g białka, 8.1g tłuszczu, 0.01g węglowodanów</td></tr><tr><td class="term">Składnik 3</td><td class="description">50ml mleka (mililitry): 50ml → 21 kcal, 1.7g białka, 0.5g tłuszczu, 2.4g węglowodanów</td></tr></tbody></table>
+
+    <p><strong>Weryfikowane sumy składników:</strong></p>
+
+    <ul><li>Kalorie całkowite: 155 + 71.7 + 21 = 247.7 kcal</li><li>Białko całkowite: 13 + 0.09 + 1.7 = 14.79g</li><li>Tłuszcze całkowite: 11 + 8.1 + 0.5 = 19.6g</li><li>Węglowodany całkowite: 1.1 + 0.01 + 2.4 = 3.51g</li></ul>
+
+    <p><strong>Testowane aspekty integracyjne:</strong></p>
+
+    <ul><li>Równoczesna konwersja trzech różnych jednostek miary</li><li>Prawidłowe sumowanie wszystkich makroskładników</li><li>Zachowanie precyzji przy akumulacji błędów zaokrągleń</li><li>Reprezentatywność rzeczywistych przepisów kulinarnych</li></ul>
+  example: []
+  syntax:
+    content: >-
+      [Fact]
+
+      public void CalculateForRecipe_WithMultipleIngredients_ShouldSumCorrectly()
+    content.vb: >-
+      <Fact>
+
+      Public Sub CalculateForRecipe_WithMultipleIngredients_ShouldSumCorrectly()
+  overload: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithMultipleIngredients_ShouldSumCorrectly*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithOptionalNutrients_ShouldHandleNullValues
+  commentId: M:CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithOptionalNutrients_ShouldHandleNullValues
+  id: CalculateForRecipe_WithOptionalNutrients_ShouldHandleNullValues
+  parent: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests
+  langs:
+  - csharp
+  - vb
+  name: CalculateForRecipe_WithOptionalNutrients_ShouldHandleNullValues()
+  nameWithType: RecipeNutritionCalculatorTests.CalculateForRecipe_WithOptionalNutrients_ShouldHandleNullValues()
+  fullName: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithOptionalNutrients_ShouldHandleNullValues()
+  type: Method
+  source:
+    remote:
+      path: src/CalorieTracker.Tests/Services/RecipeNutritionCalculatorTests.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: CalculateForRecipe_WithOptionalNutrients_ShouldHandleNullValues
+    path: ../src/CalorieTracker.Tests/Services/RecipeNutritionCalculatorTests.cs
+    startLine: 337
+  assemblies:
+  - CalorieTracker.Tests
+  namespace: CalorieTracker.Tests.Services
+  summary: >-
+    Weryfikuje prawidłową obsługę opcjonalnych składników odżywczych z wartościami null.
+
+    Test sprawdzający logikę propagacji wartości null w sumowaniu składników.
+  remarks: >-
+    <p><strong>Scenariusz testowy - Produkt z częściowymi danymi:</strong></p>
+
+    <table><tbody><tr><td class="term">Składniki podstawowe</td><td class="description">Kalorie: 100/100g, Białko: 10g/100g, Tłuszcz: 5g/100g, Węglowodany: 15g/100g</td></tr><tr><td class="term">Składniki opcjonalne</td><td class="description">Błonnik: 2g/100g, Cukry: null, Sód: 500mg/100g</td></tr><tr><td class="term">Ilość użyta</td><td class="description">50g (połowa porcji referencyjnej)</td></tr></tbody></table>
+
+    <p><strong>Weryfikowana logika null-safety:</strong></p>
+
+    <ul><li>Wartości non-null: obliczane proporcjonalnie (błonnik: 50g × 2g/100g = 1g)</li><li>Wartości null: pozostają null (cukry: null → null)</li><li>Brak propagacji null na inne składniki (sód: 50g × 500mg/100g = 250mg)</li></ul>
+
+    <p><strong>Przypadki użycia:</strong> Produkty z niepełnymi etykietami, składniki domowe,
+
+    produkty regionalne bez pełnej analizy laboratoryjnej. System musi pozostać funkcjonalny
+
+    przy częściowych danych odżywczych.</p>
+
+    <p><strong>Logika biznesowa:</strong> Null oznacza "nieznane", nie "zero". 
+
+    Umożliwia stopniowe uzupełnianie bazy danych produktów.</p>
+  example: []
+  syntax:
+    content: >-
+      [Fact]
+
+      public void CalculateForRecipe_WithOptionalNutrients_ShouldHandleNullValues()
+    content.vb: >-
+      <Fact>
+
+      Public Sub CalculateForRecipe_WithOptionalNutrients_ShouldHandleNullValues()
+  overload: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithOptionalNutrients_ShouldHandleNullValues*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithEmptyIngredients_ShouldReturnZeroValues
+  commentId: M:CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithEmptyIngredients_ShouldReturnZeroValues
+  id: CalculateForRecipe_WithEmptyIngredients_ShouldReturnZeroValues
+  parent: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests
+  langs:
+  - csharp
+  - vb
+  name: CalculateForRecipe_WithEmptyIngredients_ShouldReturnZeroValues()
+  nameWithType: RecipeNutritionCalculatorTests.CalculateForRecipe_WithEmptyIngredients_ShouldReturnZeroValues()
+  fullName: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithEmptyIngredients_ShouldReturnZeroValues()
+  type: Method
+  source:
+    remote:
+      path: src/CalorieTracker.Tests/Services/RecipeNutritionCalculatorTests.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: CalculateForRecipe_WithEmptyIngredients_ShouldReturnZeroValues
+    path: ../src/CalorieTracker.Tests/Services/RecipeNutritionCalculatorTests.cs
+    startLine: 398
+  assemblies:
+  - CalorieTracker.Tests
+  namespace: CalorieTracker.Tests.Services
+  summary: >-
+    Weryfikuje obsługę przepisu bez składników (edge case).
+
+    Test sprawdzający inicjalizację wartości domyślnych i stabilność algorytmu.
+  remarks: >-
+    <p><strong>Scenariusz testowy:</strong></p>
+
+    <ul><li>Przepis utworzony, ale bez dodanych składników</li><li>Lista składników pusta (Ingredients.Count = 0)</li><li>Oczekiwane zachowanie: zwrot zerowych wartości, nie błąd</li></ul>
+
+    <p><strong>Weryfikowane aspekty stabilności:</strong></p>
+
+    <ul><li>Brak rzucania wyjątków przy pustej kolekcji</li><li>Poprawna inicjalizacja wszystkich składników odżywczych na zero</li><li>Wartości opcjonalne ustawione na null (nie zero)</li><li>Gotowość do dodawania składników w przyszłości</li></ul>
+
+    <p><strong>Przypadki użycia w UI:</strong></p>
+
+    <ul><li>Nowy przepis w trakcie tworzenia (draft state)</li><li>Przepis po usunięciu wszystkich składników</li><li>Szablon przepisu do wypełnienia</li><li>Błędne stany aplikacji (network issues, data corruption)</li></ul>
+  example: []
+  syntax:
+    content: >-
+      [Fact]
+
+      public void CalculateForRecipe_WithEmptyIngredients_ShouldReturnZeroValues()
+    content.vb: >-
+      <Fact>
+
+      Public Sub CalculateForRecipe_WithEmptyIngredients_ShouldReturnZeroValues()
+  overload: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithEmptyIngredients_ShouldReturnZeroValues*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.ConvertToGrams_ShouldCalculateCorrectWeight(CalorieTracker.Domain.Enums.ProductUnit,System.Single,System.Single)
+  commentId: M:CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.ConvertToGrams_ShouldCalculateCorrectWeight(CalorieTracker.Domain.Enums.ProductUnit,System.Single,System.Single)
+  id: ConvertToGrams_ShouldCalculateCorrectWeight(CalorieTracker.Domain.Enums.ProductUnit,System.Single,System.Single)
+  parent: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests
+  langs:
+  - csharp
+  - vb
+  name: ConvertToGrams_ShouldCalculateCorrectWeight(ProductUnit, float, float)
+  nameWithType: RecipeNutritionCalculatorTests.ConvertToGrams_ShouldCalculateCorrectWeight(ProductUnit, float, float)
+  fullName: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.ConvertToGrams_ShouldCalculateCorrectWeight(CalorieTracker.Domain.Enums.ProductUnit, float, float)
+  type: Method
+  source:
+    remote:
+      path: src/CalorieTracker.Tests/Services/RecipeNutritionCalculatorTests.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: ConvertToGrams_ShouldCalculateCorrectWeight
+    path: ../src/CalorieTracker.Tests/Services/RecipeNutritionCalculatorTests.cs
+    startLine: 451
+  assemblies:
+  - CalorieTracker.Tests
+  namespace: CalorieTracker.Tests.Services
+  summary: >-
+    Weryfikuje poprawność konwersji różnych jednostek miary na gramy.
+
+    Test parametryzowany sprawdzający wszystkie obsługiwane jednostki produktów oraz logikę konwersji.
+  remarks: >-
+    <p><strong>Testowane algorytmy konwersji:</strong></p>
+
+    <table><tbody><tr><td class="term">Gram → Gram</td><td class="description">100g = 100g (konwersja 1:1, brak transformacji)</td></tr><tr><td class="term">Milliliter → Gram</td><td class="description">200ml = 200g (założenie gęstości ρ ≈ 1g/ml)</td></tr><tr><td class="term">Piece → Gram</td><td class="description">3 sztuki × 50g/sztuka = 150g (quantity × ServingSize)</td></tr></tbody></table>
+
+    <p><strong>Logika biznesowa konwersji:</strong></p>
+
+    <ul><li>Wszystkie kalkulacje wewnętrznie operują na gramach dla spójności</li><li>ServingSize definiuje masę jednej sztuki dla produktów liczonych</li><li>Gęstość 1:1 jest przybliżeniem wystarczającym dla większości płynów kuchennych</li><li>Konwersja musi być deterministyczna i odwracalna</li></ul>
+
+    <p><strong>Walidacja przez kalorie:</strong> Test sprawdza konwersję pośrednio przez kalkulację kalorii,
+
+    która jest proporcjonalna do masy (expectedGrams × 100 kcal/100g = expectedGrams kcal).</p>
+  example: []
+  syntax:
+    content: >-
+      [Theory]
+
+      [InlineData(new object[] { ProductUnit.Gram, 100, 100 })]
+
+      [InlineData(new object[] { ProductUnit.Milliliter, 200, 200 })]
+
+      [InlineData(new object[] { ProductUnit.Piece, 3, 150 })]
+
+      public void ConvertToGrams_ShouldCalculateCorrectWeight(ProductUnit unit, float quantity, float expectedGrams)
+    parameters:
+    - id: unit
+      type: CalorieTracker.Domain.Enums.ProductUnit
+      description: Jednostka miary produktu testowego.
+    - id: quantity
+      type: System.Single
+      description: Ilość produktu w jego naturalnej jednostce.
+    - id: expectedGrams
+      type: System.Single
+      description: Oczekiwana masa w gramach po konwersji.
+    content.vb: >-
+      <Theory>
+
+      <InlineData(New Object() { ProductUnit.Gram, 100, 100 })>
+
+      <InlineData(New Object() { ProductUnit.Milliliter, 200, 200 })>
+
+      <InlineData(New Object() { ProductUnit.Piece, 3, 150 })>
+
+      Public Sub ConvertToGrams_ShouldCalculateCorrectWeight(unit As ProductUnit, quantity As Single, expectedGrams As Single)
+  overload: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.ConvertToGrams_ShouldCalculateCorrectWeight*
+  attributes:
+  - type: Xunit.TheoryAttribute
+    ctor: Xunit.TheoryAttribute.#ctor
+    arguments: []
+  nameWithType.vb: RecipeNutritionCalculatorTests.ConvertToGrams_ShouldCalculateCorrectWeight(ProductUnit, Single, Single)
+  fullName.vb: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.ConvertToGrams_ShouldCalculateCorrectWeight(CalorieTracker.Domain.Enums.ProductUnit, Single, Single)
+  name.vb: ConvertToGrams_ShouldCalculateCorrectWeight(ProductUnit, Single, Single)
+references:
+- uid: CalorieTracker.Domain.Services.RecipeNutritionCalculator
+  commentId: T:CalorieTracker.Domain.Services.RecipeNutritionCalculator
+  parent: CalorieTracker.Domain.Services
+  href: CalorieTracker.Domain.Services.RecipeNutritionCalculator.html
+  name: RecipeNutritionCalculator
+  nameWithType: RecipeNutritionCalculator
+  fullName: CalorieTracker.Domain.Services.RecipeNutritionCalculator
+- uid: CalorieTracker.Tests.Services
+  commentId: N:CalorieTracker.Tests.Services
+  href: CalorieTracker.html
+  name: CalorieTracker.Tests.Services
+  nameWithType: CalorieTracker.Tests.Services
+  fullName: CalorieTracker.Tests.Services
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Tests
+    name: Tests
+    href: CalorieTracker.Tests.html
+  - name: .
+  - uid: CalorieTracker.Tests.Services
+    name: Services
+    href: CalorieTracker.Tests.Services.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Tests
+    name: Tests
+    href: CalorieTracker.Tests.html
+  - name: .
+  - uid: CalorieTracker.Tests.Services
+    name: Services
+    href: CalorieTracker.Tests.Services.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: CalorieTracker.Domain.Services
+  commentId: N:CalorieTracker.Domain.Services
+  href: CalorieTracker.html
+  name: CalorieTracker.Domain.Services
+  nameWithType: CalorieTracker.Domain.Services
+  fullName: CalorieTracker.Domain.Services
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Domain
+    name: Domain
+    href: CalorieTracker.Domain.html
+  - name: .
+  - uid: CalorieTracker.Domain.Services
+    name: Services
+    href: CalorieTracker.Domain.Services.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Domain
+    name: Domain
+    href: CalorieTracker.Domain.html
+  - name: .
+  - uid: CalorieTracker.Domain.Services
+    name: Services
+    href: CalorieTracker.Domain.Services.html
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.#ctor*
+  commentId: Overload:CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.#ctor
+  href: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.html#CalorieTracker_Tests_Services_RecipeNutritionCalculatorTests__ctor
+  name: RecipeNutritionCalculatorTests
+  nameWithType: RecipeNutritionCalculatorTests.RecipeNutritionCalculatorTests
+  fullName: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.RecipeNutritionCalculatorTests
+  nameWithType.vb: RecipeNutritionCalculatorTests.New
+  fullName.vb: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.New
+  name.vb: New
+- uid: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithGramBasedProduct_ShouldCalculateCorrectly*
+  commentId: Overload:CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithGramBasedProduct_ShouldCalculateCorrectly
+  href: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.html#CalorieTracker_Tests_Services_RecipeNutritionCalculatorTests_CalculateForRecipe_WithGramBasedProduct_ShouldCalculateCorrectly
+  name: CalculateForRecipe_WithGramBasedProduct_ShouldCalculateCorrectly
+  nameWithType: RecipeNutritionCalculatorTests.CalculateForRecipe_WithGramBasedProduct_ShouldCalculateCorrectly
+  fullName: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithGramBasedProduct_ShouldCalculateCorrectly
+- uid: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithPieceBasedProduct_ShouldCalculateCorrectly*
+  commentId: Overload:CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithPieceBasedProduct_ShouldCalculateCorrectly
+  href: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.html#CalorieTracker_Tests_Services_RecipeNutritionCalculatorTests_CalculateForRecipe_WithPieceBasedProduct_ShouldCalculateCorrectly
+  name: CalculateForRecipe_WithPieceBasedProduct_ShouldCalculateCorrectly
+  nameWithType: RecipeNutritionCalculatorTests.CalculateForRecipe_WithPieceBasedProduct_ShouldCalculateCorrectly
+  fullName: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithPieceBasedProduct_ShouldCalculateCorrectly
+- uid: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithMilliliterBasedProduct_ShouldCalculateCorrectly*
+  commentId: Overload:CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithMilliliterBasedProduct_ShouldCalculateCorrectly
+  href: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.html#CalorieTracker_Tests_Services_RecipeNutritionCalculatorTests_CalculateForRecipe_WithMilliliterBasedProduct_ShouldCalculateCorrectly
+  name: CalculateForRecipe_WithMilliliterBasedProduct_ShouldCalculateCorrectly
+  nameWithType: RecipeNutritionCalculatorTests.CalculateForRecipe_WithMilliliterBasedProduct_ShouldCalculateCorrectly
+  fullName: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithMilliliterBasedProduct_ShouldCalculateCorrectly
+- uid: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithFractionalQuantity_ShouldCalculateCorrectly*
+  commentId: Overload:CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithFractionalQuantity_ShouldCalculateCorrectly
+  href: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.html#CalorieTracker_Tests_Services_RecipeNutritionCalculatorTests_CalculateForRecipe_WithFractionalQuantity_ShouldCalculateCorrectly
+  name: CalculateForRecipe_WithFractionalQuantity_ShouldCalculateCorrectly
+  nameWithType: RecipeNutritionCalculatorTests.CalculateForRecipe_WithFractionalQuantity_ShouldCalculateCorrectly
+  fullName: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithFractionalQuantity_ShouldCalculateCorrectly
+- uid: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithMultipleIngredients_ShouldSumCorrectly*
+  commentId: Overload:CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithMultipleIngredients_ShouldSumCorrectly
+  href: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.html#CalorieTracker_Tests_Services_RecipeNutritionCalculatorTests_CalculateForRecipe_WithMultipleIngredients_ShouldSumCorrectly
+  name: CalculateForRecipe_WithMultipleIngredients_ShouldSumCorrectly
+  nameWithType: RecipeNutritionCalculatorTests.CalculateForRecipe_WithMultipleIngredients_ShouldSumCorrectly
+  fullName: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithMultipleIngredients_ShouldSumCorrectly
+- uid: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithOptionalNutrients_ShouldHandleNullValues*
+  commentId: Overload:CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithOptionalNutrients_ShouldHandleNullValues
+  href: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.html#CalorieTracker_Tests_Services_RecipeNutritionCalculatorTests_CalculateForRecipe_WithOptionalNutrients_ShouldHandleNullValues
+  name: CalculateForRecipe_WithOptionalNutrients_ShouldHandleNullValues
+  nameWithType: RecipeNutritionCalculatorTests.CalculateForRecipe_WithOptionalNutrients_ShouldHandleNullValues
+  fullName: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithOptionalNutrients_ShouldHandleNullValues
+- uid: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithEmptyIngredients_ShouldReturnZeroValues*
+  commentId: Overload:CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithEmptyIngredients_ShouldReturnZeroValues
+  href: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.html#CalorieTracker_Tests_Services_RecipeNutritionCalculatorTests_CalculateForRecipe_WithEmptyIngredients_ShouldReturnZeroValues
+  name: CalculateForRecipe_WithEmptyIngredients_ShouldReturnZeroValues
+  nameWithType: RecipeNutritionCalculatorTests.CalculateForRecipe_WithEmptyIngredients_ShouldReturnZeroValues
+  fullName: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.CalculateForRecipe_WithEmptyIngredients_ShouldReturnZeroValues
+- uid: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.ConvertToGrams_ShouldCalculateCorrectWeight*
+  commentId: Overload:CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.ConvertToGrams_ShouldCalculateCorrectWeight
+  href: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.html#CalorieTracker_Tests_Services_RecipeNutritionCalculatorTests_ConvertToGrams_ShouldCalculateCorrectWeight_CalorieTracker_Domain_Enums_ProductUnit_System_Single_System_Single_
+  name: ConvertToGrams_ShouldCalculateCorrectWeight
+  nameWithType: RecipeNutritionCalculatorTests.ConvertToGrams_ShouldCalculateCorrectWeight
+  fullName: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.ConvertToGrams_ShouldCalculateCorrectWeight
+- uid: CalorieTracker.Domain.Enums.ProductUnit
+  commentId: T:CalorieTracker.Domain.Enums.ProductUnit
+  parent: CalorieTracker.Domain.Enums
+  href: CalorieTracker.Domain.Enums.ProductUnit.html
+  name: ProductUnit
+  nameWithType: ProductUnit
+  fullName: CalorieTracker.Domain.Enums.ProductUnit
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: CalorieTracker.Domain.Enums
+  commentId: N:CalorieTracker.Domain.Enums
+  href: CalorieTracker.html
+  name: CalorieTracker.Domain.Enums
+  nameWithType: CalorieTracker.Domain.Enums
+  fullName: CalorieTracker.Domain.Enums
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Domain
+    name: Domain
+    href: CalorieTracker.Domain.html
+  - name: .
+  - uid: CalorieTracker.Domain.Enums
+    name: Enums
+    href: CalorieTracker.Domain.Enums.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Domain
+    name: Domain
+    href: CalorieTracker.Domain.html
+  - name: .
+  - uid: CalorieTracker.Domain.Enums
+    name: Enums
+    href: CalorieTracker.Domain.Enums.html

@@ -1,0 +1,479 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Application.Auth.Commands.LogoutCommand
+  commentId: T:CalorieTracker.Application.Auth.Commands.LogoutCommand
+  id: LogoutCommand
+  parent: CalorieTracker.Application.Auth.Commands
+  children:
+  - CalorieTracker.Application.Auth.Commands.LogoutCommand.#ctor(System.String)
+  - CalorieTracker.Application.Auth.Commands.LogoutCommand.RefreshToken
+  langs:
+  - csharp
+  - vb
+  name: LogoutCommand
+  nameWithType: LogoutCommand
+  fullName: CalorieTracker.Application.Auth.Commands.LogoutCommand
+  type: Class
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Auth/Commands/LogoutCommand.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: LogoutCommand
+    path: ../src/CalorieTracker.Application/Auth/Commands/LogoutCommand.cs
+    startLine: 10
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Auth.Commands
+  summary: >-
+    Rekord reprezentujący komendę wylogowania użytkownika.
+
+    Zawiera token odświeżający, który powinien zostać unieważniony w systemie.
+  example: []
+  syntax:
+    content: 'public record LogoutCommand : IEquatable<LogoutCommand>'
+    content.vb: Public Class LogoutCommand Implements IEquatable(Of LogoutCommand)
+  inheritance:
+  - System.Object
+  implements:
+  - System.IEquatable{CalorieTracker.Application.Auth.Commands.LogoutCommand}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: CalorieTracker.Application.Auth.Commands.LogoutCommand.#ctor(System.String)
+  commentId: M:CalorieTracker.Application.Auth.Commands.LogoutCommand.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: CalorieTracker.Application.Auth.Commands.LogoutCommand
+  langs:
+  - csharp
+  - vb
+  name: LogoutCommand(string)
+  nameWithType: LogoutCommand.LogoutCommand(string)
+  fullName: CalorieTracker.Application.Auth.Commands.LogoutCommand.LogoutCommand(string)
+  type: Constructor
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Auth/Commands/LogoutCommand.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: .ctor
+    path: ../src/CalorieTracker.Application/Auth/Commands/LogoutCommand.cs
+    startLine: 10
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Auth.Commands
+  summary: >-
+    Rekord reprezentujący komendę wylogowania użytkownika.
+
+    Zawiera token odświeżający, który powinien zostać unieważniony w systemie.
+  example: []
+  syntax:
+    content: public LogoutCommand(string RefreshToken)
+    parameters:
+    - id: RefreshToken
+      type: System.String
+      description: Token odświeżający, który ma zostać unieważniony podczas wylogowania.
+    content.vb: Public Sub New(RefreshToken As String)
+  overload: CalorieTracker.Application.Auth.Commands.LogoutCommand.#ctor*
+  nameWithType.vb: LogoutCommand.New(String)
+  fullName.vb: CalorieTracker.Application.Auth.Commands.LogoutCommand.New(String)
+  name.vb: New(String)
+- uid: CalorieTracker.Application.Auth.Commands.LogoutCommand.RefreshToken
+  commentId: P:CalorieTracker.Application.Auth.Commands.LogoutCommand.RefreshToken
+  id: RefreshToken
+  parent: CalorieTracker.Application.Auth.Commands.LogoutCommand
+  langs:
+  - csharp
+  - vb
+  name: RefreshToken
+  nameWithType: LogoutCommand.RefreshToken
+  fullName: CalorieTracker.Application.Auth.Commands.LogoutCommand.RefreshToken
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Application/Auth/Commands/LogoutCommand.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: RefreshToken
+    path: ../src/CalorieTracker.Application/Auth/Commands/LogoutCommand.cs
+    startLine: 10
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.Auth.Commands
+  summary: Token odświeżający, który ma zostać unieważniony podczas wylogowania.
+  example: []
+  syntax:
+    content: public string RefreshToken { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property RefreshToken As String
+  overload: CalorieTracker.Application.Auth.Commands.LogoutCommand.RefreshToken*
+references:
+- uid: CalorieTracker.Application.Auth.Commands
+  commentId: N:CalorieTracker.Application.Auth.Commands
+  href: CalorieTracker.html
+  name: CalorieTracker.Application.Auth.Commands
+  nameWithType: CalorieTracker.Application.Auth.Commands
+  fullName: CalorieTracker.Application.Auth.Commands
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth
+    name: Auth
+    href: CalorieTracker.Application.Auth.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth.Commands
+    name: Commands
+    href: CalorieTracker.Application.Auth.Commands.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth
+    name: Auth
+    href: CalorieTracker.Application.Auth.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth.Commands
+    name: Commands
+    href: CalorieTracker.Application.Auth.Commands.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IEquatable{CalorieTracker.Application.Auth.Commands.LogoutCommand}
+  commentId: T:System.IEquatable{CalorieTracker.Application.Auth.Commands.LogoutCommand}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<LogoutCommand>
+  nameWithType: IEquatable<LogoutCommand>
+  fullName: System.IEquatable<CalorieTracker.Application.Auth.Commands.LogoutCommand>
+  nameWithType.vb: IEquatable(Of LogoutCommand)
+  fullName.vb: System.IEquatable(Of CalorieTracker.Application.Auth.Commands.LogoutCommand)
+  name.vb: IEquatable(Of LogoutCommand)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: CalorieTracker.Application.Auth.Commands.LogoutCommand
+    name: LogoutCommand
+    href: CalorieTracker.Application.Auth.Commands.LogoutCommand.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CalorieTracker.Application.Auth.Commands.LogoutCommand
+    name: LogoutCommand
+    href: CalorieTracker.Application.Auth.Commands.LogoutCommand.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: CalorieTracker.Application.Auth.Commands.LogoutCommand.#ctor*
+  commentId: Overload:CalorieTracker.Application.Auth.Commands.LogoutCommand.#ctor
+  href: CalorieTracker.Application.Auth.Commands.LogoutCommand.html#CalorieTracker_Application_Auth_Commands_LogoutCommand__ctor_System_String_
+  name: LogoutCommand
+  nameWithType: LogoutCommand.LogoutCommand
+  fullName: CalorieTracker.Application.Auth.Commands.LogoutCommand.LogoutCommand
+  nameWithType.vb: LogoutCommand.New
+  fullName.vb: CalorieTracker.Application.Auth.Commands.LogoutCommand.New
+  name.vb: New
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: CalorieTracker.Application.Auth.Commands.LogoutCommand.RefreshToken*
+  commentId: Overload:CalorieTracker.Application.Auth.Commands.LogoutCommand.RefreshToken
+  href: CalorieTracker.Application.Auth.Commands.LogoutCommand.html#CalorieTracker_Application_Auth_Commands_LogoutCommand_RefreshToken
+  name: RefreshToken
+  nameWithType: LogoutCommand.RefreshToken
+  fullName: CalorieTracker.Application.Auth.Commands.LogoutCommand.RefreshToken

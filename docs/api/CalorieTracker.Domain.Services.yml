@@ -1,0 +1,62 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Domain.Services
+  commentId: N:CalorieTracker.Domain.Services
+  id: CalorieTracker.Domain.Services
+  children:
+  - CalorieTracker.Domain.Services.RecipeNutritionCalculator
+  - CalorieTracker.Domain.Services.WeightAnalysisService
+  langs:
+  - csharp
+  - vb
+  name: CalorieTracker.Domain.Services
+  nameWithType: CalorieTracker.Domain.Services
+  fullName: CalorieTracker.Domain.Services
+  type: Namespace
+  assemblies:
+  - CalorieTracker.Domain
+references:
+- uid: CalorieTracker.Domain.Services.RecipeNutritionCalculator
+  commentId: T:CalorieTracker.Domain.Services.RecipeNutritionCalculator
+  parent: CalorieTracker.Domain.Services
+  href: CalorieTracker.Domain.Services.RecipeNutritionCalculator.html
+  name: RecipeNutritionCalculator
+  nameWithType: RecipeNutritionCalculator
+  fullName: CalorieTracker.Domain.Services.RecipeNutritionCalculator
+- uid: CalorieTracker.Domain.Services.WeightAnalysisService
+  commentId: T:CalorieTracker.Domain.Services.WeightAnalysisService
+  parent: CalorieTracker.Domain.Services
+  href: CalorieTracker.Domain.Services.WeightAnalysisService.html
+  name: WeightAnalysisService
+  nameWithType: WeightAnalysisService
+  fullName: CalorieTracker.Domain.Services.WeightAnalysisService
+- uid: CalorieTracker.Domain.Services
+  commentId: N:CalorieTracker.Domain.Services
+  href: CalorieTracker.html
+  name: CalorieTracker.Domain.Services
+  nameWithType: CalorieTracker.Domain.Services
+  fullName: CalorieTracker.Domain.Services
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Domain
+    name: Domain
+    href: CalorieTracker.Domain.html
+  - name: .
+  - uid: CalorieTracker.Domain.Services
+    name: Services
+    href: CalorieTracker.Domain.Services.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Domain
+    name: Domain
+    href: CalorieTracker.Domain.html
+  - name: .
+  - uid: CalorieTracker.Domain.Services
+    name: Services
+    href: CalorieTracker.Domain.Services.html

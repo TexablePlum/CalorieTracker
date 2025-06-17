@@ -1,0 +1,637 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto
+  commentId: T:CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto
+  id: WeightMeasurementDto
+  parent: CalorieTracker.Api.Models.WeightMeasurements
+  children:
+  - CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.BMI
+  - CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.CreatedAt
+  - CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.Id
+  - CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.MeasurementDate
+  - CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.ProgressToGoal
+  - CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.WeightChangeKg
+  - CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.WeightKg
+  langs:
+  - csharp
+  - vb
+  name: WeightMeasurementDto
+  nameWithType: WeightMeasurementDto
+  fullName: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto
+  type: Class
+  source:
+    remote:
+      path: src/CalorieTracker.Api/Models/WeightMeasurements/WeightMeasurementDto.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: WeightMeasurementDto
+    path: ../src/CalorieTracker.Api/Models/WeightMeasurements/WeightMeasurementDto.cs
+    startLine: 9
+  assemblies:
+  - CalorieTracker.Api
+  namespace: CalorieTracker.Api.Models.WeightMeasurements
+  summary: >-
+    Model transferu danych (DTO) zawierający pełne informacje o pomiarze masy ciała.
+
+    Używany jako odpowiedź API, zawiera zarówno podstawowe dane pomiaru,
+
+    jak i dodatkowe obliczone metryki (BMI, progres, etc.).
+  example: []
+  syntax:
+    content: public class WeightMeasurementDto
+    content.vb: Public Class WeightMeasurementDto
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.Id
+  commentId: P:CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.Id
+  id: Id
+  parent: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: WeightMeasurementDto.Id
+  fullName: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.Id
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Api/Models/WeightMeasurements/WeightMeasurementDto.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Id
+    path: ../src/CalorieTracker.Api/Models/WeightMeasurements/WeightMeasurementDto.cs
+    startLine: 14
+  assemblies:
+  - CalorieTracker.Api
+  namespace: CalorieTracker.Api.Models.WeightMeasurements
+  summary: Unikalny identyfikator pomiaru w systemie.
+  example: []
+  syntax:
+    content: public Guid Id { get; set; }
+    parameters: []
+    return:
+      type: System.Guid
+    content.vb: Public Property Id As Guid
+  overload: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.Id*
+- uid: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.MeasurementDate
+  commentId: P:CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.MeasurementDate
+  id: MeasurementDate
+  parent: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto
+  langs:
+  - csharp
+  - vb
+  name: MeasurementDate
+  nameWithType: WeightMeasurementDto.MeasurementDate
+  fullName: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.MeasurementDate
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Api/Models/WeightMeasurements/WeightMeasurementDto.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: MeasurementDate
+    path: ../src/CalorieTracker.Api/Models/WeightMeasurements/WeightMeasurementDto.cs
+    startLine: 20
+  assemblies:
+  - CalorieTracker.Api
+  namespace: CalorieTracker.Api.Models.WeightMeasurements
+  summary: >-
+    Data wykonania pomiaru wagi.
+
+    Format daty zawiera tylko informację o dniu, miesiącu i roku (bez czasu).
+  example: []
+  syntax:
+    content: public DateOnly MeasurementDate { get; set; }
+    parameters: []
+    return:
+      type: System.DateOnly
+    content.vb: Public Property MeasurementDate As DateOnly
+  overload: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.MeasurementDate*
+- uid: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.WeightKg
+  commentId: P:CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.WeightKg
+  id: WeightKg
+  parent: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto
+  langs:
+  - csharp
+  - vb
+  name: WeightKg
+  nameWithType: WeightMeasurementDto.WeightKg
+  fullName: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.WeightKg
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Api/Models/WeightMeasurements/WeightMeasurementDto.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: WeightKg
+    path: ../src/CalorieTracker.Api/Models/WeightMeasurements/WeightMeasurementDto.cs
+    startLine: 25
+  assemblies:
+  - CalorieTracker.Api
+  namespace: CalorieTracker.Api.Models.WeightMeasurements
+  summary: Zmierzona waga użytkownika w kilogramach.
+  example: []
+  syntax:
+    content: public float WeightKg { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property WeightKg As Single
+  overload: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.WeightKg*
+- uid: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.BMI
+  commentId: P:CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.BMI
+  id: BMI
+  parent: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto
+  langs:
+  - csharp
+  - vb
+  name: BMI
+  nameWithType: WeightMeasurementDto.BMI
+  fullName: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.BMI
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Api/Models/WeightMeasurements/WeightMeasurementDto.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: BMI
+    path: ../src/CalorieTracker.Api/Models/WeightMeasurements/WeightMeasurementDto.cs
+    startLine: 30
+  assemblies:
+  - CalorieTracker.Api
+  namespace: CalorieTracker.Api.Models.WeightMeasurements
+  summary: Wskaźnik masy ciała (BMI) obliczony na podstawie wagi i wzrostu użytkownika.
+  example: []
+  syntax:
+    content: public float BMI { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property BMI As Single
+  overload: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.BMI*
+- uid: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.WeightChangeKg
+  commentId: P:CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.WeightChangeKg
+  id: WeightChangeKg
+  parent: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto
+  langs:
+  - csharp
+  - vb
+  name: WeightChangeKg
+  nameWithType: WeightMeasurementDto.WeightChangeKg
+  fullName: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.WeightChangeKg
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Api/Models/WeightMeasurements/WeightMeasurementDto.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: WeightChangeKg
+    path: ../src/CalorieTracker.Api/Models/WeightMeasurements/WeightMeasurementDto.cs
+    startLine: 36
+  assemblies:
+  - CalorieTracker.Api
+  namespace: CalorieTracker.Api.Models.WeightMeasurements
+  summary: >-
+    Zmiana wagi w kilogramach w porównaniu do poprzedniego pomiaru.
+
+    Wartość dodatnia oznacza przyrost masy, ujemna - spadek.
+  example: []
+  syntax:
+    content: public float WeightChangeKg { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property WeightChangeKg As Single
+  overload: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.WeightChangeKg*
+- uid: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.ProgressToGoal
+  commentId: P:CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.ProgressToGoal
+  id: ProgressToGoal
+  parent: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto
+  langs:
+  - csharp
+  - vb
+  name: ProgressToGoal
+  nameWithType: WeightMeasurementDto.ProgressToGoal
+  fullName: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.ProgressToGoal
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Api/Models/WeightMeasurements/WeightMeasurementDto.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: ProgressToGoal
+    path: ../src/CalorieTracker.Api/Models/WeightMeasurements/WeightMeasurementDto.cs
+    startLine: 42
+  assemblies:
+  - CalorieTracker.Api
+  namespace: CalorieTracker.Api.Models.WeightMeasurements
+  summary: >-
+    Progres w osiąganiu celu wagowego wyrażony w procentach.
+
+    Wartość 100% oznacza osiągnięcie celu.
+  example: []
+  syntax:
+    content: public float ProgressToGoal { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property ProgressToGoal As Single
+  overload: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.ProgressToGoal*
+- uid: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.CreatedAt
+  commentId: P:CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.CreatedAt
+  id: CreatedAt
+  parent: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto
+  langs:
+  - csharp
+  - vb
+  name: CreatedAt
+  nameWithType: WeightMeasurementDto.CreatedAt
+  fullName: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.CreatedAt
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Api/Models/WeightMeasurements/WeightMeasurementDto.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: CreatedAt
+    path: ../src/CalorieTracker.Api/Models/WeightMeasurements/WeightMeasurementDto.cs
+    startLine: 48
+  assemblies:
+  - CalorieTracker.Api
+  namespace: CalorieTracker.Api.Models.WeightMeasurements
+  summary: >-
+    Data i czas utworzenia rekordu pomiaru w systemie.
+
+    Zawiera pełną informację temporalną (dzień, miesiąc, rok, godzina, minuta, sekunda).
+  example: []
+  syntax:
+    content: public DateTime CreatedAt { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Property CreatedAt As Date
+  overload: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.CreatedAt*
+references:
+- uid: CalorieTracker.Api.Models.WeightMeasurements
+  commentId: N:CalorieTracker.Api.Models.WeightMeasurements
+  href: CalorieTracker.html
+  name: CalorieTracker.Api.Models.WeightMeasurements
+  nameWithType: CalorieTracker.Api.Models.WeightMeasurements
+  fullName: CalorieTracker.Api.Models.WeightMeasurements
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Api
+    name: Api
+    href: CalorieTracker.Api.html
+  - name: .
+  - uid: CalorieTracker.Api.Models
+    name: Models
+    href: CalorieTracker.Api.Models.html
+  - name: .
+  - uid: CalorieTracker.Api.Models.WeightMeasurements
+    name: WeightMeasurements
+    href: CalorieTracker.Api.Models.WeightMeasurements.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Api
+    name: Api
+    href: CalorieTracker.Api.html
+  - name: .
+  - uid: CalorieTracker.Api.Models
+    name: Models
+    href: CalorieTracker.Api.Models.html
+  - name: .
+  - uid: CalorieTracker.Api.Models.WeightMeasurements
+    name: WeightMeasurements
+    href: CalorieTracker.Api.Models.WeightMeasurements.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.Id*
+  commentId: Overload:CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.Id
+  href: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.html#CalorieTracker_Api_Models_WeightMeasurements_WeightMeasurementDto_Id
+  name: Id
+  nameWithType: WeightMeasurementDto.Id
+  fullName: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.Id
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.guid
+  name: Guid
+  nameWithType: Guid
+  fullName: System.Guid
+- uid: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.MeasurementDate*
+  commentId: Overload:CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.MeasurementDate
+  href: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.html#CalorieTracker_Api_Models_WeightMeasurements_WeightMeasurementDto_MeasurementDate
+  name: MeasurementDate
+  nameWithType: WeightMeasurementDto.MeasurementDate
+  fullName: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.MeasurementDate
+- uid: System.DateOnly
+  commentId: T:System.DateOnly
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.dateonly
+  name: DateOnly
+  nameWithType: DateOnly
+  fullName: System.DateOnly
+- uid: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.WeightKg*
+  commentId: Overload:CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.WeightKg
+  href: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.html#CalorieTracker_Api_Models_WeightMeasurements_WeightMeasurementDto_WeightKg
+  name: WeightKg
+  nameWithType: WeightMeasurementDto.WeightKg
+  fullName: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.WeightKg
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.BMI*
+  commentId: Overload:CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.BMI
+  href: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.html#CalorieTracker_Api_Models_WeightMeasurements_WeightMeasurementDto_BMI
+  name: BMI
+  nameWithType: WeightMeasurementDto.BMI
+  fullName: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.BMI
+- uid: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.WeightChangeKg*
+  commentId: Overload:CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.WeightChangeKg
+  href: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.html#CalorieTracker_Api_Models_WeightMeasurements_WeightMeasurementDto_WeightChangeKg
+  name: WeightChangeKg
+  nameWithType: WeightMeasurementDto.WeightChangeKg
+  fullName: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.WeightChangeKg
+- uid: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.ProgressToGoal*
+  commentId: Overload:CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.ProgressToGoal
+  href: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.html#CalorieTracker_Api_Models_WeightMeasurements_WeightMeasurementDto_ProgressToGoal
+  name: ProgressToGoal
+  nameWithType: WeightMeasurementDto.ProgressToGoal
+  fullName: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.ProgressToGoal
+- uid: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.CreatedAt*
+  commentId: Overload:CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.CreatedAt
+  href: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.html#CalorieTracker_Api_Models_WeightMeasurements_WeightMeasurementDto_CreatedAt
+  name: CreatedAt
+  nameWithType: WeightMeasurementDto.CreatedAt
+  fullName: CalorieTracker.Api.Models.WeightMeasurements.WeightMeasurementDto.CreatedAt
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date

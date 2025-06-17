@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Infrastructure.Auth
+  commentId: N:CalorieTracker.Infrastructure.Auth
+  id: CalorieTracker.Infrastructure.Auth
+  children:
+  - CalorieTracker.Infrastructure.Auth.JwtGenerator
+  langs:
+  - csharp
+  - vb
+  name: CalorieTracker.Infrastructure.Auth
+  nameWithType: CalorieTracker.Infrastructure.Auth
+  fullName: CalorieTracker.Infrastructure.Auth
+  type: Namespace
+  assemblies:
+  - CalorieTracker.Infrastructure
+references:
+- uid: CalorieTracker.Infrastructure.Auth.JwtGenerator
+  commentId: T:CalorieTracker.Infrastructure.Auth.JwtGenerator
+  href: CalorieTracker.Infrastructure.Auth.JwtGenerator.html
+  name: JwtGenerator
+  nameWithType: JwtGenerator
+  fullName: CalorieTracker.Infrastructure.Auth.JwtGenerator

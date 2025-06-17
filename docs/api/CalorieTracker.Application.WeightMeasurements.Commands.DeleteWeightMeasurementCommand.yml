@@ -1,0 +1,524 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand
+  commentId: T:CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand
+  id: DeleteWeightMeasurementCommand
+  parent: CalorieTracker.Application.WeightMeasurements.Commands
+  children:
+  - CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand.#ctor(System.Guid,System.String)
+  - CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand.Id
+  - CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand.UserId
+  langs:
+  - csharp
+  - vb
+  name: DeleteWeightMeasurementCommand
+  nameWithType: DeleteWeightMeasurementCommand
+  fullName: CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand
+  type: Class
+  source:
+    remote:
+      path: src/CalorieTracker.Application/WeightMeasurements/Commands/DeleteWeightMeasurementCommand.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: DeleteWeightMeasurementCommand
+    path: ../src/CalorieTracker.Application/WeightMeasurements/Commands/DeleteWeightMeasurementCommand.cs
+    startLine: 18
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.WeightMeasurements.Commands
+  summary: >-
+    Klasa reprezentująca komendę usuwania pomiaru masy ciała.
+
+    Wymaga podania zarówno identyfikatora pomiaru, jak i użytkownika w celu weryfikacji uprawnień.
+  remarks: Rekord typu positional record z parametrami konstruktora.
+  example: []
+  syntax:
+    content: 'public record DeleteWeightMeasurementCommand : IEquatable<DeleteWeightMeasurementCommand>'
+    content.vb: Public Class DeleteWeightMeasurementCommand Implements IEquatable(Of DeleteWeightMeasurementCommand)
+  inheritance:
+  - System.Object
+  implements:
+  - System.IEquatable{CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand.#ctor(System.Guid,System.String)
+  commentId: M:CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand.#ctor(System.Guid,System.String)
+  id: '#ctor(System.Guid,System.String)'
+  parent: CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand
+  langs:
+  - csharp
+  - vb
+  name: DeleteWeightMeasurementCommand(Guid, string)
+  nameWithType: DeleteWeightMeasurementCommand.DeleteWeightMeasurementCommand(Guid, string)
+  fullName: CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand.DeleteWeightMeasurementCommand(System.Guid, string)
+  type: Constructor
+  source:
+    remote:
+      path: src/CalorieTracker.Application/WeightMeasurements/Commands/DeleteWeightMeasurementCommand.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: .ctor
+    path: ../src/CalorieTracker.Application/WeightMeasurements/Commands/DeleteWeightMeasurementCommand.cs
+    startLine: 18
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.WeightMeasurements.Commands
+  summary: >-
+    Klasa reprezentująca komendę usuwania pomiaru masy ciała.
+
+    Wymaga podania zarówno identyfikatora pomiaru, jak i użytkownika w celu weryfikacji uprawnień.
+  remarks: Rekord typu positional record z parametrami konstruktora.
+  example: []
+  syntax:
+    content: public DeleteWeightMeasurementCommand(Guid Id, string UserId)
+    parameters:
+    - id: Id
+      type: System.Guid
+    - id: UserId
+      type: System.String
+    content.vb: Public Sub New(Id As Guid, UserId As String)
+  overload: CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand.#ctor*
+  nameWithType.vb: DeleteWeightMeasurementCommand.New(Guid, String)
+  fullName.vb: CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand.New(System.Guid, String)
+  name.vb: New(Guid, String)
+- uid: CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand.Id
+  commentId: P:CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand.Id
+  id: Id
+  parent: CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: DeleteWeightMeasurementCommand.Id
+  fullName: CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand.Id
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Application/WeightMeasurements/Commands/DeleteWeightMeasurementCommand.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Id
+    path: ../src/CalorieTracker.Application/WeightMeasurements/Commands/DeleteWeightMeasurementCommand.cs
+    startLine: 23
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.WeightMeasurements.Commands
+  syntax:
+    content: public Guid Id { get; init; }
+    parameters: []
+    return:
+      type: System.Guid
+    content.vb: Public Property Id As Guid
+  overload: CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand.Id*
+- uid: CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand.UserId
+  commentId: P:CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand.UserId
+  id: UserId
+  parent: CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand
+  langs:
+  - csharp
+  - vb
+  name: UserId
+  nameWithType: DeleteWeightMeasurementCommand.UserId
+  fullName: CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand.UserId
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Application/WeightMeasurements/Commands/DeleteWeightMeasurementCommand.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: UserId
+    path: ../src/CalorieTracker.Application/WeightMeasurements/Commands/DeleteWeightMeasurementCommand.cs
+    startLine: 29
+  assemblies:
+  - CalorieTracker.Application
+  namespace: CalorieTracker.Application.WeightMeasurements.Commands
+  syntax:
+    content: public string UserId { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property UserId As String
+  overload: CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand.UserId*
+references:
+- uid: CalorieTracker.Application.WeightMeasurements.Commands
+  commentId: N:CalorieTracker.Application.WeightMeasurements.Commands
+  href: CalorieTracker.html
+  name: CalorieTracker.Application.WeightMeasurements.Commands
+  nameWithType: CalorieTracker.Application.WeightMeasurements.Commands
+  fullName: CalorieTracker.Application.WeightMeasurements.Commands
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.WeightMeasurements
+    name: WeightMeasurements
+    href: CalorieTracker.Application.WeightMeasurements.html
+  - name: .
+  - uid: CalorieTracker.Application.WeightMeasurements.Commands
+    name: Commands
+    href: CalorieTracker.Application.WeightMeasurements.Commands.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.WeightMeasurements
+    name: WeightMeasurements
+    href: CalorieTracker.Application.WeightMeasurements.html
+  - name: .
+  - uid: CalorieTracker.Application.WeightMeasurements.Commands
+    name: Commands
+    href: CalorieTracker.Application.WeightMeasurements.Commands.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IEquatable{CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand}
+  commentId: T:System.IEquatable{CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<DeleteWeightMeasurementCommand>
+  nameWithType: IEquatable<DeleteWeightMeasurementCommand>
+  fullName: System.IEquatable<CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand>
+  nameWithType.vb: IEquatable(Of DeleteWeightMeasurementCommand)
+  fullName.vb: System.IEquatable(Of CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand)
+  name.vb: IEquatable(Of DeleteWeightMeasurementCommand)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand
+    name: DeleteWeightMeasurementCommand
+    href: CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand
+    name: DeleteWeightMeasurementCommand
+    href: CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand.#ctor*
+  commentId: Overload:CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand.#ctor
+  href: CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand.html#CalorieTracker_Application_WeightMeasurements_Commands_DeleteWeightMeasurementCommand__ctor_System_Guid_System_String_
+  name: DeleteWeightMeasurementCommand
+  nameWithType: DeleteWeightMeasurementCommand.DeleteWeightMeasurementCommand
+  fullName: CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand.DeleteWeightMeasurementCommand
+  nameWithType.vb: DeleteWeightMeasurementCommand.New
+  fullName.vb: CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand.New
+  name.vb: New
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.guid
+  name: Guid
+  nameWithType: Guid
+  fullName: System.Guid
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand.Id*
+  commentId: Overload:CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand.Id
+  href: CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand.html#CalorieTracker_Application_WeightMeasurements_Commands_DeleteWeightMeasurementCommand_Id
+  name: Id
+  nameWithType: DeleteWeightMeasurementCommand.Id
+  fullName: CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand.Id
+- uid: CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand.UserId*
+  commentId: Overload:CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand.UserId
+  href: CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand.html#CalorieTracker_Application_WeightMeasurements_Commands_DeleteWeightMeasurementCommand_UserId
+  name: UserId
+  nameWithType: DeleteWeightMeasurementCommand.UserId
+  fullName: CalorieTracker.Application.WeightMeasurements.Commands.DeleteWeightMeasurementCommand.UserId

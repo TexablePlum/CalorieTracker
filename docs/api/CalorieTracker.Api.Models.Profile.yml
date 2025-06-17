@@ -1,0 +1,69 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Api.Models.Profile
+  commentId: N:CalorieTracker.Api.Models.Profile
+  id: CalorieTracker.Api.Models.Profile
+  children:
+  - CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest
+  - CalorieTracker.Api.Models.Profile.UserProfileDto
+  langs:
+  - csharp
+  - vb
+  name: CalorieTracker.Api.Models.Profile
+  nameWithType: CalorieTracker.Api.Models.Profile
+  fullName: CalorieTracker.Api.Models.Profile
+  type: Namespace
+  assemblies:
+  - CalorieTracker.Api
+references:
+- uid: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest
+  commentId: T:CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest
+  parent: CalorieTracker.Api.Models.Profile
+  href: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.html
+  name: UpdateUserProfileRequest
+  nameWithType: UpdateUserProfileRequest
+  fullName: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest
+- uid: CalorieTracker.Api.Models.Profile.UserProfileDto
+  commentId: T:CalorieTracker.Api.Models.Profile.UserProfileDto
+  href: CalorieTracker.Api.Models.Profile.UserProfileDto.html
+  name: UserProfileDto
+  nameWithType: UserProfileDto
+  fullName: CalorieTracker.Api.Models.Profile.UserProfileDto
+- uid: CalorieTracker.Api.Models.Profile
+  commentId: N:CalorieTracker.Api.Models.Profile
+  href: CalorieTracker.html
+  name: CalorieTracker.Api.Models.Profile
+  nameWithType: CalorieTracker.Api.Models.Profile
+  fullName: CalorieTracker.Api.Models.Profile
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Api
+    name: Api
+    href: CalorieTracker.Api.html
+  - name: .
+  - uid: CalorieTracker.Api.Models
+    name: Models
+    href: CalorieTracker.Api.Models.html
+  - name: .
+  - uid: CalorieTracker.Api.Models.Profile
+    name: Profile
+    href: CalorieTracker.Api.Models.Profile.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Api
+    name: Api
+    href: CalorieTracker.Api.html
+  - name: .
+  - uid: CalorieTracker.Api.Models
+    name: Models
+    href: CalorieTracker.Api.Models.html
+  - name: .
+  - uid: CalorieTracker.Api.Models.Profile
+    name: Profile
+    href: CalorieTracker.Api.Models.Profile.html

@@ -1,0 +1,85 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Application.Recipes.Commands
+  commentId: N:CalorieTracker.Application.Recipes.Commands
+  id: CalorieTracker.Application.Recipes.Commands
+  children:
+  - CalorieTracker.Application.Recipes.Commands.CreateRecipeCommand
+  - CalorieTracker.Application.Recipes.Commands.CreateRecipeIngredientCommand
+  - CalorieTracker.Application.Recipes.Commands.DeleteRecipeCommand
+  - CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand
+  langs:
+  - csharp
+  - vb
+  name: CalorieTracker.Application.Recipes.Commands
+  nameWithType: CalorieTracker.Application.Recipes.Commands
+  fullName: CalorieTracker.Application.Recipes.Commands
+  type: Namespace
+  assemblies:
+  - CalorieTracker.Application
+references:
+- uid: CalorieTracker.Application.Recipes.Commands.CreateRecipeCommand
+  commentId: T:CalorieTracker.Application.Recipes.Commands.CreateRecipeCommand
+  parent: CalorieTracker.Application.Recipes.Commands
+  href: CalorieTracker.Application.Recipes.Commands.CreateRecipeCommand.html
+  name: CreateRecipeCommand
+  nameWithType: CreateRecipeCommand
+  fullName: CalorieTracker.Application.Recipes.Commands.CreateRecipeCommand
+- uid: CalorieTracker.Application.Recipes.Commands.CreateRecipeIngredientCommand
+  commentId: T:CalorieTracker.Application.Recipes.Commands.CreateRecipeIngredientCommand
+  href: CalorieTracker.Application.Recipes.Commands.CreateRecipeIngredientCommand.html
+  name: CreateRecipeIngredientCommand
+  nameWithType: CreateRecipeIngredientCommand
+  fullName: CalorieTracker.Application.Recipes.Commands.CreateRecipeIngredientCommand
+- uid: CalorieTracker.Application.Recipes.Commands.DeleteRecipeCommand
+  commentId: T:CalorieTracker.Application.Recipes.Commands.DeleteRecipeCommand
+  parent: CalorieTracker.Application.Recipes.Commands
+  href: CalorieTracker.Application.Recipes.Commands.DeleteRecipeCommand.html
+  name: DeleteRecipeCommand
+  nameWithType: DeleteRecipeCommand
+  fullName: CalorieTracker.Application.Recipes.Commands.DeleteRecipeCommand
+- uid: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand
+  commentId: T:CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand
+  parent: CalorieTracker.Application.Recipes.Commands
+  href: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand.html
+  name: UpdateRecipeCommand
+  nameWithType: UpdateRecipeCommand
+  fullName: CalorieTracker.Application.Recipes.Commands.UpdateRecipeCommand
+- uid: CalorieTracker.Application.Recipes.Commands
+  commentId: N:CalorieTracker.Application.Recipes.Commands
+  href: CalorieTracker.html
+  name: CalorieTracker.Application.Recipes.Commands
+  nameWithType: CalorieTracker.Application.Recipes.Commands
+  fullName: CalorieTracker.Application.Recipes.Commands
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Recipes
+    name: Recipes
+    href: CalorieTracker.Application.Recipes.html
+  - name: .
+  - uid: CalorieTracker.Application.Recipes.Commands
+    name: Commands
+    href: CalorieTracker.Application.Recipes.Commands.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Recipes
+    name: Recipes
+    href: CalorieTracker.Application.Recipes.html
+  - name: .
+  - uid: CalorieTracker.Application.Recipes.Commands
+    name: Commands
+    href: CalorieTracker.Application.Recipes.Commands.html

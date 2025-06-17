@@ -1,0 +1,928 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest
+  commentId: T:CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest
+  id: UpdateUserProfileRequest
+  parent: CalorieTracker.Api.Models.Profile
+  children:
+  - CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.ActivityLevel
+  - CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.Age
+  - CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.FirstName
+  - CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.Gender
+  - CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.Goal
+  - CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.HeightCm
+  - CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.LastName
+  - CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.MealPlan
+  - CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.TargetWeightKg
+  - CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.WeeklyGoalChangeKg
+  - CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.WeightKg
+  langs:
+  - csharp
+  - vb
+  name: UpdateUserProfileRequest
+  nameWithType: UpdateUserProfileRequest
+  fullName: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest
+  type: Class
+  source:
+    remote:
+      path: src/CalorieTracker.Api/Models/Profile/UpdateUserProfileRequest.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: UpdateUserProfileRequest
+    path: ../src/CalorieTracker.Api/Models/Profile/UpdateUserProfileRequest.cs
+    startLine: 9
+  assemblies:
+  - CalorieTracker.Api
+  namespace: CalorieTracker.Api.Models.Profile
+  summary: >-
+    Model żądania aktualizacji profilu użytkownika.
+
+    Zawiera zarówno podstawowe dane użytkownika jak i szczegóły dotyczące celów zdrowotnych i preferencji.
+  example: []
+  syntax:
+    content: public class UpdateUserProfileRequest
+    content.vb: Public Class UpdateUserProfileRequest
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.FirstName
+  commentId: P:CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.FirstName
+  id: FirstName
+  parent: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest
+  langs:
+  - csharp
+  - vb
+  name: FirstName
+  nameWithType: UpdateUserProfileRequest.FirstName
+  fullName: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.FirstName
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Api/Models/Profile/UpdateUserProfileRequest.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: FirstName
+    path: ../src/CalorieTracker.Api/Models/Profile/UpdateUserProfileRequest.cs
+    startLine: 15
+  assemblies:
+  - CalorieTracker.Api
+  namespace: CalorieTracker.Api.Models.Profile
+  summary: Imię użytkownika (opcjonalne).
+  example: []
+  syntax:
+    content: public string? FirstName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property FirstName As String
+  overload: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.FirstName*
+- uid: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.LastName
+  commentId: P:CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.LastName
+  id: LastName
+  parent: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest
+  langs:
+  - csharp
+  - vb
+  name: LastName
+  nameWithType: UpdateUserProfileRequest.LastName
+  fullName: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.LastName
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Api/Models/Profile/UpdateUserProfileRequest.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: LastName
+    path: ../src/CalorieTracker.Api/Models/Profile/UpdateUserProfileRequest.cs
+    startLine: 20
+  assemblies:
+  - CalorieTracker.Api
+  namespace: CalorieTracker.Api.Models.Profile
+  summary: Nazwisko użytkownika (opcjonalne).
+  example: []
+  syntax:
+    content: public string? LastName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property LastName As String
+  overload: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.LastName*
+- uid: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.Goal
+  commentId: P:CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.Goal
+  id: Goal
+  parent: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest
+  langs:
+  - csharp
+  - vb
+  name: Goal
+  nameWithType: UpdateUserProfileRequest.Goal
+  fullName: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.Goal
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Api/Models/Profile/UpdateUserProfileRequest.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Goal
+    path: ../src/CalorieTracker.Api/Models/Profile/UpdateUserProfileRequest.cs
+    startLine: 26
+  assemblies:
+  - CalorieTracker.Api
+  namespace: CalorieTracker.Api.Models.Profile
+  summary: Cel zdrowotny użytkownika (np. utrata wagi, budowa masy) (opcjonalne).
+  example: []
+  syntax:
+    content: public string? Goal { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Goal As String
+  overload: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.Goal*
+- uid: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.Gender
+  commentId: P:CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.Gender
+  id: Gender
+  parent: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest
+  langs:
+  - csharp
+  - vb
+  name: Gender
+  nameWithType: UpdateUserProfileRequest.Gender
+  fullName: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.Gender
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Api/Models/Profile/UpdateUserProfileRequest.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Gender
+    path: ../src/CalorieTracker.Api/Models/Profile/UpdateUserProfileRequest.cs
+    startLine: 31
+  assemblies:
+  - CalorieTracker.Api
+  namespace: CalorieTracker.Api.Models.Profile
+  summary: Płeć użytkownika (opcjonalne).
+  example: []
+  syntax:
+    content: public string? Gender { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Gender As String
+  overload: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.Gender*
+- uid: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.Age
+  commentId: P:CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.Age
+  id: Age
+  parent: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest
+  langs:
+  - csharp
+  - vb
+  name: Age
+  nameWithType: UpdateUserProfileRequest.Age
+  fullName: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.Age
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Api/Models/Profile/UpdateUserProfileRequest.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Age
+    path: ../src/CalorieTracker.Api/Models/Profile/UpdateUserProfileRequest.cs
+    startLine: 36
+  assemblies:
+  - CalorieTracker.Api
+  namespace: CalorieTracker.Api.Models.Profile
+  summary: Wiek użytkownika w latach (opcjonalne).
+  example: []
+  syntax:
+    content: public int? Age { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Public Property Age As Integer?
+  overload: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.Age*
+- uid: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.HeightCm
+  commentId: P:CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.HeightCm
+  id: HeightCm
+  parent: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest
+  langs:
+  - csharp
+  - vb
+  name: HeightCm
+  nameWithType: UpdateUserProfileRequest.HeightCm
+  fullName: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.HeightCm
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Api/Models/Profile/UpdateUserProfileRequest.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: HeightCm
+    path: ../src/CalorieTracker.Api/Models/Profile/UpdateUserProfileRequest.cs
+    startLine: 41
+  assemblies:
+  - CalorieTracker.Api
+  namespace: CalorieTracker.Api.Models.Profile
+  summary: Wzrost użytkownika w centymetrach (opcjonalne).
+  example: []
+  syntax:
+    content: public float? HeightCm { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Single}
+    content.vb: Public Property HeightCm As Single?
+  overload: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.HeightCm*
+- uid: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.WeightKg
+  commentId: P:CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.WeightKg
+  id: WeightKg
+  parent: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest
+  langs:
+  - csharp
+  - vb
+  name: WeightKg
+  nameWithType: UpdateUserProfileRequest.WeightKg
+  fullName: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.WeightKg
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Api/Models/Profile/UpdateUserProfileRequest.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: WeightKg
+    path: ../src/CalorieTracker.Api/Models/Profile/UpdateUserProfileRequest.cs
+    startLine: 46
+  assemblies:
+  - CalorieTracker.Api
+  namespace: CalorieTracker.Api.Models.Profile
+  summary: Aktualna waga użytkownika w kilogramach (opcjonalne).
+  example: []
+  syntax:
+    content: public float? WeightKg { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Single}
+    content.vb: Public Property WeightKg As Single?
+  overload: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.WeightKg*
+- uid: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.TargetWeightKg
+  commentId: P:CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.TargetWeightKg
+  id: TargetWeightKg
+  parent: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest
+  langs:
+  - csharp
+  - vb
+  name: TargetWeightKg
+  nameWithType: UpdateUserProfileRequest.TargetWeightKg
+  fullName: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.TargetWeightKg
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Api/Models/Profile/UpdateUserProfileRequest.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: TargetWeightKg
+    path: ../src/CalorieTracker.Api/Models/Profile/UpdateUserProfileRequest.cs
+    startLine: 51
+  assemblies:
+  - CalorieTracker.Api
+  namespace: CalorieTracker.Api.Models.Profile
+  summary: Docelowa waga użytkownika w kilogramach (opcjonalne).
+  example: []
+  syntax:
+    content: public float? TargetWeightKg { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Single}
+    content.vb: Public Property TargetWeightKg As Single?
+  overload: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.TargetWeightKg*
+- uid: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.ActivityLevel
+  commentId: P:CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.ActivityLevel
+  id: ActivityLevel
+  parent: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest
+  langs:
+  - csharp
+  - vb
+  name: ActivityLevel
+  nameWithType: UpdateUserProfileRequest.ActivityLevel
+  fullName: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.ActivityLevel
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Api/Models/Profile/UpdateUserProfileRequest.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: ActivityLevel
+    path: ../src/CalorieTracker.Api/Models/Profile/UpdateUserProfileRequest.cs
+    startLine: 56
+  assemblies:
+  - CalorieTracker.Api
+  namespace: CalorieTracker.Api.Models.Profile
+  summary: Poziom aktywności fizycznej użytkownika (opcjonalne).
+  example: []
+  syntax:
+    content: public string? ActivityLevel { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ActivityLevel As String
+  overload: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.ActivityLevel*
+- uid: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.WeeklyGoalChangeKg
+  commentId: P:CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.WeeklyGoalChangeKg
+  id: WeeklyGoalChangeKg
+  parent: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest
+  langs:
+  - csharp
+  - vb
+  name: WeeklyGoalChangeKg
+  nameWithType: UpdateUserProfileRequest.WeeklyGoalChangeKg
+  fullName: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.WeeklyGoalChangeKg
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Api/Models/Profile/UpdateUserProfileRequest.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: WeeklyGoalChangeKg
+    path: ../src/CalorieTracker.Api/Models/Profile/UpdateUserProfileRequest.cs
+    startLine: 62
+  assemblies:
+  - CalorieTracker.Api
+  namespace: CalorieTracker.Api.Models.Profile
+  summary: >-
+    Tygodniowy cel zmiany wagi w kilogramach (opcjonalne).
+
+    Wartość dodatnia - przyrost masy, ujemna - redukcja.
+  example: []
+  syntax:
+    content: public float? WeeklyGoalChangeKg { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Single}
+    content.vb: Public Property WeeklyGoalChangeKg As Single?
+  overload: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.WeeklyGoalChangeKg*
+- uid: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.MealPlan
+  commentId: P:CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.MealPlan
+  id: MealPlan
+  parent: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest
+  langs:
+  - csharp
+  - vb
+  name: MealPlan
+  nameWithType: UpdateUserProfileRequest.MealPlan
+  fullName: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.MealPlan
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Api/Models/Profile/UpdateUserProfileRequest.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: MealPlan
+    path: ../src/CalorieTracker.Api/Models/Profile/UpdateUserProfileRequest.cs
+    startLine: 68
+  assemblies:
+  - CalorieTracker.Api
+  namespace: CalorieTracker.Api.Models.Profile
+  summary: >-
+    Plan posiłków użytkownika jako lista flag (opcjonalne).
+
+    Określa preferencje dotyczące rozkładu posiłków w ciągu dnia.
+  example: []
+  syntax:
+    content: public List<bool>? MealPlan { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{System.Boolean}
+    content.vb: Public Property MealPlan As List(Of Boolean)
+  overload: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.MealPlan*
+references:
+- uid: CalorieTracker.Api.Models.Profile
+  commentId: N:CalorieTracker.Api.Models.Profile
+  href: CalorieTracker.html
+  name: CalorieTracker.Api.Models.Profile
+  nameWithType: CalorieTracker.Api.Models.Profile
+  fullName: CalorieTracker.Api.Models.Profile
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Api
+    name: Api
+    href: CalorieTracker.Api.html
+  - name: .
+  - uid: CalorieTracker.Api.Models
+    name: Models
+    href: CalorieTracker.Api.Models.html
+  - name: .
+  - uid: CalorieTracker.Api.Models.Profile
+    name: Profile
+    href: CalorieTracker.Api.Models.Profile.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Api
+    name: Api
+    href: CalorieTracker.Api.html
+  - name: .
+  - uid: CalorieTracker.Api.Models
+    name: Models
+    href: CalorieTracker.Api.Models.html
+  - name: .
+  - uid: CalorieTracker.Api.Models.Profile
+    name: Profile
+    href: CalorieTracker.Api.Models.Profile.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.FirstName*
+  commentId: Overload:CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.FirstName
+  href: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.html#CalorieTracker_Api_Models_Profile_UpdateUserProfileRequest_FirstName
+  name: FirstName
+  nameWithType: UpdateUserProfileRequest.FirstName
+  fullName: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.FirstName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.LastName*
+  commentId: Overload:CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.LastName
+  href: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.html#CalorieTracker_Api_Models_Profile_UpdateUserProfileRequest_LastName
+  name: LastName
+  nameWithType: UpdateUserProfileRequest.LastName
+  fullName: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.LastName
+- uid: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.Goal*
+  commentId: Overload:CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.Goal
+  href: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.html#CalorieTracker_Api_Models_Profile_UpdateUserProfileRequest_Goal
+  name: Goal
+  nameWithType: UpdateUserProfileRequest.Goal
+  fullName: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.Goal
+- uid: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.Gender*
+  commentId: Overload:CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.Gender
+  href: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.html#CalorieTracker_Api_Models_Profile_UpdateUserProfileRequest_Gender
+  name: Gender
+  nameWithType: UpdateUserProfileRequest.Gender
+  fullName: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.Gender
+- uid: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.Age*
+  commentId: Overload:CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.Age
+  href: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.html#CalorieTracker_Api_Models_Profile_UpdateUserProfileRequest_Age
+  name: Age
+  nameWithType: UpdateUserProfileRequest.Age
+  fullName: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.Age
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int?
+  nameWithType: int?
+  fullName: int?
+  nameWithType.vb: Integer?
+  fullName.vb: Integer?
+  name.vb: Integer?
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.HeightCm*
+  commentId: Overload:CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.HeightCm
+  href: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.html#CalorieTracker_Api_Models_Profile_UpdateUserProfileRequest_HeightCm
+  name: HeightCm
+  nameWithType: UpdateUserProfileRequest.HeightCm
+  fullName: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.HeightCm
+- uid: System.Nullable{System.Single}
+  commentId: T:System.Nullable{System.Single}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float?
+  nameWithType: float?
+  fullName: float?
+  nameWithType.vb: Single?
+  fullName.vb: Single?
+  name.vb: Single?
+  spec.csharp:
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '?'
+  spec.vb:
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '?'
+- uid: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.WeightKg*
+  commentId: Overload:CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.WeightKg
+  href: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.html#CalorieTracker_Api_Models_Profile_UpdateUserProfileRequest_WeightKg
+  name: WeightKg
+  nameWithType: UpdateUserProfileRequest.WeightKg
+  fullName: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.WeightKg
+- uid: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.TargetWeightKg*
+  commentId: Overload:CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.TargetWeightKg
+  href: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.html#CalorieTracker_Api_Models_Profile_UpdateUserProfileRequest_TargetWeightKg
+  name: TargetWeightKg
+  nameWithType: UpdateUserProfileRequest.TargetWeightKg
+  fullName: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.TargetWeightKg
+- uid: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.ActivityLevel*
+  commentId: Overload:CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.ActivityLevel
+  href: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.html#CalorieTracker_Api_Models_Profile_UpdateUserProfileRequest_ActivityLevel
+  name: ActivityLevel
+  nameWithType: UpdateUserProfileRequest.ActivityLevel
+  fullName: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.ActivityLevel
+- uid: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.WeeklyGoalChangeKg*
+  commentId: Overload:CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.WeeklyGoalChangeKg
+  href: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.html#CalorieTracker_Api_Models_Profile_UpdateUserProfileRequest_WeeklyGoalChangeKg
+  name: WeeklyGoalChangeKg
+  nameWithType: UpdateUserProfileRequest.WeeklyGoalChangeKg
+  fullName: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.WeeklyGoalChangeKg
+- uid: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.MealPlan*
+  commentId: Overload:CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.MealPlan
+  href: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.html#CalorieTracker_Api_Models_Profile_UpdateUserProfileRequest_MealPlan
+  name: MealPlan
+  nameWithType: UpdateUserProfileRequest.MealPlan
+  fullName: CalorieTracker.Api.Models.Profile.UpdateUserProfileRequest.MealPlan
+- uid: System.Collections.Generic.List{System.Boolean}
+  commentId: T:System.Collections.Generic.List{System.Boolean}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<bool>
+  nameWithType: List<bool>
+  fullName: System.Collections.Generic.List<bool>
+  nameWithType.vb: List(Of Boolean)
+  fullName.vb: System.Collections.Generic.List(Of Boolean)
+  name.vb: List(Of Boolean)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic

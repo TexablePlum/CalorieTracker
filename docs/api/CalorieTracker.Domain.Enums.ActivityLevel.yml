@@ -1,0 +1,211 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Domain.Enums.ActivityLevel
+  commentId: T:CalorieTracker.Domain.Enums.ActivityLevel
+  id: ActivityLevel
+  parent: CalorieTracker.Domain.Enums
+  children:
+  - CalorieTracker.Domain.Enums.ActivityLevel.ExtremelyActive
+  - CalorieTracker.Domain.Enums.ActivityLevel.LightlyActive
+  - CalorieTracker.Domain.Enums.ActivityLevel.ModeratelyActive
+  - CalorieTracker.Domain.Enums.ActivityLevel.Sedentary
+  - CalorieTracker.Domain.Enums.ActivityLevel.VeryActive
+  langs:
+  - csharp
+  - vb
+  name: ActivityLevel
+  nameWithType: ActivityLevel
+  fullName: CalorieTracker.Domain.Enums.ActivityLevel
+  type: Enum
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Enums/ActivityLevel.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: ActivityLevel
+    path: ../src/CalorieTracker.Domain/Enums/ActivityLevel.cs
+    startLine: 9
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Enums
+  example: []
+  syntax:
+    content: public enum ActivityLevel
+    content.vb: Public Enum ActivityLevel
+- uid: CalorieTracker.Domain.Enums.ActivityLevel.Sedentary
+  commentId: F:CalorieTracker.Domain.Enums.ActivityLevel.Sedentary
+  id: Sedentary
+  parent: CalorieTracker.Domain.Enums.ActivityLevel
+  langs:
+  - csharp
+  - vb
+  name: Sedentary
+  nameWithType: ActivityLevel.Sedentary
+  fullName: CalorieTracker.Domain.Enums.ActivityLevel.Sedentary
+  type: Field
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Enums/ActivityLevel.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Sedentary
+    path: ../src/CalorieTracker.Domain/Enums/ActivityLevel.cs
+    startLine: 14
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Enums
+  example: []
+  syntax:
+    content: Sedentary = 0
+    return:
+      type: CalorieTracker.Domain.Enums.ActivityLevel
+- uid: CalorieTracker.Domain.Enums.ActivityLevel.LightlyActive
+  commentId: F:CalorieTracker.Domain.Enums.ActivityLevel.LightlyActive
+  id: LightlyActive
+  parent: CalorieTracker.Domain.Enums.ActivityLevel
+  langs:
+  - csharp
+  - vb
+  name: LightlyActive
+  nameWithType: ActivityLevel.LightlyActive
+  fullName: CalorieTracker.Domain.Enums.ActivityLevel.LightlyActive
+  type: Field
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Enums/ActivityLevel.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: LightlyActive
+    path: ../src/CalorieTracker.Domain/Enums/ActivityLevel.cs
+    startLine: 19
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Enums
+  summary: Oznacza lekką aktywność fizyczną (np. lekkie ćwiczenia 1-3 razy w tygodniu).
+  example: []
+  syntax:
+    content: LightlyActive = 1
+    return:
+      type: CalorieTracker.Domain.Enums.ActivityLevel
+- uid: CalorieTracker.Domain.Enums.ActivityLevel.ModeratelyActive
+  commentId: F:CalorieTracker.Domain.Enums.ActivityLevel.ModeratelyActive
+  id: ModeratelyActive
+  parent: CalorieTracker.Domain.Enums.ActivityLevel
+  langs:
+  - csharp
+  - vb
+  name: ModeratelyActive
+  nameWithType: ActivityLevel.ModeratelyActive
+  fullName: CalorieTracker.Domain.Enums.ActivityLevel.ModeratelyActive
+  type: Field
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Enums/ActivityLevel.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: ModeratelyActive
+    path: ../src/CalorieTracker.Domain/Enums/ActivityLevel.cs
+    startLine: 24
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Enums
+  summary: Oznacza umiarkowaną aktywność fizyczną (np. umiarkowane ćwiczenia 3-5 razy w tygodniu).
+  example: []
+  syntax:
+    content: ModeratelyActive = 2
+    return:
+      type: CalorieTracker.Domain.Enums.ActivityLevel
+- uid: CalorieTracker.Domain.Enums.ActivityLevel.VeryActive
+  commentId: F:CalorieTracker.Domain.Enums.ActivityLevel.VeryActive
+  id: VeryActive
+  parent: CalorieTracker.Domain.Enums.ActivityLevel
+  langs:
+  - csharp
+  - vb
+  name: VeryActive
+  nameWithType: ActivityLevel.VeryActive
+  fullName: CalorieTracker.Domain.Enums.ActivityLevel.VeryActive
+  type: Field
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Enums/ActivityLevel.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: VeryActive
+    path: ../src/CalorieTracker.Domain/Enums/ActivityLevel.cs
+    startLine: 29
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Enums
+  summary: Oznacza wysoką aktywność fizyczną (np. intensywne ćwiczenia 6-7 razy w tygodniu).
+  example: []
+  syntax:
+    content: VeryActive = 3
+    return:
+      type: CalorieTracker.Domain.Enums.ActivityLevel
+- uid: CalorieTracker.Domain.Enums.ActivityLevel.ExtremelyActive
+  commentId: F:CalorieTracker.Domain.Enums.ActivityLevel.ExtremelyActive
+  id: ExtremelyActive
+  parent: CalorieTracker.Domain.Enums.ActivityLevel
+  langs:
+  - csharp
+  - vb
+  name: ExtremelyActive
+  nameWithType: ActivityLevel.ExtremelyActive
+  fullName: CalorieTracker.Domain.Enums.ActivityLevel.ExtremelyActive
+  type: Field
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Enums/ActivityLevel.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: ExtremelyActive
+    path: ../src/CalorieTracker.Domain/Enums/ActivityLevel.cs
+    startLine: 34
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Enums
+  summary: Oznacza bardzo wysoką aktywność fizyczną (np. bardzo ciężkie ćwiczenia, praca fizyczna, treningi dwa razy dziennie).
+  example: []
+  syntax:
+    content: ExtremelyActive = 4
+    return:
+      type: CalorieTracker.Domain.Enums.ActivityLevel
+references:
+- uid: CalorieTracker.Domain.Enums
+  commentId: N:CalorieTracker.Domain.Enums
+  href: CalorieTracker.html
+  name: CalorieTracker.Domain.Enums
+  nameWithType: CalorieTracker.Domain.Enums
+  fullName: CalorieTracker.Domain.Enums
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Domain
+    name: Domain
+    href: CalorieTracker.Domain.html
+  - name: .
+  - uid: CalorieTracker.Domain.Enums
+    name: Enums
+    href: CalorieTracker.Domain.Enums.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Domain
+    name: Domain
+    href: CalorieTracker.Domain.html
+  - name: .
+  - uid: CalorieTracker.Domain.Enums
+    name: Enums
+    href: CalorieTracker.Domain.Enums.html
+- uid: CalorieTracker.Domain.Enums.ActivityLevel
+  commentId: T:CalorieTracker.Domain.Enums.ActivityLevel
+  parent: CalorieTracker.Domain.Enums
+  href: CalorieTracker.Domain.Enums.ActivityLevel.html
+  name: ActivityLevel
+  nameWithType: ActivityLevel
+  fullName: CalorieTracker.Domain.Enums.ActivityLevel

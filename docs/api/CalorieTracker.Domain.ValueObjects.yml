@@ -1,0 +1,54 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Domain.ValueObjects
+  commentId: N:CalorieTracker.Domain.ValueObjects
+  id: CalorieTracker.Domain.ValueObjects
+  children:
+  - CalorieTracker.Domain.ValueObjects.RecipeNutrition
+  langs:
+  - csharp
+  - vb
+  name: CalorieTracker.Domain.ValueObjects
+  nameWithType: CalorieTracker.Domain.ValueObjects
+  fullName: CalorieTracker.Domain.ValueObjects
+  type: Namespace
+  assemblies:
+  - CalorieTracker.Domain
+references:
+- uid: CalorieTracker.Domain.ValueObjects.RecipeNutrition
+  commentId: T:CalorieTracker.Domain.ValueObjects.RecipeNutrition
+  parent: CalorieTracker.Domain.ValueObjects
+  href: CalorieTracker.Domain.ValueObjects.RecipeNutrition.html
+  name: RecipeNutrition
+  nameWithType: RecipeNutrition
+  fullName: CalorieTracker.Domain.ValueObjects.RecipeNutrition
+- uid: CalorieTracker.Domain.ValueObjects
+  commentId: N:CalorieTracker.Domain.ValueObjects
+  href: CalorieTracker.html
+  name: CalorieTracker.Domain.ValueObjects
+  nameWithType: CalorieTracker.Domain.ValueObjects
+  fullName: CalorieTracker.Domain.ValueObjects
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Domain
+    name: Domain
+    href: CalorieTracker.Domain.html
+  - name: .
+  - uid: CalorieTracker.Domain.ValueObjects
+    name: ValueObjects
+    href: CalorieTracker.Domain.ValueObjects.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Domain
+    name: Domain
+    href: CalorieTracker.Domain.html
+  - name: .
+  - uid: CalorieTracker.Domain.ValueObjects
+    name: ValueObjects
+    href: CalorieTracker.Domain.ValueObjects.html

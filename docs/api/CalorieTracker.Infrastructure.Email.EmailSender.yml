@@ -1,0 +1,669 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Infrastructure.Email.EmailSender
+  commentId: T:CalorieTracker.Infrastructure.Email.EmailSender
+  id: EmailSender
+  parent: CalorieTracker.Infrastructure.Email
+  children:
+  - CalorieTracker.Infrastructure.Email.EmailSender.#ctor(Microsoft.Extensions.Options.IOptions{CalorieTracker.Infrastructure.Email.EmailSettings})
+  - CalorieTracker.Infrastructure.Email.EmailSender.SendAsync(System.String,System.String,System.String)
+  langs:
+  - csharp
+  - vb
+  name: EmailSender
+  nameWithType: EmailSender
+  fullName: CalorieTracker.Infrastructure.Email.EmailSender
+  type: Class
+  source:
+    remote:
+      path: src/CalorieTracker.Infrastructure/Email/EmailSender.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: EmailSender
+    path: ../src/CalorieTracker.Infrastructure/Email/EmailSender.cs
+    startLine: 14
+  assemblies:
+  - CalorieTracker.Infrastructure
+  namespace: CalorieTracker.Infrastructure.Email
+  summary: >-
+    Implementacja interfejsu <xref href="CalorieTracker.Application.Auth.Interfaces.IEmailSender" data-throw-if-not-resolved="false"></xref> odpowiedzialna za wysyłanie wiadomości e-mail.
+
+    Wykorzystuje bibliotekę MailKit do nawiązywania połączenia z serwerem SMTP i przesyłania wiadomości.
+  example: []
+  syntax:
+    content: 'public class EmailSender : IEmailSender'
+    content.vb: Public Class EmailSender Implements IEmailSender
+  inheritance:
+  - System.Object
+  implements:
+  - CalorieTracker.Application.Auth.Interfaces.IEmailSender
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: CalorieTracker.Infrastructure.Email.EmailSender.#ctor(Microsoft.Extensions.Options.IOptions{CalorieTracker.Infrastructure.Email.EmailSettings})
+  commentId: M:CalorieTracker.Infrastructure.Email.EmailSender.#ctor(Microsoft.Extensions.Options.IOptions{CalorieTracker.Infrastructure.Email.EmailSettings})
+  id: '#ctor(Microsoft.Extensions.Options.IOptions{CalorieTracker.Infrastructure.Email.EmailSettings})'
+  parent: CalorieTracker.Infrastructure.Email.EmailSender
+  langs:
+  - csharp
+  - vb
+  name: EmailSender(IOptions<EmailSettings>)
+  nameWithType: EmailSender.EmailSender(IOptions<EmailSettings>)
+  fullName: CalorieTracker.Infrastructure.Email.EmailSender.EmailSender(Microsoft.Extensions.Options.IOptions<CalorieTracker.Infrastructure.Email.EmailSettings>)
+  type: Constructor
+  source:
+    remote:
+      path: src/CalorieTracker.Infrastructure/Email/EmailSender.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: .ctor
+    path: ../src/CalorieTracker.Infrastructure/Email/EmailSender.cs
+    startLine: 25
+  assemblies:
+  - CalorieTracker.Infrastructure
+  namespace: CalorieTracker.Infrastructure.Email
+  summary: Inicjalizuje nową instancję klasy <xref href="CalorieTracker.Infrastructure.Email.EmailSender" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public EmailSender(IOptions<EmailSettings> cfg)
+    parameters:
+    - id: cfg
+      type: Microsoft.Extensions.Options.IOptions{CalorieTracker.Infrastructure.Email.EmailSettings}
+      description: Obiekt konfiguracji zawierający ustawienia serwera SMTP.
+    content.vb: Public Sub New(cfg As IOptions(Of EmailSettings))
+  overload: CalorieTracker.Infrastructure.Email.EmailSender.#ctor*
+  nameWithType.vb: EmailSender.New(IOptions(Of EmailSettings))
+  fullName.vb: CalorieTracker.Infrastructure.Email.EmailSender.New(Microsoft.Extensions.Options.IOptions(Of CalorieTracker.Infrastructure.Email.EmailSettings))
+  name.vb: New(IOptions(Of EmailSettings))
+- uid: CalorieTracker.Infrastructure.Email.EmailSender.SendAsync(System.String,System.String,System.String)
+  commentId: M:CalorieTracker.Infrastructure.Email.EmailSender.SendAsync(System.String,System.String,System.String)
+  id: SendAsync(System.String,System.String,System.String)
+  parent: CalorieTracker.Infrastructure.Email.EmailSender
+  langs:
+  - csharp
+  - vb
+  name: SendAsync(string, string, string)
+  nameWithType: EmailSender.SendAsync(string, string, string)
+  fullName: CalorieTracker.Infrastructure.Email.EmailSender.SendAsync(string, string, string)
+  type: Method
+  source:
+    remote:
+      path: src/CalorieTracker.Infrastructure/Email/EmailSender.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: SendAsync
+    path: ../src/CalorieTracker.Infrastructure/Email/EmailSender.cs
+    startLine: 34
+  assemblies:
+  - CalorieTracker.Infrastructure
+  namespace: CalorieTracker.Infrastructure.Email
+  summary: Wysyła wiadomość e-mail do określonego odbiorcy.
+  example: []
+  syntax:
+    content: public Task SendAsync(string to, string subject, string bodyHtml)
+    parameters:
+    - id: to
+      type: System.String
+      description: Adres e-mail odbiorcy wiadomości.
+    - id: subject
+      type: System.String
+      description: Temat wiadomości e-mail.
+    - id: bodyHtml
+      type: System.String
+      description: Treść wiadomości w formacie HTML.
+    return:
+      type: System.Threading.Tasks.Task
+      description: Obiekt <xref href="System.Threading.Tasks.Task" data-throw-if-not-resolved="false"></xref> reprezentujący asynchroniczną operację.
+    content.vb: Public Function SendAsync([to] As String, subject As String, bodyHtml As String) As Task
+  overload: CalorieTracker.Infrastructure.Email.EmailSender.SendAsync*
+  implements:
+  - CalorieTracker.Application.Auth.Interfaces.IEmailSender.SendAsync(System.String,System.String,System.String)
+  nameWithType.vb: EmailSender.SendAsync(String, String, String)
+  fullName.vb: CalorieTracker.Infrastructure.Email.EmailSender.SendAsync(String, String, String)
+  name.vb: SendAsync(String, String, String)
+references:
+- uid: CalorieTracker.Application.Auth.Interfaces.IEmailSender
+  commentId: T:CalorieTracker.Application.Auth.Interfaces.IEmailSender
+  parent: CalorieTracker.Application.Auth.Interfaces
+  href: CalorieTracker.Application.Auth.Interfaces.IEmailSender.html
+  name: IEmailSender
+  nameWithType: IEmailSender
+  fullName: CalorieTracker.Application.Auth.Interfaces.IEmailSender
+- uid: CalorieTracker.Infrastructure.Email
+  commentId: N:CalorieTracker.Infrastructure.Email
+  href: CalorieTracker.html
+  name: CalorieTracker.Infrastructure.Email
+  nameWithType: CalorieTracker.Infrastructure.Email
+  fullName: CalorieTracker.Infrastructure.Email
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Infrastructure
+    name: Infrastructure
+    href: CalorieTracker.Infrastructure.html
+  - name: .
+  - uid: CalorieTracker.Infrastructure.Email
+    name: Email
+    href: CalorieTracker.Infrastructure.Email.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Infrastructure
+    name: Infrastructure
+    href: CalorieTracker.Infrastructure.html
+  - name: .
+  - uid: CalorieTracker.Infrastructure.Email
+    name: Email
+    href: CalorieTracker.Infrastructure.Email.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: CalorieTracker.Application.Auth.Interfaces
+  commentId: N:CalorieTracker.Application.Auth.Interfaces
+  href: CalorieTracker.html
+  name: CalorieTracker.Application.Auth.Interfaces
+  nameWithType: CalorieTracker.Application.Auth.Interfaces
+  fullName: CalorieTracker.Application.Auth.Interfaces
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth
+    name: Auth
+    href: CalorieTracker.Application.Auth.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth.Interfaces
+    name: Interfaces
+    href: CalorieTracker.Application.Auth.Interfaces.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth
+    name: Auth
+    href: CalorieTracker.Application.Auth.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth.Interfaces
+    name: Interfaces
+    href: CalorieTracker.Application.Auth.Interfaces.html
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CalorieTracker.Infrastructure.Email.EmailSender
+  commentId: T:CalorieTracker.Infrastructure.Email.EmailSender
+  href: CalorieTracker.Infrastructure.Email.EmailSender.html
+  name: EmailSender
+  nameWithType: EmailSender
+  fullName: CalorieTracker.Infrastructure.Email.EmailSender
+- uid: CalorieTracker.Infrastructure.Email.EmailSender.#ctor*
+  commentId: Overload:CalorieTracker.Infrastructure.Email.EmailSender.#ctor
+  href: CalorieTracker.Infrastructure.Email.EmailSender.html#CalorieTracker_Infrastructure_Email_EmailSender__ctor_Microsoft_Extensions_Options_IOptions_CalorieTracker_Infrastructure_Email_EmailSettings__
+  name: EmailSender
+  nameWithType: EmailSender.EmailSender
+  fullName: CalorieTracker.Infrastructure.Email.EmailSender.EmailSender
+  nameWithType.vb: EmailSender.New
+  fullName.vb: CalorieTracker.Infrastructure.Email.EmailSender.New
+  name.vb: New
+- uid: Microsoft.Extensions.Options.IOptions{CalorieTracker.Infrastructure.Email.EmailSettings}
+  commentId: T:Microsoft.Extensions.Options.IOptions{CalorieTracker.Infrastructure.Email.EmailSettings}
+  parent: Microsoft.Extensions.Options
+  definition: Microsoft.Extensions.Options.IOptions`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  name: IOptions<EmailSettings>
+  nameWithType: IOptions<EmailSettings>
+  fullName: Microsoft.Extensions.Options.IOptions<CalorieTracker.Infrastructure.Email.EmailSettings>
+  nameWithType.vb: IOptions(Of EmailSettings)
+  fullName.vb: Microsoft.Extensions.Options.IOptions(Of CalorieTracker.Infrastructure.Email.EmailSettings)
+  name.vb: IOptions(Of EmailSettings)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Options.IOptions`1
+    name: IOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  - name: <
+  - uid: CalorieTracker.Infrastructure.Email.EmailSettings
+    name: EmailSettings
+    href: CalorieTracker.Infrastructure.Email.EmailSettings.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Options.IOptions`1
+    name: IOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CalorieTracker.Infrastructure.Email.EmailSettings
+    name: EmailSettings
+    href: CalorieTracker.Infrastructure.Email.EmailSettings.html
+  - name: )
+- uid: Microsoft.Extensions.Options.IOptions`1
+  commentId: T:Microsoft.Extensions.Options.IOptions`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  name: IOptions<TOptions>
+  nameWithType: IOptions<TOptions>
+  fullName: Microsoft.Extensions.Options.IOptions<TOptions>
+  nameWithType.vb: IOptions(Of TOptions)
+  fullName.vb: Microsoft.Extensions.Options.IOptions(Of TOptions)
+  name.vb: IOptions(Of TOptions)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Options.IOptions`1
+    name: IOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  - name: <
+  - name: TOptions
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Options.IOptions`1
+    name: IOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TOptions
+  - name: )
+- uid: Microsoft.Extensions.Options
+  commentId: N:Microsoft.Extensions.Options
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Options
+  nameWithType: Microsoft.Extensions.Options
+  fullName: Microsoft.Extensions.Options
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Options
+    name: Options
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Options
+    name: Options
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: CalorieTracker.Infrastructure.Email.EmailSender.SendAsync*
+  commentId: Overload:CalorieTracker.Infrastructure.Email.EmailSender.SendAsync
+  href: CalorieTracker.Infrastructure.Email.EmailSender.html#CalorieTracker_Infrastructure_Email_EmailSender_SendAsync_System_String_System_String_System_String_
+  name: SendAsync
+  nameWithType: EmailSender.SendAsync
+  fullName: CalorieTracker.Infrastructure.Email.EmailSender.SendAsync
+- uid: CalorieTracker.Application.Auth.Interfaces.IEmailSender.SendAsync(System.String,System.String,System.String)
+  commentId: M:CalorieTracker.Application.Auth.Interfaces.IEmailSender.SendAsync(System.String,System.String,System.String)
+  parent: CalorieTracker.Application.Auth.Interfaces.IEmailSender
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: SendAsync(string, string, string)
+  nameWithType: IEmailSender.SendAsync(string, string, string)
+  fullName: CalorieTracker.Application.Auth.Interfaces.IEmailSender.SendAsync(string, string, string)
+  nameWithType.vb: IEmailSender.SendAsync(String, String, String)
+  fullName.vb: CalorieTracker.Application.Auth.Interfaces.IEmailSender.SendAsync(String, String, String)
+  name.vb: SendAsync(String, String, String)
+  spec.csharp:
+  - uid: CalorieTracker.Application.Auth.Interfaces.IEmailSender.SendAsync(System.String,System.String,System.String)
+    name: SendAsync
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: CalorieTracker.Application.Auth.Interfaces.IEmailSender.SendAsync(System.String,System.String,System.String)
+    name: SendAsync
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

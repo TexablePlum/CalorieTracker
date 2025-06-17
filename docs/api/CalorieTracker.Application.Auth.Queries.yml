@@ -1,0 +1,94 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Application.Auth.Queries
+  commentId: N:CalorieTracker.Application.Auth.Queries
+  id: CalorieTracker.Application.Auth.Queries
+  children:
+  - CalorieTracker.Application.Auth.Queries.GetProductByBarcodeQuery
+  - CalorieTracker.Application.Auth.Queries.GetProductByIdQuery
+  - CalorieTracker.Application.Auth.Queries.GetUserProductsQuery
+  - CalorieTracker.Application.Auth.Queries.LoginUserQuery
+  - CalorieTracker.Application.Auth.Queries.SearchProductsQuery
+  langs:
+  - csharp
+  - vb
+  name: CalorieTracker.Application.Auth.Queries
+  nameWithType: CalorieTracker.Application.Auth.Queries
+  fullName: CalorieTracker.Application.Auth.Queries
+  type: Namespace
+  assemblies:
+  - CalorieTracker.Application
+references:
+- uid: CalorieTracker.Application.Auth.Queries.LoginUserQuery
+  commentId: T:CalorieTracker.Application.Auth.Queries.LoginUserQuery
+  parent: CalorieTracker.Application.Auth.Queries
+  href: CalorieTracker.Application.Auth.Queries.LoginUserQuery.html
+  name: LoginUserQuery
+  nameWithType: LoginUserQuery
+  fullName: CalorieTracker.Application.Auth.Queries.LoginUserQuery
+- uid: CalorieTracker.Application.Auth.Queries.GetProductByBarcodeQuery
+  commentId: T:CalorieTracker.Application.Auth.Queries.GetProductByBarcodeQuery
+  parent: CalorieTracker.Application.Auth.Queries
+  href: CalorieTracker.Application.Auth.Queries.GetProductByBarcodeQuery.html
+  name: GetProductByBarcodeQuery
+  nameWithType: GetProductByBarcodeQuery
+  fullName: CalorieTracker.Application.Auth.Queries.GetProductByBarcodeQuery
+- uid: CalorieTracker.Application.Auth.Queries.GetProductByIdQuery
+  commentId: T:CalorieTracker.Application.Auth.Queries.GetProductByIdQuery
+  parent: CalorieTracker.Application.Auth.Queries
+  href: CalorieTracker.Application.Auth.Queries.GetProductByIdQuery.html
+  name: GetProductByIdQuery
+  nameWithType: GetProductByIdQuery
+  fullName: CalorieTracker.Application.Auth.Queries.GetProductByIdQuery
+- uid: CalorieTracker.Application.Auth.Queries.GetUserProductsQuery
+  commentId: T:CalorieTracker.Application.Auth.Queries.GetUserProductsQuery
+  parent: CalorieTracker.Application.Auth.Queries
+  href: CalorieTracker.Application.Auth.Queries.GetUserProductsQuery.html
+  name: GetUserProductsQuery
+  nameWithType: GetUserProductsQuery
+  fullName: CalorieTracker.Application.Auth.Queries.GetUserProductsQuery
+- uid: CalorieTracker.Application.Auth.Queries.SearchProductsQuery
+  commentId: T:CalorieTracker.Application.Auth.Queries.SearchProductsQuery
+  parent: CalorieTracker.Application.Auth.Queries
+  href: CalorieTracker.Application.Auth.Queries.SearchProductsQuery.html
+  name: SearchProductsQuery
+  nameWithType: SearchProductsQuery
+  fullName: CalorieTracker.Application.Auth.Queries.SearchProductsQuery
+- uid: CalorieTracker.Application.Auth.Queries
+  commentId: N:CalorieTracker.Application.Auth.Queries
+  href: CalorieTracker.html
+  name: CalorieTracker.Application.Auth.Queries
+  nameWithType: CalorieTracker.Application.Auth.Queries
+  fullName: CalorieTracker.Application.Auth.Queries
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth
+    name: Auth
+    href: CalorieTracker.Application.Auth.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth.Queries
+    name: Queries
+    href: CalorieTracker.Application.Auth.Queries.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth
+    name: Auth
+    href: CalorieTracker.Application.Auth.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth.Queries
+    name: Queries
+    href: CalorieTracker.Application.Auth.Queries.html

@@ -1,0 +1,565 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Infrastructure.Auth.JwtGenerator
+  commentId: T:CalorieTracker.Infrastructure.Auth.JwtGenerator
+  id: JwtGenerator
+  parent: CalorieTracker.Infrastructure.Auth
+  children:
+  - CalorieTracker.Infrastructure.Auth.JwtGenerator.#ctor(Microsoft.Extensions.Configuration.IConfiguration)
+  - CalorieTracker.Infrastructure.Auth.JwtGenerator.CreateToken(CalorieTracker.Domain.Entities.ApplicationUser)
+  langs:
+  - csharp
+  - vb
+  name: JwtGenerator
+  nameWithType: JwtGenerator
+  fullName: CalorieTracker.Infrastructure.Auth.JwtGenerator
+  type: Class
+  source:
+    remote:
+      path: src/CalorieTracker.Infrastructure/Auth/JwtGenerator.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: JwtGenerator
+    path: ../src/CalorieTracker.Infrastructure/Auth/JwtGenerator.cs
+    startLine: 17
+  assemblies:
+  - CalorieTracker.Infrastructure
+  namespace: CalorieTracker.Infrastructure.Auth
+  example: []
+  syntax:
+    content: 'public class JwtGenerator : IJwtGenerator'
+    content.vb: Public Class JwtGenerator Implements IJwtGenerator
+  inheritance:
+  - System.Object
+  implements:
+  - CalorieTracker.Application.Auth.Interfaces.IJwtGenerator
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: CalorieTracker.Infrastructure.Auth.JwtGenerator.#ctor(Microsoft.Extensions.Configuration.IConfiguration)
+  commentId: M:CalorieTracker.Infrastructure.Auth.JwtGenerator.#ctor(Microsoft.Extensions.Configuration.IConfiguration)
+  id: '#ctor(Microsoft.Extensions.Configuration.IConfiguration)'
+  parent: CalorieTracker.Infrastructure.Auth.JwtGenerator
+  langs:
+  - csharp
+  - vb
+  name: JwtGenerator(IConfiguration)
+  nameWithType: JwtGenerator.JwtGenerator(IConfiguration)
+  fullName: CalorieTracker.Infrastructure.Auth.JwtGenerator.JwtGenerator(Microsoft.Extensions.Configuration.IConfiguration)
+  type: Constructor
+  source:
+    remote:
+      path: src/CalorieTracker.Infrastructure/Auth/JwtGenerator.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: .ctor
+    path: ../src/CalorieTracker.Infrastructure/Auth/JwtGenerator.cs
+    startLine: 28
+  assemblies:
+  - CalorieTracker.Infrastructure
+  namespace: CalorieTracker.Infrastructure.Auth
+  summary: Inicjalizuje nową instancję klasy <xref href="CalorieTracker.Infrastructure.Auth.JwtGenerator" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public JwtGenerator(IConfiguration config)
+    parameters:
+    - id: config
+      type: Microsoft.Extensions.Configuration.IConfiguration
+      description: Obiekt konfiguracji aplikacji <xref href="Microsoft.Extensions.Configuration.IConfiguration" data-throw-if-not-resolved="false"></xref>.
+    content.vb: Public Sub New(config As IConfiguration)
+  overload: CalorieTracker.Infrastructure.Auth.JwtGenerator.#ctor*
+  nameWithType.vb: JwtGenerator.New(IConfiguration)
+  fullName.vb: CalorieTracker.Infrastructure.Auth.JwtGenerator.New(Microsoft.Extensions.Configuration.IConfiguration)
+  name.vb: New(IConfiguration)
+- uid: CalorieTracker.Infrastructure.Auth.JwtGenerator.CreateToken(CalorieTracker.Domain.Entities.ApplicationUser)
+  commentId: M:CalorieTracker.Infrastructure.Auth.JwtGenerator.CreateToken(CalorieTracker.Domain.Entities.ApplicationUser)
+  id: CreateToken(CalorieTracker.Domain.Entities.ApplicationUser)
+  parent: CalorieTracker.Infrastructure.Auth.JwtGenerator
+  langs:
+  - csharp
+  - vb
+  name: CreateToken(ApplicationUser)
+  nameWithType: JwtGenerator.CreateToken(ApplicationUser)
+  fullName: CalorieTracker.Infrastructure.Auth.JwtGenerator.CreateToken(CalorieTracker.Domain.Entities.ApplicationUser)
+  type: Method
+  source:
+    remote:
+      path: src/CalorieTracker.Infrastructure/Auth/JwtGenerator.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: CreateToken
+    path: ../src/CalorieTracker.Infrastructure/Auth/JwtGenerator.cs
+    startLine: 36
+  assemblies:
+  - CalorieTracker.Infrastructure
+  namespace: CalorieTracker.Infrastructure.Auth
+  summary: >-
+    Tworzy token JWT dla podanego użytkownika.
+
+    Token zawiera identyfikator użytkownika oraz jego adres e-mail jako roszczenia (claims).
+  example: []
+  syntax:
+    content: public string CreateToken(ApplicationUser user)
+    parameters:
+    - id: user
+      type: CalorieTracker.Domain.Entities.ApplicationUser
+      description: Obiekt <xref href="CalorieTracker.Domain.Entities.ApplicationUser" data-throw-if-not-resolved="false"></xref>, dla którego token ma zostać wygenerowany.
+    return:
+      type: System.String
+      description: Ciąg znaków reprezentujący wygenerowany token JWT.
+    content.vb: Public Function CreateToken(user As ApplicationUser) As String
+  overload: CalorieTracker.Infrastructure.Auth.JwtGenerator.CreateToken*
+  implements:
+  - CalorieTracker.Application.Auth.Interfaces.IJwtGenerator.CreateToken(CalorieTracker.Domain.Entities.ApplicationUser)
+references:
+- uid: CalorieTracker.Infrastructure.Auth
+  commentId: N:CalorieTracker.Infrastructure.Auth
+  href: CalorieTracker.html
+  name: CalorieTracker.Infrastructure.Auth
+  nameWithType: CalorieTracker.Infrastructure.Auth
+  fullName: CalorieTracker.Infrastructure.Auth
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Infrastructure
+    name: Infrastructure
+    href: CalorieTracker.Infrastructure.html
+  - name: .
+  - uid: CalorieTracker.Infrastructure.Auth
+    name: Auth
+    href: CalorieTracker.Infrastructure.Auth.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Infrastructure
+    name: Infrastructure
+    href: CalorieTracker.Infrastructure.html
+  - name: .
+  - uid: CalorieTracker.Infrastructure.Auth
+    name: Auth
+    href: CalorieTracker.Infrastructure.Auth.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: CalorieTracker.Application.Auth.Interfaces.IJwtGenerator
+  commentId: T:CalorieTracker.Application.Auth.Interfaces.IJwtGenerator
+  parent: CalorieTracker.Application.Auth.Interfaces
+  href: CalorieTracker.Application.Auth.Interfaces.IJwtGenerator.html
+  name: IJwtGenerator
+  nameWithType: IJwtGenerator
+  fullName: CalorieTracker.Application.Auth.Interfaces.IJwtGenerator
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CalorieTracker.Application.Auth.Interfaces
+  commentId: N:CalorieTracker.Application.Auth.Interfaces
+  href: CalorieTracker.html
+  name: CalorieTracker.Application.Auth.Interfaces
+  nameWithType: CalorieTracker.Application.Auth.Interfaces
+  fullName: CalorieTracker.Application.Auth.Interfaces
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth
+    name: Auth
+    href: CalorieTracker.Application.Auth.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth.Interfaces
+    name: Interfaces
+    href: CalorieTracker.Application.Auth.Interfaces.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth
+    name: Auth
+    href: CalorieTracker.Application.Auth.html
+  - name: .
+  - uid: CalorieTracker.Application.Auth.Interfaces
+    name: Interfaces
+    href: CalorieTracker.Application.Auth.Interfaces.html
+- uid: CalorieTracker.Infrastructure.Auth.JwtGenerator
+  commentId: T:CalorieTracker.Infrastructure.Auth.JwtGenerator
+  href: CalorieTracker.Infrastructure.Auth.JwtGenerator.html
+  name: JwtGenerator
+  nameWithType: JwtGenerator
+  fullName: CalorieTracker.Infrastructure.Auth.JwtGenerator
+- uid: Microsoft.Extensions.Configuration.IConfiguration
+  commentId: T:Microsoft.Extensions.Configuration.IConfiguration
+  parent: Microsoft.Extensions.Configuration
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfiguration
+  name: IConfiguration
+  nameWithType: IConfiguration
+  fullName: Microsoft.Extensions.Configuration.IConfiguration
+- uid: CalorieTracker.Infrastructure.Auth.JwtGenerator.#ctor*
+  commentId: Overload:CalorieTracker.Infrastructure.Auth.JwtGenerator.#ctor
+  href: CalorieTracker.Infrastructure.Auth.JwtGenerator.html#CalorieTracker_Infrastructure_Auth_JwtGenerator__ctor_Microsoft_Extensions_Configuration_IConfiguration_
+  name: JwtGenerator
+  nameWithType: JwtGenerator.JwtGenerator
+  fullName: CalorieTracker.Infrastructure.Auth.JwtGenerator.JwtGenerator
+  nameWithType.vb: JwtGenerator.New
+  fullName.vb: CalorieTracker.Infrastructure.Auth.JwtGenerator.New
+  name.vb: New
+- uid: Microsoft.Extensions.Configuration
+  commentId: N:Microsoft.Extensions.Configuration
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Configuration
+  nameWithType: Microsoft.Extensions.Configuration
+  fullName: Microsoft.Extensions.Configuration
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Configuration
+    name: Configuration
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Configuration
+    name: Configuration
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration
+- uid: CalorieTracker.Domain.Entities.ApplicationUser
+  commentId: T:CalorieTracker.Domain.Entities.ApplicationUser
+  parent: CalorieTracker.Domain.Entities
+  href: CalorieTracker.Domain.Entities.ApplicationUser.html
+  name: ApplicationUser
+  nameWithType: ApplicationUser
+  fullName: CalorieTracker.Domain.Entities.ApplicationUser
+- uid: CalorieTracker.Infrastructure.Auth.JwtGenerator.CreateToken*
+  commentId: Overload:CalorieTracker.Infrastructure.Auth.JwtGenerator.CreateToken
+  href: CalorieTracker.Infrastructure.Auth.JwtGenerator.html#CalorieTracker_Infrastructure_Auth_JwtGenerator_CreateToken_CalorieTracker_Domain_Entities_ApplicationUser_
+  name: CreateToken
+  nameWithType: JwtGenerator.CreateToken
+  fullName: CalorieTracker.Infrastructure.Auth.JwtGenerator.CreateToken
+- uid: CalorieTracker.Application.Auth.Interfaces.IJwtGenerator.CreateToken(CalorieTracker.Domain.Entities.ApplicationUser)
+  commentId: M:CalorieTracker.Application.Auth.Interfaces.IJwtGenerator.CreateToken(CalorieTracker.Domain.Entities.ApplicationUser)
+  parent: CalorieTracker.Application.Auth.Interfaces.IJwtGenerator
+  name: CreateToken(ApplicationUser)
+  nameWithType: IJwtGenerator.CreateToken(ApplicationUser)
+  fullName: CalorieTracker.Application.Auth.Interfaces.IJwtGenerator.CreateToken(CalorieTracker.Domain.Entities.ApplicationUser)
+  spec.csharp:
+  - uid: CalorieTracker.Application.Auth.Interfaces.IJwtGenerator.CreateToken(CalorieTracker.Domain.Entities.ApplicationUser)
+    name: CreateToken
+  - name: (
+  - uid: CalorieTracker.Domain.Entities.ApplicationUser
+    name: ApplicationUser
+  - name: )
+  spec.vb:
+  - uid: CalorieTracker.Application.Auth.Interfaces.IJwtGenerator.CreateToken(CalorieTracker.Domain.Entities.ApplicationUser)
+    name: CreateToken
+  - name: (
+  - uid: CalorieTracker.Domain.Entities.ApplicationUser
+    name: ApplicationUser
+  - name: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: CalorieTracker.Domain.Entities
+  commentId: N:CalorieTracker.Domain.Entities
+  href: CalorieTracker.html
+  name: CalorieTracker.Domain.Entities
+  nameWithType: CalorieTracker.Domain.Entities
+  fullName: CalorieTracker.Domain.Entities
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Domain
+    name: Domain
+    href: CalorieTracker.Domain.html
+  - name: .
+  - uid: CalorieTracker.Domain.Entities
+    name: Entities
+    href: CalorieTracker.Domain.Entities.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Domain
+    name: Domain
+    href: CalorieTracker.Domain.html
+  - name: .
+  - uid: CalorieTracker.Domain.Entities
+    name: Entities
+    href: CalorieTracker.Domain.Entities.html

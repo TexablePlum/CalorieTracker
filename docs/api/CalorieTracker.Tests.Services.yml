@@ -1,0 +1,30 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Tests.Services
+  commentId: N:CalorieTracker.Tests.Services
+  id: CalorieTracker.Tests.Services
+  children:
+  - CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests
+  - CalorieTracker.Tests.Services.WeightAnalysisServiceTests
+  langs:
+  - csharp
+  - vb
+  name: CalorieTracker.Tests.Services
+  nameWithType: CalorieTracker.Tests.Services
+  fullName: CalorieTracker.Tests.Services
+  type: Namespace
+  assemblies:
+  - CalorieTracker.Tests
+references:
+- uid: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests
+  commentId: T:CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests
+  href: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests.html
+  name: RecipeNutritionCalculatorTests
+  nameWithType: RecipeNutritionCalculatorTests
+  fullName: CalorieTracker.Tests.Services.RecipeNutritionCalculatorTests
+- uid: CalorieTracker.Tests.Services.WeightAnalysisServiceTests
+  commentId: T:CalorieTracker.Tests.Services.WeightAnalysisServiceTests
+  href: CalorieTracker.Tests.Services.WeightAnalysisServiceTests.html
+  name: WeightAnalysisServiceTests
+  nameWithType: WeightAnalysisServiceTests
+  fullName: CalorieTracker.Tests.Services.WeightAnalysisServiceTests

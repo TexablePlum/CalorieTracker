@@ -1,0 +1,78 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Application.WeightMeasurements.Queries
+  commentId: N:CalorieTracker.Application.WeightMeasurements.Queries
+  id: CalorieTracker.Application.WeightMeasurements.Queries
+  children:
+  - CalorieTracker.Application.WeightMeasurements.Queries.GetLatestWeightMeasurementQuery
+  - CalorieTracker.Application.WeightMeasurements.Queries.GetUserWeightMeasurementsQuery
+  - CalorieTracker.Application.WeightMeasurements.Queries.GetWeightMeasurementDetailsQuery
+  langs:
+  - csharp
+  - vb
+  name: CalorieTracker.Application.WeightMeasurements.Queries
+  nameWithType: CalorieTracker.Application.WeightMeasurements.Queries
+  fullName: CalorieTracker.Application.WeightMeasurements.Queries
+  type: Namespace
+  assemblies:
+  - CalorieTracker.Application
+references:
+- uid: CalorieTracker.Application.WeightMeasurements.Queries.GetLatestWeightMeasurementQuery
+  commentId: T:CalorieTracker.Application.WeightMeasurements.Queries.GetLatestWeightMeasurementQuery
+  parent: CalorieTracker.Application.WeightMeasurements.Queries
+  href: CalorieTracker.Application.WeightMeasurements.Queries.GetLatestWeightMeasurementQuery.html
+  name: GetLatestWeightMeasurementQuery
+  nameWithType: GetLatestWeightMeasurementQuery
+  fullName: CalorieTracker.Application.WeightMeasurements.Queries.GetLatestWeightMeasurementQuery
+- uid: CalorieTracker.Application.WeightMeasurements.Queries.GetUserWeightMeasurementsQuery
+  commentId: T:CalorieTracker.Application.WeightMeasurements.Queries.GetUserWeightMeasurementsQuery
+  parent: CalorieTracker.Application.WeightMeasurements.Queries
+  href: CalorieTracker.Application.WeightMeasurements.Queries.GetUserWeightMeasurementsQuery.html
+  name: GetUserWeightMeasurementsQuery
+  nameWithType: GetUserWeightMeasurementsQuery
+  fullName: CalorieTracker.Application.WeightMeasurements.Queries.GetUserWeightMeasurementsQuery
+- uid: CalorieTracker.Application.WeightMeasurements.Queries.GetWeightMeasurementDetailsQuery
+  commentId: T:CalorieTracker.Application.WeightMeasurements.Queries.GetWeightMeasurementDetailsQuery
+  parent: CalorieTracker.Application.WeightMeasurements.Queries
+  href: CalorieTracker.Application.WeightMeasurements.Queries.GetWeightMeasurementDetailsQuery.html
+  name: GetWeightMeasurementDetailsQuery
+  nameWithType: GetWeightMeasurementDetailsQuery
+  fullName: CalorieTracker.Application.WeightMeasurements.Queries.GetWeightMeasurementDetailsQuery
+- uid: CalorieTracker.Application.WeightMeasurements.Queries
+  commentId: N:CalorieTracker.Application.WeightMeasurements.Queries
+  href: CalorieTracker.html
+  name: CalorieTracker.Application.WeightMeasurements.Queries
+  nameWithType: CalorieTracker.Application.WeightMeasurements.Queries
+  fullName: CalorieTracker.Application.WeightMeasurements.Queries
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.WeightMeasurements
+    name: WeightMeasurements
+    href: CalorieTracker.Application.WeightMeasurements.html
+  - name: .
+  - uid: CalorieTracker.Application.WeightMeasurements.Queries
+    name: Queries
+    href: CalorieTracker.Application.WeightMeasurements.Queries.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.WeightMeasurements
+    name: WeightMeasurements
+    href: CalorieTracker.Application.WeightMeasurements.html
+  - name: .
+  - uid: CalorieTracker.Application.WeightMeasurements.Queries
+    name: Queries
+    href: CalorieTracker.Application.WeightMeasurements.Queries.html

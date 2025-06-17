@@ -1,0 +1,110 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Application.Recipes.Handlers
+  commentId: N:CalorieTracker.Application.Recipes.Handlers
+  id: CalorieTracker.Application.Recipes.Handlers
+  children:
+  - CalorieTracker.Application.Recipes.Handlers.CreateRecipeHandler
+  - CalorieTracker.Application.Recipes.Handlers.DeleteRecipeHandler
+  - CalorieTracker.Application.Recipes.Handlers.GetAllRecipesHandler
+  - CalorieTracker.Application.Recipes.Handlers.GetRecipeDetailsHandler
+  - CalorieTracker.Application.Recipes.Handlers.GetUserRecipesHandler
+  - CalorieTracker.Application.Recipes.Handlers.SearchRecipesHandler
+  - CalorieTracker.Application.Recipes.Handlers.UpdateRecipeHandler
+  langs:
+  - csharp
+  - vb
+  name: CalorieTracker.Application.Recipes.Handlers
+  nameWithType: CalorieTracker.Application.Recipes.Handlers
+  fullName: CalorieTracker.Application.Recipes.Handlers
+  type: Namespace
+  assemblies:
+  - CalorieTracker.Application
+references:
+- uid: CalorieTracker.Application.Recipes.Handlers.CreateRecipeHandler
+  commentId: T:CalorieTracker.Application.Recipes.Handlers.CreateRecipeHandler
+  parent: CalorieTracker.Application.Recipes.Handlers
+  href: CalorieTracker.Application.Recipes.Handlers.CreateRecipeHandler.html
+  name: CreateRecipeHandler
+  nameWithType: CreateRecipeHandler
+  fullName: CalorieTracker.Application.Recipes.Handlers.CreateRecipeHandler
+- uid: CalorieTracker.Application.Recipes.Handlers.DeleteRecipeHandler
+  commentId: T:CalorieTracker.Application.Recipes.Handlers.DeleteRecipeHandler
+  parent: CalorieTracker.Application.Recipes.Handlers
+  href: CalorieTracker.Application.Recipes.Handlers.DeleteRecipeHandler.html
+  name: DeleteRecipeHandler
+  nameWithType: DeleteRecipeHandler
+  fullName: CalorieTracker.Application.Recipes.Handlers.DeleteRecipeHandler
+- uid: CalorieTracker.Application.Recipes.Handlers.GetAllRecipesHandler
+  commentId: T:CalorieTracker.Application.Recipes.Handlers.GetAllRecipesHandler
+  parent: CalorieTracker.Application.Recipes.Handlers
+  href: CalorieTracker.Application.Recipes.Handlers.GetAllRecipesHandler.html
+  name: GetAllRecipesHandler
+  nameWithType: GetAllRecipesHandler
+  fullName: CalorieTracker.Application.Recipes.Handlers.GetAllRecipesHandler
+- uid: CalorieTracker.Application.Recipes.Handlers.GetRecipeDetailsHandler
+  commentId: T:CalorieTracker.Application.Recipes.Handlers.GetRecipeDetailsHandler
+  parent: CalorieTracker.Application.Recipes.Handlers
+  href: CalorieTracker.Application.Recipes.Handlers.GetRecipeDetailsHandler.html
+  name: GetRecipeDetailsHandler
+  nameWithType: GetRecipeDetailsHandler
+  fullName: CalorieTracker.Application.Recipes.Handlers.GetRecipeDetailsHandler
+- uid: CalorieTracker.Application.Recipes.Handlers.GetUserRecipesHandler
+  commentId: T:CalorieTracker.Application.Recipes.Handlers.GetUserRecipesHandler
+  parent: CalorieTracker.Application.Recipes.Handlers
+  href: CalorieTracker.Application.Recipes.Handlers.GetUserRecipesHandler.html
+  name: GetUserRecipesHandler
+  nameWithType: GetUserRecipesHandler
+  fullName: CalorieTracker.Application.Recipes.Handlers.GetUserRecipesHandler
+- uid: CalorieTracker.Application.Recipes.Handlers.SearchRecipesHandler
+  commentId: T:CalorieTracker.Application.Recipes.Handlers.SearchRecipesHandler
+  parent: CalorieTracker.Application.Recipes.Handlers
+  href: CalorieTracker.Application.Recipes.Handlers.SearchRecipesHandler.html
+  name: SearchRecipesHandler
+  nameWithType: SearchRecipesHandler
+  fullName: CalorieTracker.Application.Recipes.Handlers.SearchRecipesHandler
+- uid: CalorieTracker.Application.Recipes.Handlers.UpdateRecipeHandler
+  commentId: T:CalorieTracker.Application.Recipes.Handlers.UpdateRecipeHandler
+  parent: CalorieTracker.Application.Recipes.Handlers
+  href: CalorieTracker.Application.Recipes.Handlers.UpdateRecipeHandler.html
+  name: UpdateRecipeHandler
+  nameWithType: UpdateRecipeHandler
+  fullName: CalorieTracker.Application.Recipes.Handlers.UpdateRecipeHandler
+- uid: CalorieTracker.Application.Recipes.Handlers
+  commentId: N:CalorieTracker.Application.Recipes.Handlers
+  href: CalorieTracker.html
+  name: CalorieTracker.Application.Recipes.Handlers
+  nameWithType: CalorieTracker.Application.Recipes.Handlers
+  fullName: CalorieTracker.Application.Recipes.Handlers
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Recipes
+    name: Recipes
+    href: CalorieTracker.Application.Recipes.html
+  - name: .
+  - uid: CalorieTracker.Application.Recipes.Handlers
+    name: Handlers
+    href: CalorieTracker.Application.Recipes.Handlers.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Application
+    name: Application
+    href: CalorieTracker.Application.html
+  - name: .
+  - uid: CalorieTracker.Application.Recipes
+    name: Recipes
+    href: CalorieTracker.Application.Recipes.html
+  - name: .
+  - uid: CalorieTracker.Application.Recipes.Handlers
+    name: Handlers
+    href: CalorieTracker.Application.Recipes.Handlers.html

@@ -1,0 +1,54 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Infrastructure.Data
+  commentId: N:CalorieTracker.Infrastructure.Data
+  id: CalorieTracker.Infrastructure.Data
+  children:
+  - CalorieTracker.Infrastructure.Data.AppDbContext
+  langs:
+  - csharp
+  - vb
+  name: CalorieTracker.Infrastructure.Data
+  nameWithType: CalorieTracker.Infrastructure.Data
+  fullName: CalorieTracker.Infrastructure.Data
+  type: Namespace
+  assemblies:
+  - CalorieTracker.Infrastructure
+references:
+- uid: CalorieTracker.Infrastructure.Data.AppDbContext
+  commentId: T:CalorieTracker.Infrastructure.Data.AppDbContext
+  parent: CalorieTracker.Infrastructure.Data
+  href: CalorieTracker.Infrastructure.Data.AppDbContext.html
+  name: AppDbContext
+  nameWithType: AppDbContext
+  fullName: CalorieTracker.Infrastructure.Data.AppDbContext
+- uid: CalorieTracker.Infrastructure.Data
+  commentId: N:CalorieTracker.Infrastructure.Data
+  href: CalorieTracker.html
+  name: CalorieTracker.Infrastructure.Data
+  nameWithType: CalorieTracker.Infrastructure.Data
+  fullName: CalorieTracker.Infrastructure.Data
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Infrastructure
+    name: Infrastructure
+    href: CalorieTracker.Infrastructure.html
+  - name: .
+  - uid: CalorieTracker.Infrastructure.Data
+    name: Data
+    href: CalorieTracker.Infrastructure.Data.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Infrastructure
+    name: Infrastructure
+    href: CalorieTracker.Infrastructure.html
+  - name: .
+  - uid: CalorieTracker.Infrastructure.Data
+    name: Data
+    href: CalorieTracker.Infrastructure.Data.html

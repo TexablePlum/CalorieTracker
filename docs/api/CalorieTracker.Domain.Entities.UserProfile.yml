@@ -1,0 +1,1020 @@
+### YamlMime:ManagedReference
+items:
+- uid: CalorieTracker.Domain.Entities.UserProfile
+  commentId: T:CalorieTracker.Domain.Entities.UserProfile
+  id: UserProfile
+  parent: CalorieTracker.Domain.Entities
+  children:
+  - CalorieTracker.Domain.Entities.UserProfile.ActivityLevel
+  - CalorieTracker.Domain.Entities.UserProfile.Age
+  - CalorieTracker.Domain.Entities.UserProfile.Gender
+  - CalorieTracker.Domain.Entities.UserProfile.Goal
+  - CalorieTracker.Domain.Entities.UserProfile.HeightCm
+  - CalorieTracker.Domain.Entities.UserProfile.Id
+  - CalorieTracker.Domain.Entities.UserProfile.MealPlan
+  - CalorieTracker.Domain.Entities.UserProfile.TargetWeightKg
+  - CalorieTracker.Domain.Entities.UserProfile.User
+  - CalorieTracker.Domain.Entities.UserProfile.UserId
+  - CalorieTracker.Domain.Entities.UserProfile.WeeklyGoalChangeKg
+  - CalorieTracker.Domain.Entities.UserProfile.WeightKg
+  langs:
+  - csharp
+  - vb
+  name: UserProfile
+  nameWithType: UserProfile
+  fullName: CalorieTracker.Domain.Entities.UserProfile
+  type: Class
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/UserProfile.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: UserProfile
+    path: ../src/CalorieTracker.Domain/Entities/UserProfile.cs
+    startLine: 11
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  example: []
+  syntax:
+    content: public class UserProfile
+    content.vb: Public Class UserProfile
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: CalorieTracker.Domain.Entities.UserProfile.Id
+  commentId: P:CalorieTracker.Domain.Entities.UserProfile.Id
+  id: Id
+  parent: CalorieTracker.Domain.Entities.UserProfile
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: UserProfile.Id
+  fullName: CalorieTracker.Domain.Entities.UserProfile.Id
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/UserProfile.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Id
+    path: ../src/CalorieTracker.Domain/Entities/UserProfile.cs
+    startLine: 16
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  example: []
+  syntax:
+    content: public Guid Id { get; set; }
+    parameters: []
+    return:
+      type: System.Guid
+    content.vb: Public Property Id As Guid
+  overload: CalorieTracker.Domain.Entities.UserProfile.Id*
+- uid: CalorieTracker.Domain.Entities.UserProfile.Goal
+  commentId: P:CalorieTracker.Domain.Entities.UserProfile.Goal
+  id: Goal
+  parent: CalorieTracker.Domain.Entities.UserProfile
+  langs:
+  - csharp
+  - vb
+  name: Goal
+  nameWithType: UserProfile.Goal
+  fullName: CalorieTracker.Domain.Entities.UserProfile.Goal
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/UserProfile.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Goal
+    path: ../src/CalorieTracker.Domain/Entities/UserProfile.cs
+    startLine: 24
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  summary: >-
+    Cel użytkownika (np. utrata wagi, utrzymanie wagi, przyrost masy), zdefiniowany przez <xref href="CalorieTracker.Domain.Enums.GoalType" data-throw-if-not-resolved="false"></xref>.
+
+    Opcjonalny.
+  example: []
+  syntax:
+    content: public GoalType? Goal { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{CalorieTracker.Domain.Enums.GoalType}
+    content.vb: Public Property Goal As GoalType?
+  overload: CalorieTracker.Domain.Entities.UserProfile.Goal*
+- uid: CalorieTracker.Domain.Entities.UserProfile.Gender
+  commentId: P:CalorieTracker.Domain.Entities.UserProfile.Gender
+  id: Gender
+  parent: CalorieTracker.Domain.Entities.UserProfile
+  langs:
+  - csharp
+  - vb
+  name: Gender
+  nameWithType: UserProfile.Gender
+  fullName: CalorieTracker.Domain.Entities.UserProfile.Gender
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/UserProfile.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Gender
+    path: ../src/CalorieTracker.Domain/Entities/UserProfile.cs
+    startLine: 30
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  summary: >-
+    Płeć użytkownika, zdefiniowana przez <xref href="CalorieTracker.Domain.Entities.UserProfile.Gender" data-throw-if-not-resolved="false"></xref>.
+
+    Opcjonalny.
+  example: []
+  syntax:
+    content: public Gender? Gender { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{CalorieTracker.Domain.Enums.Gender}
+    content.vb: Public Property Gender As Gender?
+  overload: CalorieTracker.Domain.Entities.UserProfile.Gender*
+- uid: CalorieTracker.Domain.Entities.UserProfile.Age
+  commentId: P:CalorieTracker.Domain.Entities.UserProfile.Age
+  id: Age
+  parent: CalorieTracker.Domain.Entities.UserProfile
+  langs:
+  - csharp
+  - vb
+  name: Age
+  nameWithType: UserProfile.Age
+  fullName: CalorieTracker.Domain.Entities.UserProfile.Age
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/UserProfile.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: Age
+    path: ../src/CalorieTracker.Domain/Entities/UserProfile.cs
+    startLine: 36
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  summary: >-
+    Wiek użytkownika w latach.
+
+    Opcjonalny.
+  example: []
+  syntax:
+    content: public int? Age { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Public Property Age As Integer?
+  overload: CalorieTracker.Domain.Entities.UserProfile.Age*
+- uid: CalorieTracker.Domain.Entities.UserProfile.HeightCm
+  commentId: P:CalorieTracker.Domain.Entities.UserProfile.HeightCm
+  id: HeightCm
+  parent: CalorieTracker.Domain.Entities.UserProfile
+  langs:
+  - csharp
+  - vb
+  name: HeightCm
+  nameWithType: UserProfile.HeightCm
+  fullName: CalorieTracker.Domain.Entities.UserProfile.HeightCm
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/UserProfile.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: HeightCm
+    path: ../src/CalorieTracker.Domain/Entities/UserProfile.cs
+    startLine: 42
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  summary: >-
+    Wzrost użytkownika w centymetrach.
+
+    Opcjonalny.
+  example: []
+  syntax:
+    content: public float? HeightCm { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Single}
+    content.vb: Public Property HeightCm As Single?
+  overload: CalorieTracker.Domain.Entities.UserProfile.HeightCm*
+- uid: CalorieTracker.Domain.Entities.UserProfile.WeightKg
+  commentId: P:CalorieTracker.Domain.Entities.UserProfile.WeightKg
+  id: WeightKg
+  parent: CalorieTracker.Domain.Entities.UserProfile
+  langs:
+  - csharp
+  - vb
+  name: WeightKg
+  nameWithType: UserProfile.WeightKg
+  fullName: CalorieTracker.Domain.Entities.UserProfile.WeightKg
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/UserProfile.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: WeightKg
+    path: ../src/CalorieTracker.Domain/Entities/UserProfile.cs
+    startLine: 48
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  summary: >-
+    Aktualna waga użytkownika w kilogramach.
+
+    Opcjonalny.
+  example: []
+  syntax:
+    content: public float? WeightKg { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Single}
+    content.vb: Public Property WeightKg As Single?
+  overload: CalorieTracker.Domain.Entities.UserProfile.WeightKg*
+- uid: CalorieTracker.Domain.Entities.UserProfile.TargetWeightKg
+  commentId: P:CalorieTracker.Domain.Entities.UserProfile.TargetWeightKg
+  id: TargetWeightKg
+  parent: CalorieTracker.Domain.Entities.UserProfile
+  langs:
+  - csharp
+  - vb
+  name: TargetWeightKg
+  nameWithType: UserProfile.TargetWeightKg
+  fullName: CalorieTracker.Domain.Entities.UserProfile.TargetWeightKg
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/UserProfile.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: TargetWeightKg
+    path: ../src/CalorieTracker.Domain/Entities/UserProfile.cs
+    startLine: 54
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  summary: >-
+    Docelowa waga użytkownika w kilogramach.
+
+    Opcjonalny.
+  example: []
+  syntax:
+    content: public float? TargetWeightKg { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Single}
+    content.vb: Public Property TargetWeightKg As Single?
+  overload: CalorieTracker.Domain.Entities.UserProfile.TargetWeightKg*
+- uid: CalorieTracker.Domain.Entities.UserProfile.ActivityLevel
+  commentId: P:CalorieTracker.Domain.Entities.UserProfile.ActivityLevel
+  id: ActivityLevel
+  parent: CalorieTracker.Domain.Entities.UserProfile
+  langs:
+  - csharp
+  - vb
+  name: ActivityLevel
+  nameWithType: UserProfile.ActivityLevel
+  fullName: CalorieTracker.Domain.Entities.UserProfile.ActivityLevel
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/UserProfile.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: ActivityLevel
+    path: ../src/CalorieTracker.Domain/Entities/UserProfile.cs
+    startLine: 60
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  summary: >-
+    Poziom aktywności fizycznej użytkownika, zdefiniowany przez <xref href="CalorieTracker.Domain.Entities.UserProfile.ActivityLevel" data-throw-if-not-resolved="false"></xref>.
+
+    Opcjonalny.
+  example: []
+  syntax:
+    content: public ActivityLevel? ActivityLevel { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{CalorieTracker.Domain.Enums.ActivityLevel}
+    content.vb: Public Property ActivityLevel As ActivityLevel?
+  overload: CalorieTracker.Domain.Entities.UserProfile.ActivityLevel*
+- uid: CalorieTracker.Domain.Entities.UserProfile.WeeklyGoalChangeKg
+  commentId: P:CalorieTracker.Domain.Entities.UserProfile.WeeklyGoalChangeKg
+  id: WeeklyGoalChangeKg
+  parent: CalorieTracker.Domain.Entities.UserProfile
+  langs:
+  - csharp
+  - vb
+  name: WeeklyGoalChangeKg
+  nameWithType: UserProfile.WeeklyGoalChangeKg
+  fullName: CalorieTracker.Domain.Entities.UserProfile.WeeklyGoalChangeKg
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/UserProfile.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: WeeklyGoalChangeKg
+    path: ../src/CalorieTracker.Domain/Entities/UserProfile.cs
+    startLine: 66
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  summary: >-
+    Docelowa tygodniowa zmiana wagi użytkownika w kilogramach (np. -0.5 kg dla utraty wagi).
+
+    Opcjonalny.
+  example: []
+  syntax:
+    content: public float? WeeklyGoalChangeKg { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Single}
+    content.vb: Public Property WeeklyGoalChangeKg As Single?
+  overload: CalorieTracker.Domain.Entities.UserProfile.WeeklyGoalChangeKg*
+- uid: CalorieTracker.Domain.Entities.UserProfile.MealPlan
+  commentId: P:CalorieTracker.Domain.Entities.UserProfile.MealPlan
+  id: MealPlan
+  parent: CalorieTracker.Domain.Entities.UserProfile
+  langs:
+  - csharp
+  - vb
+  name: MealPlan
+  nameWithType: UserProfile.MealPlan
+  fullName: CalorieTracker.Domain.Entities.UserProfile.MealPlan
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/UserProfile.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: MealPlan
+    path: ../src/CalorieTracker.Domain/Entities/UserProfile.cs
+    startLine: 73
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  summary: >-
+    Tablica wartości logicznych określająca, które posiłki są uwzględnione w planie żywieniowym użytkownika.
+
+    Indeksy odpowiadają: 0-śniadanie, 1-II śniadanie, 2-lunch, 3-obiad, 4-przekąska, 5-kolacja.
+
+    Domyślnie wszystkie ustawione na `false`.
+  example: []
+  syntax:
+    content: public bool[] MealPlan { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean[]
+    content.vb: Public Property MealPlan As Boolean()
+  overload: CalorieTracker.Domain.Entities.UserProfile.MealPlan*
+- uid: CalorieTracker.Domain.Entities.UserProfile.UserId
+  commentId: P:CalorieTracker.Domain.Entities.UserProfile.UserId
+  id: UserId
+  parent: CalorieTracker.Domain.Entities.UserProfile
+  langs:
+  - csharp
+  - vb
+  name: UserId
+  nameWithType: UserProfile.UserId
+  fullName: CalorieTracker.Domain.Entities.UserProfile.UserId
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/UserProfile.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: UserId
+    path: ../src/CalorieTracker.Domain/Entities/UserProfile.cs
+    startLine: 81
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  summary: >-
+    Identyfikator użytkownika, do którego przypisany jest ten profil.
+
+    Pole wymagane.
+  example: []
+  syntax:
+    content: public string UserId { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property UserId As String
+  overload: CalorieTracker.Domain.Entities.UserProfile.UserId*
+- uid: CalorieTracker.Domain.Entities.UserProfile.User
+  commentId: P:CalorieTracker.Domain.Entities.UserProfile.User
+  id: User
+  parent: CalorieTracker.Domain.Entities.UserProfile
+  langs:
+  - csharp
+  - vb
+  name: User
+  nameWithType: UserProfile.User
+  fullName: CalorieTracker.Domain.Entities.UserProfile.User
+  type: Property
+  source:
+    remote:
+      path: src/CalorieTracker.Domain/Entities/UserProfile.cs
+      branch: main
+      repo: https://github.com/TexablePlum/CalorieTracker.git
+    id: User
+    path: ../src/CalorieTracker.Domain/Entities/UserProfile.cs
+    startLine: 86
+  assemblies:
+  - CalorieTracker.Domain
+  namespace: CalorieTracker.Domain.Entities
+  summary: Właściwość nawigacyjna do powiązanego użytkownika <xref href="CalorieTracker.Domain.Entities.ApplicationUser" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public ApplicationUser User { get; set; }
+    parameters: []
+    return:
+      type: CalorieTracker.Domain.Entities.ApplicationUser
+    content.vb: Public Property User As ApplicationUser
+  overload: CalorieTracker.Domain.Entities.UserProfile.User*
+references:
+- uid: CalorieTracker.Domain.Entities
+  commentId: N:CalorieTracker.Domain.Entities
+  href: CalorieTracker.html
+  name: CalorieTracker.Domain.Entities
+  nameWithType: CalorieTracker.Domain.Entities
+  fullName: CalorieTracker.Domain.Entities
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Domain
+    name: Domain
+    href: CalorieTracker.Domain.html
+  - name: .
+  - uid: CalorieTracker.Domain.Entities
+    name: Entities
+    href: CalorieTracker.Domain.Entities.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Domain
+    name: Domain
+    href: CalorieTracker.Domain.html
+  - name: .
+  - uid: CalorieTracker.Domain.Entities
+    name: Entities
+    href: CalorieTracker.Domain.Entities.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CalorieTracker.Domain.Entities.UserProfile.Id*
+  commentId: Overload:CalorieTracker.Domain.Entities.UserProfile.Id
+  href: CalorieTracker.Domain.Entities.UserProfile.html#CalorieTracker_Domain_Entities_UserProfile_Id
+  name: Id
+  nameWithType: UserProfile.Id
+  fullName: CalorieTracker.Domain.Entities.UserProfile.Id
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.guid
+  name: Guid
+  nameWithType: Guid
+  fullName: System.Guid
+- uid: CalorieTracker.Domain.Enums.GoalType
+  commentId: T:CalorieTracker.Domain.Enums.GoalType
+  parent: CalorieTracker.Domain.Enums
+  href: CalorieTracker.Domain.Enums.GoalType.html
+  name: GoalType
+  nameWithType: GoalType
+  fullName: CalorieTracker.Domain.Enums.GoalType
+- uid: CalorieTracker.Domain.Entities.UserProfile.Goal*
+  commentId: Overload:CalorieTracker.Domain.Entities.UserProfile.Goal
+  href: CalorieTracker.Domain.Entities.UserProfile.html#CalorieTracker_Domain_Entities_UserProfile_Goal
+  name: Goal
+  nameWithType: UserProfile.Goal
+  fullName: CalorieTracker.Domain.Entities.UserProfile.Goal
+- uid: System.Nullable{CalorieTracker.Domain.Enums.GoalType}
+  commentId: T:System.Nullable{CalorieTracker.Domain.Enums.GoalType}
+  parent: System
+  definition: System.Nullable`1
+  href: CalorieTracker.Domain.Enums.GoalType.html
+  name: GoalType?
+  nameWithType: GoalType?
+  fullName: CalorieTracker.Domain.Enums.GoalType?
+  spec.csharp:
+  - uid: CalorieTracker.Domain.Enums.GoalType
+    name: GoalType
+    href: CalorieTracker.Domain.Enums.GoalType.html
+  - name: '?'
+  spec.vb:
+  - uid: CalorieTracker.Domain.Enums.GoalType
+    name: GoalType
+    href: CalorieTracker.Domain.Enums.GoalType.html
+  - name: '?'
+- uid: CalorieTracker.Domain.Enums
+  commentId: N:CalorieTracker.Domain.Enums
+  href: CalorieTracker.html
+  name: CalorieTracker.Domain.Enums
+  nameWithType: CalorieTracker.Domain.Enums
+  fullName: CalorieTracker.Domain.Enums
+  spec.csharp:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Domain
+    name: Domain
+    href: CalorieTracker.Domain.html
+  - name: .
+  - uid: CalorieTracker.Domain.Enums
+    name: Enums
+    href: CalorieTracker.Domain.Enums.html
+  spec.vb:
+  - uid: CalorieTracker
+    name: CalorieTracker
+    href: CalorieTracker.html
+  - name: .
+  - uid: CalorieTracker.Domain
+    name: Domain
+    href: CalorieTracker.Domain.html
+  - name: .
+  - uid: CalorieTracker.Domain.Enums
+    name: Enums
+    href: CalorieTracker.Domain.Enums.html
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: CalorieTracker.Domain.Entities.UserProfile.Gender
+  commentId: P:CalorieTracker.Domain.Entities.UserProfile.Gender
+  href: CalorieTracker.Domain.Entities.UserProfile.html#CalorieTracker_Domain_Entities_UserProfile_Gender
+  name: Gender
+  nameWithType: UserProfile.Gender
+  fullName: CalorieTracker.Domain.Entities.UserProfile.Gender
+- uid: CalorieTracker.Domain.Entities.UserProfile.Gender*
+  commentId: Overload:CalorieTracker.Domain.Entities.UserProfile.Gender
+  href: CalorieTracker.Domain.Entities.UserProfile.html#CalorieTracker_Domain_Entities_UserProfile_Gender
+  name: Gender
+  nameWithType: UserProfile.Gender
+  fullName: CalorieTracker.Domain.Entities.UserProfile.Gender
+- uid: System.Nullable{CalorieTracker.Domain.Enums.Gender}
+  commentId: T:System.Nullable{CalorieTracker.Domain.Enums.Gender}
+  parent: System
+  definition: System.Nullable`1
+  href: CalorieTracker.Domain.Enums.Gender.html
+  name: Gender?
+  nameWithType: Gender?
+  fullName: CalorieTracker.Domain.Enums.Gender?
+  spec.csharp:
+  - uid: CalorieTracker.Domain.Enums.Gender
+    name: Gender
+    href: CalorieTracker.Domain.Enums.Gender.html
+  - name: '?'
+  spec.vb:
+  - uid: CalorieTracker.Domain.Enums.Gender
+    name: Gender
+    href: CalorieTracker.Domain.Enums.Gender.html
+  - name: '?'
+- uid: CalorieTracker.Domain.Entities.UserProfile.Age*
+  commentId: Overload:CalorieTracker.Domain.Entities.UserProfile.Age
+  href: CalorieTracker.Domain.Entities.UserProfile.html#CalorieTracker_Domain_Entities_UserProfile_Age
+  name: Age
+  nameWithType: UserProfile.Age
+  fullName: CalorieTracker.Domain.Entities.UserProfile.Age
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int?
+  nameWithType: int?
+  fullName: int?
+  nameWithType.vb: Integer?
+  fullName.vb: Integer?
+  name.vb: Integer?
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+- uid: CalorieTracker.Domain.Entities.UserProfile.HeightCm*
+  commentId: Overload:CalorieTracker.Domain.Entities.UserProfile.HeightCm
+  href: CalorieTracker.Domain.Entities.UserProfile.html#CalorieTracker_Domain_Entities_UserProfile_HeightCm
+  name: HeightCm
+  nameWithType: UserProfile.HeightCm
+  fullName: CalorieTracker.Domain.Entities.UserProfile.HeightCm
+- uid: System.Nullable{System.Single}
+  commentId: T:System.Nullable{System.Single}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float?
+  nameWithType: float?
+  fullName: float?
+  nameWithType.vb: Single?
+  fullName.vb: Single?
+  name.vb: Single?
+  spec.csharp:
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '?'
+  spec.vb:
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '?'
+- uid: CalorieTracker.Domain.Entities.UserProfile.WeightKg*
+  commentId: Overload:CalorieTracker.Domain.Entities.UserProfile.WeightKg
+  href: CalorieTracker.Domain.Entities.UserProfile.html#CalorieTracker_Domain_Entities_UserProfile_WeightKg
+  name: WeightKg
+  nameWithType: UserProfile.WeightKg
+  fullName: CalorieTracker.Domain.Entities.UserProfile.WeightKg
+- uid: CalorieTracker.Domain.Entities.UserProfile.TargetWeightKg*
+  commentId: Overload:CalorieTracker.Domain.Entities.UserProfile.TargetWeightKg
+  href: CalorieTracker.Domain.Entities.UserProfile.html#CalorieTracker_Domain_Entities_UserProfile_TargetWeightKg
+  name: TargetWeightKg
+  nameWithType: UserProfile.TargetWeightKg
+  fullName: CalorieTracker.Domain.Entities.UserProfile.TargetWeightKg
+- uid: CalorieTracker.Domain.Entities.UserProfile.ActivityLevel
+  commentId: P:CalorieTracker.Domain.Entities.UserProfile.ActivityLevel
+  href: CalorieTracker.Domain.Entities.UserProfile.html#CalorieTracker_Domain_Entities_UserProfile_ActivityLevel
+  name: ActivityLevel
+  nameWithType: UserProfile.ActivityLevel
+  fullName: CalorieTracker.Domain.Entities.UserProfile.ActivityLevel
+- uid: CalorieTracker.Domain.Entities.UserProfile.ActivityLevel*
+  commentId: Overload:CalorieTracker.Domain.Entities.UserProfile.ActivityLevel
+  href: CalorieTracker.Domain.Entities.UserProfile.html#CalorieTracker_Domain_Entities_UserProfile_ActivityLevel
+  name: ActivityLevel
+  nameWithType: UserProfile.ActivityLevel
+  fullName: CalorieTracker.Domain.Entities.UserProfile.ActivityLevel
+- uid: System.Nullable{CalorieTracker.Domain.Enums.ActivityLevel}
+  commentId: T:System.Nullable{CalorieTracker.Domain.Enums.ActivityLevel}
+  parent: System
+  definition: System.Nullable`1
+  href: CalorieTracker.Domain.Enums.ActivityLevel.html
+  name: ActivityLevel?
+  nameWithType: ActivityLevel?
+  fullName: CalorieTracker.Domain.Enums.ActivityLevel?
+  spec.csharp:
+  - uid: CalorieTracker.Domain.Enums.ActivityLevel
+    name: ActivityLevel
+    href: CalorieTracker.Domain.Enums.ActivityLevel.html
+  - name: '?'
+  spec.vb:
+  - uid: CalorieTracker.Domain.Enums.ActivityLevel
+    name: ActivityLevel
+    href: CalorieTracker.Domain.Enums.ActivityLevel.html
+  - name: '?'
+- uid: CalorieTracker.Domain.Entities.UserProfile.WeeklyGoalChangeKg*
+  commentId: Overload:CalorieTracker.Domain.Entities.UserProfile.WeeklyGoalChangeKg
+  href: CalorieTracker.Domain.Entities.UserProfile.html#CalorieTracker_Domain_Entities_UserProfile_WeeklyGoalChangeKg
+  name: WeeklyGoalChangeKg
+  nameWithType: UserProfile.WeeklyGoalChangeKg
+  fullName: CalorieTracker.Domain.Entities.UserProfile.WeeklyGoalChangeKg
+- uid: CalorieTracker.Domain.Entities.UserProfile.MealPlan*
+  commentId: Overload:CalorieTracker.Domain.Entities.UserProfile.MealPlan
+  href: CalorieTracker.Domain.Entities.UserProfile.html#CalorieTracker_Domain_Entities_UserProfile_MealPlan
+  name: MealPlan
+  nameWithType: UserProfile.MealPlan
+  fullName: CalorieTracker.Domain.Entities.UserProfile.MealPlan
+- uid: System.Boolean[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool[]
+  nameWithType: bool[]
+  fullName: bool[]
+  nameWithType.vb: Boolean()
+  fullName.vb: Boolean()
+  name.vb: Boolean()
+  spec.csharp:
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: (
+  - name: )
+- uid: CalorieTracker.Domain.Entities.UserProfile.UserId*
+  commentId: Overload:CalorieTracker.Domain.Entities.UserProfile.UserId
+  href: CalorieTracker.Domain.Entities.UserProfile.html#CalorieTracker_Domain_Entities_UserProfile_UserId
+  name: UserId
+  nameWithType: UserProfile.UserId
+  fullName: CalorieTracker.Domain.Entities.UserProfile.UserId
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: CalorieTracker.Domain.Entities.ApplicationUser
+  commentId: T:CalorieTracker.Domain.Entities.ApplicationUser
+  parent: CalorieTracker.Domain.Entities
+  href: CalorieTracker.Domain.Entities.ApplicationUser.html
+  name: ApplicationUser
+  nameWithType: ApplicationUser
+  fullName: CalorieTracker.Domain.Entities.ApplicationUser
+- uid: CalorieTracker.Domain.Entities.UserProfile.User*
+  commentId: Overload:CalorieTracker.Domain.Entities.UserProfile.User
+  href: CalorieTracker.Domain.Entities.UserProfile.html#CalorieTracker_Domain_Entities_UserProfile_User
+  name: User
+  nameWithType: UserProfile.User
+  fullName: CalorieTracker.Domain.Entities.UserProfile.User
