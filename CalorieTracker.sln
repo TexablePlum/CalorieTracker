@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalorieTracker.Infrastructu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalorieTracker.Api", "src\CalorieTracker.Api\CalorieTracker.Api.csproj", "{511DDF28-3759-4FC2-90DC-AFDAED380DA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "src\CalorieTracker.Tests\Tests.csproj", "{26E556E3-7F03-4149-29E1-3814E8D0C29C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalorieTracker.Tests", "src\CalorieTracker.Tests\CalorieTracker.Tests.csproj", "{26E556E3-7F03-4149-29E1-3814E8D0C29C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

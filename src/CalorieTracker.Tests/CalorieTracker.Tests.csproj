@@ -6,6 +6,10 @@
     <Nullable>enable</Nullable>
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+    <AssemblyName>CalorieTracker.Tests</AssemblyName>
+    <RootNamespace>CalorieTracker.Tests</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

@@ -1,0 +1,1 @@
+Dokumentacje aby była w pełni funkcjonalna, potrzebuje być uruchomiona na serwerze. Do tego służy skrypt Dokumentacja.bat wystarczy go uruchomić, a po chwili pojawi się okno przeglądarki z dokumentacją.

@@ -1,0 +1,45 @@
+name: Build Documentation
+
+on:
+  push:
+    branches: [ main, master ]
+    paths: [ 'src/**', 'docs/**' ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '9.0.x'
+        
+    - name: Install DocFX
+      run: dotnet tool install -g docfx
+      
+    - name: Build projects
+      run: dotnet build src/
+      
+    - name: Build documentation
+      run: |
+        cd docs
+        docfx docfx.json
+        
+    - name: Upload documentation artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: documentation
+        path: docs/_site/
+        
+    - name: Deploy to GitHub Pages
+      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: docs/_site

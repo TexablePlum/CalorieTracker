@@ -1,0 +1,12 @@
+# DocFX wygenerowane pliki
+_site/
+api/
+obj/
+bin/
+
+# Logi
+*.log
+
+# OS pliki
+.DS_Store
+Thumbs.db

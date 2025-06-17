@@ -1,0 +1,9 @@
+- name: Home
+  href: index.md
+- name: Getting Started
+  href: getting-started.md
+- name: Architecture
+  href: architecture.md
+- name: API Reference
+  href: api/
+  homepage: api/index.md
