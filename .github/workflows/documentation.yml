@@ -32,10 +32,15 @@ jobs:
         dotnet restore
         dotnet build --configuration Release
       
+    - name: Generate API metadata
+      run: |
+        cd docs
+        docfx metadata docfx.json
+        
     - name: Build documentation
       run: |
         cd docs
-        docfx docfx.json
+        docfx build docfx.json
         
     - name: Upload documentation artifact
       uses: actions/upload-pages-artifact@v3
