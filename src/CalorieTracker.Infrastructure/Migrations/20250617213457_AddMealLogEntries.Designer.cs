@@ -4,6 +4,7 @@ using CalorieTracker.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CalorieTracker.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250617213457_AddMealLogEntries")]
+    partial class AddMealLogEntries
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -446,40 +449,6 @@ namespace CalorieTracker.Infrastructure.Migrations
                     b.ToTable("UserProfiles");
                 });
 
-            modelBuilder.Entity("CalorieTracker.Domain.Entities.WaterIntakeLogEntry", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<decimal>("AmountMilliliters")
-                        .HasColumnType("decimal(8,2)");
-
-                    b.Property<DateTime>("ConsumedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Notes")
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ConsumedAt");
-
-                    b.HasIndex("UserId");
-
-                    b.HasIndex("UserId", "ConsumedAt");
-
-                    b.ToTable("WaterIntakeLogEntries");
-                });
-
             modelBuilder.Entity("CalorieTracker.Domain.Entities.WeightMeasurement", b =>
                 {
                     b.Property<Guid>("Id")
@@ -756,17 +725,6 @@ namespace CalorieTracker.Infrastructure.Migrations
                     b.HasOne("CalorieTracker.Domain.Entities.ApplicationUser", "User")
                         .WithOne("Profile")
                         .HasForeignKey("CalorieTracker.Domain.Entities.UserProfile", "UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("CalorieTracker.Domain.Entities.WaterIntakeLogEntry", b =>
-                {
-                    b.HasOne("CalorieTracker.Domain.Entities.ApplicationUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

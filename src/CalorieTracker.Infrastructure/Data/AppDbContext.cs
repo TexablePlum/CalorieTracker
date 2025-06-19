@@ -62,6 +62,16 @@ namespace CalorieTracker.Infrastructure.Data
 		public DbSet<WeightMeasurement> WeightMeasurements { get; set; } = null!;
 
 		/// <summary>
+		/// Kolekcja wpisów posiłków w dziennikach żywieniowych użytkowników.
+		/// </summary>
+		public DbSet<MealLogEntry> MealLogEntries { get; set; } = null!;
+
+		/// <summary>
+		/// Kolekcja wpisów spożycia wody użytkowników.
+		/// </summary>
+		public DbSet<WaterIntakeLogEntry> WaterIntakeLogEntries { get; set; } = null!;
+
+		/// <summary>
 		/// Konfiguruje model bazy danych przy jej tworzeniu.
 		/// Definiuje relacje między encjami, indeksy oraz ograniczenia.
 		/// </summary>
@@ -74,6 +84,8 @@ namespace CalorieTracker.Infrastructure.Data
 			ConfigureProducts(builder);
 			ConfigureRecipes(builder);
 			ConfigureWeightMeasurements(builder);
+			ConfigureMealLogEntries(builder);
+			ConfigureWaterIntakeLogEntries(builder);
 		}
 
 		/// <summary>
@@ -225,6 +237,82 @@ namespace CalorieTracker.Infrastructure.Data
 				// Konwersja DateOnly (jeśli potrzebne)
 				entity.Property(w => w.MeasurementDate)
 					.HasConversion<DateOnly>();
+			});
+		}
+
+		/// <summary>
+		/// Konfiguruje relacje, indeksy i ograniczenia dla encji MealLogEntry.
+		/// </summary>
+		/// <param name="builder">Obiekt ModelBuilder służący do konfiguracji modelu.</param>
+		private void ConfigureMealLogEntries(ModelBuilder builder)
+		{
+			builder.Entity<MealLogEntry>(entity =>
+			{
+				// Klucz główny
+				entity.HasKey(m => m.Id);
+
+				// Indeksy dla wydajności
+				entity.HasIndex(m => m.UserId);
+				entity.HasIndex(m => m.ConsumedAt);
+				entity.HasIndex(m => new { m.UserId, m.ConsumedAt });
+				entity.HasIndex(m => m.MealType);
+
+				// Relacja N:1 z ApplicationUser
+				entity.HasOne(m => m.User)
+					.WithMany()
+					.HasForeignKey(m => m.UserId)
+					.OnDelete(DeleteBehavior.Cascade);
+
+				// Relacja N:1 z Product (opcjonalna)
+				entity.HasOne(m => m.Product)
+					.WithMany()
+					.HasForeignKey(m => m.ProductId)
+					.OnDelete(DeleteBehavior.Restrict);
+
+				// Relacja N:1 z Recipe (opcjonalna)
+				entity.HasOne(m => m.Recipe)
+					.WithMany()
+					.HasForeignKey(m => m.RecipeId)
+					.OnDelete(DeleteBehavior.Restrict);
+
+				// Konwersja enum na string
+				entity.Property(m => m.MealType)
+					.HasConversion<string>()
+					.IsRequired();
+
+				// Ograniczenia długości
+				entity.Property(m => m.Notes).HasMaxLength(500);
+			});
+		}
+
+		/// <summary>
+		/// Konfiguruje relacje, indeksy i ograniczenia dla encji WaterIntakeLogEntry.
+		/// </summary>
+		/// <param name="builder">Obiekt ModelBuilder służący do konfiguracji modelu.</param>
+		private void ConfigureWaterIntakeLogEntries(ModelBuilder builder)
+		{
+			builder.Entity<WaterIntakeLogEntry>(entity =>
+			{
+				// Klucz główny
+				entity.HasKey(w => w.Id);
+
+				// Indeksy dla wydajności
+				entity.HasIndex(w => w.UserId);
+				entity.HasIndex(w => w.ConsumedAt);
+				entity.HasIndex(w => new { w.UserId, w.ConsumedAt });
+
+				// Relacja N:1 z ApplicationUser
+				entity.HasOne(w => w.User)
+					.WithMany()
+					.HasForeignKey(w => w.UserId)
+					.OnDelete(DeleteBehavior.Cascade);
+
+				// Ograniczenia długości
+				entity.Property(w => w.Notes).HasMaxLength(200);
+
+				// Prawidłowa konfiguracja dla AmountMilliliters
+				entity.Property(w => w.AmountMilliliters)
+					.HasColumnType("decimal(8,2)"); // Maksymalnie 999999.99ml
 			});
 		}
 	}

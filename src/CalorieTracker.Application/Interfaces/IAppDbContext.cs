@@ -53,6 +53,16 @@ public interface IAppDbContext
 	DbSet<WeightMeasurement> WeightMeasurements { get; set; }
 
 	/// <summary>
+	/// Kolekcja wpisów posiłków w dziennikach żywieniowych użytkowników.
+	/// </summary>
+	DbSet<MealLogEntry> MealLogEntries { get; set; }
+
+	/// <summary>
+	/// Kolekcja wpisów dotyczących spożycia wody przez użytkowników.
+	/// </summary>
+	DbSet<WaterIntakeLogEntry> WaterIntakeLogEntries { get; set; }
+
+	/// <summary>
 	/// Asynchronicznie zapisuje wszystkie zmiany w kontekście do bazy danych.
 	/// </summary>
 	/// <param name="ct">Token anulowania do bezpiecznego przerwania operacji.</param>

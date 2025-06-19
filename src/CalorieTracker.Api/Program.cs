@@ -8,11 +8,13 @@ using CalorieTracker.Api.Validation;
 using CalorieTracker.Application.Auth.Handlers;
 using CalorieTracker.Application.Auth.Interfaces;
 using CalorieTracker.Application.Interfaces;
+using CalorieTracker.Application.NutritionTracking.Handlers;
 using CalorieTracker.Application.Recipes.Handlers;
 using CalorieTracker.Application.WeightMeasurements.Handlers;
 using CalorieTracker.Application.WeightMeasurements.Services;
 using CalorieTracker.Domain.Entities;
 using CalorieTracker.Domain.Services;
+using CalorieTracker.Domain.Services.Interfaces;
 using CalorieTracker.Infrastructure.Auth;
 using CalorieTracker.Infrastructure.Data;
 using CalorieTracker.Infrastructure.Email;
@@ -161,7 +163,7 @@ builder.Services.AddScoped<GetRecipeDetailsHandler>();
 builder.Services.AddScoped<SearchRecipesHandler>();
 builder.Services.AddScoped<GetUserRecipesHandler>();
 builder.Services.AddScoped<GetAllRecipesHandler>();
-builder.Services.AddScoped<RecipeNutritionCalculator>();
+builder.Services.AddScoped<IRecipeNutritionCalculator, RecipeNutritionCalculator>();
 builder.Services.AddScoped<CreateWeightMeasurementHandler>();
 builder.Services.AddScoped<UpdateWeightMeasurementHandler>();
 builder.Services.AddScoped<DeleteWeightMeasurementHandler>();
@@ -170,6 +172,16 @@ builder.Services.AddScoped<GetLatestWeightMeasurementHandler>();
 builder.Services.AddScoped<GetWeightMeasurementDetailsHandler>();
 builder.Services.AddScoped<WeightAnalysisService>();
 builder.Services.AddScoped<WeightMeasurementRecalculationService>();
+builder.Services.AddScoped<NutritionCalculationService>();
+builder.Services.AddScoped<NutritionTrackingService>();
+builder.Services.AddScoped<LogMealHandler>();
+builder.Services.AddScoped<UpdateMealLogHandler>();
+builder.Services.AddScoped<DeleteMealLogHandler>();
+builder.Services.AddScoped<GetDailyNutritionProgressHandler>();
+builder.Services.AddScoped<GetMealHistoryHandler>();
+builder.Services.AddScoped<LogWaterIntakeHandler>();
+builder.Services.AddScoped<UpdateWaterIntakeHandler>();
+builder.Services.AddScoped<DeleteWaterIntakeHandler>();
 
 // Rejestracja generatora tokenów JWT.
 builder.Services.AddScoped<IJwtGenerator, JwtGenerator>();
@@ -180,6 +192,8 @@ builder.Services.AddAutoMapper(typeof(ProfileMapping));
 builder.Services.AddAutoMapper(typeof(ProductMappingProfile));
 builder.Services.AddAutoMapper(typeof(RecipeMappingProfile));
 builder.Services.AddAutoMapper(typeof(WeightMeasurementMappingProfile));
+builder.Services.AddAutoMapper(typeof(NutritionTrackingMappingProfile));
+builder.Services.AddAutoMapper(typeof(WaterTrackingMappingProfile));
 
 // Konfiguracja ustawieñ poczty email.
 builder.Services.Configure<EmailSettings>(

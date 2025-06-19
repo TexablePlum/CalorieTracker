@@ -5,6 +5,7 @@
 using CalorieTracker.Domain.Entities;
 using CalorieTracker.Domain.ValueObjects;
 using CalorieTracker.Domain.Enums;
+using CalorieTracker.Domain.Services.Interfaces;
 
 namespace CalorieTracker.Domain.Services
 {
@@ -12,7 +13,7 @@ namespace CalorieTracker.Domain.Services
 	/// Serwis domenowy do kalkulacji wartości odżywczych przepisów.
 	/// Zawiera logikę biznesową do precyzyjnego obliczania makroskładników i kalorii na podstawie składników przepisu.
 	/// &lt;/summary>
-	public class RecipeNutritionCalculator
+	public class RecipeNutritionCalculator : IRecipeNutritionCalculator
 	{
 		/// &lt;summary>
 		/// Oblicza całkowitą wartość odżywczą przepisu na podstawie listy jego składników.
