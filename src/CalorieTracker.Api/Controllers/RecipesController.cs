@@ -8,6 +8,7 @@ using CalorieTracker.Application.Recipes.Commands;
 using CalorieTracker.Application.Recipes.Handlers;
 using CalorieTracker.Application.Recipes.Queries;
 using CalorieTracker.Domain.Services;
+using CalorieTracker.Domain.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
@@ -34,7 +35,7 @@ namespace CalorieTracker.Api.Controllers
 		/// <summary>
 		/// Serwis kalkulacji wartości odżywczych przepisów na podstawie składników i ich proporcji.
 		/// </summary>
-		private readonly RecipeNutritionCalculator _nutritionCalculator;
+		private readonly IRecipeNutritionCalculator _nutritionCalculator;
 
 		/// <summary>
 		/// Handler odpowiedzialny za tworzenie nowych przepisów w systemie.
@@ -85,7 +86,7 @@ namespace CalorieTracker.Api.Controllers
 		/// <param name="getAllRecipesHandler">Handler pobierania wszystkich przepisów.</param>
 		public RecipesController(
 			   IMapper mapper,
-			   RecipeNutritionCalculator nutritionCalculator,
+			   IRecipeNutritionCalculator nutritionCalculator,
 			   CreateRecipeHandler createHandler,
 			   UpdateRecipeHandler updateHandler,
 			   DeleteRecipeHandler deleteHandler,
