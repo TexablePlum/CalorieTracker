@@ -81,12 +81,12 @@ namespace CalorieTracker.Application.NutritionTracking.Handlers
 		/// <returns>Łączna ilość wody w litrach.</returns>
 		private async Task<float> GetDailyWaterIntakeInLiters(string userId, DateOnly date)
 		{
-			var waterEntries = await _db.WaterIntakeLogEntries
+			var totalMilliliters = await _db.WaterIntakeLogEntries
 				.Where(w => w.UserId == userId &&
 						   DateOnly.FromDateTime(w.ConsumedAt) == date)
-				.ToListAsync();
+				.SumAsync(w => w.AmountMilliliters);
 
-			return waterEntries.Sum(w => w.AmountLiters);
+			return (float)(Convert.ToDecimal(totalMilliliters) / 1000m);
 		}
 	}
 }
