@@ -202,7 +202,7 @@ namespace CalorieTracker.Domain.Services
 				protein: (float)Math.Round(totalProtein, 1),
 				fat: (float)Math.Round(totalFat, 1),
 				carbohydrates: (float)Math.Round(totalCarbohydrates, 1),
-				waterLiters: (float)Math.Round(waterIntakeLiters, 1),
+				waterLiters: (float)Math.Round(waterIntakeLiters, 3),
 				fiber: totalFiber > 0 ? (float)Math.Round(totalFiber, 1) : null,
 				sugar: totalSugar > 0 ? (float)Math.Round(totalSugar, 1) : null,
 				sodium: totalSodium > 0 ? (float)Math.Round(totalSodium, 1) : null
