@@ -26,6 +26,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -132,7 +133,12 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 // Dodanie serwisów kontrolerów MVC.
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+	.AddJsonOptions(options => 
+	{
+		// Zapobiega automatycznemu zaokr¹glaniu liczb w JSON
+		options.JsonSerializerOptions.NumberHandling = JsonNumberHandling.AllowReadingFromString;
+	});
 
 // Dodanie i konfiguracja FluentValidation do automatycznej walidacji ¿¹dañ.
 builder.Services.AddFluentValidationAutoValidation()
