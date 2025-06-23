@@ -97,30 +97,61 @@ namespace CalorieTracker.Domain.Services
 		/// <summary>
 		/// Kalkuluje wartości odżywcze na podstawie przepisu kulinarnego.
 		/// Używa RecipeNutritionCalculator do obliczenia całkowitej wartości przepisu,
-		/// następnie skaluje do rzeczywistej spożytej porcji.
+		/// następnie skaluje do rzeczywistej spożytej porcji przy użyciu TotalWeightGrams.
 		/// </summary>
-		/// <param name="mealLogEntry">Wpis posiłku do uzupełnienia.</param>
-		/// <param name="recipe">Przepis kulinarny będący podstawą kalkulacji.</param>
+		/// <param name="mealLogEntry">Wpis posiłku do uzupełnienia. Nie może być null.</param>
+		/// <param name="recipe">Przepis kulinarny będący podstawą kalkulacji. Nie może być null.</param>
+		/// <exception cref="ArgumentNullException">
+		/// Wyrzucany gdy recipe lub mealLogEntry jest null.
+		/// </exception>
+		/// <exception cref="InvalidOperationException">
+		/// Wyrzucany gdy przepis ma nieprawidłową wagę całkowitą lub ilość jest nieprawidłowa.
+		/// </exception>
 		private void CalculateNutritionFromRecipe(MealLogEntry mealLogEntry, Recipe recipe)
 		{
+			//walidacja null-ów
+			ArgumentNullException.ThrowIfNull(recipe);
+			ArgumentNullException.ThrowIfNull(mealLogEntry);
+
+			// zabezpieczenia
+			if (recipe.TotalWeightGrams <= 0)
+			{
+				throw new InvalidOperationException(
+					$"Przepis '{recipe.Name}' ma nieprawidłową wagę: {recipe.TotalWeightGrams}g. " +
+					"Waga musi być większa od zera."
+				);
+			}
+
+			if (mealLogEntry.Quantity <= 0)
+			{
+				throw new InvalidOperationException(
+					$"Ilość w wpisie posiłku musi być większa od zera. " +
+					$"Aktualna wartość: {mealLogEntry.Quantity}"
+				);
+			}
+
+			// Pobiera wartości odżywcze całego przepisu
 			var totalRecipeNutrition = _recipeNutritionCalculator.CalculateForRecipe(recipe);
-			var totalRecipeWeight = 100f;
-			var factor = mealLogEntry.Quantity / totalRecipeWeight;
 
-			mealLogEntry.CalculatedCalories = totalRecipeNutrition.Calories * factor;
-			mealLogEntry.CalculatedProtein = totalRecipeNutrition.Protein * factor;
-			mealLogEntry.CalculatedFat = totalRecipeNutrition.Fat * factor;
-			mealLogEntry.CalculatedCarbohydrates = totalRecipeNutrition.Carbohydrates * factor;
+			// Oblicza jaki procent przepisu zostaje spożyty
+			var portionFactor = mealLogEntry.Quantity / recipe.TotalWeightGrams;
 
-			mealLogEntry.CalculatedFiber = totalRecipeNutrition.Fiber.HasValue ?
-				totalRecipeNutrition.Fiber.Value * factor : null;
-			mealLogEntry.CalculatedSugar = totalRecipeNutrition.Sugar.HasValue ?
-				totalRecipeNutrition.Sugar.Value * factor : null;
-			mealLogEntry.CalculatedSodium = totalRecipeNutrition.Sodium.HasValue ?
-				totalRecipeNutrition.Sodium.Value * factor : null;
+			// Scale() do proporcjonalnego przeskalowania
+			var scaledNutrition = totalRecipeNutrition.Scale(portionFactor);
 
+			// Przepisuje przeskalowane wartości do MealLogEntry
+			mealLogEntry.CalculatedCalories = scaledNutrition.Calories;
+			mealLogEntry.CalculatedProtein = scaledNutrition.Protein;
+			mealLogEntry.CalculatedFat = scaledNutrition.Fat;
+			mealLogEntry.CalculatedCarbohydrates = scaledNutrition.Carbohydrates;
+			mealLogEntry.CalculatedFiber = scaledNutrition.Fiber;
+			mealLogEntry.CalculatedSugar = scaledNutrition.Sugar;
+			mealLogEntry.CalculatedSodium = scaledNutrition.Sodium;
+
+			// Zaokrągla wyniki do odpowiedniej precyzji
 			RoundNutritionValues(mealLogEntry);
 		}
+
 
 		/// <summary>
 		/// Konwertuje ilość na gramy w zależności od jednostki produktu.

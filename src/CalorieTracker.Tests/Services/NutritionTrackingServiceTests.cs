@@ -118,27 +118,40 @@ namespace CalorieTracker.Tests.Services
 		[Fact]
 		public void CalculateNutritionForMealEntry_Recipe_ShouldUseRecipeCalculator()
 		{
-			// Arrange - przepis z mockiem kalkulatora
+			// Arrange - przepis z rzeczywistą wagą
 			var recipe = CreateRecipe("Sałatka owocowa");
-			var mealEntry = CreateMealLogEntry(recipeId: Guid.NewGuid(), quantity: 150f);
+			recipe.TotalWeightGrams = 400f; // cały przepis waży 400g
+
+			var mealEntry = CreateMealLogEntry(recipeId: Guid.NewGuid(), quantity: 150f); // zjedzono 150g
 			mealEntry.Recipe = recipe;
 
-			// Setup mock - całkowite wartości przepisu
-			var recipeNutrition = new RecipeNutrition(320f, 8f, 12f, 65f, 15f, 45f, 150f);
+			// Setup mock - wartości dla CAŁEGO przepisu (400g)
+			var recipeNutrition = new RecipeNutrition(
+				calories: 320f,    // cały przepis (400g) ma 320 kcal  
+				protein: 8f,       // cały przepis (400g) ma 8g białka
+				fat: 12f,          // cały przepis (400g) ma 12g tłuszczu  
+				carbohydrates: 65f, // cały przepis (400g) ma 65g węglowodanów
+				fiber: 15f,        // Opcjonalne składniki dla całego przepisu
+				sugar: 45f,
+				sodium: 150f
+			);
+
 			_mockRecipeCalculator.Setup(x => x.CalculateForRecipe(recipe))
 								 .Returns(recipeNutrition);
 
 			// Act - kalkulacja
 			_service.CalculateNutritionForMealEntry(mealEntry);
 
-			// Assert - sprawdzenie skalowania (150g / 100g = 1.5x)
-			Assert.Equal(480f, mealEntry.CalculatedCalories, 1);		// 320 * 1.5
-			Assert.Equal(12f, mealEntry.CalculatedProtein, 1);			// 8 * 1.5
-			Assert.Equal(18f, mealEntry.CalculatedFat, 1);				// 12 * 1.5
-			Assert.Equal(97.5f, mealEntry.CalculatedCarbohydrates, 1);	// 65 * 1.5
-			Assert.Equal(22.5f, mealEntry.CalculatedFiber!.Value, 1);	// 15 * 1.5
-			Assert.Equal(67.5f, mealEntry.CalculatedSugar!.Value, 1);	// 45 * 1.5
-			Assert.Equal(225f, mealEntry.CalculatedSodium!.Value, 1);	// 150 * 1.5
+			// Assert - sprawdzenie skalowania (150g / 400g = 0.375x)
+			var factor = 150f / 400f; // 0.375
+
+			Assert.Equal(320f * factor, mealEntry.CalculatedCalories, 1);        // 120 kcal
+			Assert.Equal(8f * factor, mealEntry.CalculatedProtein, 1);           // 3g
+			Assert.Equal(12f * factor, mealEntry.CalculatedFat, 1);              // 4.5g
+			Assert.Equal(65f * factor, mealEntry.CalculatedCarbohydrates, 1);    // 24.375g
+			Assert.Equal(15f * factor, mealEntry.CalculatedFiber!.Value, 1);     // 5.625g
+			Assert.Equal(45f * factor, mealEntry.CalculatedSugar!.Value, 1);     // 16.875g
+			Assert.Equal(150f * factor, mealEntry.CalculatedSodium!.Value, 1);   // 56.25mg
 
 			// Weryfikacja wywołania mocka
 			_mockRecipeCalculator.Verify(x => x.CalculateForRecipe(recipe), Times.Once);
