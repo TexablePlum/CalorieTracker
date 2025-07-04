@@ -1,495 +1,234 @@
-# 🏆 CalorieTracker - System Zarządzania Żywieniem Klasy Enterprise
+# CalorieTracker API
 
-<div align="center">
+A REST backend for nutrition tracking and body-weight management, built with ASP.NET Core 9 on a clean, layered architecture. It derives a user's daily energy and macronutrient targets from their profile and tracks meals, water, weight, products, and recipes against those targets with all dietary math implemented as dependency-free domain logic.
 
-![.NET Version](https://img.shields.io/badge/.NET-9.0-512BD4?style=for-the-badge&logo=dotnet)
-![Architektura](https://img.shields.io/badge/Architektura-Clean%20Architecture-00599C?style=for-the-badge&logo=c-sharp)
-![Wzorce](https://img.shields.io/badge/Wzorce-CQRS%20%2B%20DDD-FF6B6B?style=for-the-badge)
-![Baza](https://img.shields.io/badge/Baza-SQL%20Server-CC2927?style=for-the-badge&logo=microsoft-sql-server)
-![API](https://img.shields.io/badge/API-REST%20%2B%20JWT-4ECDC4?style=for-the-badge)
-![Azure](https://img.shields.io/badge/Hosting-Microsoft%20Azure-0078D4?style=for-the-badge&logo=microsoft-azure)
-![CI/CD](https://img.shields.io/badge/CI/CD-GitHub%20Actions-2088FF?style=for-the-badge&logo=github-actions)
-![Docs](https://img.shields.io/badge/Docs-GitHub%20Pages-222222?style=for-the-badge&logo=github-pages)
+![.NET 9.0](https://img.shields.io/badge/.NET-9.0-512BD4?style=flat-square&logo=dotnet&logoColor=white)
+![ASP.NET Core](https://img.shields.io/badge/ASP.NET_Core-9.0-512BD4?style=flat-square&logo=dotnet&logoColor=white)
+![EF Core](https://img.shields.io/badge/EF_Core-9.0-512BD4?style=flat-square&logo=dotnet&logoColor=white)
+![SQL Server](https://img.shields.io/badge/SQL_Server-CC2927?style=flat-square&logo=microsoftsqlserver&logoColor=white)
+![JWT](https://img.shields.io/badge/Auth-JWT_%2B_Identity-000000?style=flat-square&logo=jsonwebtokens&logoColor=white)
+![Swagger](https://img.shields.io/badge/API-OpenAPI-85EA2D?style=flat-square&logo=swagger&logoColor=black)
+![xUnit](https://img.shields.io/badge/Tests-xUnit-512BD4?style=flat-square)
+![Azure](https://img.shields.io/badge/Deploy-Azure_App_Service-0078D4?style=flat-square&logo=microsoftazure&logoColor=white)
+![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 
-**🚀 Profesjonalna aplikacja do monitorowania diety zbudowana z użyciem wzorców klasy enterprise i najlepszych praktyk**
-
-[🌐 **LIVE DEMO - API**](https://ct-backend-texableplum.azurewebsites.net/index.html) • [📚 **DOKUMENTACJA**](https://texableplum.github.io/CalorieTracker/) • [Funkcjonalności](#-kluczowe-funkcjonalności) • [Architektura](#%EF%B8%8F-przegląd-architektury) • [Tech Stack](#%EF%B8%8F-stack-technologiczny)
-
-</div>
+**[Live API & Swagger UI](https://ct-backend-texableplum.azurewebsites.net/index.html)** · **[API Reference (DocFX)](https://texableplum.github.io/CalorieTracker/)**
 
 ---
 
-## 🎯 Opis Projektu
+## Overview
 
-CalorieTracker to **gotowa do produkcji**, **enterprise-grade** aplikacja do zarządzania żywieniem zaprojektowana z wykorzystaniem **zasad Clean Architecture** i **Domain-Driven Design**. Projekt demonstruje zaawansowane praktyki programistyczne w .NET, pokazując prawidłowe rozdzielenie odpowiedzialności, zasady SOLID oraz standardowe wzorce projektowe.
+CalorieTracker turns a user profile into a personalized nutrition plan and then tracks progress against it:
 
-### 🔥 Co Cechuje Ten Projekt
+1. **Register** and confirm the account with a one-time email code.
+2. **Complete the profile** - age, gender, height, weight, target weight, activity level, goal, weekly pace, and a meal plan.
+3. From that profile the API computes **daily calorie, macronutrient, and water targets**.
+4. **Log** meals, water, and weight; query daily progress, history, and trends.
+5. Browse a shared **product catalog**, add custom products, and compose **recipes** whose nutrition is calculated from their ingredients.
 
-- **🏗️ Clean Architecture** - Idealne rozdzielenie warstw Domain, Application, Infrastructure i API
-- **📋 Wzorzec CQRS** - Command Query Responsibility Segregation dla optymalnej wydajności
-- **🔐 Bezpieczeństwo** - Uwierzytelnianie JWT z refresh tokenami, integracja z Identity framework
-- **📊 Zaawansowany ORM** - Entity Framework Core z niestandardowymi konfiguracjami
-- **✅ Kompleksowa Walidacja** - FluentValidation z niestandardowymi walidatorami i obsługą błędów
-- **🔄 Profesjonalne Mapowanie** - Profile AutoMapper dla czystego transferu danych
-- **📖 Dokumentacja OpenAPI** - Integracja Swagger z uwierzytelnianiem JWT
-- **🎨 Wzorce Projektowe** - Repository, Factory, Strategy i inne
-- **🧪 Struktura Gotowa do Testów** - Łatwo testowalna dzięki dependency injection
-- **☁️ Deployment w Chmurze** - Hostowana na Microsoft Azure
+Most endpoints sit behind a `RequireCompleteProfile` filter: until the profile holds everything the nutrition formulas need, the API answers `403 ProfileIncomplete`. This keeps the calculation layer total - it never has to defend against partial input at request time.
 
----
+## Features
 
-## 🌐 Live Demo i Dokumentacja
+- **Authentication & accounts:** ASP.NET Core Identity with JWT access tokens and rotating refresh tokens, email confirmation, password reset, resend throttling, account lockout (5 attempts / 15 min), and an enforced password policy.
+- **Nutrition engine:** BMR, TDEE, goal-adjusted calories, protein/fat/carbohydrate ranges, and a hydration target, derived purely from the profile.
+- **Meal & water logging:** log products or recipes per meal type, with per-entry macro snapshots; daily progress and historical queries.
+- **Weight tracking:** measurements enriched with BMI, change since the previous entry, and progress toward the target weight.
+- **Products:** searchable shared catalog with barcode lookup, per-100 g nutrition, categories and units, plus user-created products.
+- **Recipes:** multi-ingredient recipes with nutrition computed from ingredient products and serving size.
+- **Validation & mapping:** FluentValidation on inbound requests, AutoMapper between API models and domain entities.
+- **Docs & ops:** OpenAPI/Swagger UI, DocFX reference site, and CI that deploys to Azure and publishes the docs.
 
-### 🚀 **Dostępne Online**
-- **[🔗 Live API + Swagger UI](https://ct-backend-texableplum.azurewebsites.net/index.html)** - Pełna dokumentacja API z możliwością testowania
-- **[📖 Dokumentacja GitHub Pages](https://texableplum.github.io/CalorieTracker/)** - Szczegółowa dokumentacja techniczna
-- **🔐 Testowe Konto**: Użyj endpointu `/api/auth/register` lub skontaktuj się w celu otrzymania danych testowych
+## Architecture
 
-### 📋 **Instrukcja Testowania API**
-1. Przejdź do [Swagger UI](https://ct-backend-texableplum.azurewebsites.net/index.html)
-2. **Rejestracja**: Użyj endpointu `POST /api/auth/register` z prawidłowymi danymi
-3. **Potwierdzenie Email**: Sprawdź skrzynkę email i użyj kodu z `POST /api/auth/confirm`
-4. **Logowanie**: Zaloguj się używając `POST /api/auth/login`
-5. **Autoryzacja**: Skopiuj otrzymany token JWT i kliknij "Authorize" w Swagger UI
-6. **Profil**: Uzupełnij profil przez `PUT /api/profile` - **WYMAGANE** do korzystania z większości funkcji
-7. **Testowanie**: Testuj dowolne endpointy API - większosć wymaga kompletnego profilu
+The solution follows Clean Architecture: dependencies point inward, and the domain has no framework or infrastructure references.
 
-> **⚠️ Uwaga**: Większość funkcjonalności wymaga uzupełnionego profilu użytkownika (wiek, płeć, wzrost, waga, cele itd.). Aplikacja automatycznie blokuje dostęp do funkcji bez kompletnych danych.
+| Project | Responsibility | Key dependencies |
+| :--- | :--- | :--- |
+| `CalorieTracker.Domain` | Entities, enums, value objects, and pure calculation services (nutrition, weight, recipe). No I/O. | Identity types only |
+| `CalorieTracker.Application` | Command/query handlers, application interfaces (`IAppDbContext`, `IJwtGenerator`). Orchestrates the domain. | Domain |
+| `CalorieTracker.Infrastructure` | EF Core `AppDbContext` + SQL Server, Identity stores, migrations, JWT generation, SMTP email. | EF Core, MailKit, RazorLight |
+| `CalorieTracker.Api` | Controllers, request/response models, validators, AutoMapper profiles, auth & Swagger wiring, the `RequireCompleteProfile` filter. | Application, Infrastructure |
+| `CalorieTracker.Tests` | xUnit + Moq unit tests for the domain calculation services. | all of the above |
 
----
-
-## ✨ Kluczowe Funkcjonalności
-
-### 🍎 Funkcjonalność Biznesowa
-- **Kompleksowe Śledzenie Żywienia** - Logowanie posiłków, śledzenie makroskładników, monitorowanie dziennego spożycia
-- **Zarządzanie Przepisami** - Tworzenie niestandardowych przepisów z kalkulacją składników
-- **Monitorowanie Wagi** - Śledzenie zmian wagi z analizą trendów
-- **Dziennik Nawodnienia** - Śledzenie dziennego spożycia wody
-- **Baza Produktów** - Obszerna baza produktów spożywczych z informacjami żywieniowymi
-
-### 🔧 Doskonałość Techniczna
-- **Projekt API RESTful** - Czysta, spójna struktura endpointów
-- **Zaawansowane Uwierzytelnianie** - Tokeny JWT z mechanizmem odświeżania
-- **Integracja Email** - Weryfikacja konta i resetowanie hasła z zewnętrznym API
-- **Konfiguracja CORS** - Gotowa do integracji z frontendem
-- **Migracje Bazy Danych** - Kontrola wersji zmian w schemacie
-- **Obsługa Błędów** - Kompleksowe zarządzanie wyjątkami
-- **Hosting w Chmurze** - Wdrożona na Microsoft Azure
-- **User Secrets** - Bezpieczne przechowywanie danych wrażliwych
-- **Testy Jednostkowe** - Pokrycie testami serwisów domenowych
-- **Atrybut Kompletności Profilu** - Automatyczna kontrola dostępu do funkcji
-- **CI/CD Pipeline** - GitHub Actions z automatycznym wdrażaniem
-- **Automatyczna Dokumentacja** - GitHub Pages buduje docs przy każdym push
-
----
-
-## 🏛️ Przegląd Architektury
-
-Aplikacja implementuje zasady **Clean Architecture** z wyraźnym rozdzieleniem odpowiedzialności:
-
-```mermaid
-graph TD
-    A[🌐 Warstwa API<br/>Kontrolery • Walidacja • Middleware • Uwierzytelnianie] --> B[📋 Warstwa Aplikacji<br/>Komendy • Zapytania • Handlery • DTOs • Interfejsy]
-    B --> C[🏗️ Warstwa Domeny<br/>Encje • Obiekty Wartości • Enums • Logika Domenowa]
-    C --> D[💾 Warstwa Infrastruktury<br/>Dostęp do Danych • Serwisy Zewnętrzne • Email • Baza Danych]
+```
+API  ─▶  Application  ─▶  Domain
+ │            │
+ └────────────┴────────▶  Infrastructure  ─▶  Domain
 ```
 
-### 🎯 Zaimplementowane Wzorce Projektowe
+**On the handler layer:** commands and queries are dispatched through small, single-purpose handler classes such as `LogMealHandler` and `GetDailyNutritionProgressHandler`, each registered explicitly in DI. It is a CQRS-style split implemented by hand rather than through a mediator library. The wiring is explicit and easy to trace.
 
-| Wzorzec | Implementacja | Cel |
-|---------|----------------|-----|
-| **CQRS** | Oddzielne Handlery Command/Query | Optymalne operacje odczytu/zapisu |
-| **Repository** | Abstrakcja `IAppDbContext` | Oddzielenie dostępu do danych |
-| **Factory** | Generowanie tokenów JWT | Scentralizowane tworzenie tokenów |
-| **Strategy** | Wybór szablonów email | Elastyczna obsługa emaili |
-| **Builder** | Konfiguracje Fluent API | Czysty kod konfiguracyjny |
-| **Dependency Injection** | Wbudowany kontener .NET DI | Luźne powiązania |
+## Nutrition model
 
----
+The heart of the project is `NutritionCalculationService`, a self-contained domain service with no external dependencies, covered directly by unit tests.
 
-## 🛠️ Stack Technologiczny
+| Quantity | Method |
+| :--- | :--- |
+| **BMR** | Mifflin–St Jeor equation, sex-specific |
+| **TDEE** | BMR × activity multiplier (1.2 sedentary → 1.9 extremely active) |
+| **Target calories** | TDEE adjusted by the weekly goal at 7,700 kcal/kg, clamped to safe floors/ceilings per goal |
+| **Protein** | g/kg body weight, banded by goal (lose / maintain / gain) |
+| **Fat** | percentage of target calories, banded by goal, at 9 kcal/g |
+| **Carbohydrates** | remainder of the calorie budget after protein and fat ("carbs by difference") |
+| **Water** | 30 ml/kg plus an activity bonus, clamped to 2.0–3.5 L (IOM guidance) |
 
-### **Backend Core**
-- **🔹 .NET 9** - Zaawansowany framework z najnowszymi możliwościami
-- **🔹 ASP.NET Core Web API** - Wysokowydajny framework webowy
-- **🔹 Entity Framework Core** - Zaawansowany ORM z obsługą LINQ
-- **🔹 SQL Server** - Baza danych klasy enterprise
+`WeightAnalysisService` computes BMI, change since the last measurement, and distance to goal, and back-fills those derived fields on each new measurement.
 
-### **Uwierzytelnianie i Bezpieczeństwo**
-- **🔐 ASP.NET Core Identity** - Framework zarządzania użytkownikami
-- **🔐 JWT Bearer Authentication** - Bezstanowe uwierzytelnianie tokenowe
-- **🔐 Implementacja Refresh Token** - Bezpieczne odnawianie tokenów
+## Tech stack
 
-### **Walidacja i Mapowanie**
-- **✅ FluentValidation** - Ekspresyjne reguły walidacji
-- **🔄 AutoMapper** - Mapowanie obiekt-do-obiekt
-- **📋 Niestandardowe Walidatory** - Egzekwowanie reguł biznesowych
-- **🛡️ Atrybuty Autoryzacji** - `RequireCompleteProfile` dla kontroli dostępu
+- **Runtime:** .NET 9, ASP.NET Core Web API
+- **Persistence:** Entity Framework Core 9, SQL Server (code-first, 30 migrations)
+- **Identity & auth:** ASP.NET Core Identity, JWT bearer (`System.IdentityModel.Tokens.Jwt`), refresh tokens
+- **Validation & mapping:** FluentValidation, AutoMapper
+- **Email:** MailKit (SMTP) with RazorLight HTML templates
+- **Docs:** Swashbuckle / Swagger, DocFX
+- **Testing:** xUnit, Moq
+- **CI/CD:** GitHub Actions → Azure App Service; DocFX → GitHub Pages
 
-### **Dokumentacja i API**
-- **📖 Swagger/OpenAPI** - Interaktywna dokumentacja API
-- **🌐 CORS** - Współdzielenie zasobów między domenami
-- **📊 Strukturalne Logowanie** - Kompleksowa obsługa logów
-- **🔐 User Secrets** - Bezpieczne przechowywanie kluczy API
+## API reference
 
-### **Narzędzia Deweloperskie**
-- **🧪 Dependency Injection** - Wbudowany kontener IoC
-- **⚙️ Zarządzanie Konfiguracją** - Elastyczne ustawienia aplikacji
-- **📧 Serwisy Email** - Integracja z zewnętrznym API email
-- **🔄 Migracje Bazy Danych** - Kontrola wersji schematu
-- **🧪 Testy Jednostkowe** - Kompleksowe testy serwisów domenowych
+All routes are prefixed with `/api`. Endpoints are JWT-protected unless marked *public*; those tagged **profile** additionally require a complete profile.
 
-### **Hosting i DevOps**
-- **☁️ Microsoft Azure** - Hosting w chmurze
-- **🚀 GitHub Actions** - Automatyczne CI/CD pipeline
-- **📖 GitHub Pages** - Automatyczne budowanie dokumentacji
-- **📊 Application Insights** - Monitorowanie aplikacji
+**Auth:** `/api/auth`
+| Method | Route | Description |
+| :-- | :-- | :-- |
+| POST | `/register` | Create an account *(public)* |
+| POST | `/login` | Obtain access + refresh tokens *(public)* |
+| POST | `/confirm` | Confirm email with a one-time code *(public)* |
+| POST | `/resend-code` | Resend the confirmation code *(public)* |
+| POST | `/refresh` | Exchange a refresh token *(public)* |
+| POST | `/forgot-password` · `/reset-password` | Password reset flow *(public)* |
+| POST | `/logout` | Revoke the current refresh token |
+| GET | `/me` | Current user details |
 
----
+**Profile:** `/api/profile`
+| Method | Route | Description |
+| :-- | :-- | :-- |
+| GET | `/` | Read the profile |
+| PUT | `/` | Create or update the profile that drives all targets |
 
-## 🚀 Rozpoczęcie Pracy
+**Products:** `/api/products` · *profile*
+| Method | Route | Description |
+| :-- | :-- | :-- |
+| GET | `/search` · `/{id}` · `/barcode/{barcode}` · `/my-products` | Look up products |
+| POST · PUT · DELETE | `/` · `/{id}` | Manage user products |
 
-### Wymagania
-- **✅ .NET 9 SDK** - [Pobierz tutaj](https://dotnet.microsoft.com/download/dotnet/9.0)
-- **✅ SQL Server** - LocalDB, Express lub pełna wersja
-- **✅ Visual Studio 2022** lub **VS Code** z rozszerzeniem C#
+**Recipes:** `/api/recipes` · *profile*
+| Method | Route | Description |
+| :-- | :-- | :-- |
+| GET | `/` · `/search` · `/my` · `/{id}` | Browse recipes |
+| POST · PUT · DELETE | `/` · `/{id}` | Manage recipes |
 
-### 🔧 Instalacja
+**Nutrition tracking:** `/api/nutrition-tracking` · *profile*
+| Method | Route | Description |
+| :-- | :-- | :-- |
+| POST · PUT · DELETE | `/log-meal` · `/meals/{id}` | Log and edit meals |
+| GET | `/daily-progress` · `/meal-history` | Progress against targets and history |
+| POST · PUT · DELETE | `/log-water` · `/water/{id}` | Log and edit water intake |
+| GET | `/water/quick-options` | Preset water amounts |
 
-1. **Sklonuj repozytorium**
-```bash
-git clone https://github.com/TexablePlum/CalorieTracker.git
-cd CalorieTracker
+**Weight measurements:** `/api/weightmeasurements` · *profile*
+| Method | Route | Description |
+| :-- | :-- | :-- |
+| GET | `/` · `/latest` · `/{id}` | Read measurements |
+| POST · PUT · DELETE | `/` · `/{id}` | Manage measurements |
+
+The full request/response schemas are available in the [live Swagger UI](https://ct-backend-texableplum.azurewebsites.net/index.html).
+
+## Data model
+
+```
+ApplicationUser 1───1 UserProfile          (age, sex, height, weight, target, activity, goal, meal plan)
+ApplicationUser 1───* MealLogEntry         (→ Product or Recipe, meal type, calculated macros snapshot)
+ApplicationUser 1───* WaterIntakeLogEntry  (amount, timestamp)
+ApplicationUser 1───* WeightMeasurement    (weight, BMI, change, date)
+Recipe          1───* RecipeIngredient ───* Product
 ```
 
-2. **Skonfiguruj bazę danych**
-```bash
-# Zaktualizuj connection string w appsettings.json
-# Uruchom migracje
-dotnet ef database update --project CalorieTracker.Infrastructure
-```
+## Getting started
 
-3. **Skonfiguruj ustawienia JWT**
-```json
+### Prerequisites
+
+- [.NET 9 SDK](https://dotnet.microsoft.com/download)
+- SQL Server (LocalDB, Express, or a full instance)
+- An SMTP account for confirmation and reset emails
+
+### Configuration
+
+`appsettings.json` ships with empty values, so supply secrets via [User Secrets](https://learn.microsoft.com/aspnet/core/security/app-secrets) in development or environment variables in production. The double-underscore form maps to the nested keys below.
+
+```jsonc
 {
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=...;Database=CalorieTracker;Trusted_Connection=True;TrustServerCertificate=True"
+  },
   "Jwt": {
-    "Key": "twoj-super-tajny-klucz-jwt-minimum-256-bitow",
+    "Key": "<at least 32 characters>",
     "Issuer": "CalorieTracker",
-    "Audience": "CalorieTracker-Users",
-    "ExpiryMinutes": 60
+    "Audience": "CalorieTrackerClient"
+  },
+  "Email": {
+    "Host": "smtp.example.com",
+    "Port": 587,
+    "User": "no-reply@example.com",
+    "Password": "<smtp-password>",
+    "EnableSsl": true,
+    "From": "no-reply@example.com"
   }
 }
 ```
 
-4. **Uruchom aplikację**
+### Database
+
+Automatic migration on startup is intentionally disabled; apply migrations explicitly, and the CI pipeline runs the same command on deploy:
+
 ```bash
-dotnet run --project CalorieTracker.Api
+dotnet ef database update \
+  --project src/CalorieTracker.Infrastructure \
+  --startup-project src/CalorieTracker.Api
 ```
 
-5. **Dostęp do Swagger UI**
-   - Przejdź do `https://localhost:7000` (lub inny skonfigurowany port)
-   - Eksploruj i testuj endpointy API
+### Run
 
----
-
-## 📚 Dokumentacja API
-
-### 🔐 AuthController - Uwierzytelnianie i autoryzacja
-
-| Metoda | Endpoint | Opis | Parametry |
-|--------|----------|------|-----------|
-| `POST` | `/api/auth/register` | Rejestracja nowego użytkownika z weryfikacją email | `{ email, password, firstName?, lastName? }` |
-| `POST` | `/api/auth/login` | Logowanie użytkownika z tokenami JWT | `{ email, password }` |
-| `POST` | `/api/auth/confirm` | Potwierdzenie adresu email 6-cyfrowym kodem | `{ email, code }` |
-| `POST` | `/api/auth/resend-code` | Ponowne wysłanie kodu aktywacyjnego (throttling 60s) | `{ email }` |
-| `POST` | `/api/auth/refresh` | Odświeżanie wygasłych tokenów JWT | `{ accessToken, refreshToken }` |
-| `POST` | `/api/auth/logout` | Wylogowanie i unieważnienie refresh tokenów | `{ refreshToken }` |
-| `POST` | `/api/auth/forgot-password` | Inicjacja procesu resetowania hasła | `{ email }` |
-| `POST` | `/api/auth/reset-password` | Resetowanie hasła kodem weryfikacyjnym | `{ email, code, newPassword }` |
-
-### 👤 ProfileController - Zarządzanie profilem użytkownika
-
-| Metoda | Endpoint | Opis | Wymagania |
-|--------|----------|------|-----------|
-| `GET` | `/api/profile` | Pobranie kompletnego profilu użytkownika | 🔐 Auth |
-| `PUT` | `/api/profile` | Aktualizacja profilu z automatycznym zarządzaniem wagą | 🔐 Auth |
-
-### 🍎 ProductsController - Zarządzanie produktami spożywczymi
-
-| Metoda | Endpoint | Opis | Wymagania |
-|--------|----------|------|-----------|
-| `GET` | `/api/products/search` | Wyszukiwanie produktów z filtrami i paginacją | 🔐 Auth + 📋 Profile |
-| `GET` | `/api/products/{id}` | Szczegóły produktu po ID | 🔐 Auth + 📋 Profile |
-| `GET` | `/api/products/barcode/{barcode}` | Wyszukiwanie produktu po kodzie kreskowym | 🔐 Auth + 📋 Profile |
-| `GET` | `/api/products/user` | Lista produktów użytkownika z paginacją | 🔐 Auth + 📋 Profile |
-| `POST` | `/api/products` | Tworzenie nowego produktu spożywczego | 🔐 Auth + 📋 Profile |
-| `PUT` | `/api/products/{id}` | Aktualizacja produktu (tylko właściciel) | 🔐 Auth + 📋 Profile + 🎯 Owner |
-| `DELETE` | `/api/products/{id}` | Usunięcie produktu (tylko właściciel) | 🔐 Auth + 📋 Profile + 🎯 Owner |
-
-### 🍳 RecipesController - System przepisów kulinarnych
-
-| Metoda | Endpoint | Opis | Wymagania |
-|--------|----------|------|-----------|
-| `GET` | `/api/recipes/search` | Wyszukiwanie przepisów z filtrami | 🔐 Auth + 📋 Profile |
-| `GET` | `/api/recipes/{id}` | Szczegóły przepisu z kalkulacją wartości odżywczych | 🔐 Auth + 📋 Profile |
-| `GET` | `/api/recipes/user` | Lista przepisów użytkownika | 🔐 Auth + 📋 Profile |
-| `GET` | `/api/recipes/all` | Wszystkie przepisy publiczne z paginacją | 🔐 Auth + 📋 Profile |
-| `POST` | `/api/recipes` | Tworzenie nowego przepisu z składnikami | 🔐 Auth + 📋 Profile |
-| `PUT` | `/api/recipes/{id}` | Aktualizacja przepisu (tylko właściciel) | 🔐 Auth + 📋 Profile + 🎯 Owner |
-| `DELETE` | `/api/recipes/{id}` | Usunięcie przepisu (tylko właściciel) | 🔐 Auth + 📋 Profile + 🎯 Owner |
-
-### ⚖️ WeightMeasurementsController - Monitorowanie wagi
-
-| Metoda | Endpoint | Opis | Wymagania |
-|--------|----------|------|-----------|
-| `GET` | `/api/weight-measurements` | Historia pomiarów wagi użytkownika | 🔐 Auth + 📋 Profile |
-| `GET` | `/api/weight-measurements/latest` | Najnowszy pomiar wagi | 🔐 Auth + 📋 Profile |
-| `GET` | `/api/weight-measurements/{id}` | Szczegóły konkretnego pomiaru | 🔐 Auth + 📋 Profile |
-| `POST` | `/api/weight-measurements` | Dodanie nowego pomiaru wagi | 🔐 Auth + 📋 Profile |
-| `PUT` | `/api/weight-measurements/{id}` | Aktualizacja pomiaru wagi | 🔐 Auth + 📋 Profile + 🎯 Owner |
-| `DELETE` | `/api/weight-measurements/{id}` | Usunięcie pomiaru wagi | 🔐 Auth + 📋 Profile + 🎯 Owner |
-
-### 📊 NutritionTrackingController - Śledzenie żywienia
-
-| Metoda | Endpoint | Opis | Wymagania |
-|--------|----------|------|-----------|
-| `GET` | `/api/nutrition-tracking/daily-progress` | Kompletny dzienny postęp żywieniowy | 🔐 Auth + 📋 Profile |
-| `GET` | `/api/nutrition-tracking/nutrition-requirements` | Dzienne zapotrzebowanie żywieniowe (BMR/TDEE) | 🔐 Auth + 📋 Profile |
-| `GET` | `/api/nutrition-tracking/meal-history` | Historia posiłków z filtrowaniem po dacie | 🔐 Auth + 📋 Profile |
-| `POST` | `/api/nutrition-tracking/log-meal` | Logowanie posiłku (produkt lub przepis) | 🔐 Auth + 📋 Profile |
-| `PUT` | `/api/nutrition-tracking/meals/{id}` | Aktualizacja wpisu posiłku | 🔐 Auth + 📋 Profile + 🎯 Owner |
-| `DELETE` | `/api/nutrition-tracking/meals/{id}` | Usunięcie wpisu posiłku | 🔐 Auth + 📋 Profile + 🎯 Owner |
-| `POST` | `/api/nutrition-tracking/log-water` | Logowanie spożycia wody | 🔐 Auth + 📋 Profile |
-| `PUT` | `/api/nutrition-tracking/water/{id}` | Aktualizacja wpisu wody | 🔐 Auth + 📋 Profile + 🎯 Owner |
-| `DELETE` | `/api/nutrition-tracking/water/{id}` | Usunięcie wpisu wody | 🔐 Auth + 📋 Profile + 🎯 Owner |
-| `GET` | `/api/nutrition-tracking/water/quick-options` | Predefiniowane opcje ilości wody | 🔐 Auth |
-
-### 📝 Legenda wymagań
-- **🔐 Auth** - Wymagane uwierzytelnienie (token JWT)
-- **📋 Profile** - Wymagany kompletny profil użytkownika (atrybut `RequireCompleteProfile`)
-- **🎯 Owner** - Dostęp tylko dla właściciela zasobu
-
----
-
-## 🏗️ Struktura Projektu
-
-```
-CalorieTracker/
-├── 🌐 CalorieTracker.Api/               # Warstwa API
-│   ├── Controllers/                    # Kontrolery REST API
-│   ├── Models/                         # Modele żądań/odpowiedzi API
-│   ├── Validation/                     # Walidatory FluentValidation
-│   └── Program.cs                      # Punkt wejścia aplikacji
-│
-├── 📋 CalorieTracker.Application/      # Warstwa Aplikacji
-│   ├── Auth/                          # Logika uwierzytelniania
-│   ├── Interfaces/                    # Kontrakty aplikacji
-│   ├── Recipes/                       # Zarządzanie przepisami
-│   ├── Nutrition/                     # Kalkulacje żywieniowe
-│   └── Profiles/                      # Profile AutoMapper
-│
-├── 🏗️ CalorieTracker.Domain/           # Warstwa Domeny
-│   ├── Entities/                      # Encje domenowe
-│   ├── Enums/                         # Wyliczenia domenowe
-│   └── ValueObjects/                  # Obiekty wartości
-│
-└── 💾 CalorieTracker.Infrastructure/   # Warstwa Infrastruktury
-    ├── Data/                          # Kontekst bazy danych
-    ├── Services/                      # Serwisy zewnętrzne
-    └── Configurations/                # Konfiguracje encji
+```bash
+dotnet restore
+dotnet run --project src/CalorieTracker.Api
 ```
 
----
+Swagger UI is served at the application root: `http://localhost:5260` or `https://localhost:7095`.
 
-## 🎯 Najważniejsze Aspekty Jakości Kodu
+### Test
 
-### **🏛️ Implementacja Clean Architecture**
-```csharp
-// Idealne rozdzielenie odpowiedzialności z abstrakcjami interfejsów
-public interface IAppDbContext
-{
-    DbSet<Recipe> Recipes { get; }
-    DbSet<Product> Products { get; }
-    Task<int> SaveChangesAsync(CancellationToken ct = default);
-}
+```bash
+dotnet test
 ```
 
-### **📋 Wzorzec CQRS z Handlerami**
-```csharp
-// Rozdzielenie Command/Query dla optymalnej wydajności
-public class CreateRecipeHandler
-{
-    private readonly IAppDbContext _db;
-    
-    public async Task<CreateRecipeResponse> Handle(
-        CreateRecipeCommand command)
-    {
-        // Implementacja logiki biznesowej
-    }
-}
+## Project structure
+
+```
+src/
+├── CalorieTracker.Domain          # entities, enums, value objects, calculation services
+├── CalorieTracker.Application     # command/query handlers, interfaces
+├── CalorieTracker.Infrastructure  # EF Core, Identity, migrations, JWT, email
+├── CalorieTracker.Api             # controllers, models, validators, mapping, startup
+└── CalorieTracker.Tests           # xUnit tests for domain services
+docs/                              # DocFX configuration and generated API metadata
 ```
 
-### **✅ Zaawansowana Walidacja**
-```csharp
-// FluentValidation z niestandardowymi regułami biznesowymi
-public class CreateRecipeRequestValidator : AbstractValidator<CreateRecipeRequest>
-{
-    public CreateRecipeRequestValidator()
-    {
-        RuleFor(x => x.Name)
-            .NotEmpty().WithMessage("Nazwa przepisu jest wymagana")
-            .MaximumLength(200);
-            
-        RuleFor(x => x.Ingredients)
-            .NotEmpty().WithMessage("Wymagany co najmniej jeden składnik")
-            .Must(HaveValidIngredients);
-    }
-}
-```
+## Continuous integration
 
-### **🛡️ Kontrola Dostępu z Atrybutem Kompletności**
-```csharp
-// Automatyczne blokowanie dostępu bez kompletnego profilu
-[RequireCompleteProfile]
-[HttpPost("log")]
-public async Task<IActionResult> LogMeal([FromBody] LogMealRequest request)
-{
-    // Ta akcja wymaga uzupełnionego profilu użytkownika
-    // Atrybut automatycznie sprawdza wszystkie wymagane pola
-}
-```
+- **`deploy.yml`:** on push to `main`: build, publish, apply EF Core migrations, and deploy to Azure App Service.
+- **`documentation.yml`:** build the DocFX site and publish it to GitHub Pages.
 
-### **🔐 Bezpieczeństwo z User Secrets**
-```csharp
-// JWT z refresh tokenami + bezpieczne przechowywanie kluczy
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer(options =>
-    {
-        options.TokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateIssuer = true,
-            ValidateAudience = true,
-            ValidateLifetime = true,
-            ClockSkew = TimeSpan.Zero,
-            // Klucze API przechowywane w User Secrets
-            IssuerSigningKey = new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes(configuration["Jwt:Key"]))
-        };
-    });
-```
+## Mobile client
 
-### **🧪 Testy Jednostkowe Serwisów**
-```csharp
-// Kompleksowe testy serwisów domenowych z mockami
-[Fact]
-public void CalculateDailyRequirements_MaleProfile_ShouldCalculateCorrectBMR()
-{
-    // Arrange - profil mężczyzny 30 lat, 180cm, 80kg
-    var profile = CreateUserProfile(Gender.Male, 30, 180, 80);
-    
-    // Act - kalkulacja wymagań żywieniowych
-    var result = _service.CalculateDailyRequirements(profile);
-    
-    // Assert - weryfikacja BMR według formuły Mifflin-St Jeor
-    Assert.Equal(1780f, result.BMR);
-}
-```
+The API is consumed by a companion cross-platform mobile app built with Flutter and Dart.
 
----
+## A note on language
 
-## 🔄 Kluczowe Decyzje Projektowe
+Type and member names are in English; the inline XML-doc comments and some API response messages are in Polish, as this was an academic project with Polish-language documentation required by the university. The public contract of routes, models, and Swagger is language-neutral.
 
-### **1. Wybór Clean Architecture**
-- **Dlaczego**: Zapewnia testowalność, łatwość utrzymania i skalowalność
-- **Korzyść**: Wyraźne rozdzielenie logiki biznesowej od problemów infrastrukturalnych
+## License
 
-### **2. Implementacja CQRS**
-- **Dlaczego**: Optymalizuje operacje odczytu/zapisu niezależnie
-- **Korzyść**: Lepsza wydajność i elastyczność dla złożonych zapytań
-
-### **3. Integracja FluentValidation**
-- **Dlaczego**: Ekspresyjne, łatwe w utrzymaniu reguły walidacji
-- **Korzyść**: Scentralizowana logika walidacji z jasnymi komunikatami błędów
-
-### **4. Użycie AutoMapper**
-- **Dlaczego**: Redukuje kod mapowania boilerplate
-- **Korzyść**: Czyste DTOs i rozdzielenie encji domenowych
-
-### **5. Strategia JWT + Refresh Token**
-- **Dlaczego**: Bezstanowe uwierzytelnianie z bezpieczeństwem
-- **Korzyść**: Skalowalne uwierzytelnianie odpowiednie dla systemów rozproszonych
-
-### **6. Hosting w Azure z User Secrets**
-- **Dlaczego**: Profesjonalne środowisko produkcyjne z bezpiecznym zarządzaniem sekretami
-- **Korzyść**: Demonstracja umiejętności DevOps, cloud computing i security best practices
-
-### **7. Zewnętrzne API Email**
-- **Dlaczego**: Integracja z profesjonalnymi serwisami email (SMTP)
-- **Korzyść**: Pokazuje umiejętność integracji z zewnętrznymi dostawcami usług
-
-### **8. Testy Jednostkowe**
-- **Dlaczego**: Zapewnienie jakości kodu i pokrycie krytycznych ścieżek
-- **Korzyść**: Demonstracja profesjonalnego podejścia do testowania i TDD
-
-### **10. GitHub Actions CI/CD**
-- **Dlaczego**: Automatyzacja buildów, testów i wdrożeń
-- **Korzyść**: Demonstracja umiejętności DevOps i automatyzacji procesów
-
-### **11. GitHub Pages dla Dokumentacji**
-- **Dlaczego**: Automatyczne generowanie i publikowanie dokumentacji
-- **Korzyść**: Pokazuje podejście documentation-as-code i continuous documentation
-
----
-
-## 🌟 Osiągnięcia Techniczne
-
-- ✅ **Zero błędów i warningów kompilacji** - Czysty, dobrze zorganizowany kod
-- ✅ **Pełna dokumentacja XML** - Każda klasa i metoda udokumentowana
-- ✅ **Spójne konwencje nazewnictwa** - Polskie komentarze, angielskie nazwy
-- ✅ **Zasady SOLID** - Implementowane konsekwentnie w całym projekcie
-- ✅ **Obsługa błędów** - Kompleksowe zarządzanie wyjątkami
-- ✅ **Bezpieczeństwo** - User Secrets, zewnętrzne API, JWT security
-- ✅ **Wydajność** - Optymalizowane zapytania i architektura
-- ✅ **Testowalność** - Struktura gotowa do unit i integration testów
-- ✅ **Pokrycie testami** - Testy jednostkowe serwisów domenowych
-- ✅ **Production-ready** - Hosting w Azure z CI/CD
-- ✅ **Automatyzacja** - GitHub Actions pipeline z auto-deployment
-- ✅ **Living Documentation** - GitHub Pages z auto-generated docs
-
----
-
-## 🤝 Wkład w Rozwój
-
-Ten projekt stosuje standardy rozwoju enterprise:
-
-- **Styl Kodu**: Konwencje kodowania Microsoft C#
-- **Architektura**: Zasady Clean Architecture
-- **Wzorce**: Zasady SOLID i sprawdzone wzorce projektowe
-- **Testowanie**: Struktura gotowa do testów jednostkowych i integracyjnych
-- **Dokumentacja**: Kompleksowa dokumentacja XML
-
----
-
-## 📞 Kontakt
-
-🔗 **📧 **porebskid8@gmail.com** | 🌐 **[Portfolio](https://github.com/TexablePlum)**
-
----
-
-## 📄 Licencja
-
-Ten projekt jest licencjonowany na licencji MIT - zobacz plik [LICENSE](LICENSE) dla szczegółów.
-
----
-
-<div align="center">
-
-**🏆 Zbudowane z pasją do inżynierii oprogramowania**
-
-*Demonstracja zaawansowanych umiejętności programistycznych w .NET i najlepszych praktyk*
-
-### 🌐 **[ZOBACZ LIVE DEMO](https://ct-backend-texableplum.azurewebsites.net/index.html)** 🌐
-
-⭐ **Oznacz gwiazdką to repozytorium, jeśli uznałeś je za wartościowe!** ⭐
-
-</div>
+Released under the [MIT License](LICENSE).
