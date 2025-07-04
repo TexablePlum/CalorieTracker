@@ -275,28 +275,31 @@ dotnet run --project CalorieTracker.Api
 
 ```
 CalorieTracker/
-├── 🌐 CalorieTracker.Api/               # Warstwa API
+├── 🌐 CalorieTracker.Api/               # Warstwa API - Punkty wejścia i kontrolery
+│   ├── Attributes/                     # Niestandardowe atrybuty (RequireCompleteProfile)
 │   ├── Controllers/                    # Kontrolery REST API
-│   ├── Models/                         # Modele żądań/odpowiedzi API
+│   ├── Mapping/                        # Profile AutoMapper dla API
+│   ├── Models/                         # DTOs żądań/odpowiedzi API
 │   ├── Validation/                     # Walidatory FluentValidation
-│   └── Program.cs                      # Punkt wejścia aplikacji
+│   └── Program.cs                      # Punkt wejścia i konfiguracja DI
 │
-├── 📋 CalorieTracker.Application/      # Warstwa Aplikacji
-│   ├── Auth/                          # Logika uwierzytelniania
-│   ├── Interfaces/                    # Kontrakty aplikacji
-│   ├── Recipes/                       # Zarządzanie przepisami
-│   ├── Nutrition/                     # Kalkulacje żywieniowe
-│   └── Profiles/                      # Profile AutoMapper
+├── 📋 CalorieTracker.Application/       # Warstwa Aplikacji - Logika biznesowa
+│   ├── Commands/                       # Komendy CQRS (operacje zapisu)
+│   ├── Handlers/                       # Handlery Command/Query
+│   ├── Queries/                        # Zapytania CQRS (operacje odczytu)
+│   ├── Interfaces/                     # Kontrakty i interfejsy aplikacji
+│   └── Services/                       # Serwisy aplikacyjne
 │
-├── 🏗️ CalorieTracker.Domain/           # Warstwa Domeny
-│   ├── Entities/                      # Encje domenowe
-│   ├── Enums/                         # Wyliczenia domenowe
-│   └── ValueObjects/                  # Obiekty wartości
+├── 🏗️ CalorieTracker.Domain/            # Warstwa Domeny - Logika przedmiotowa
+│   ├── Entities/                       # Encje domenowe
+│   ├── Enums/                          # Wyliczenia domenowe
+│   ├── Services/                       # Serwisy domenowe
+│   └── ValueObjects/                   # Obiekty wartości
 │
-└── 💾 CalorieTracker.Infrastructure/   # Warstwa Infrastruktury
-    ├── Data/                          # Kontekst bazy danych
-    ├── Services/                      # Serwisy zewnętrzne
-    └── Configurations/                # Konfiguracje encji
+└── 💾 CalorieTracker.Infrastructure/    # Warstwa Infrastruktury - Dostęp do danych
+    ├── Auth/                           # Serwisy uwierzytelniania (JWT, Identity)
+    ├── Data/                           # Kontekst EF Core i migracje
+    └── Email/                          # Serwis wysyłania email
 ```
 
 ---
